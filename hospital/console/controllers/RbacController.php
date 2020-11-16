@@ -10,7 +10,7 @@ class RbacController extends Controller
     {
         $auth = Yii::$app->authManager;
         $auth->removeAll();
-        
+
         // add "createPost" permission
         $createMarc = $auth->createPermission('createMarcacao');
         $createMarc->description = 'Criar marcação';
