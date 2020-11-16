@@ -81,6 +81,7 @@ $_SERVER = [
     ]
     'argc' => 2
 ]
+<<<<<<< Updated upstream
 2020-11-16 15:07:19 [-][-][-][error][yii\base\UnknownClassException] exception 'yii\base\UnknownClassException' with message 'Unable to find 'console\controllers\RbacController' in file: C:\wamp64\www\hospital/console/controllers/RbacController.php. Namespace missing?' in C:\wamp64\www\hospital\vendor\yiisoft\yii2\BaseYii.php:296
 Stack trace:
 #0 [internal function]: yii\BaseYii::autoload('console\\control...')
@@ -94,6 +95,22 @@ Stack trace:
 #8 C:\wamp64\www\hospital\yii(23): yii\base\Application->run()
 #9 {main}
 2020-11-16 15:07:18 [-][-][-][info][application] $_GET = []
+=======
+2020-11-16 15:57:34 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 15:57:34 [-][-][-][info][application] $_GET = []
 
 $_POST = []
 
@@ -103,6 +120,716 @@ $_COOKIE = []
 
 $_SERVER = [
     'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605538654.6127
+    'REQUEST_TIME' => 1605538654
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'imigrate'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:00:11 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 16:00:11 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605538811.7907
+    'REQUEST_TIME' => 1605538811
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'imigrate'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:02:03 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 16:02:03 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605538923.5444
+    'REQUEST_TIME' => 1605538923
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'imigrate'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:03:47 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 16:03:47 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605539027.3276
+    'REQUEST_TIME' => 1605539027
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'imigrate'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:04:07 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 16:04:07 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605539047.2474
+    'REQUEST_TIME' => 1605539047
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'imigrate'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:04:14 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "imigrate". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('imigrate', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 16:04:14 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605539054.147
+    'REQUEST_TIME' => 1605539054
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'imigrate'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:06:08 [-][-][-][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'console\controllers\RbacController' in file: C:\wamp64\www\PSI\hospital/console/controllers/RbacController.php. Namespace missing? in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('console\\control...')
+#1 [internal function]: spl_autoload_call('console\\control...')
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(637): class_exists('console\\control...')
+#3 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('rbac')
+#4 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('init')
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('rbac/init', Array)
+#6 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('rbac/init', Array)
+#7 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#9 {main}
+2020-11-16 16:06:08 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605539168.378
+    'REQUEST_TIME' => 1605539168
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'rbac/init'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:06:34 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "init". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('init', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('init', Array)
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "init". in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php:184
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('init', Array)
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#3 {main}
+2020-11-16 16:06:34 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605539194.1121
+    'REQUEST_TIME' => 1605539194
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+        1 => 'init'
+    ]
+    'argc' => 2
+]
+2020-11-16 16:07:21 [-][-][-][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'console\controllers\RbacController' in file: C:\wamp64\www\PSI\hospital/console/controllers/RbacController.php. Namespace missing? in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('console\\control...')
+#1 [internal function]: spl_autoload_call('console\\control...')
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(637): class_exists('console\\control...')
+#3 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('rbac')
+#4 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('init')
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(181): yii\base\Module->runAction('rbac/init', Array)
+#6 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\console\Application.php(148): yii\console\Application->runAction('rbac/init', Array)
+#7 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\console\Application->handleRequest(Object(yii\console\Request))
+#8 C:\wamp64\www\PSI\hospital\yii(23): yii\base\Application->run()
+#9 {main}
+2020-11-16 16:07:21 [-][-][-][info][application] $_GET = []
+>>>>>>> Stashed changes
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+<<<<<<< Updated upstream
     'APPDATA' => 'C:\\Users\\Diogo Chen\\AppData\\Roaming'
     'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
     'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
@@ -160,6 +887,69 @@ $_SERVER = [
     'REQUEST_TIME' => 1605539238
     'argv' => [
         0 => 'C:\\wamp64\\www\\hospital\\yii'
+=======
+    'AMDRMPATH' => 'C:\\Program Files\\AMD\\RyzenMaster\\'
+    'APPDATA' => 'C:\\Users\\tome\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-R033JNS'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'ESET_OPTIONS' => '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               '
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\tome'
+    'LOCALAPPDATA' => 'C:\\Users\\tome\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-R033JNS'
+    'MYSQLCONNECTOR_ASSEMBLIESPATH' => 'C:\\Program Files (x86)\\MySQL\\MySQL Connector Net 8.0.13\\Assemblies\\v4.5.2'
+    'NUMBER_OF_PROCESSORS' => '16'
+    'OneDrive' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveCommercial' => 'C:\\Users\\tome\\OneDrive - IPLeiria'
+    'OneDriveConsumer' => 'C:\\Users\\tome\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Roaming\\npm;C:\\Users\\tome\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\xampp1\\php;;C:\\Users\\tome\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'php' => 'E:\\wamp64\\bin\\php\\php7.0.32'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_ARCHITEW6432' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD'
+    'PROCESSOR_LEVEL' => '23'
+    'PROCESSOR_REVISION' => '7100'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files (x86)'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SNF' => 'C:\\ProgramData\\Quoteexs\\snp.sc'
+    'SNP' => 'https://%66%65%65%64.%68%65%6C%70%65%72%62%61%72.%63%6F%6D?publisher=APSFWakeNet&co=PT&userid=264623d5-0f19-d720-1998-c74b9450c5c7&searchtype=sc&installDate=23/12/2018&barcodeid=51198004&channelid=004&av=windows'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\tome\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-R033JNS'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-R033JNS'
+    'USERNAME' => 'tome'
+    'USERPROFILE' => 'C:\\Users\\tome'
+    'VBOX_MSI_INSTALL_PATH' => 'C:\\Program Files\\Oracle\\VirtualBox\\'
+    'VS150PROCOMNTOOLS' => 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\\Common7\\Tools\\'
+    'windir' => 'C:\\WINDOWS'
+    'YII_PATH' => 'C:\\wamp64\\www\\PSI\\hospital\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1605539241.0437
+    'REQUEST_TIME' => 1605539241
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\PSI\\hospital\\yii'
+>>>>>>> Stashed changes
         1 => 'rbac/init'
     ]
     'argc' => 2
