@@ -14,6 +14,19 @@
         android:layout_gravity="center|top"
         android:text="Procurar Medico" />
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+    </SearchView>
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

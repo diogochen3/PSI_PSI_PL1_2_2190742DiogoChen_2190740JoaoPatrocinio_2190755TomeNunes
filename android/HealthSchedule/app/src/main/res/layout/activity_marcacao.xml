@@ -16,6 +16,18 @@
         tools:layout_editor_absoluteX="200dp"
         tools:layout_editor_absoluteY="97dp" />
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </SearchView>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" />
+
     <CalendarView
         android:id="@+id/calendarView2"
         android:layout_width="match_parent"
