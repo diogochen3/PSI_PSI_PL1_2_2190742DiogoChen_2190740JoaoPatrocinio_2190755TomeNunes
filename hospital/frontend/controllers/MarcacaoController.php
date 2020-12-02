@@ -6,6 +6,7 @@ use Yii;
 use app\models\Marcacao;
 use app\models\MarcacaoSearch;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -64,15 +65,22 @@ class MarcacaoController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Marcacao();
+        if (Yii::$app->user->can('createMarcacao'))
+        {
+            $model = new Marcacao();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }else
+        {
+            throw new ForbiddenHttpException;
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**
