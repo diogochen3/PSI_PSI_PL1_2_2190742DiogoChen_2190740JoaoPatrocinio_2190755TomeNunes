@@ -16,6 +16,7 @@
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/lib-innerbrowser" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/module-asserts" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/module-filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/module-phpbrowser" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/module-yii2" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/phpunit-wrapper" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/codeception/stub" />
@@ -24,9 +25,12 @@
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/guzzlehttp/psr7" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/opis/closure" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/phpdocumentor/type-resolver" />
@@ -61,7 +65,11 @@
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/polyfill-php70" />
+      <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/hospital/vendor/yiisoft/yii2" />
