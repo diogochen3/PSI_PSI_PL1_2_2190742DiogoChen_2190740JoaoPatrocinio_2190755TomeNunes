@@ -3,7 +3,16 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Health Schedule';
+
 ?>
+
+
+
+
+
+
+
+
 <!-- End: Fixed navbar starting with transparency -->
 <main class="page landing-page">
     <section class="clean-block clean-hero" style="background-image: url(&quot;/assets/img/tech/image4.jpg?h=9446cbacfd25d8004e78de858ef87e72&quot;);border-color: rgba(9,162,255,0.85);color: rgba(9, 162, 255, 0.85);">
@@ -20,6 +29,21 @@ $this->title = 'Health Schedule';
             <h4 style="color: blue;"><strong>ATENDIMENTO PERMANENTE</strong><br></h4>
             <p><strong>Mais do que um hospital, somos uma casa que o recebe, que partilha as suas preocupações e que o apoia sempre da melhor forma. Tratamos afetivamente!</strong><br></p>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="col-md-5 feature-box"><i class="icon-pencil icon"></i>
             <h4 style="color: blue;"><strong>MARCAÇÃO ONLINE</strong><br></h4>
             <p><strong>Para sua comodidade, pode efetuar um pedido de marcação online, sujeito a confirmação pelos nossos serviços no prazo de 48 horas.</strong><br></p>
