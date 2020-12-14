@@ -5,9 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Consultas */
 
-$this->title = 'Create Consultas';
-$this->params['breadcrumbs'][] = ['label' => 'Consultas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Marcaçao de Consultas';
+
 ?>
 <div class="consultas-create">
 

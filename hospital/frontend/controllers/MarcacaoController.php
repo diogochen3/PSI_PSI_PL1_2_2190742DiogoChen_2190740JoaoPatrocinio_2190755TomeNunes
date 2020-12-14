@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use app\models\Marcacao;
-use app\models\MarcacaoSearch;
+use frontend\models\Marcacao;
+use frontend\models\MarcacaoSearch;
 use yii\web\Controller;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;

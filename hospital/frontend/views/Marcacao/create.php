@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Marcacao */
+/* @var $model frontend\models\Marcacao */
 
 $this->title = 'Create Marcacao';
 $this->params['breadcrumbs'][] = ['label' => 'Marcacaos', 'url' => ['index']];
