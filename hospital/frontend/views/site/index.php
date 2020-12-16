@@ -2,8 +2,17 @@
 
 /* @var $this yii\web\View */
 
+use common\models\User;
+
 $this->title = 'Health Schedule';
 
+$ids = User::find()->select('id')->column();
+var_dump($ids);
+$user = User::isMedico();
+var_dump($user);
+/*foreach ($user as $item) {
+ if ($item == )
+}*/
 ?>
 
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Especialidade;
+use frontend\models\Especialidade;
 
 /**
- * EspecialidadeSearch represents the model behind the search form of `app\models\Especialidade`.
+ * EspecialidadeSearch represents the model behind the search form of `frontend\models\Especialidade`.
  */
 class EspecialidadeSearch extends Especialidade
 {

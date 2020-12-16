@@ -3,12 +3,11 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Especialidade */
+/* @var $model frontend\models\Especialidade */
 
 $this->title = 'Create Especialidade';
 $this->params['breadcrumbs'][] = ['label' => 'Especialidades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
 <div class="especialidade-create">
 

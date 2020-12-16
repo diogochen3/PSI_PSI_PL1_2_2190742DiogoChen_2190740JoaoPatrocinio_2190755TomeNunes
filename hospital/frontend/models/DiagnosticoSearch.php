@@ -4,10 +4,10 @@ namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Diagnostico;
+use frontend\models\Diagnostico;
 
 /**
- * DiagnosticoSearch represents the model behind the search form of `app\models\Diagnostico`.
+ * DiagnosticoSearch represents the model behind the search form of `frontend\models\Diagnostico`.
  */
 class DiagnosticoSearch extends Diagnostico
 {
@@ -17,8 +17,8 @@ class DiagnosticoSearch extends Diagnostico
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['Descri', 'date', 'situacao'], 'safe'],
+            [['id', 'id_medico', 'id_utente'], 'integer'],
+            [['descricao', 'date', 'situacao'], 'safe'],
         ];
     }
 
@@ -60,9 +60,11 @@ class DiagnosticoSearch extends Diagnostico
         $query->andFilterWhere([
             'id' => $this->id,
             'date' => $this->date,
+            'id_medico' => $this->id_medico,
+            'id_utente' => $this->id_utente,
         ]);
 
-        $query->andFilterWhere(['like', 'Descri', $this->Descri])
+        $query->andFilterWhere(['like', 'descricao', $this->descricao])
             ->andFilterWhere(['like', 'situacao', $this->situacao]);
 
         return $dataProvider;

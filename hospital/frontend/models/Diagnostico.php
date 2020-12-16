@@ -2,15 +2,21 @@
 
 namespace frontend\models;
 
+use common\models\User;
 use Yii;
 
 /**
  * This is the model class for table "diagnostico".
  *
  * @property int $id
- * @property string $Descri
+ * @property string $descricao
  * @property string $date
  * @property string $situacao
+ * @property int $id_medico
+ * @property int $id_utente
+ *
+ * @property User $medico
+ * @property User $utente
  */
 class Diagnostico extends \yii\db\ActiveRecord
 {
@@ -28,11 +34,12 @@ class Diagnostico extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'Descri', 'date', 'situacao'], 'required'],
-            [['id'], 'integer'],
+            [['descricao', 'date', 'situacao', 'id_medico', 'id_utente'], 'required'],
             [['date'], 'safe'],
-            [['Descri', 'situacao'], 'string', 'max' => 255],
-            [['id'], 'unique'],
+            [['id_medico', 'id_utente'], 'integer'],
+            [['descricao', 'situacao'], 'string', 'max' => 255],
+            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_medico' => 'id']],
+            [['id_utente'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_utente' => 'id']],
         ];
     }
 
@@ -43,9 +50,31 @@ class Diagnostico extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'Descri' => 'Descri',
+            'descricao' => 'Descricao',
             'date' => 'Date',
             'situacao' => 'Situacao',
+            'id_medico' => 'Id Medico',
+            'id_utente' => 'Id Utente',
         ];
+    }
+
+    /**
+     * Gets query for [[Medico]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedico()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id_medico']);
+    }
+
+    /**
+     * Gets query for [[Utente]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUtente()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id_utente']);
     }
 }

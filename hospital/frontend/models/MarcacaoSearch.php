@@ -1,13 +1,13 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use frontend\models\Marcacao;
 
 /**
- * MarcacaoSearch represents the model behind the search form of `app\models\Marcacao`.
+ * MarcacaoSearch represents the model behind the search form of `frontend\models\Marcacao`.
  */
 class MarcacaoSearch extends Marcacao
 {
@@ -17,8 +17,8 @@ class MarcacaoSearch extends Marcacao
     public function rules()
     {
         return [
-            [['id', 'id_especialidade'], 'integer'],
-            [['date'], 'safe'],
+            [['id', 'Aceitar', 'id_especialidade', 'id_Utente', 'id_Medico'], 'integer'],
+            [['date', 'tempo'], 'safe'],
         ];
     }
 
@@ -60,7 +60,11 @@ class MarcacaoSearch extends Marcacao
         $query->andFilterWhere([
             'id' => $this->id,
             'date' => $this->date,
+            'tempo' => $this->tempo,
+            'Aceitar' => $this->Aceitar,
             'id_especialidade' => $this->id_especialidade,
+            'id_Utente' => $this->id_Utente,
+            'id_Medico' => $this->id_Medico,
         ]);
 
         return $dataProvider;

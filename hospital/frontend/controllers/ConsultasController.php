@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use app\models\Consultas;
-use app\models\ConsultaSearch;
+use frontend\models\Consultas;
+use frontend\models\ConsultasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class ConsultasController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ConsultaSearch();
+        $searchModel = new ConsultasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

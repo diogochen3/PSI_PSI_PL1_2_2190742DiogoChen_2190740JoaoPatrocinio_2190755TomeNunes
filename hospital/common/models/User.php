@@ -215,4 +215,19 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    public static function isMedico()
+    {
+        return  Yii::$app->authManager->getUserIdsByRole("medico"); //return array
+    }
+    /**
+     * Gets query for [[Id0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getId0()
+    {
+        return $this->hasOne(Profile::className(), ['id' => 'id']);
+    }
+
 }

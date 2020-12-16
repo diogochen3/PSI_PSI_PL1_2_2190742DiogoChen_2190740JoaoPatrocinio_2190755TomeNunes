@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\MarcacaoSearch */
+/* @var $model frontend\models\MarcacaoSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -19,7 +19,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'date') ?>
 
+    <?= $form->field($model, 'tempo') ?>
+
+    <?= $form->field($model, 'Aceitar') ?>
+
     <?= $form->field($model, 'id_especialidade') ?>
+
+    <?php // echo $form->field($model, 'id_Utente') ?>
+
+    <?php // echo $form->field($model, 'id_Medico') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

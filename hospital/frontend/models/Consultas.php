@@ -1,16 +1,20 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
+use common\models\User;
 use Yii;
 
 /**
  * This is the model class for table "consultas".
  *
  * @property int $id
- * @property int $id_marcacao
+ * @property int $id_utente
+ * @property int $id_medico
  *
- * @property Marcacao $marcacao
+ * @property Marcacao $id0
+ * @property User $medico
+ * @property User $utente
  * @property ReceitasConsultas[] $receitasConsultas
  * @property Receitas[] $receitas
  */
@@ -30,10 +34,12 @@ class Consultas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'id_marcacao'], 'required'],
-            [['id', 'id_marcacao'], 'integer'],
+            [['id', 'id_utente', 'id_medico'], 'required'],
+            [['id', 'id_utente', 'id_medico'], 'integer'],
             [['id'], 'unique'],
-            [['id_marcacao'], 'exist', 'skipOnError' => true, 'targetClass' => Marcacao::className(), 'targetAttribute' => ['id_marcacao' => 'id']],
+            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Marcacao::className(), 'targetAttribute' => ['id' => 'id']],
+            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_medico' => 'id']],
+            [['id_utente'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_utente' => 'id']],
         ];
     }
 
@@ -44,18 +50,39 @@ class Consultas extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'id_marcacao' => 'Id Marcacao',
+            'id_utente' => 'Id Utente',
+            'id_medico' => 'Id Medico',
         ];
     }
 
     /**
-     * Gets query for [[Marcacao]].
+     * Gets query for [[Id0]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getMarcacao()
+    public function getId0()
     {
-        return $this->hasOne(Marcacao::className(), ['id' => 'id_marcacao']);
+        return $this->hasOne(Marcacao::className(), ['id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Medico]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedico()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id_medico']);
+    }
+
+    /**
+     * Gets query for [[Utente]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUtente()
+    {
+        return $this->hasOne(User::className(), ['id' => 'id_utente']);
     }
 
     /**

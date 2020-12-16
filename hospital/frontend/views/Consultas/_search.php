@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ConsultaSearch */
+/* @var $model frontend\models\ConsultasSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -17,7 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'id_marcacao') ?>
+    <?= $form->field($model, 'id_utente') ?>
+
+    <?= $form->field($model, 'id_medico') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

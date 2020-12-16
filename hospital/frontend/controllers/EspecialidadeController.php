@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use Yii;
-use app\models\Especialidade;
-use app\models\EspecialidadeSearch;
+use frontend\models\Especialidade;
+use frontend\models\EspecialidadeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -52,7 +52,6 @@ class EspecialidadeController extends Controller
      */
     public function actionView($id)
     {
-        $this->ShowByRole();
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -117,39 +116,11 @@ class EspecialidadeController extends Controller
      * @return Especialidade the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function ShowByRole(){
-        $role = (new \yii\db\Query())
-            ->select('user_id')
-            ->from('auth_assignment')
-            ->where(['item_name' => 'medico'])
-            ->all();
-
-        foreach ($role as $medico_id){
-            $role2 = (new \yii\db\Query())
-                ->select('*')
-                ->from('profile')
-                ->where(['id' => $medico_id])
-                ->all();
-
-            var_dump($role2);
-        }
-        return $role;
-    }
-
-
-
-
-
-
     protected function findModel($id)
     {
         if (($model = Especialidade::findOne($id)) !== null) {
             return $model;
         }
-
-
-
-
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }

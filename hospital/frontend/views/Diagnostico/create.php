@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Diagnostico */
+/* @var $model frontend\models\Diagnostico */
 
 $this->title = 'Create Diagnostico';
 $this->params['breadcrumbs'][] = ['label' => 'Diagnosticos', 'url' => ['index']];

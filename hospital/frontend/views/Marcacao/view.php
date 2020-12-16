@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Marcacao */
+/* @var $model frontend\models\Marcacao */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Marcacaos', 'url' => ['index']];
@@ -31,7 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'date',
+            'tempo',
+            'Aceitar',
             'id_especialidade',
+            'id_Utente',
+            'id_Medico',
         ],
     ]) ?>
 
