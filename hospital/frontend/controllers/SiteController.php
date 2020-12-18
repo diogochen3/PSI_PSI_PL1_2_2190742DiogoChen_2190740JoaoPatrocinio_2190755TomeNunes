@@ -1,11 +1,12 @@
 <?php
 namespace frontend\controllers;
 
-use common\models\User;
+use common\models\Profile;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\data\Pagination;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -79,6 +80,8 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+
+
     /**
      * Logs in a user.
      *
@@ -144,9 +147,47 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $query = Profile::find()->where(['is_medico' => 1]);
+
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 10,
+            'totalCount' => $query->count()
+        ]);
+
+        $medicos = $query->orderBy('First_name')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+
+        return $this->render('about', [
+            'medicos' => $medicos,
+            'pagination' => $pagination
+        ]);
+
     }
 
+    public function search($params)
+    {
+        $query = Profile::find();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        // load the search form data and validate
+        if (!($this->load($params) && $this->validate())) {
+            return $dataProvider;
+        }
+
+        // adjust the query by adding the filters
+        $query->andFilterWhere(['id' => $this->id]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'creation_date', $this->creation_date]);
+
+        return $dataProvider;
+    }
     /**
      * Signs user up.
      *
@@ -259,4 +300,7 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+
+
 }

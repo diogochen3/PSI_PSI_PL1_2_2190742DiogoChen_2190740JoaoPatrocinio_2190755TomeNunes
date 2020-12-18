@@ -1,25 +1,9 @@
-<?php
+<?php use \yii\widgets\LinkPager; ?>
 
-/* @var $this yii\web\View */
+<ul>
 
-use yii\helpers\Html;
+</ul>
 
-
-
-$roleModel = Yii::$app->db
-    ->createCommand("Select * from auth_assignment where item_name='medico'")
-    ->queryAll();
-foreach($roleModel as $roda) {
-
-$medico_user = Yii::$app->db
-    ->createCommand("Select * from profile where id='". $roda['user_id'] ."'")
-    ->queryAll();
-
-foreach($medico_user as $row) {
-
-
-
-?>
 
 <head>
     <meta charset="utf-8">
@@ -27,6 +11,8 @@ foreach($medico_user as $row) {
     <title>Table - Brand</title>
 
 </head>
+
+
 
     <div id="wrapper" style="    margin-top: 2%;">
         <div class="d-flex flex-column" id="content-wrapper">
@@ -63,52 +49,34 @@ foreach($medico_user as $row) {
                                     </thead>
                                     <tbody>
 
-<?php
+  <tr>
+      <?php
+      foreach ($medicos as $medico) : ?>
 
+      <td><img class="rounded-circle mr-2" width="30" height="30" src="/assets/img/avatars/avatar1.jpeg?h=0ecc82101fb9a10ca459432faa8c0656"></td>
 
-                                  ?>  <tr>
-                                            <td><img class="rounded-circle mr-2" width="30" height="30" src="/assets/img/avatars/avatar1.jpeg?h=0ecc82101fb9a10ca459432faa8c0656"><?= $row['First_name']; ?> <?= $row['Last_name']; ?></td>
-                                            <td><?= $row['Email']; ?></td>
+      <td><?= $medico->First_name  ?> <?= $medico->Last_name  ?></td>
+                                            <td><?= $medico->Email  ?></td>
+                                            <td></td>
+
 
 
                                         </tr>
-<?php
-                                    }
-                                    }
-
-
-?>
 
 
 
+
+  <?php endforeach; ?>
 
 
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td><strong>Nome</strong></td>
-                                            <td><strong>Email</strong></td>
-                                            <td><strong>Especialização</strong></td>
-                                            <td><strong>Marcar Consulta</strong></td>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 align-self-center">
                                     <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
                                 </div>
-                                <div class="col-md-6">
-                                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                        <ul class="pagination">
-                                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                                <?= LinkPager::widget(['pagination' => $pagination]); ?>
                             </div>
                         </div>
                     </div>

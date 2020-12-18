@@ -18,6 +18,7 @@ use yii\bootstrap\ActiveForm;
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
 
+            <?= $form->field($model, 'username')->textInput()->label('') ?>
 
             <?= $form->field($model, 'fname')->textInput()->label('') ?>
 

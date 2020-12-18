@@ -1,8 +1,7 @@
 <?php
 
-namespace frontend\models;
+namespace app\models;
 
-use common\models\User;
 use Yii;
 
 /**
@@ -18,8 +17,6 @@ use Yii;
  * @property string $Birth_date
  * @property string $gender
  * @property string $postal_code
- *
- * @property User $id0
  */
 class Profile extends \yii\db\ActiveRecord
 {
@@ -47,7 +44,6 @@ class Profile extends \yii\db\ActiveRecord
             [['NIF'], 'unique'],
             [['Email'], 'unique'],
             [['id'], 'unique'],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id' => 'id']],
         ];
     }
 
@@ -68,15 +64,5 @@ class Profile extends \yii\db\ActiveRecord
             'gender' => 'Gender',
             'postal_code' => 'Postal Code',
         ];
-    }
-
-    /**
-     * Gets query for [[Id0]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getId0()
-    {
-        return $this->hasOne(User::className(), ['id' => 'id']);
     }
 }
