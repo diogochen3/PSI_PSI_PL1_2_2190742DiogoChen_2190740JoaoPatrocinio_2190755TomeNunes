@@ -18,8 +18,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_weight="0" />
 
     <TextView
         android:id="@+id/textView4"

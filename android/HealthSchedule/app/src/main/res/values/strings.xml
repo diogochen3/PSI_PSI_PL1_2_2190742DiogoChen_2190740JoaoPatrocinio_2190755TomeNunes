@@ -3,4 +3,5 @@
     <string name="numero_de_identifica_o">Numero de Identificação</string>
     <string name="palavra_passe">Palavra-Passe</string>
     <string name="entrar">Entrar</string>
+    <string name="Title_login">Login</string>
 </resources>
