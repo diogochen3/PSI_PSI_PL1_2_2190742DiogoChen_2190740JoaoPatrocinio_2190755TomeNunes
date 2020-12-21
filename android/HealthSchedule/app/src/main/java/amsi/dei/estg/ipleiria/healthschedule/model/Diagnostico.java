@@ -1,5 +1,6 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
-public class User {
+public class Diagnostico {
+
 
 }
