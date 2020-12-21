@@ -1,0 +1,1001 @@
+2020-12-18 18:08:57 [127.0.0.1][-][4ib7vshhbvjbcr4q45nj87vj9k][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'backend\models\LoginForm' in file: C:\xampp\htdocs\psi\hospital/backend/models/LoginForm.php. Namespace missing? in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\models\\...')
+#1 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(79): spl_autoload_call('backend\\models\\...')
+#2 [internal function]: backend\controllers\SiteController->actionLogin()
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-12-18 18:08:57 [127.0.0.1][-][4ib7vshhbvjbcr4q45nj87vj9k][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '4ib7vshhbvjbcr4q45nj87vj9k'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=4ib7vshhbvjbcr4q45nj87vj9k'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '56489'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608311337.606
+    'REQUEST_TIME' => 1608311337
+]
+2020-12-21 16:45:42 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'backend\models\LoginForm' in file: C:\xampp\htdocs\psi\hospital/backend/models/LoginForm.php. Namespace missing? in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\models\\...')
+#1 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(79): spl_autoload_call('backend\\models\\...')
+#2 [internal function]: backend\controllers\SiteController->actionLogin()
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-12-21 16:45:42 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58043'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608565542.406
+    'REQUEST_TIME' => 1608565542
+]
+2020-12-21 16:49:19 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownClassException] yii\base\UnknownClassException: Unable to find 'backend\models\LoginForm' in file: C:\xampp\htdocs\psi\hospital/backend/models/LoginForm.php. Namespace missing? in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\BaseYii.php:296
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\models\\...')
+#1 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(79): spl_autoload_call('backend\\models\\...')
+#2 [internal function]: backend\controllers\SiteController->actionLogin()
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2020-12-21 16:49:19 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58047'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608565758.994
+    'REQUEST_TIME' => 1608565758
+]
+2020-12-21 16:53:34 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 16:53:34 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58085'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566014.675
+    'REQUEST_TIME' => 1608566014
+]
+2020-12-21 16:53:36 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 16:53:36 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58086'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566016.04
+    'REQUEST_TIME' => 1608566016
+]
+2020-12-21 17:02:23 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:02:23 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf-backend' => 'JytkHZpbdqjkWSwjKHvk6ySfBLIW4c0fJ1DzdKxanq9QRyVr424-3IEBVk9FDqqxUO13gSHYjnZOD58OwnfT2Q=='
+    'LoginForm' => [
+        'username' => 'teste@teste.com'
+        'password' => '1234567890'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '253'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://back.test'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58159'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566543.307
+    'REQUEST_TIME' => 1608566543
+]
+2020-12-21 17:03:36 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:03:36 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf-backend' => 'JytkHZpbdqjkWSwjKHvk6ySfBLIW4c0fJ1DzdKxanq9QRyVr424-3IEBVk9FDqqxUO13gSHYjnZOD58OwnfT2Q=='
+    'LoginForm' => [
+        'username' => 'teste@teste.com'
+        'password' => '1234567890'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '253'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://back.test'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58163'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566616.645
+    'REQUEST_TIME' => 1608566616
+]
+2020-12-21 17:04:47 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:04:47 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = [
+    '_csrf-backend' => 'JytkHZpbdqjkWSwjKHvk6ySfBLIW4c0fJ1DzdKxanq9QRyVr424-3IEBVk9FDqqxUO13gSHYjnZOD58OwnfT2Q=='
+    'LoginForm' => [
+        'username' => 'teste@teste.com'
+        'password' => '1234567890'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '253'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://back.test'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58168'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566687.681
+    'REQUEST_TIME' => 1608566687
+]
+2020-12-21 17:04:55 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:04:55 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/index.php?'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58171'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566695.301
+    'REQUEST_TIME' => 1608566695
+]
+2020-12-21 17:04:58 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:04:58 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/index.php'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58172'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566698.502
+    'REQUEST_TIME' => 1608566698
+]
+2020-12-21 17:08:30 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:08:30 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/index.php'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58267'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608566910.671
+    'REQUEST_TIME' => 1608566910
+]
+2020-12-21 17:11:50 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: backend\models\LoginForm::username in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\base\Component->__get('username')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(backend\models\LoginForm), 'username')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1417): yii\helpers\BaseHtml::activeInput('text', Object(backend\models\LoginForm), 'username', Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(407): yii\helpers\BaseHtml::activeTextInput(Object(backend\models\LoginForm), 'username', Array)
+#4 C:\xampp\htdocs\psi\hospital\backend\views\site\login.php(21): yii\widgets\ActiveField->textInput(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SiteController))
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('login', Array, Object(backend\controllers\SiteController))
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\SiteController.php(86): yii\base\Controller->render('login', Array)
+#10 [internal function]: backend\controllers\SiteController->actionLogin()
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2020-12-21 17:11:50 [127.0.0.1][-][ejbtpmgn5ju82juq7tlgicpaf0][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ejbtpmgn5ju82juq7tlgicpaf0'
+    '_csrf-backend' => '363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/index.php'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ejbtpmgn5ju82juq7tlgicpaf0; _csrf-backend=363b61247490c0e7f89e1aaa675e713a129f14d7f325096496a4c7e8e42b6323a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wlAvy5HteXzlmuNZtrs379Cii_lzn-Mv%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g PHP/7.2.33'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '58277'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1608567110.744
+    'REQUEST_TIME' => 1608567110
+]
