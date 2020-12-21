@@ -22,12 +22,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 NotificationCompat.Builder notification=(NotificationCompat.Builder)
                         new NotificationCompat.Builder(getApplicationContext())
+                        .setSmallIcon(R.drawable.ic_launcher_background)
                         .setContentTitle("Alerta de consulta!!")
                         .setContentText("Consulta dia 23/12/2020, 13h");
 
                 NotificationManager notificationManager=(NotificationManager)
                         getSystemService(NOTIFICATION_SERVICE);
-                NotificationManager.notification(id: 0 ,notification.build());
+                NotificationManager.notify(0,notification.build());
             }
         });
     }
