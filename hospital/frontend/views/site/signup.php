@@ -60,19 +60,7 @@ use yii\jui\DatePicker;
                     <div class="form-group"><?= $form->field($model, 'phone_number')->label("Numero de Telefone")?></div>
                 </div>
                 <div class="col">
-                    <div class="form-group"><?= $form->field($model, 'Birth_date')->label("Data de Nascimento")->widget(DatePicker::class(), [
-
-                            'clientOptions' => [
-
-                                'language' => 'en',
-
-                                'dateFormat' => 'yyyy-MM-dd',
-
-                            ]])
-
-
-
- ?></div>
+                    <div class="form-group"><?= $form->field($model, 'Birth_date')->label("Data de Nascimento")->input("date"); ?></div>
                 </div>
             </div>
             <div class="form-group"> <?= $form->field($model, 'password')->textInput() ?></div>
