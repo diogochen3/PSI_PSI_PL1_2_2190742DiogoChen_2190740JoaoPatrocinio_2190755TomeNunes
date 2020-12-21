@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\Profile;
+use common\models\User;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -301,6 +302,28 @@ class SiteController extends Controller
         ]);
     }
 
-
+    /**
+     * Signs user up.
+     *
+     * @return mixed
+     */
+    public function actionHistorico()
+    {
+        $UtenteId =  Yii::$app->user->id;
+        
+        $user = User::find();
+        $ids = $user->select('id')->column();
+        foreach ($ids as $value) {
+            foreach (User::isMedico() as $item) {
+                if ($value === $item)
+                    $medico = $user->where(['id' => (int)$item])->column();
+                else
+                    $medico = null;
+            }
+        }
+        return $this->render('historico', [
+            'model' => $medico,
+        ]);
+    }
 
 }
