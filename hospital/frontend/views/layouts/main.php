@@ -52,7 +52,7 @@ AppAsset::register($this);
         ['label' => 'Inicio', 'url' => ['/site/index']],
         ['label' => 'Serviços', 'url' => ['/site/about']],
         ['label' => 'Corpo Clinico', 'url' => ['/site/about']],
-        ['label' => 'Marcações', 'url' => ['/consultas/create']],
+        ['label' => 'Marcações', 'url' => ['/marcacao/create']],
 
 
     ];

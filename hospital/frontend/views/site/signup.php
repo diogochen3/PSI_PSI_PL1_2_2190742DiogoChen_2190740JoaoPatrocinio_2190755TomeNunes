@@ -6,7 +6,6 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use yii\jui\DatePicker;
 
 
 ?>
@@ -18,67 +17,57 @@ use yii\jui\DatePicker;
         <div class="block-heading">
             <h2 class="text-info" style="width: 159px;margin: 4px;padding: 10px;height: 54px;">Registar</h2>
         </div>
-        <form style="width: 1000px;margin: 0px;border-radius: 0px;padding: 40px;max-width: 1000px;">
-            <div class="form-row">
+
+
                 <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+
                 <div class="col-xl-4">
-                    <div class="form-group"><?= $form->field($model, 'username')->textInput()->label("Primeiro Nome") ?></div>
-                </div>
-                <div class="col-xl-4">
-                    <div class="form-group"><?= $form->field($model, 'lname')->textInput()->label("Ultimo Nome") ?></div>
+                    <?= $form->field($model, 'fname')->textInput()->label("Primeiro Nome") ?>
+
+
+                    <?= $form->field($model, 'lname')->textInput()->label("Ultimo Nome") ?>
                 </div>
                 <div class="col">
-                    <div class="form-group"><?= $form->field($model, 'email')->textInput()->label("Endereço de email") ?></div>
+                    <?= $form->field($model, 'email')->input("email")->label("Endereço de email") ?>
                 </div>
-            </div>
+
             <div class="form-row">
                 <div class="col-xl-9">
-                    <div class="form-group"><?= $form->field($model, 'Address')->textInput()->label("Morada") ?></div>
+                    <?= $form->field($model, 'Address')->textInput()->label("Morada") ?>
                 </div>
                 <div class="col">
-                    <div class="form-group"><?= $form->field($model, 'postal_code')->textInput()->label("Codigo Postal") ?></div>
+                   <?= $form->field($model, 'postal_code')->textInput()->label("Codigo Postal") ?>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-xl-3">
-                    <div class="form-group"> <?= $form->field($model, 'NIF')->textInput()->label("Numero de Identificação Fiscal") ?></div>
+                   <?= $form->field($model, 'NIF')->textInput()->label("Numero de Identificação Fiscal") ?>
                 </div>
                 <div class="col-xl-3">
-                    <div class="form-group">
+
 
 
 
                            <?= $form->field($model, 'gender')->dropDownList(
-            ['M' => 'Masculino', 'F' => 'Feminino', 'O' =>'Outro']
-      // options
+            ['Male' => 'Masculino', 'Female' => 'Feminino', 'Other' =>'Outro']
+
                         )->label("Genero");?>
 
 
-                    </div>
+
                 </div>
                 <div class="col-xl-3">
-                    <div class="form-group"><?= $form->field($model, 'phone_number')->label("Numero de Telefone")?></div>
+                   <?= $form->field($model, 'phone_number')->label("Numero de Telefone")?>
                 </div>
-                <div class="col">
-                    <div class="form-group"><?= $form->field($model, 'Birth_date')->label("Data de Nascimento")->widget(DatePicker::class(), [
-
-                            'clientOptions' => [
-
-                                'language' => 'en',
-
-                                'dateFormat' => 'yyyy-MM-dd',
-
-                            ]])
-
-
-
- ?></div>
-                </div>
+             
             </div>
-            <div class="form-group"> <?= $form->field($model, 'password')->textInput() ?></div>
-            <?= Html::submitButton('Registar', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-        </form>
-        <?php ActiveForm::end(); ?>
-    </div>
+            <?= $form->field($model, 'password')->passwordInput() ?>
+
+            <div class="form-group">
+                <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+            </div>
+            <?php ActiveForm::end(); ?>
+
+</div>
 
 </section>

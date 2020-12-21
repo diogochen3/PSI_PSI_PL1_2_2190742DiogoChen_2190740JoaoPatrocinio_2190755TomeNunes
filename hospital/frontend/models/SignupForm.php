@@ -31,16 +31,7 @@ class SignupForm extends Model
     {
         return [
             ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
-
-            ['email', 'trim'],
-            ['email', 'required'],
-            ['email', 'email'],
-            ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
-
 
             ['fname', 'trim'],
             ['fname', 'required'],
@@ -50,13 +41,11 @@ class SignupForm extends Model
             ['lname', 'required'],
             ['lname', 'string', 'min' => 2, 'max' => 255],
 
-            ['phone_number', 'trim'],
-            ['phone_number', 'required'],
-            ['phone_number', 'integer'],
-
-            ['gender', 'trim'],
-            ['gender', 'required'],
-            ['gender', 'string'],
+            ['email', 'trim'],
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'string', 'max' => 255],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
 
             ['Address', 'trim'],
             ['Address', 'required'],
@@ -69,6 +58,15 @@ class SignupForm extends Model
             ['NIF', 'trim'],
             ['NIF', 'required'],
             ['NIF', 'integer'],
+
+            ['gender', 'trim'],
+            ['gender', 'required'],
+            ['gender', 'string'],
+
+            ['phone_number', 'trim'],
+            ['phone_number', 'required'],
+            ['phone_number', 'integer'],
+
 
             ['Birth_date', 'trim'],
             ['Birth_date', 'required'],
@@ -91,17 +89,6 @@ class SignupForm extends Model
     public function signup()
     {
 
-       /* if (!$this->validate()) {
-            return null;
-        }
-        
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-        return $user->save() && $this->sendEmail($user);*/
         if ($this->validate()) {
             $user = new User();
 
@@ -109,14 +96,14 @@ class SignupForm extends Model
             $user->username = $this->username;
             $user->email = $this->email;
             $profile->Email = $this->email;
-            $profile->First_name = $this->username;
+            $profile->First_name = $this->fname;
             $profile->Last_name = $this->lname;
             $profile->Phone_number = $this->phone_number;
             $profile->NIF = $this->NIF;
             $profile->Address = $this->Address;
             $profile->gender = $this->gender;
             $profile->postal_code = $this->postal_code;
-            $profile->Birth_date = $this->Birth_date;
+            $profile->Birth_date = "2000-12-12";
 
             $user->setPassword($this->password);
             $user->generateAuthKey();

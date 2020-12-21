@@ -6,6 +6,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -42,7 +43,7 @@ public class SingletonGestorHospital {
     }
 
 
-    public void loginAPI(String email, String pass, Context applicationContext) {
+    public void loginAPI(final String email, final String pass, final Context applicationContext) {
 
         StringRequest req =new StringRequest(Request.Method.POST,
                     mUrlAPILogin, new Response.Listener<String>() {
@@ -50,9 +51,9 @@ public class SingletonGestorHospital {
                 public void onResponse(String response) {
                     String token = HospitalJsonParser.parserJsonLogin(response);
 
-                    if(HospitalLoginListener != null)
+                    if(hospitalLoginListener != null)
                     {
-                        HospitalLoginListener.onValidateLogin(token,email);
+                        hospitalLoginListener.onValidateLogin(token,email);
                     }
                     //TODO: informar a vista -> listener
                 }
@@ -60,7 +61,7 @@ public class SingletonGestorHospital {
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(applicationContext, error.getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                     }) {
@@ -68,7 +69,7 @@ public class SingletonGestorHospital {
                     Map<String, String> params = new HashMap<>();
                     params.put("email", email);
                     params.put("password", pass);
-                    params.put("token", TOKEN);
+
                     return params;
                 }
             };

@@ -53,7 +53,7 @@ class Marcacao extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'date' => 'Date',
+            'date' => 'Data',
             'tempo' => 'Tempo',
             'Aceitar' => 'Aceitar',
             'id_especialidade' => 'Id Especialidade',
