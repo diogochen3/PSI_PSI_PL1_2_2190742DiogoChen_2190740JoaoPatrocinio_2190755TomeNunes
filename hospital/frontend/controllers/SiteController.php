@@ -3,11 +3,14 @@ namespace frontend\controllers;
 
 use common\models\Profile;
 use common\models\User;
+use frontend\models\Marcacao;
 use frontend\models\ResendVerificationEmailForm;
+use frontend\models\Teste;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\data\Pagination;
+use yii\helpers\VarDumper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -197,11 +200,12 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        VarDumper::dump($model->NIF);
+
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
             return $this->goHome();
         }
-
         return $this->render('signup', [
             'model' => $model,
         ]);
@@ -309,21 +313,29 @@ class SiteController extends Controller
      */
     public function actionHistorico()
     {
-        $UtenteId =  Yii::$app->user->id;
-        
-        $user = User::find();
-        $ids = $user->select('id')->column();
-        foreach ($ids as $value) {
-            foreach (User::isMedico() as $item) {
-                if ($value === $item)
-                    $medico = $user->where(['id' => (int)$item])->column();
-                else
-                    $medico = null;
-            }
-        }
+        $UtenteId =  7;// Yii::$app->user->id;
+        $marcacao = Marcacao::find();
+        $marcacaoutente = $marcacao->where(['id_Utente' => $UtenteId])->all();
         return $this->render('historico', [
-            'model' => $medico,
+            'model' => $marcacaoutente,
         ]);
     }
 
+    public function actionCreate()
+    {
+        $model = new \frontend\models\Marcacao();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                // form inputs are valid, do something here
+                $model->save(false);
+                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                return $this->goHome();
+            }
+        }
+
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
 }
