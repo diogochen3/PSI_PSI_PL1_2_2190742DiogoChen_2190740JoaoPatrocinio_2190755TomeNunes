@@ -3,13 +3,15 @@
 /* @var $this yii\web\View */
 
 use common\models\User;
+use yii\helpers\VarDumper;
 
 $this->title = 'Health Schedule';
 
-$ids = User::find()->select('id')->column();
+
+/*$ids = User::find()->select('id')->column();
 var_dump($ids);
 $user = User::isMedico();
-var_dump($user);
+var_dump($user);*/
 /*foreach ($user as $item) {
  if ($item == )
 }*/
@@ -42,16 +44,13 @@ var_dump($user);
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($model as $item) { ?>
                 <tr>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                    <td>Cell 2</td>
+                    <td><?= $item->date; ?></td>
+                    <td><?= $item->medico->id0->First_name; ?></td>
+                    <td><?= $item->especialidade->Name; ?></td>
                 </tr>
-                <tr>
-                    <td>Cell 3</td>
-                    <td>Cell 2</td>
-                    <td>Cell 4</td>
-                </tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>

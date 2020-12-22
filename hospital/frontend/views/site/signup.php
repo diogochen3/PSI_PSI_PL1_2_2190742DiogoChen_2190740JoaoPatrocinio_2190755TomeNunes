@@ -48,9 +48,7 @@ use yii\jui\DatePicker;
 
 
 
-                           <?= $form->field($model, 'gender')->dropDownList(
-            ['M' => 'Masculino', 'F' => 'Feminino', 'O' =>'Outro']
-      // options
+                           <?= $form->field($model, 'gender')->dropDownList(['M' => 'Masculino', 'F' => 'Feminino', 'O' =>'Outro']// options
                         )->label("Genero");?>
 
 
@@ -64,7 +62,7 @@ use yii\jui\DatePicker;
                 </div>
             </div>
             <div class="form-group"> <?= $form->field($model, 'password')->textInput() ?></div>
-            <?= Html::submitButton('Registar', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+            <?= Html::submitButton('signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
         </form>
         <?php ActiveForm::end(); ?>
     </div>
