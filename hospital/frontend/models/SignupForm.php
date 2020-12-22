@@ -67,10 +67,9 @@ class SignupForm extends Model
             ['phone_number', 'required'],
             ['phone_number', 'integer'],
 
-
             ['Birth_date', 'trim'],
             ['Birth_date', 'required'],
-            ['Birth_date', 'date'],
+            ['Birth_date', 'string'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
@@ -93,7 +92,7 @@ class SignupForm extends Model
             $user = new User();
 
             $profile = new Profile();
-            $user->username = $this->username;
+            $user->username = $this->fname;
             $user->email = $this->email;
             $profile->Email = $this->email;
             $profile->First_name = $this->fname;
@@ -103,7 +102,7 @@ class SignupForm extends Model
             $profile->Address = $this->Address;
             $profile->gender = $this->gender;
             $profile->postal_code = $this->postal_code;
-            $profile->Birth_date = "2000-12-12";
+            $profile->Birth_date = $this->Birth_date;
 
             $user->setPassword($this->password);
             $user->generateAuthKey();

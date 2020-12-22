@@ -59,6 +59,9 @@ use yii\bootstrap\ActiveForm;
                 <div class="col-xl-3">
                    <?= $form->field($model, 'phone_number')->label("Numero de Telefone")?>
                 </div>
+                <div class="col-xl-3">
+                   <?= $form->field($model, 'Birth_date')->label("Data de Nascimento")->input("date")?>
+                </div>
              
             </div>
             <?= $form->field($model, 'password')->passwordInput() ?>
