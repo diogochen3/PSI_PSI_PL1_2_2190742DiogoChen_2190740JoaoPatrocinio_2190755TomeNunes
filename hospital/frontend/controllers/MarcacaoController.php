@@ -66,6 +66,19 @@ class MarcacaoController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
+    public function actionLists($especialidade){
+        $query =
+        $productlist = Especialidade::findBySql('select * from User where "'. $especialidade .'"')->all();
+
+        if(count($productlist)>0){
+            foreach ($productlist as $item) {
+
+            }
+        }else{
+
+        }
+
+           }
     public function actionCreate()
     {
         $model = new Marcacao();
@@ -98,6 +111,8 @@ class MarcacaoController extends Controller
 
 
         }
+
+
 
         return $this->render('create', [
             'model' => $model,
