@@ -2,6 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\User;
+use common\models\Profile;
+use frontend\models\Especialidade;
+use frontend\models\MedicoEspecialidade;
 use Yii;
 use frontend\models\Marcacao;
 use frontend\models\MarcacaoSearch;
@@ -66,13 +70,42 @@ class MarcacaoController extends Controller
     {
         $model = new Marcacao();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+
+        if (Yii::$app->user->id == null){
+
+        }else{
+        $user = Profile::find();
+        $medicoId = User::isMedico();
+        $medico = $user->where(['id' => $medicoId])->all();
+        $esp = Especialidade::find()->all();
+        $listEsp = [];
+        $listmed = [];
+
+        foreach ($esp as $item) {
+            $listEsp[$item->id] = $item->Name;
+        }
+        foreach ($medico as $item) {
+            $listmed[$item->id] = $item->Email;
+        }
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->id_Utente = Yii::$app->user->id;
+            $model->save(false);
+
+                return $this->redirect('../..');
+
+
+
+
         }
 
         return $this->render('create', [
             'model' => $model,
+            'especialidades' => $listEsp,
+            'medico' => $listmed,
         ]);
+        }
+        return $this->redirect(['../index.php']);
     }
 
     /**

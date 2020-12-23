@@ -23,6 +23,7 @@ use Yii;
  */
 class Marcacao extends \yii\db\ActiveRecord
 {
+
     /**
      * {@inheritdoc}
      */
@@ -37,7 +38,7 @@ class Marcacao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'tempo', 'Aceitar', 'id_especialidade', 'id_Utente', 'id_Medico'], 'required'],
+            [['date', 'tempo', 'Aceitar', 'id_especialidade', 'id_Medico'], 'required'],
             [['date', 'tempo'], 'safe'],
             [['Aceitar', 'id_especialidade', 'id_Utente', 'id_Medico'], 'integer'],
             [['id_especialidade'], 'exist', 'skipOnError' => true, 'targetClass' => Especialidade::className(), 'targetAttribute' => ['id_especialidade' => 'id']],

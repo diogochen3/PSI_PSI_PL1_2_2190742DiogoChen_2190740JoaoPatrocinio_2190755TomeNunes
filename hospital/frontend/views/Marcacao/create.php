@@ -4,6 +4,8 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Marcacao */
+/* @var $especialidades array */
+/* @var $medico array */
 
 $this->title = 'Create Marcacao';
 $this->params['breadcrumbs'][] = ['label' => 'Marcacaos', 'url' => ['index']];
@@ -15,6 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'especialidades' => $especialidades,
+        'medico' => $medico,
     ]) ?>
 
 </div>
