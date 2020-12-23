@@ -313,9 +313,9 @@ class SiteController extends Controller
      */
     public function actionHistorico()
     {
-        $UtenteId =  7;// Yii::$app->user->id;
+        $utenteId =  Yii::$app->user->id;
         $marcacao = Marcacao::find();
-        $marcacaoutente = $marcacao->where(['id_Utente' => $UtenteId])->all();
+        $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->all();
         return $this->render('historico', [
             'model' => $marcacaoutente,
         ]);
@@ -323,19 +323,20 @@ class SiteController extends Controller
 
     public function actionCreate()
     {
-        $model = new \frontend\models\Marcacao();
-
-        if ($model->load(Yii::$app->request->post())) {
-            if ($model->validate()) {
-                // form inputs are valid, do something here
-                $model->save(false);
-                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
-                return $this->goHome();
-            }
+        $model = new Marcacao();
+        $utenteId = Yii::$app->user->id;
+        $user = Profile::find();
+        $medicoId = User::isMedico();
+        $medico = $user->where(['id' => $medicoId])->all();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+           'medico' => $medico
+           // 'utenteid' => $utenteId,
         ]);
     }
+
 }
