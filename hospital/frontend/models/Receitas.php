@@ -1,7 +1,9 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
 
+use frontend\models\Consultas;
+use frontend\models\ReceitasConsultas;
 use Yii;
 
 /**
@@ -60,6 +62,7 @@ class Receitas extends \yii\db\ActiveRecord
      * Gets query for [[Consultas]].
      *
      * @return \yii\db\ActiveQuery
+     * @throws \yii\base\InvalidConfigException
      */
     public function getConsultas()
     {

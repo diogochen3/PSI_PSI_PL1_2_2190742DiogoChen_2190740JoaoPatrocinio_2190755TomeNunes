@@ -99,6 +99,7 @@ class Consultas extends \yii\db\ActiveRecord
      * Gets query for [[Receitas]].
      *
      * @return \yii\db\ActiveQuery
+     * @throws \yii\base\InvalidConfigException
      */
     public function getReceitas()
     {

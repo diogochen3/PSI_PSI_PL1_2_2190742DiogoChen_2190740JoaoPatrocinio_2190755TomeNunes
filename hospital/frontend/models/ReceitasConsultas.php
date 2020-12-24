@@ -1,6 +1,8 @@
 <?php
 
-namespace app\models;
+namespace frontend\models;
+
+
 
 use Yii;
 
@@ -13,6 +15,7 @@ use Yii;
  * @property Consultas $consultas
  * @property Receitas $receitas
  */
+
 class ReceitasConsultas extends \yii\db\ActiveRecord
 {
     /**

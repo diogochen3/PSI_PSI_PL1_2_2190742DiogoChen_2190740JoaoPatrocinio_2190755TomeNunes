@@ -1,6 +1,7 @@
 <?php
 namespace common\models;
 
+use frontend\models\Especialidade;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -233,5 +234,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasOne(Profile::className(), ['id' => 'id']);
     }
-
+    /**
+     * Gets query for [[Medicos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedicos()
+    {
+        return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
+    }
 }

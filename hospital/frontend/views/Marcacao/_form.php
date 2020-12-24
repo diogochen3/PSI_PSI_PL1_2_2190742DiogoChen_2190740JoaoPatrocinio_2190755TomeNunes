@@ -1,5 +1,7 @@
 <?php
 
+use common\models\Profile;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -18,12 +20,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'tempo')->Input("time") ?>
 
-    <?= $form->field($model, 'id_especialidade')->dropDownList(
-      $especialidades
 
-    )->label("Especialidade");?>
+<?= $form->field($model, 'id_especialidade')->dropDownList($especialidades,
+    ['prompt'=>'-Choose a especialidade-',
+        'onchange'=>'
+        	$.post( "'.Yii::$app->urlManager->createUrl('marcacao/lists?id=').'"+$(this).val(), function( data ) {
+			  $( "select#Marcacao-id_medico" ).html( data );
+				  			});'
+    ]);
 
-
+$dataPost=ArrayHelper::map(Profile::find()->all(), 'id', 'First_name');
+echo $form->field($model, 'id_Medico')
+    ->dropDownList(
+        $dataPost,
+        ['prompt'=>'-Choose o medico-']
+    );?>
 
     <?= $form->field($model, 'id_Medico')->dropDownList(
         $medico

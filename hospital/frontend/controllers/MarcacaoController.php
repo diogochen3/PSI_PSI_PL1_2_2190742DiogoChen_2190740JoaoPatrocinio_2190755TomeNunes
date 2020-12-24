@@ -9,6 +9,7 @@ use frontend\models\MedicoEspecialidade;
 use Yii;
 use frontend\models\Marcacao;
 use frontend\models\MarcacaoSearch;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -61,13 +62,28 @@ class MarcacaoController extends Controller
         ]);
     }
 
+
     /**
      * Creates a new Marcacao model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionLists($especialidade){
-        $query =
+    public function actionLists($id){
+        $espeuser = MedicoEspecialidade::find()->where(['id_especialidade' => $id])->select('id_medico')->column();
+        VarDumper::dump($espeuser);
+        $profile = Profile::find()
+                ->where(['id' => $espeuser])
+                ->all();
+
+            if (!empty($profile)) {
+                foreach($profile as $item) {
+                    echo "<option value='".$item->id."'>".$item->First_name."</option>";
+                }
+            } else {
+                echo "<option>-</option>";
+            }
+
+        /*$query =
         $productlist = Especialidade::findBySql('select * from User where "'. $especialidade .'"')->all();
 
         if(count($productlist)>0){
@@ -76,9 +92,8 @@ class MarcacaoController extends Controller
             }
         }else{
 
-        }
-
-           }
+        }*/
+    }
     public function actionCreate()
     {
         $model = new Marcacao();

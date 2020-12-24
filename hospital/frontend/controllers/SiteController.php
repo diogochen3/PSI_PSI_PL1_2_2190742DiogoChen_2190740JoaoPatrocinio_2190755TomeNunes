@@ -3,6 +3,8 @@ namespace frontend\controllers;
 
 use common\models\Profile;
 use common\models\User;
+use frontend\models\Consultas;
+use frontend\models\Especialidade;
 use frontend\models\Marcacao;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\Teste;
@@ -338,5 +340,15 @@ class SiteController extends Controller
            // 'utenteid' => $utenteId,
         ]);
     }
+
+    public function actionTeste()
+        {
+            $model = Consultas::find()->all();
+
+            return $this->render('teste', [
+                'model' => $model,
+                // 'utenteid' => $utenteId,
+            ]);
+        }
 
 }
