@@ -23,10 +23,11 @@ use yii\bootstrap\ActiveForm;
 
                 <div class="col-xl-4">
                     <?= $form->field($model, 'fname')->textInput()->label("Primeiro Nome") ?>
-
-
-                    <?= $form->field($model, 'lname')->textInput()->label("Ultimo Nome") ?>
                 </div>
+        
+                 <div class="col-xl-4">
+                    <?= $form->field($model, 'lname')->textInput()->label("Ultimo Nome") ?>
+                 </div>
                 <div class="col">
                     <?= $form->field($model, 'email')->input("email")->label("Endereço de email") ?>
                 </div>
