@@ -11,14 +11,16 @@ $this->title = 'Health Schedule';
 
 
 
+<?php if (Yii::$app->session->hasFlash('success')): ?>
+    <div class="alert alert-success alert-dismissable">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        <?= Yii::$app->session->getFlash('success') ?>
+    </div>
+<?php endif; ?>
 
 
-
-
-
-<!-- End: Fixed navbar starting with transparency -->
 <main class="page landing-page">
-    <section class="clean-block clean-hero" style="background-image: url(&quot;/assets/img/tech/image4.jpg?h=9446cbacfd25d8004e78de858ef87e72&quot;);border-color: rgba(9,162,255,0.85);color: rgba(9, 162, 255, 0.85);">
+    <section class="clean-block clean-hero" style="background-image: url(&quot;/assets/img/tech/image4.jpg?h=9446cbacfd25d8004e78de858ef87e72&quot;);color: rgba(9, 162, 255, 0.85);">
         <div class="text" style="width: 50%;"><img src="/assets/img/tech/logo3.png?h=e1dd101b8795cd94efca584d23f9700d"></div>
     </section>
     <section class="clean-block features">

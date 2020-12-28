@@ -7,9 +7,7 @@ use yii\helpers\Html;
 /* @var $especialidades array */
 /* @var $medico array */
 
-$this->title = 'Create Marcacao';
-$this->params['breadcrumbs'][] = ['label' => 'Marcacaos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Marcar Consulta';
 ?>
 <div class="marcacao-create">
 

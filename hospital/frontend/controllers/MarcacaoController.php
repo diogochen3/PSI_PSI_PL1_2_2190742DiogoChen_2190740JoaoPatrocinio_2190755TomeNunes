@@ -7,7 +7,7 @@ use common\models\Profile;
 use frontend\models\Especialidade;
 use frontend\models\MedicoEspecialidade;
 use Yii;
-use frontend\models\Marcacao;
+use common\models\Marcacao;
 use frontend\models\MarcacaoSearch;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
@@ -136,6 +136,9 @@ class MarcacaoController extends Controller
             'medico' => $listmed,
         ]);
         }
+
+        Yii::$app->session->setFlash('success', "Order is made!!");
+
         return $this->redirect(['../index.php']);
     }
 
