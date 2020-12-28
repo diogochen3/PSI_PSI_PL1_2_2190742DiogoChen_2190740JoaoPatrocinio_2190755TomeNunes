@@ -86,6 +86,7 @@ class MarcacaoController extends Controller
         /*$query =
         $productlist = Especialidade::findBySql('select * from User where "'. $especialidade .'"')->all();
 
+
         if(count($productlist)>0){
             foreach ($productlist as $item) {
 
