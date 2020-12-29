@@ -70,7 +70,6 @@ class MarcacaoController extends Controller
      */
     public function actionLists($id){
         $espeuser = MedicoEspecialidade::find()->where(['id_especialidade' => $id])->select('id_medico')->column();
-        VarDumper::dump($espeuser);
         $profile = Profile::find()
                 ->where(['id' => $espeuser])
                 ->all();
@@ -99,8 +98,9 @@ class MarcacaoController extends Controller
     {
         $model = new Marcacao();
 
+        //VarDumper::dump(Yii::$app->user->can('createMarcacao'));
 
-        if (Yii::$app->user->id == null){
+        if (Yii::$app->user->can('createMarcacao') === true){
 
         }else{
         $user = Profile::find();

@@ -35741,3 +35741,443 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1609186972.364
     'REQUEST_TIME' => 1609186972
 ]
+2020-12-28 23:12:38 [::1][6][53g5lv24rlukjo2906o4v4gbs0][error][Error] Error: Class 'Url' not found in C:\wamp64\www\hospital\frontend\views\Marcacao\_form.php:27
+Stack trace:
+#0 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\h...', Array)
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\h...', Array, NULL)
+#3 C:\wamp64\www\hospital\frontend\views\Marcacao\create.php(19): yii\base\View->render('_form', Array)
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\h...')
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\h...', Array)
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\h...', Array, Object(frontend\controllers\MarcacaoController))
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('create', Array, Object(frontend\controllers\MarcacaoController))
+#8 C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php(136): yii\base\Controller->render('create', Array)
+#9 [internal function]: frontend\controllers\MarcacaoController->actionCreate()
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#12 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#13 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#14 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#16 {main}
+2020-12-28 23:12:37 [::1][6][53g5lv24rlukjo2906o4v4gbs0][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => '53g5lv24rlukjo2906o4v4gbs0'
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    '_csrf-frontend' => '0de8bcba01d1bba365a8086d022a3f35fd3ba3be0a9b1235ef588b9fdbaf8572a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"yZt33Ht4U0d9P6l7Icm7ZM-A_vwzW9p5\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'front.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://front.test/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-frontend=53g5lv24rlukjo2906o4v4gbs0; _identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; _csrf-frontend=0de8bcba01d1bba365a8086d022a3f35fd3ba3be0a9b1235ef588b9fdbaf8572a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22yZt33Ht4U0d9P6l7Icm7ZM-A_vwzW9p5%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Users\\Diogo Chen\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Diogo Chen\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at front.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'front.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '58699'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/marcacao/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/marcacao/create'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\frontend\\web\\marcacao\\create'
+    'PHP_SELF' => '/index.php/marcacao/create'
+    'REQUEST_TIME_FLOAT' => 1609197157.484
+    'REQUEST_TIME' => 1609197157
+]
+2020-12-29 15:22:02 [::1][6][2ug7qavqe33t4j19sppu1872i4][error][ParseError] ParseError: syntax error, unexpected ')' in C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php:73
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('frontend\\contro...')
+#1 [internal function]: spl_autoload_call('frontend\\contro...')
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(637): class_exists('frontend\\contro...')
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('marcacao')
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('create')
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2020-12-29 15:22:01 [::1][6][2ug7qavqe33t4j19sppu1872i4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    'advanced-frontend' => '2ug7qavqe33t4j19sppu1872i4'
+    '_csrf-frontend' => '2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'front.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://front.test/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; advanced-frontend=2ug7qavqe33t4j19sppu1872i4; _csrf-frontend=2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Users\\Diogo Chen\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Diogo Chen\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at front.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'front.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '59405'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/marcacao/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/marcacao/create'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\frontend\\web\\marcacao\\create'
+    'PHP_SELF' => '/index.php/marcacao/create'
+    'REQUEST_TIME_FLOAT' => 1609255321.488
+    'REQUEST_TIME' => 1609255321
+]
+2020-12-29 15:45:25 [::1][6][2ug7qavqe33t4j19sppu1872i4][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_hospital.medicoespecialidade' doesn't exist in C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1299): PDOStatement->execute()
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1165): yii\db\Command->internalExecute('SELECT `profile...')
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(407): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Query.php(248): yii\db\Command->queryAll()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php(74): yii\db\ActiveQuery->all()
+#6 [internal function]: frontend\controllers\MarcacaoController->actionLists('1')
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('lists', Array)
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/lists', Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bd_hospital.medicoespecialidade' doesn't exist
+The SQL being executed was: SELECT `profile`.* FROM `profile` INNER JOIN `MedicoEspecialidade` ON P.id = ME.id_medico WHERE `id_especialidade`='1' in C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Schema.php:678
+Stack trace:
+#0 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1304): yii\db\Schema->convertException(Object(PDOException), 'SELECT `profile...')
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1165): yii\db\Command->internalExecute('SELECT `profile...')
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(407): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Query.php(248): yii\db\Command->queryAll()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php(74): yii\db\ActiveQuery->all()
+#6 [internal function]: frontend\controllers\MarcacaoController->actionLists('1')
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('lists', Array)
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/lists', Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'bd_hospital.medicoespecialidade' doesn't exist
+)
+
+2020-12-29 15:45:25 [::1][6][2ug7qavqe33t4j19sppu1872i4][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    'advanced-frontend' => '2ug7qavqe33t4j19sppu1872i4'
+    '_csrf-frontend' => '2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'front.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'G9iRFQN-m_uicMKjeduM-a3MxcUDgYWfC_STI2vt69Ndrct_WkvKqdo0i_YWg-DOwKufiXK4vctBg95KJ7LZig=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://front.test/index.php/marcacao/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; advanced-frontend=2ug7qavqe33t4j19sppu1872i4; _csrf-frontend=2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Users\\Diogo Chen\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Diogo Chen\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at front.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'front.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '59607'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/index.php/marcacao/lists?id=1'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/marcacao/lists'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\frontend\\web\\marcacao\\lists'
+    'PHP_SELF' => '/index.php/marcacao/lists'
+    'REQUEST_TIME_FLOAT' => 1609256725.041
+    'REQUEST_TIME' => 1609256725
+]
+2020-12-29 15:46:48 [::1][6][2ug7qavqe33t4j19sppu1872i4][error][ParseError] ParseError: syntax error, unexpected ';', expecting ',' or ')' in C:\wamp64\www\hospital\frontend\views\Marcacao\_form.php:15
+Stack trace:
+#0 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\h...', Array)
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\h...', Array, NULL)
+#2 C:\wamp64\www\hospital\frontend\views\Marcacao\create.php(19): yii\base\View->render('_form', Array)
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\h...')
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\h...', Array)
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\h...', Array, Object(frontend\controllers\MarcacaoController))
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('create', Array, Object(frontend\controllers\MarcacaoController))
+#7 C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php(135): yii\base\Controller->render('create', Array)
+#8 [internal function]: frontend\controllers\MarcacaoController->actionCreate()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#12 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#13 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#15 {main}
+2020-12-29 15:46:48 [::1][6][2ug7qavqe33t4j19sppu1872i4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    'advanced-frontend' => '2ug7qavqe33t4j19sppu1872i4'
+    '_csrf-frontend' => '2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'front.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://front.test/index.php/site/about'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; advanced-frontend=2ug7qavqe33t4j19sppu1872i4; _csrf-frontend=2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Users\\Diogo Chen\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Diogo Chen\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at front.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'front.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '59650'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/marcacao/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/marcacao/create'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\frontend\\web\\marcacao\\create'
+    'PHP_SELF' => '/index.php/marcacao/create'
+    'REQUEST_TIME_FLOAT' => 1609256808.121
+    'REQUEST_TIME' => 1609256808
+]
+2020-12-29 16:05:40 [::1][6][2ug7qavqe33t4j19sppu1872i4][error][yii\db\Exception] PDOException: SQLSTATE[HY000]: General error: 1364 Field 'Aceitar' doesn't have a default value in C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1299): PDOStatement->execute()
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1099): yii\db\Command->internalExecute('INSERT INTO `ma...')
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Schema.php(433): yii\db\Command->execute()
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('marcacao', Array)
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(false, NULL)
+#6 C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php(122): yii\db\BaseActiveRecord->save(false)
+#7 [internal function]: frontend\controllers\MarcacaoController->actionCreate()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#12 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 1364 Field 'Aceitar' doesn't have a default value
+The SQL being executed was: INSERT INTO `marcacao` (`date`, `tempo`, `id_especialidade`, `id_Medico`, `id_Utente`) VALUES ('2020-12-31', '19:08', 1, 13, 6) in C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Schema.php:678
+Stack trace:
+#0 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1304): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `ma...')
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Command.php(1099): yii\db\Command->internalExecute('INSERT INTO `ma...')
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\Schema.php(433): yii\db\Command->execute()
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('marcacao', Array)
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(false, NULL)
+#6 C:\wamp64\www\hospital\frontend\controllers\MarcacaoController.php(122): yii\db\BaseActiveRecord->save(false)
+#7 [internal function]: frontend\controllers\MarcacaoController->actionCreate()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#12 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1364
+    [2] => Field 'Aceitar' doesn't have a default value
+)
+
+2020-12-29 16:05:39 [::1][6][2ug7qavqe33t4j19sppu1872i4][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-frontend' => 'rHgDBxqqOipOla0_gNZE2SgAwpkESNhuAz49rBYuRdvqDVltQ59reDbR5GrvjijuRWeY1XVx4DpJSXDFWnF3gg=='
+    'Marcacao' => [
+        'date' => '2020-12-31'
+        'tempo' => '19:08'
+        'id_especialidade' => '1'
+        'id_Medico' => '13'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    'advanced-frontend' => '2ug7qavqe33t4j19sppu1872i4'
+    '_csrf-frontend' => '2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'front.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '225'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_ORIGIN' => 'http://front.test'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://front.test/index.php/marcacao/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; advanced-frontend=2ug7qavqe33t4j19sppu1872i4; _csrf-frontend=2b84aa4a5cc071ed7ad9d12fbbf57b5d6cc2f678b779627a5c97b247b5968784a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22FuZjY5QRxDIUoXl7mgZLq98TJwMiL_2Y%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Users\\Diogo Chen\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Diogo Chen\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at front.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'front.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/frontend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '60052'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/marcacao/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/marcacao/create'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\frontend\\web\\marcacao\\create'
+    'PHP_SELF' => '/index.php/marcacao/create'
+    'REQUEST_TIME_FLOAT' => 1609257939.92
+    'REQUEST_TIME' => 1609257939
+]

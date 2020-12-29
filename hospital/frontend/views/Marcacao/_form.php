@@ -1,8 +1,10 @@
 <?php
 
 use common\models\Profile;
+use frontend\models\MedicoEspecialidade;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -10,6 +12,15 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 /* @var $especialidades array */
 /* @var $medico array */
+//$espeuser = MedicoEspecialidade::find()->where(['id_especialidade' => 1])->select('id_medico')->column();
+//\yii\helpers\VarDumper::dump( $espeuser = MedicoEspecialidade::find()->where(['id_especialidade' => 1])->select('id_medico')->column());
+/*\yii\helpers\VarDumper::dump(        $profile = Profile::find()
+                ->where(['id' => $espeuser])
+                ->all() );*/
+/*$profile = Profile::find()
+    ->where(['id' => $espeuser])
+    ->all();*/
+
 ?>
 
 <div class="marcacao-form">
@@ -23,23 +34,24 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'id_especialidade')->dropDownList($especialidades,
     ['prompt'=>'-Choose a especialidade-',
-        'onchange'=>'
-        	$.post( "'.Yii::$app->urlManager->createUrl('marcacao/lists?id=').'"+$(this).val(), function( data ) {
-			  $( "select#Marcacao-id_medico" ).html( data );
-				  			});'
+        'onchange'=>
+            '$.get( "'.Url::toRoute('/marcacao/lists').'", { id: $(this).val() } )
+                            .done(function( data ) {
+                                $( "#'.Html::getInputId($model, 'id_Medico').'" ).html( data );
+                            }
+                        );
+                    '
+        /* '$.post( "'.Yii::$app->urlManager->createUrl('marcacao/lists?id=').'"+$(this).val(), function( data ) {
+           $( "select#id_medico" ).html( data );*/
+				  	//		});'
     ]);
 
 $dataPost=ArrayHelper::map(Profile::find()->all(), 'id', 'First_name');
 echo $form->field($model, 'id_Medico')
     ->dropDownList(
-        $dataPost,
         ['prompt'=>'-Choose o medico-']
     );?>
 
-    <?= $form->field($model, 'id_Medico')->dropDownList(
-        $medico
-
-    )->label("Especialidade");?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

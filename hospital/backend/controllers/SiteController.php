@@ -100,6 +100,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
+
         $this->layout = 'blank';
 
         $model = new LoginForm();
@@ -107,7 +108,7 @@ class SiteController extends Controller
             return $this->goBack();
         } else {
             $model->password = '';
-
+            
             return $this->render('login', [
                 'model' => $model,
             ]);
