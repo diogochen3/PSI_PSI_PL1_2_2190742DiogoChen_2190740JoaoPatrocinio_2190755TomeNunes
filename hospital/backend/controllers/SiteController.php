@@ -2,6 +2,7 @@
 namespace backend\controllers;
 
 
+use backend\models\profileSearch;
 use common\models\Marcacao;
 use common\models\Profile;
 use Yii;
@@ -34,11 +35,15 @@ class SiteController extends Controller
                         'allow' => true,
 
 
+
+
+
                     ],
 
                     [
                         'actions' => ['logout', 'index'],
                         'allow' => true,
+
 
                     ],
 
@@ -48,6 +53,7 @@ class SiteController extends Controller
                     [
                         'allow' => true,
                         'roles' => ['medico','admin'],
+
                     ],
                 ],
             ],
@@ -79,6 +85,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+
         return $this->render('index');
     }
     public static function isUserAdmin($email)
@@ -104,16 +112,21 @@ class SiteController extends Controller
         $this->layout = 'blank';
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post()) && $model->login() && $model->validateLogin()) {
+
+
             return $this->goBack();
         } else {
+
             $model->password = '';
             
             return $this->render('login', [
                 'model' => $model,
             ]);
         }
+
     }
+
 
 
     /**
@@ -125,7 +138,7 @@ class SiteController extends Controller
     {
         Yii::$app->user->logout();
 
-        return $this->goHome();
+        return $this->redirect('login');
     }
     public function actionProfile()
     {
@@ -151,6 +164,10 @@ class SiteController extends Controller
     public function actionTable()
 
         {
+                     $cock = Yii::$app->authManager->getRolesByUser(Yii::$app->user->getId());
+
+            $searchModel = new profileSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
             $query = Profile::find()->where(['is_medico' => 0]);
 
 
@@ -167,7 +184,9 @@ class SiteController extends Controller
 
             return $this->render('table', [
                 'utentes' => $utentes,
-                'pagination' => $pagination
+                'pagination' => $pagination,
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
             ]);
 
         }

@@ -4,12 +4,12 @@
 /* @var $content string */
 
 use backend\assets\AppAsset;
+use common\models\User;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
-
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -79,8 +79,9 @@ AppAsset::register($this);
                     <li class="nav-item">
                     <?php
                     $userRole = Yii::$app->authManager->getRolesByUser(Yii::$app->user->getId());
+                       $query = User::isAdmin();
 
-                    if(\common\models\User::isAdmin(Yii::$app->user->getId())){
+                    if($query == true){
                         ?><li class="nav-item">  <?php Html::a('Lista de medicos', ['site/table_utentes']);?><?php
                         ?><li class="nav-item"> <?php Html::a('Definições', ['site/table_utentes']);?><?php
                     }

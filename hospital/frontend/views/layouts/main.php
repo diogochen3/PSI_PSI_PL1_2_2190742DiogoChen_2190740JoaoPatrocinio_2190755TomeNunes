@@ -31,6 +31,7 @@ AppAsset::register($this);
     <link rel="stylesheet" href="/assets/css/styles.min.css?h=fcf418ef9ef80599aec4b7aead34e9eb">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+
     <?php $this->head() ?>
 </head>
 <body>

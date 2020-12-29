@@ -57,6 +57,7 @@ class LoginForm extends Model
      */
     public function login()
     {
+
         if ($this->validate()) {
 
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
@@ -77,5 +78,29 @@ class LoginForm extends Model
 
         return $this->_user;
     }
+
+    public function validateLogin(){
+        $queryadmin = User::isAdmin();
+        $querymedico = User::isMedico();
+
+        foreach ($queryadmin as $admin) {
+            foreach ($querymedico as $medicos)
+
+            if (Yii::$app->user->getId() == $admin || Yii::$app->user->getId() == $medicos){
+
+                return true;
+
+            }else{
+                return false;
+            }
+
+
+            }
+
+
+
+
+    }
+
 
 }

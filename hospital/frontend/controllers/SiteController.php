@@ -153,8 +153,8 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        $query = Profile::find()->where(['is_medico' => 1]);
 
+        $query = Profile::find()->where(['is_medico' => 1]);
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
