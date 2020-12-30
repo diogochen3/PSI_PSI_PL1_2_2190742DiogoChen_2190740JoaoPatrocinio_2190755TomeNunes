@@ -14,6 +14,9 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
+
+
+
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=cbc877e732f00f43eca6ed7bf01bde0b">

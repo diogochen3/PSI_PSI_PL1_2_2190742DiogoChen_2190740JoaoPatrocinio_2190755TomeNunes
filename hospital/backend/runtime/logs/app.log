@@ -1586,6 +1586,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1608581711.772
     'REQUEST_TIME' => 1608581711
 ]
+<<<<<<< Updated upstream
 2020-12-28 16:40:27 [127.0.0.1][6][4lhra8pjp7sf96js5u2nh1dh87][error][ParseError] ParseError: syntax error, unexpected ']', expecting end of file in C:\xampp\htdocs\psi\hospital\backend\views\layouts\main.php:77
 Stack trace:
 #0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
@@ -1601,19 +1602,43 @@ Stack trace:
 #10 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
 #11 {main}
 2020-12-28 16:40:27 [127.0.0.1][6][4lhra8pjp7sf96js5u2nh1dh87][info][application] $_GET = []
+=======
+2020-12-28 14:29:02 [::1][-][o8ndglfci03lsqkfan47tktdm7][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\PSI\hospital\backend\views\layouts\blank.php in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php:233
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(424): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(backend\controllers\SiteController))
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(410): yii\base\Controller->renderContent('\r\n\r\n<div class=...')
+#2 C:\wamp64\www\PSI\hospital\backend\controllers\SiteController.php(93): yii\base\Controller->render('login', Array)
+#3 [internal function]: backend\controllers\SiteController->actionLogin()
+#4 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#7 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/login', Array)
+#8 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\PSI\hospital\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2020-12-28 14:29:02 [::1][-][o8ndglfci03lsqkfan47tktdm7][info][application] $_GET = []
+>>>>>>> Stashed changes
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< Updated upstream
     'advanced-backend' => '4lhra8pjp7sf96js5u2nh1dh87'
     '_identity-backend' => '6bad94fb3a9ab66ec79bc2b4453b4b71e2fda7c5deeb960e28e0515e5badcc87a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
     '_csrf-backend' => '17c9ea939d2917d98d89627e5463acd92cd2142a78fc2e32c13885de1202b5e1a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"D0kNAU9VnVKLBuIc83bdYCfguAxoJxzS\";}'
+=======
+    'advanced-frontend' => '4vv7i4dvb22mkqesj0hupjh8m1'
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    '_csrf-frontend' => '1ee8c4ab8f590cc0cc520387d6ff78c1dcd86bee31b8c7fba55dfdba3daa84e3a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"aQv3uHE-V8hc_8ZrBfDUP_tuTnJVSWdz\";}'
+    'advanced-backend' => 'o8ndglfci03lsqkfan47tktdm7'
+>>>>>>> Stashed changes
 ]
 
 $_SESSION = [
     '__flash' => []
+<<<<<<< Updated upstream
     '__returnUrl' => 'http://back.test/index.php'
     '__id' => 6
 ]
@@ -1654,10 +1679,49 @@ $_SERVER = [
     'SERVER_ADMIN' => 'postmaster@localhost'
     'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
     'REMOTE_PORT' => '56170'
+=======
+    '__returnUrl' => 'http://localhost/PSI/hospital/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/PSI/hospital/backend/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-frontend=4vv7i4dvb22mkqesj0hupjh8m1; _identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; _csrf-frontend=1ee8c4ab8f590cc0cc520387d6ff78c1dcd86bee31b8c7fba55dfdba3daa84e3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22aQv3uHE-V8hc_8ZrBfDUP_tuTnJVSWdz%22%3B%7D; advanced-backend=o8ndglfci03lsqkfan47tktdm7'
+    'PATH' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/PSI/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '51605'
+>>>>>>> Stashed changes
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
     'QUERY_STRING' => ''
+<<<<<<< Updated upstream
     'REQUEST_URI' => '/index.php'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
@@ -9224,4 +9288,13 @@ $_SERVER = [
     'PHP_SELF' => '/index.php/site/table_marcacoes'
     'REQUEST_TIME_FLOAT' => 1609185001.621
     'REQUEST_TIME' => 1609185001
+=======
+    'REQUEST_URI' => '/PSI/hospital/backend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/PSI/hospital/backend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\site\\login'
+    'PHP_SELF' => '/PSI/hospital/backend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1609165741.991
+    'REQUEST_TIME' => 1609165741
+>>>>>>> Stashed changes
 ]

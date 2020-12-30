@@ -35457,6 +35457,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1608762474.504
     'REQUEST_TIME' => 1608762474
 ]
+<<<<<<< Updated upstream
 2020-12-28 17:21:01 [127.0.0.1][-][i5pqekk5nsad68arrj0oc13asd][error][yii\db\IntegrityException] PDOException: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2147483647' for key 'NIF' in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\Command.php:1299
 Stack trace:
 #0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\Command.php(1299): PDOStatement->execute()
@@ -35521,12 +35522,66 @@ $_POST = [
     ]
     'signup-button' => ''
 ]
+=======
+2020-12-28 14:15:46 [::1][-][jmgapcfa912fqg2gmebu4bh9j2][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_medico' in 'where clause' in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php:1299
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php(1299): PDOStatement->execute()
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php(1165): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Query.php(494): yii\db\Command->queryScalar()
+#4 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\ActiveQuery.php(352): yii\db\Query->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Query.php(366): yii\db\ActiveQuery->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#6 C:\wamp64\www\PSI\hospital\frontend\controllers\SiteController.php(161): yii\db\Query->count()
+#7 [internal function]: frontend\controllers\SiteController->actionAbout()
+#8 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('about', Array)
+#11 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/about', Array)
+#12 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\PSI\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'is_medico' in 'where clause'
+The SQL being executed was: SELECT COUNT(*) FROM `profile` WHERE `is_medico`=1 in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Schema.php:678
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php(1304): yii\db\Schema->convertException(Object(PDOException), 'SELECT COUNT(*)...')
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php(1165): yii\db\Command->internalExecute('SELECT COUNT(*)...')
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Command.php(433): yii\db\Command->queryInternal('fetchColumn', 0)
+#3 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Query.php(494): yii\db\Command->queryScalar()
+#4 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\ActiveQuery.php(352): yii\db\Query->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\Query.php(366): yii\db\ActiveQuery->queryScalar('COUNT(*)', Object(yii\db\Connection))
+#6 C:\wamp64\www\PSI\hospital\frontend\controllers\SiteController.php(161): yii\db\Query->count()
+#7 [internal function]: frontend\controllers\SiteController->actionAbout()
+#8 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('about', Array)
+#11 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('site/about', Array)
+#12 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\PSI\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'is_medico' in 'where clause'
+)
+
+2020-12-28 14:15:46 [::1][-][jmgapcfa912fqg2gmebu4bh9j2][info][application] $_GET = []
+
+$_POST = []
+>>>>>>> Stashed changes
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< Updated upstream
     'advanced-frontend' => 'i5pqekk5nsad68arrj0oc13asd'
     '_csrf-frontend' => 'ae6a4d26070d4d47b7a44812665cb913552ccbd315049fdefb11b30cc5889b79a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"x9n_FZzlh1W8-9vfdBv89Znc91PxXpsu\";}'
+=======
+    'advanced-frontend' => 'jmgapcfa912fqg2gmebu4bh9j2'
+    '_csrf-frontend' => '2606703bf78da44f8d8e9801da77438d0bb574e833ae52a148818c58f31b37c3a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"llnnVELAuBujdAIkED0Q8o8JEfzQ-nWN\";}'
+>>>>>>> Stashed changes
 ]
 
 $_SESSION = [
@@ -35534,6 +35589,7 @@ $_SESSION = [
 ]
 
 $_SERVER = [
+<<<<<<< Updated upstream
     'MIBDIRS' => 'C:/xampp/php/extras/mibs'
     'MYSQL_HOME' => '\\xampp\\mysql\\bin'
     'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
@@ -35600,19 +35656,97 @@ Stack trace:
 #11 C:\xampp\htdocs\psi\hospital\frontend\web\index.php(17): yii\base\Application->run()
 #12 {main}
 2020-12-28 21:22:12 [127.0.0.1][18][r566ap68629e0kgi6o3v05t9t1][info][application] $_GET = []
+=======
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/PSI/hospital/frontend/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-frontend=jmgapcfa912fqg2gmebu4bh9j2; _csrf-frontend=2606703bf78da44f8d8e9801da77438d0bb574e833ae52a148818c58f31b37c3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22llnnVELAuBujdAIkED0Q8o8JEfzQ-nWN%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/PSI/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '51176'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/PSI/hospital/frontend/web/index.php/site/about'
+    'SCRIPT_NAME' => '/PSI/hospital/frontend/web/index.php'
+    'PATH_INFO' => '/site/about'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\site\\about'
+    'PHP_SELF' => '/PSI/hospital/frontend/web/index.php/site/about'
+    'REQUEST_TIME_FLOAT' => 1609164946.635
+    'REQUEST_TIME' => 1609164946
+]
+2020-12-28 14:20:18 [::1][6][4vv7i4dvb22mkqesj0hupjh8m1][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: frontend\models\Marcacao::tempo in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('tempo')
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\db\BaseActiveRecord->__get('tempo')
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(frontend\models\Marcacao), 'tempo')
+#3 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(375): yii\helpers\BaseHtml::activeInput('time', Object(frontend\models\Marcacao), 'tempo', Array)
+#4 C:\wamp64\www\PSI\hospital\frontend\views\Marcacao\_form.php(21): yii\widgets\ActiveField->input('time')
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#6 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#7 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#8 C:\wamp64\www\PSI\hospital\frontend\views\Marcacao\create.php(21): yii\base\View->render('_form', Array)
+#9 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#10 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#11 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(frontend\controllers\MarcacaoController))
+#12 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('create', Array, Object(frontend\controllers\MarcacaoController))
+#13 C:\wamp64\www\PSI\hospital\frontend\controllers\MarcacaoController.php(135): yii\base\Controller->render('create', Array)
+#14 [internal function]: frontend\controllers\MarcacaoController->actionCreate()
+#15 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#17 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#18 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#19 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 C:\wamp64\www\PSI\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#21 {main}
+2020-12-28 14:20:18 [::1][6][4vv7i4dvb22mkqesj0hupjh8m1][info][application] $_GET = []
+>>>>>>> Stashed changes
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< Updated upstream
     'advanced-frontend' => 'r566ap68629e0kgi6o3v05t9t1'
     '_identity-frontend' => '9d2e656eacafa74289a6df669cd8543e191084d320f7c211f7baa18cd0476794a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:47:\"[18,\"eC0t7kBakg43pjbhacxyDxCTmYPUh7Rl\",2592000]\";}'
     '_csrf-frontend' => 'e10ad481989748e794478598c570e96e0e3cde851f960f4c25bc9fe2fd0ff72fa:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HirYb59M271gemJZBemjxoL-j4GkQ2UJ\";}'
+=======
+    'advanced-frontend' => '4vv7i4dvb22mkqesj0hupjh8m1'
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    '_csrf-frontend' => '1ee8c4ab8f590cc0cc520387d6ff78c1dcd86bee31b8c7fba55dfdba3daa84e3a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"aQv3uHE-V8hc_8ZrBfDUP_tuTnJVSWdz\";}'
+>>>>>>> Stashed changes
 ]
 
 $_SESSION = [
     '__flash' => []
+<<<<<<< Updated upstream
     '__id' => 18
 ]
 
@@ -35652,10 +35786,49 @@ $_SERVER = [
     'SERVER_ADMIN' => 'postmaster@localhost'
     'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/frontend/web/index.php'
     'REMOTE_PORT' => '59086'
+=======
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/PSI/hospital/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-frontend=4vv7i4dvb22mkqesj0hupjh8m1; _identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; _csrf-frontend=1ee8c4ab8f590cc0cc520387d6ff78c1dcd86bee31b8c7fba55dfdba3daa84e3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22aQv3uHE-V8hc_8ZrBfDUP_tuTnJVSWdz%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/PSI/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '51287'
+>>>>>>> Stashed changes
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
     'QUERY_STRING' => ''
+<<<<<<< Updated upstream
     'REQUEST_URI' => '/'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
@@ -35679,19 +35852,61 @@ Stack trace:
 #12 C:\xampp\htdocs\psi\hospital\frontend\web\index.php(17): yii\base\Application->run()
 #13 {main}
 2020-12-28 21:22:52 [127.0.0.1][18][r566ap68629e0kgi6o3v05t9t1][info][application] $_GET = []
+=======
+    'REQUEST_URI' => '/PSI/hospital/frontend/web/index.php/marcacao/create'
+    'SCRIPT_NAME' => '/PSI/hospital/frontend/web/index.php'
+    'PATH_INFO' => '/marcacao/create'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\marcacao\\create'
+    'PHP_SELF' => '/PSI/hospital/frontend/web/index.php/marcacao/create'
+    'REQUEST_TIME_FLOAT' => 1609165218.859
+    'REQUEST_TIME' => 1609165218
+]
+2020-12-28 14:22:07 [::1][6][4vv7i4dvb22mkqesj0hupjh8m1][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: frontend\models\Marcacao::tempo in C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('tempo')
+#1 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(2244): yii\db\BaseActiveRecord->__get('tempo')
+#2 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\helpers\BaseHtml.php(1363): yii\helpers\BaseHtml::getAttributeValue(Object(frontend\models\Marcacao), 'tempo')
+#3 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\widgets\ActiveField.php(375): yii\helpers\BaseHtml::activeInput('time', Object(frontend\models\Marcacao), 'tempo', Array)
+#4 C:\wamp64\www\PSI\hospital\frontend\views\Marcacao\_form.php(21): yii\widgets\ActiveField->input('time')
+#5 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#6 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#7 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, NULL)
+#8 C:\wamp64\www\PSI\hospital\frontend\views\Marcacao\create.php(21): yii\base\View->render('_form', Array)
+#9 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\P...')
+#10 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\P...', Array)
+#11 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\P...', Array, Object(frontend\controllers\MarcacaoController))
+#12 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('create', Array, Object(frontend\controllers\MarcacaoController))
+#13 C:\wamp64\www\PSI\hospital\frontend\controllers\MarcacaoController.php(135): yii\base\Controller->render('create', Array)
+#14 [internal function]: frontend\controllers\MarcacaoController->actionCreate()
+#15 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#17 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#18 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('marcacao/create', Array)
+#19 C:\wamp64\www\PSI\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 C:\wamp64\www\PSI\hospital\frontend\web\index.php(17): yii\base\Application->run()
+#21 {main}
+2020-12-28 14:22:07 [::1][6][4vv7i4dvb22mkqesj0hupjh8m1][info][application] $_GET = []
+>>>>>>> Stashed changes
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< Updated upstream
     'advanced-frontend' => 'r566ap68629e0kgi6o3v05t9t1'
     '_identity-frontend' => '9d2e656eacafa74289a6df669cd8543e191084d320f7c211f7baa18cd0476794a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:47:\"[18,\"eC0t7kBakg43pjbhacxyDxCTmYPUh7Rl\",2592000]\";}'
     '_csrf-frontend' => 'e10ad481989748e794478598c570e96e0e3cde851f960f4c25bc9fe2fd0ff72fa:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"HirYb59M271gemJZBemjxoL-j4GkQ2UJ\";}'
+=======
+    'advanced-frontend' => '4vv7i4dvb22mkqesj0hupjh8m1'
+    '_identity-frontend' => '6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[6,\"BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL\",2592000]\";}'
+    '_csrf-frontend' => '1ee8c4ab8f590cc0cc520387d6ff78c1dcd86bee31b8c7fba55dfdba3daa84e3a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"aQv3uHE-V8hc_8ZrBfDUP_tuTnJVSWdz\";}'
+>>>>>>> Stashed changes
 ]
 
 $_SESSION = [
     '__flash' => []
+<<<<<<< Updated upstream
     '__id' => 18
 ]
 
@@ -35703,11 +35918,19 @@ $_SERVER = [
     'PHPRC' => '\\xampp\\php'
     'TMP' => '\\xampp\\tmp'
     'HTTP_HOST' => 'front.test'
+=======
+    '__id' => 6
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+>>>>>>> Stashed changes
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36'
     'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+<<<<<<< Updated upstream
     'HTTP_REFERER' => 'http://front.test/index.php/marcacao/create'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
     'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
@@ -35731,15 +35954,54 @@ $_SERVER = [
     'SERVER_ADMIN' => 'postmaster@localhost'
     'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/frontend/web/index.php'
     'REMOTE_PORT' => '59170'
+=======
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/PSI/hospital/frontend/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-frontend=4vv7i4dvb22mkqesj0hupjh8m1; _identity-frontend=6583cfb9de6a22aef97e01796ed5e2a9e8a970ad2970c9051dee6557b411bb7ea%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B6%2C%22BrKwfs6tFw4ORtW1c_0WZTfOJyWuC2WL%22%2C2592000%5D%22%3B%7D; _csrf-frontend=1ee8c4ab8f590cc0cc520387d6ff78c1dcd86bee31b8c7fba55dfdba3daa84e3a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22aQv3uHE-V8hc_8ZrBfDUP_tuTnJVSWdz%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\PuTTY\\;E:\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\tome\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\tome\\AppData\\Local\\atom\\bin;C:\\adb;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Universal Extractor;C:\\Program Files (x86)\\Universal Extractor\\bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;E:\\wamp64\\bin\\php\\php7.0.32;C:\\ProgramData\\ComposerSetup\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.0.33 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.0.33'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/PSI/hospital/frontend/web/index.php'
+    'REMOTE_PORT' => '51301'
+>>>>>>> Stashed changes
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
     'QUERY_STRING' => ''
+<<<<<<< Updated upstream
     'REQUEST_URI' => '/'
     'SCRIPT_NAME' => '/index.php'
     'PHP_SELF' => '/index.php'
     'REQUEST_TIME_FLOAT' => 1609186972.364
     'REQUEST_TIME' => 1609186972
+=======
+    'REQUEST_URI' => '/PSI/hospital/frontend/web/index.php/marcacao/create'
+    'SCRIPT_NAME' => '/PSI/hospital/frontend/web/index.php'
+    'PATH_INFO' => '/marcacao/create'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\marcacao\\create'
+    'PHP_SELF' => '/PSI/hospital/frontend/web/index.php/marcacao/create'
+    'REQUEST_TIME_FLOAT' => 1609165327.566
+    'REQUEST_TIME' => 1609165327
+>>>>>>> Stashed changes
 ]
 2020-12-28 23:12:38 [::1][6][53g5lv24rlukjo2906o4v4gbs0][error][Error] Error: Class 'Url' not found in C:\wamp64\www\hospital\frontend\views\Marcacao\_form.php:27
 Stack trace:
