@@ -2,6 +2,7 @@
 
 namespace frontend\modules\api\controllers;
 
+use yii\helpers\VarDumper;
 use yii\rest\ActiveController;
 
 class ProfileController extends ActiveController
