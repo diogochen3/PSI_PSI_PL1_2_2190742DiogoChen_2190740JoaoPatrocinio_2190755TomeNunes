@@ -20,7 +20,7 @@ import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
     private static SingletonGestorHospital instance = null;
-    private static final String mUrlAPILogin = "";
+    private static final  String  mUrlAPILogin =  "http://front.test/index.php/api/default";
     private HospitalLoginListener hospitalLoginListener;
 
     public static synchronized SingletonGestorHospital getInstance(Context context) {

@@ -35,12 +35,13 @@ class DefaultController extends ActiveController
         return $this->render('index');
     }
 
-    public function auth($username, $password)
+    /*public function auth($username, $password)
     {
         $user = \common\models\User::findByUsername($username);
         if ($user && $user->validatePassword($password))
         {
             return $user;
         }
-    }
+    }*/
+
 }

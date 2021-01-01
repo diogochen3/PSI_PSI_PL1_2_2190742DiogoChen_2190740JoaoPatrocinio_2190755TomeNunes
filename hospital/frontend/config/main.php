@@ -47,10 +47,14 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'api\Profile',
+                    'controller' => 'api/profile',
                     'pluralize' => false,
-                ]
-
+                ],
+                [
+                'class' => 'yii\rest\UrlRule',
+                'controller' => 'api\default',
+                'pluralize' => false,
+            ]
             ],
         ],
 
