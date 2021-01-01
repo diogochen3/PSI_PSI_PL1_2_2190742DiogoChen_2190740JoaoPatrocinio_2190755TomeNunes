@@ -71,7 +71,6 @@ class LoginForm extends Model
     protected function getUser()
     {
 
-
         if ($this->_user === null) {
             $this->_user = User::findByEmail($this->email);
         }
@@ -80,26 +79,18 @@ class LoginForm extends Model
     }
 
     public function validateLogin(){
-        $queryadmin = User::isAdmin();
-        $querymedico = User::isMedico();
 
-        foreach ($queryadmin as $admin) {
-            foreach ($querymedico as $medicos)
+        $user = $this->getUser();
 
-            if (Yii::$app->user->getId() == $admin || Yii::$app->user->getId() == $medicos){
+        if(is_null($user)){
 
-                return true;
+            return false;
+            //caga erro
+        }
 
-            }else{
-                return false;
-            }
+        $role = $user->getRole();
 
-
-            }
-
-
-
-
+        return isset($role['medico']) || isset($role['admin']);
     }
 
 

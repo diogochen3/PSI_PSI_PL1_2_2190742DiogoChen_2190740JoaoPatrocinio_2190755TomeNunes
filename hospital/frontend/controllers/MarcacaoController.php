@@ -137,7 +137,6 @@ class MarcacaoController extends Controller
         ]);
         }
 
-        Yii::$app->session->setFlash('success', "Order is made!!");
 
         return $this->redirect(['../index.php']);
     }

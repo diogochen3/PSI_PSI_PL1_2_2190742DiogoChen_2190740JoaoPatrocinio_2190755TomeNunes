@@ -78,12 +78,12 @@ AppAsset::register($this);
                     <li class="nav-item">  <?= Html::a('Lista de Utentes', ['site/table']) ?></li>
                     <li class="nav-item">
                     <?php
-                    $userRole = Yii::$app->authManager->getRolesByUser(Yii::$app->user->getId());
-                       $query = User::isAdmin();
+                    $user =Yii::$app->user->getId();
 
-                    if($query == true){
-                        ?><li class="nav-item">  <?php Html::a('Lista de medicos', ['site/table_utentes']);?><?php
-                        ?><li class="nav-item"> <?php Html::a('Definições', ['site/table_utentes']);?><?php
+                        var_export($adminrole);
+                    if(isset($adminrole[0]) && $adminrole[0] === '1'){
+                        ?><li class="nav-item">  <?= Html::a('Lista de medicos', ['site/table_utentes']);?><?php
+                        ?><li class="nav-item"> <?= Html::a('Definições', ['site/table_utentes']);?><?php
                     }
 
 

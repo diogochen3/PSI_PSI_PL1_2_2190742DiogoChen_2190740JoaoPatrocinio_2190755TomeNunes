@@ -89,13 +89,7 @@ class SiteController extends Controller
 
         return $this->render('index');
     }
-    public static function isUserAdmin($email)
 
-    {
-
-
-
-    }
 
     /**
      * Login action.
@@ -112,10 +106,11 @@ class SiteController extends Controller
         $this->layout = 'blank';
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login() && $model->validateLogin()) {
+
+        if ($model->load(Yii::$app->request->post()) && $model->validateLogin() && $model->login()) {
 
 
-            return $this->goBack();
+            return $this->goHome();
         } else {
 
             $model->password = '';

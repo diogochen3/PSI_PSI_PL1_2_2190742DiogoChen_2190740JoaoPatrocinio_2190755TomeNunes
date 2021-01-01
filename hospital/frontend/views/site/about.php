@@ -56,7 +56,7 @@
 
       <td><?= $medico->First_name  ?> <?= $medico->Last_name  ?></td>
                                             <td><?= $medico->Email  ?></td>
-                                            <td> </td>
+                                            <td></td>
 
 
 

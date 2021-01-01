@@ -156,6 +156,7 @@ class SiteController extends Controller
 
         $query = Profile::find()->where(['is_medico' => 1]);
 
+
         $pagination = new Pagination([
             'defaultPageSize' => 10,
             'totalCount' => $query->count()
