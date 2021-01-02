@@ -43,6 +43,7 @@ class SiteController extends Controller
                     [
                         'actions' => ['logout', 'index'],
                         'allow' => true,
+                        'roles' => ['medico','admin'],
 
 
                     ],
@@ -112,7 +113,6 @@ class SiteController extends Controller
 
             return $this->goHome();
         } else {
-
             $model->password = '';
             
             return $this->render('login', [
@@ -159,7 +159,7 @@ class SiteController extends Controller
     public function actionTable()
 
         {
-                     $cock = Yii::$app->authManager->getRolesByUser(Yii::$app->user->getId());
+
 
             $searchModel = new profileSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);

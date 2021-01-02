@@ -10,6 +10,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use backend\models\LoginForm;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -78,10 +79,9 @@ AppAsset::register($this);
                     <li class="nav-item">  <?= Html::a('Lista de Utentes', ['site/table']) ?></li>
                     <li class="nav-item">
                     <?php
-                    $user =Yii::$app->user->getId();
+                    $user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
 
-                        var_export($adminrole);
-                    if(isset($adminrole[0]) && $adminrole[0] === '1'){
+                    if(isset($user['admin'])){
                         ?><li class="nav-item">  <?= Html::a('Lista de medicos', ['site/table_utentes']);?><?php
                         ?><li class="nav-item"> <?= Html::a('Definições', ['site/table_utentes']);?><?php
                     }

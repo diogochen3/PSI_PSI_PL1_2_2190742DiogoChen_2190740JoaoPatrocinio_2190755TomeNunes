@@ -85,7 +85,7 @@ class LoginForm extends Model
         if(is_null($user)){
 
             return false;
-            //caga erro
+
         }
 
         $role = $user->getRole();
