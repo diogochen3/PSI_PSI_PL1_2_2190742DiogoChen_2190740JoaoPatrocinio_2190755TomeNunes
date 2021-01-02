@@ -153,6 +153,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+
         $query = Profile::find()->where(['is_medico' => 1]);
 
 

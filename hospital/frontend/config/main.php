@@ -19,7 +19,11 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
+
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
@@ -47,10 +51,33 @@ return [
             'rules' => [
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'api\Profile',
+                    'controller' => 'api/profile',
                     'pluralize' => false,
-                ]
 
+                    'extraPatterns' => ['GET set/{limit}' => 'set',
+                                        'GET total' => 'total'
+                    ]
+                ],
+                [
+                'class' => 'yii\rest\UrlRule',
+                'controller' => 'api/default',
+                'pluralize' => false,
+            ],
+                [
+                'class' => 'yii\rest\UrlRule',
+                'controller' => 'api/marcacao',
+                'pluralize' => false,
+
+                    'extraPatterns' => ['GET set/{limit}' => 'set',
+                                        'GET total' => 'total',
+                                        'POST marcar' => 'marcar',
+                                        'PUT marcacaonew/{id}' => 'marcacaonew',
+                                        'DELETE marcardel/{id}' => 'marcardel',
+            ],
+              'tokens' => ['{id}'    => '<id:\\d+>',
+                           '{limit}' => '<limit:\\d+>',
+                  ]
+            ]
             ],
         ],
 

@@ -2,6 +2,7 @@
 
 namespace frontend\modules\api\controllers;
 
+use yii\helpers\VarDumper;
 use yii\rest\ActiveController;
 
 class ProfileController extends ActiveController
@@ -12,5 +13,10 @@ class ProfileController extends ActiveController
     {
         return $this->render('index');
     }
-
+    public function actionTotal()
+    {
+        $climodel= new$this->modelClass;
+        $recs= $climodel::find()->all();
+        return['total' => count($recs)];
+    }
 }

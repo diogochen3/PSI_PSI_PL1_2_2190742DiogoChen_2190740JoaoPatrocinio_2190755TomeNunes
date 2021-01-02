@@ -1,5 +1,6 @@
 <?php use \yii\widgets\LinkPager;
-
+use yii\helpers\Html;
+use yii\grid\GridView;
 /* @var $utentes array */?>
 
 <ul>
@@ -39,6 +40,11 @@
                                 <div class="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
                             </div>
                         </div>
+                        <?php
+
+
+                   ?>
+
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                             <table class="table my-0" id="dataTable">
                                 <thead>
@@ -55,7 +61,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 <tr>
                                     <?php
                                     foreach ($utentes as $utente) : ?>
@@ -79,7 +84,6 @@
 
 
                                 <?php endforeach; ?>
-
 
                                 </tbody>
                             </table>

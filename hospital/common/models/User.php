@@ -227,11 +227,16 @@ class User extends ActiveRecord implements IdentityInterface
     }
     public static function isAdmin()
     {
-        return  Yii::$app->authManager->getUserIdsByRole("admin"); //return array
+        return Yii::$app->authManager->getUserIdsByRole("admin"); //return array
     }
     public static function isUtente()
     {
         return  Yii::$app->authManager->getUserIdsByRole("utente"); //return array
+    }
+
+    public  function  getRole(){
+
+        return Yii::$app->authManager->getAssignments($this->id);
     }
     /**
      * Gets query for [[Id0]].

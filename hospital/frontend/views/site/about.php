@@ -53,7 +53,6 @@
       <?php
       foreach ($medicos as $medico) : ?>
 
-      <td><img class="rounded-circle mr-2" width="30" height="30" src="/assets/img/avatars/avatar1.jpeg?h=0ecc82101fb9a10ca459432faa8c0656"></td>
 
       <td><?= $medico->First_name  ?> <?= $medico->Last_name  ?></td>
                                             <td><?= $medico->Email  ?></td>
