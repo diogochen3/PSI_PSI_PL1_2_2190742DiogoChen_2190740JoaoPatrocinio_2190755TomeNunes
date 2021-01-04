@@ -96,7 +96,7 @@ return [
                 ],
                 [
                 'class' => 'yii\rest\UrlRule',
-                'controller' => 'api/default',
+                'controller' => 'api/user',
                 'pluralize' => false,
             ],
                 [
@@ -113,7 +113,27 @@ return [
               'tokens' => ['{id}'    => '<id:\\d+>',
                            '{limit}' => '<limit:\\d+>',
                   ]
-            ]
+            ],
+                [
+                'class' => 'yii\rest\UrlRule',
+                'controller' => 'api/receitas',
+                    'pluralize' => false,
+            ],
+            [
+                'class' => 'yii\rest\UrlRule',
+                'controller' => 'api/consultas',
+                'pluralize' => false,
+            ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/medicoespecialidade',
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/receitasconsultas',
+                    'pluralize' => false,
+                ],
             ],
         ],
 

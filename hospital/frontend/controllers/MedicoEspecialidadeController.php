@@ -10,7 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MedicoEspecialidadeController implements the CRUD actions for MedicoEspecialidade model.
+ * MedicoespecialidadeController implements the CRUD actions for MedicoEspecialidade model.
  */
 class MedicoEspecialidadeController extends Controller
 {
