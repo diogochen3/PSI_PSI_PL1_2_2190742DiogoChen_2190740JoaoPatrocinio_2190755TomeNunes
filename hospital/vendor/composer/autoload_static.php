@@ -29,6 +29,7 @@ class ComposerStaticInitf36f7cc1c60b9edd2498e6543d7d5cb8
         'y' => 
         array (
             'yii\\swiftmailer\\' => 16,
+            'yii\\jui\\' => 8,
             'yii\\gii\\' => 8,
             'yii\\faker\\' => 10,
             'yii\\debug\\' => 10,
@@ -70,6 +71,7 @@ class ComposerStaticInitf36f7cc1c60b9edd2498e6543d7d5cb8
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Prophecy\\' => 9,
+            'PhpMqtt\\Client\\' => 15,
         ),
         'O' => 
         array (
@@ -96,12 +98,20 @@ class ComposerStaticInitf36f7cc1c60b9edd2498e6543d7d5cb8
             'Codeception\\Extension\\' => 22,
             'Codeception\\' => 12,
         ),
+        'B' => 
+        array (
+            'Bluerhinos\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'yii\\swiftmailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2-swiftmailer',
+        ),
+        'yii\\jui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yiisoft/yii2-jui',
         ),
         'yii\\gii\\' => 
         array (
@@ -209,6 +219,10 @@ class ComposerStaticInitf36f7cc1c60b9edd2498e6543d7d5cb8
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
+        'PhpMqtt\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-mqtt/client/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -249,6 +263,10 @@ class ComposerStaticInitf36f7cc1c60b9edd2498e6543d7d5cb8
         array (
             0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
             1 => __DIR__ . '/..' . '/codeception/stub/src',
+        ),
+        'Bluerhinos\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bluerhinos/phpmqtt',
         ),
     );
 

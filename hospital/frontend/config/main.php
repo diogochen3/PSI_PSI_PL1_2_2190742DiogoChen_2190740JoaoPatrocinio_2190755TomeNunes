@@ -55,8 +55,44 @@ return [
                     'pluralize' => false,
 
                     'extraPatterns' => ['GET set/{limit}' => 'set',
-                                        'GET total' => 'total'
+                                        'GET total' => 'total',
+                                        'POST cprofile' => 'cprofile',
+                                        'PUT profilenew/{id}' => 'profilenew',
+                                        'DELETE profiledel/{id}' => 'profiledel',
+                    ],
+                    'tokens' => ['{id}'    => '<id:\\d+>',
+                        '{limit}' => '<limit:\\d+>',
                     ]
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/especialidade',
+                    'pluralize' => false,
+
+                    'extraPatterns' => ['GET set/{limit}' => 'set',
+                        'GET total' => 'total',
+                        'POST cespecialidade' => 'cespecialidade',
+                        'PUT especialidadenew/{id}' => 'especialidadenew',
+                        'DELETE especialidadedel/{id}' => 'especialidadedel',
+                    ],
+                    'tokens' => ['{id}'    => '<id:\\d+>',
+                        '{limit}' => '<limit:\\d+>',
+                    ]
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/diagnostico',
+                    'pluralize' => false,
+
+                    'extraPatterns' => ['GET set/{limit}' => 'set',
+                        'GET total' => 'total',
+                        'POST cdiagnostico' => 'cdiagnostico',
+                        'PUT diagnosticonew/{id}' => 'diagnosticonew',
+                        'DELETE diagnosticodel/{id}' => 'diagnosticodel',
+                    ],
+                    'tokens' => ['{id}'    => '<id:\\d+>',
+                    '{limit}' => '<limit:\\d+>',
+                ]
                 ],
                 [
                 'class' => 'yii\rest\UrlRule',

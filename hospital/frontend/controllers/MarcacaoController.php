@@ -110,6 +110,7 @@ class MarcacaoController extends Controller
         $listEsp = [];
         $listmed = [];
 
+
         foreach ($esp as $item) {
             $listEsp[$item->id] = $item->Name;
         }
@@ -121,7 +122,6 @@ class MarcacaoController extends Controller
             $model->id_Utente = Yii::$app->user->id;
             $model->save(false);
 
-                return $this->redirect('../..');
 
 
 

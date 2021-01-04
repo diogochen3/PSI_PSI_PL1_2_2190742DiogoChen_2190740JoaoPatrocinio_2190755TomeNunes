@@ -3,6 +3,8 @@
 namespace frontend\modules\api\controllers;
 
 
+
+use frontend\modules\api\models\User;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
@@ -23,9 +25,8 @@ class DefaultController extends ActiveController
     {
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
-            'class' => QueryParamAuth::className(),
-           /* 'class' => HttpBasicAuth::className(),
-            'auth' => [$this, 'auth']*/
+            'class' => HttpBasicAuth::className(),
+            'auth' => [$this, 'auth']
         ];
         return $behaviors;
     }
@@ -35,13 +36,13 @@ class DefaultController extends ActiveController
         return $this->render('index');
     }
 
-    /*public function auth($username, $password)
+    public function auth($email, $password)
     {
-        $user = \common\models\User::findByUsername($username);
+        $user = User::findByEmail($email);
         if ($user && $user->validatePassword($password))
         {
             return $user;
         }
-    }*/
+    }
 
 }

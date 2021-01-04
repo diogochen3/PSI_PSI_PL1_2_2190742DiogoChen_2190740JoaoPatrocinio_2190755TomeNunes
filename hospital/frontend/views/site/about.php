@@ -1,4 +1,27 @@
-<?php use \yii\widgets\LinkPager; ?>
+<?php use frontend\mosquitto\phpMQTT;
+use \yii\widgets\LinkPager;
+
+
+
+
+
+$server = 'localhost';     // change if necessary
+$port = 1883;                     // change if necessary
+$username = '';                   // set your username
+$password = '';                   // set your password
+$client_id = 'phpMQTT-publisher'; // make sure this is unique for connecting to sever - you could use uniqid()
+
+$mqtt = new phpMQTT($server, $port, $client_id);
+
+if ($mqtt->connect(true, NULL, $username, $password)) {
+    $mqtt->publish('bluerhinos/phpMQTT/examples/publishtest', 'Hello World! at ' . date('r'), 0, false);
+    $mqtt->close();
+} else {
+    echo "Time out!\n";
+}
+
+
+?>
 
 <ul>
 
@@ -44,7 +67,7 @@
                                             <th>Nome</th>
                                             <th>Email</th>
                                             <th>Especialização</th>
-                                            <th>Marcar Consulta</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,6 +79,7 @@
 
       <td><?= $medico->First_name  ?> <?= $medico->Last_name  ?></td>
                                             <td><?= $medico->Email  ?></td>
+                                            <td></td>
                                             <td></td>
 
 

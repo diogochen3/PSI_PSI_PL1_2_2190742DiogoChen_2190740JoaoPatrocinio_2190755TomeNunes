@@ -2,7 +2,13 @@
 
 namespace frontend\modules\api\models;
 
+use common\models\Profile;
+use frontend\models\Especialidade;
 use Yii;
+use yii\base\NotSupportedException;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "user".
@@ -16,6 +22,7 @@ use Yii;
  * @property int $status
  * @property int $created_at
  * @property int $updated_at
+ * @property string $password write-only password
  * @property string|null $verification_token
  * @property int $is_medico
  *
@@ -28,14 +35,29 @@ use Yii;
  * @property MedicoEspecialidade[] $medicoEspecialidades
  * @property Profile $profile
  */
-class User extends \yii\db\ActiveRecord
+class User extends ActiveRecord implements IdentityInterface
 {
+    const STATUS_DELETED = 0;
+    const STATUS_INACTIVE = 9;
+    const STATUS_ACTIVE = 10;
+
+
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'user';
+        return '{{%user}}';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
     }
 
     /**
@@ -44,112 +66,206 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at', 'is_medico'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'string', 'max' => 255],
-            [['auth_key'], 'string', 'max' => 32],
-            [['email'], 'unique'],
-            [['password_reset_token'], 'unique'],
+            ['status', 'default', 'value' => self::STATUS_INACTIVE],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
+    public static function findIdentity($id)
     {
-        return [
-            'id' => 'ID',
-            'username' => 'Username',
-            'auth_key' => 'Auth Key',
-            'password_hash' => 'Password Hash',
-            'password_reset_token' => 'Password Reset Token',
-            'email' => 'Email',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'verification_token' => 'Verification Token',
-            'is_medico' => 'Is Medico',
-        ];
+        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**
-     * Gets query for [[Consultas]].
-     *
-     * @return \yii\db\ActiveQuery
+     * {@inheritdoc}
      */
-    public function getConsultas()
+    public static function findIdentityByAccessToken($token, $type = null)
     {
-        return $this->hasMany(Consultas::className(), ['id_medico' => 'id']);
+        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
 
     /**
-     * Gets query for [[Consultas0]].
+     * Finds user by username
      *
-     * @return \yii\db\ActiveQuery
+     * @param string $username
+     * @return \common\models\User|null
      */
-    public function getConsultas0()
+    public static function findByUsername($username)
     {
-        return $this->hasMany(Consultas::className(), ['id_utente' => 'id']);
+        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+    }
+
+
+
+
+    public static function findByEmail($email)
+    {
+        return static::findOne(['email' => $email, 'status' => self::STATUS_ACTIVE]);
+    }
+
+
+
+    /**
+     * Finds user by password reset token
+     *
+     * @param string $token password reset token
+     * @return static|null
+     */
+    public static function findByPasswordResetToken($token)
+    {
+        if (!static::isPasswordResetTokenValid($token)) {
+            return null;
+        }
+
+        return static::findOne([
+            'password_reset_token' => $token,
+            'status' => self::STATUS_ACTIVE,
+        ]);
     }
 
     /**
-     * Gets query for [[Diagnosticos]].
+     * Finds user by verification email token
      *
-     * @return \yii\db\ActiveQuery
+     * @param string $token verify email token
+     * @return static|null
      */
-    public function getDiagnosticos()
-    {
-        return $this->hasMany(Diagnostico::className(), ['id_medico' => 'id']);
+    public static function findByVerificationToken($token) {
+        return static::findOne([
+            'verification_token' => $token,
+            'status' => self::STATUS_INACTIVE
+        ]);
     }
 
     /**
-     * Gets query for [[Diagnosticos0]].
+     * Finds out if password reset token is valid
      *
-     * @return \yii\db\ActiveQuery
+     * @param string $token password reset token
+     * @return bool
      */
-    public function getDiagnosticos0()
+    public static function isPasswordResetTokenValid($token)
     {
-        return $this->hasMany(Diagnostico::className(), ['id_utente' => 'id']);
+        if (empty($token)) {
+            return false;
+        }
+
+        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
+        $expire = Yii::$app->params['user.passwordResetTokenExpire'];
+        return $timestamp + $expire >= time();
     }
 
     /**
-     * Gets query for [[Marcacaos]].
-     *
-     * @return \yii\db\ActiveQuery
+     * {@inheritdoc}
      */
-    public function getMarcacaos()
+    public function getId()
     {
-        return $this->hasMany(Marcacao::className(), ['id_Medico' => 'id']);
+        return $this->getPrimaryKey();
     }
 
     /**
-     * Gets query for [[Marcacaos0]].
-     *
-     * @return \yii\db\ActiveQuery
+     * {@inheritdoc}
      */
-    public function getMarcacaos0()
+    public function getAuthKey()
     {
-        return $this->hasMany(Marcacao::className(), ['id_Utente' => 'id']);
+        return $this->auth_key;
     }
 
     /**
-     * Gets query for [[MedicoEspecialidades]].
-     *
-     * @return \yii\db\ActiveQuery
+     * {@inheritdoc}
      */
-    public function getMedicoEspecialidades()
+    public function validateAuthKey($authKey)
     {
-        return $this->hasMany(MedicoEspecialidade::className(), ['id_medico' => 'id']);
+        return $this->getAuthKey() === $authKey;
     }
 
     /**
-     * Gets query for [[Profile]].
+     * Validates password
+     *
+     * @param string $password password to validate
+     * @return bool if password provided is valid for current user
+     */
+    public function validatePassword($password)
+    {
+        return Yii::$app->security->validatePassword($password, $this->password_hash);
+    }
+
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+
+    /**
+     * Generates "remember me" authentication key
+     */
+    public function generateAuthKey()
+    {
+        $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+
+    /**
+     * Generates new password reset token
+     */
+    public function generatePasswordResetToken()
+    {
+        $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+    }
+
+    /**
+     * Generates new token for email verification
+     */
+    public function generateEmailVerificationToken()
+    {
+        $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
+    }
+
+    /**
+     * Removes password reset token
+     */
+    public function removePasswordResetToken()
+    {
+        $this->password_reset_token = null;
+    }
+
+    public static function isMedico()
+    {
+        return  Yii::$app->authManager->getUserIdsByRole("medico"); //return array
+    }
+    public static function isAdmin()
+    {
+        return Yii::$app->authManager->getUserIdsByRole("admin"); //return array
+    }
+    public static function isUtente()
+    {
+        return  Yii::$app->authManager->getUserIdsByRole("utente"); //return array
+    }
+
+    public  function  getRole(){
+
+        return Yii::$app->authManager->getAssignments($this->id);
+    }
+    /**
+     * Gets query for [[Id0]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getProfile()
+    public function getId0()
     {
         return $this->hasOne(Profile::className(), ['id' => 'id']);
+    }
+    /**
+     * Gets query for [[Medicos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedicos()
+    {
+        return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
     }
 }
