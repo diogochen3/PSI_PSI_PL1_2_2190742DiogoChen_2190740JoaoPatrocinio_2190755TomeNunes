@@ -5,6 +5,7 @@ namespace backend\controllers;
 use backend\models\profileSearch;
 use common\models\Marcacao;
 use common\models\Profile;
+use frontend\mosquitto\controllers\NotificationController;
 use Yii;
 use yii\data\Pagination;
 use yii\debug\models\search\User;
@@ -205,6 +206,38 @@ class SiteController extends Controller
                 'pagination' => $pagination
             ]);
 
+        }
+        public function actionNotifications(){
+
+            $list = NotificationController::Receive("user_".Yii::$app->user->id);
+
+            $html = '<a class="d-flex align-items-center dropdown-item" href="[[LINK]]"><div class="mr-3">
+                     <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
+                     </div><div><span class="small text-gray-500">[[DATE]]</span>
+                     <p>[[MESSAGE]]</p></div></a>';
+
+            $result = "";
+            $count = 0;
+            $array = [];
+
+            foreach ($list as $item){
+
+                $decode = json_decode($item);
+
+                $link = "/";
+                switch ($decode->type){
+                    case NotificationController::NotificationsTypes_Marcacao: $link = "/site/table_marcacoes"; break;
+                }
+                $content = str_replace("[[LINK]]", $link,str_replace("[[DATE]]", $decode->date,str_replace("[[MESSAGE]]", $decode->message,$html)));
+                $array[strtotime($decode->date)] = $content;
+                $count++;
+            }
+
+            krsort($array);
+
+            //Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            return implode("",$array) . "|||" . $count;
         }
 
 }

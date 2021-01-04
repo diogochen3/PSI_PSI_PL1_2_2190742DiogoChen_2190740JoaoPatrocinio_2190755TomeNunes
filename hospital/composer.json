@@ -42,9 +42,6 @@
             "enabled": false
         }
     },
-    "platform": {
-        "php": "5.6.0"
-    },
 
     "repositories": [
         {
