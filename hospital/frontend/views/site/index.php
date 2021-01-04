@@ -6,22 +6,6 @@ use common\models\User;
 use frontend\mosquitto\phpMQTT;
 use PhpMqtt\Client\MQTTClient;
 
-
-
-$server = '127.0.0.1';     // change if necessary
-$port = 1883;                     // change if necessary // set your password
-$client_id = 'phpMQTT-publisher'; // make sure this is unique for connecting to sever - you could use uniqid()
-
-$mqtt = new phpMQTT($server, $port, $client_id);
-
-if ($mqtt->connect(true, NULL)) {
-    $mqtt->publish('INSERT', 'Hello World! at ' . date('r'),0, true);
-    $mqtt->close();
-} else {
-    echo "Time out!\n";
-}
-
-
 ?>
 
 
