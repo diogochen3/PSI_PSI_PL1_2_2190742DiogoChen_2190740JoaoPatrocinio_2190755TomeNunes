@@ -115,6 +115,7 @@ class MarcacaoController extends Controller
         foreach ($esp as $item) {
             $listEsp[$item->id] = $item->Name;
         }
+
         foreach ($medico as $item) {
             $listmed[$item->id] = $item->Email;
         }
