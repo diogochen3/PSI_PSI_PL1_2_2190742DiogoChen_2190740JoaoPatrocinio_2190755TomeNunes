@@ -38,7 +38,7 @@ class NotificationController
 
         if ($conn->connect(true, NULL)) {
 
-            $package = $conn->subessage(NotificationController::Notifications_Global, 0);
+            $package = $conn->subscribeAndWaitForMessage(NotificationController::Notifications_Global, 0);
 
             $conn->close();
 

@@ -108,6 +108,7 @@ class MarcacaoController extends Controller
         $medicoId = User::isMedico();
         $medico = $user->where(['id' => $medicoId])->all();
         $esp = Especialidade::find()->all();
+            $userl = Profile::find()->where(["id" => Yii::$app->user->id])->one();
         $listEsp = [];
         $listmed = [];
 
@@ -121,8 +122,8 @@ class MarcacaoController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->id_Utente = Yii::$app->user->id;
             $model->save(false);
-            $userl = Profile::find()->where(["id" => Yii::$app->user->id])->one();
-            NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ." Fez o pedido de marcação.");
+
+            NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
 
         }
 
