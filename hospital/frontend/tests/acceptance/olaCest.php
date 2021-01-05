@@ -1,7 +1,7 @@
 <?php namespace frontend\tests;
 use frontend\tests\AcceptanceTester;
 
-class firstCest
+class olaCest
 {
     public function _before(AcceptanceTester $I)
     {
@@ -10,10 +10,5 @@ class firstCest
     // tests
     public function tryToTest(AcceptanceTester $I)
     {
-    }
-
-    public function frontpageWorks(AcceptanceTester $I)
-    {
-        $I->amOnPage('/');
     }
 }
