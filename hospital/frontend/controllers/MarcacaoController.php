@@ -6,6 +6,7 @@ use common\models\User;
 use common\models\Profile;
 use frontend\models\Especialidade;
 use frontend\models\MedicoEspecialidade;
+use frontend\mosquitto\controllers\NotificationController;
 use Yii;
 use common\models\Marcacao;
 use frontend\models\MarcacaoSearch;
@@ -107,12 +108,14 @@ class MarcacaoController extends Controller
         $medicoId = User::isMedico();
         $medico = $user->where(['id' => $medicoId])->all();
         $esp = Especialidade::find()->all();
+            $userl = Profile::find()->where(["id" => Yii::$app->user->id])->one();
         $listEsp = [];
         $listmed = [];
 
         foreach ($esp as $item) {
             $listEsp[$item->id] = $item->Name;
         }
+
         foreach ($medico as $item) {
             $listmed[$item->id] = $item->Email;
         }
@@ -121,10 +124,7 @@ class MarcacaoController extends Controller
             $model->id_Utente = Yii::$app->user->id;
             $model->save(false);
 
-                return $this->redirect('../..');
-
-
-
+            NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
 
         }
 

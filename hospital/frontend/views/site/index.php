@@ -3,13 +3,10 @@
 /* @var $this yii\web\View */
 
 use common\models\User;
-
-$this->title = 'Health Schedule';
-
+use frontend\mosquitto\phpMQTT;
+use PhpMqtt\Client\MQTTClient;
 
 ?>
-
-
 
 
 

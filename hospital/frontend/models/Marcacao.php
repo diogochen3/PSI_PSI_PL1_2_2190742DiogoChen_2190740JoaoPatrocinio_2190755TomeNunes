@@ -102,4 +102,8 @@ class Marcacao extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'id_Utente']);
     }
+
+
+
+
 }

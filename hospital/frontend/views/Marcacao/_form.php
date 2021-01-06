@@ -2,6 +2,7 @@
 
 use common\models\Profile;
 use frontend\models\MedicoEspecialidade;
+use PhpMqtt\Client\MQTTClient;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -12,14 +13,20 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 /* @var $especialidades array */
 /* @var $medico array */
-//$espeuser = MedicoEspecialidade::find()->where(['id_especialidade' => 1])->select('id_medico')->column();
-//\yii\helpers\VarDumper::dump( $espeuser = MedicoEspecialidade::find()->where(['id_especialidade' => 1])->select('id_medico')->column());
-/*\yii\helpers\VarDumper::dump(        $profile = Profile::find()
-                ->where(['id' => $espeuser])
-                ->all() );*/
-/*$profile = Profile::find()
-    ->where(['id' => $espeuser])
-    ->all();*/
+
+$server   = 'front.test';
+$port     = 1883;
+$clientId = 'test-publisher';
+
+$mqtt = new MQTTClient($server, $port, $clientId);
+
+$mqtt->connect();
+$mqtt->subscribe('php-mqtt/client/test', function ($topic, $message) {
+    echo sprintf("Received message on topic [%s]: %s\n", $topic, $message);
+}, 0);
+
+$mqtt->close();
+
 
 ?>
 

@@ -153,9 +153,18 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-
-        $query = Profile::find()->where(['is_medico' => 1]);
-
+        $user = Profile::find();
+        $query = Profile::find()->where(['id' => User::isMedico()]);
+        $medico = $user->where(['id' => User::isMedico()])->all();
+        $esp = Especialidade::find()->all();
+        $listEsp = [];
+        $listmed = [];
+        foreach ($esp as $item) {
+            $listEsp[$item->id] = $item->Name;
+        }
+        foreach ($medico as $item) {
+            $listmed[$item->id] = $item->Email;
+        }
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
@@ -170,7 +179,8 @@ class SiteController extends Controller
 
         return $this->render('about', [
             'medicos' => $medicos,
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'especialidades' => $listEsp
         ]);
 
     }
@@ -351,5 +361,6 @@ class SiteController extends Controller
                 // 'utenteid' => $utenteId,
             ]);
         }
+
 
 }

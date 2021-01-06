@@ -1,4 +1,14 @@
-<?php use \yii\widgets\LinkPager; ?>
+<?php use frontend\mosquitto\phpMQTT;
+use \yii\widgets\LinkPager;
+
+
+
+
+$server = '127.0.0.1';     // change if necessary
+$port = 1883;                     // change if necessary
+
+
+?>
 
 <ul>
 
@@ -44,7 +54,7 @@
                                             <th>Nome</th>
                                             <th>Email</th>
                                             <th>Especialização</th>
-                                            <th>Marcar Consulta</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,6 +66,7 @@
 
       <td><?= $medico->First_name  ?> <?= $medico->Last_name  ?></td>
                                             <td><?= $medico->Email  ?></td>
+                                            <td></td>
                                             <td></td>
 
 
