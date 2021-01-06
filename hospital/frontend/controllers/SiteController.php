@@ -324,15 +324,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionHistorico()
-    {
-        $utenteId =  Yii::$app->user->id;
-        $marcacao = Marcacao::find();
-        $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->all();
-        return $this->render('historico', [
-            'model' => $marcacaoutente,
-        ]);
-    }
+
 
     public function actionCreate()
     {

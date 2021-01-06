@@ -103,32 +103,31 @@ class MarcacaoController extends Controller
 
         if (Yii::$app->user->can('createMarcacao') === true){
 
-        }else{
-        $user = Profile::find();
-        $medicoId = User::isMedico();
-        $medico = $user->where(['id' => $medicoId])->all();
-        $esp = Especialidade::find()->all();
+            $user = Profile::find();
+            $medicoId = User::isMedico();
+            $medico = $user->where(['id' => $medicoId])->all();
+            $esp = Especialidade::find()->all();
             $userl = Profile::find()->where(["id" => Yii::$app->user->id])->one();
-        $listEsp = [];
-        $listmed = [];
+            $listEsp = [];
+            $listmed = [];
 
-        foreach ($esp as $item) {
-            $listEsp[$item->id] = $item->Name;
-        }
+            foreach ($esp as $item) {
+                $listEsp[$item->id] = $item->Name;
+            }
 
-        foreach ($medico as $item) {
-            $listmed[$item->id] = $item->Email;
-        }
+            foreach ($medico as $item) {
+                $listmed[$item->id] = $item->Email;
+            }
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->id_Utente = Yii::$app->user->id;
-            $model->save(false);
+            if ($model->load(Yii::$app->request->post())) {
+                $model->id_Utente = Yii::$app->user->id;
+                $model->save(false);
 
-            NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
+                NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
 
-        }
-
-
+        }else {
+                return $this->redirect(['../index.php']);
+            }
 
         return $this->render('create', [
             'model' => $model,
@@ -138,7 +137,6 @@ class MarcacaoController extends Controller
         }
 
 
-        return $this->redirect(['../index.php']);
     }
 
     /**
@@ -189,5 +187,15 @@ class MarcacaoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionHistorico()
+    {
+        $utenteId =  Yii::$app->user->id;
+        $marcacao = Marcacao::find();
+        $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->all();
+        return $this->render('historico', [
+            'model' => $marcacaoutente,
+        ]);
     }
 }
