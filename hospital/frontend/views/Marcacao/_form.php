@@ -14,20 +14,6 @@ use yii\widgets\ActiveForm;
 /* @var $especialidades array */
 /* @var $medico array */
 
-$server   = 'front.test';
-$port     = 1883;
-$clientId = 'test-publisher';
-
-$mqtt = new MQTTClient($server, $port, $clientId);
-
-$mqtt->connect();
-$mqtt->subscribe('php-mqtt/client/test', function ($topic, $message) {
-    echo sprintf("Received message on topic [%s]: %s\n", $topic, $message);
-}, 0);
-
-$mqtt->close();
-
-
 ?>
 
 <div class="marcacao-form">
