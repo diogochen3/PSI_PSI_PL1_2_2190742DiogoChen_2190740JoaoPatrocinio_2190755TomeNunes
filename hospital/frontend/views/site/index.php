@@ -3,8 +3,6 @@
 /* @var $this yii\web\View */
 
 use common\models\User;
-use frontend\mosquitto\phpMQTT;
-use PhpMqtt\Client\MQTTClient;
 
 ?>
 

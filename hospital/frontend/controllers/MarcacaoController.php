@@ -2,10 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\Especialidade;
+use common\models\MedicoEspecialidade;
 use common\models\User;
 use common\models\Profile;
-use frontend\models\Especialidade;
-use frontend\models\MedicoEspecialidade;
 use frontend\mosquitto\controllers\NotificationController;
 use Yii;
 use common\models\Marcacao;
@@ -101,7 +101,7 @@ class MarcacaoController extends Controller
 
         //VarDumper::dump(Yii::$app->user->can('createMarcacao'));
 
-        if (Yii::$app->user->can('createMarcacao') === true){
+        if (Yii::$app->user->can('createMarcacao')){
 
             $user = Profile::find();
             $medicoId = User::isMedico();
