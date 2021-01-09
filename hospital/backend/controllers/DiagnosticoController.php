@@ -69,7 +69,11 @@ class DiagnosticoController extends Controller
         $model = new Diagnostico();
         $user = Profile::find();
         $idUtente = User::isUtente();
-        $utente = $user->where(['id' => $idUtente])->all();
+        $utente = [];
+        $arrayUtente = $user->where(['id' => $idUtente])->all();
+        foreach ($arrayUtente as $item) {
+            $utente[$item->id] = $item->First_name;
+        }
 
             if ($model->load(Yii::$app->request->post())) {
                 $model->id_medico = Yii::$app->user->id;

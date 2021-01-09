@@ -74,7 +74,10 @@ AppAsset::register($this);
 
 
                     <li class="nav-item">  <?= Html::a('Inicio', ['site/index']) ?></li>
-                    <li class="nav-item">  <?= Html::a('Prrrfil', ['site/profile']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Perfil', ['site/profile']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Criar diagnostico', ['diagnostico/create']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Criar receita', ['receitas/create']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Lista de Marcaçoes', ['site/table_marcacoes']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Marcaçoes', ['site/table_marcacoes']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Utentes', ['site/table']) ?></li>
                     <li class="nav-item">
