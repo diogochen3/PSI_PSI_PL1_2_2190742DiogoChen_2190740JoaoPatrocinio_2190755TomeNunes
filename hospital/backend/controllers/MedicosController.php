@@ -5,6 +5,7 @@ namespace backend\controllers;
 
 
 use common\models\Profile;
+use common\models\User;
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -68,7 +69,8 @@ class MedicosController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        $this->findModelUser($id)->delete();
+        
         return $this->redirect(['index']);
     }
 
@@ -88,4 +90,12 @@ class MedicosController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    protected function findModelUser($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
 }
