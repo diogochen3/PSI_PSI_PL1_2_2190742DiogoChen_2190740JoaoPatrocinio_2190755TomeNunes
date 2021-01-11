@@ -29,15 +29,6 @@ class MedicosController extends Controller
     }
 
 
-    public function actionView()
-    {
-        $id = Yii::$app->user->id;
-
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
 
     /**
      * Updates an existing Profile model.
@@ -51,7 +42,7 @@ class MedicosController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['site/table_medicos']);
         }
 
         return $this->render('update', [
@@ -70,8 +61,8 @@ class MedicosController extends Controller
     {
         $this->findModel($id)->delete();
         $this->findModelUser($id)->delete();
-        
-        return $this->redirect(['index']);
+
+        return $this->redirect(['site/table_medicos']);
     }
 
     /**
