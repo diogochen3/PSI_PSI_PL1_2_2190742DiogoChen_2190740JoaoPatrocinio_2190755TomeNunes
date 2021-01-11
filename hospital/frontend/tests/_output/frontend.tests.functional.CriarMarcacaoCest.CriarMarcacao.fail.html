@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Marcar Consulta</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=e6119be3d1e93121c763c07412516b02">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=fcf418ef9ef80599aec4b7aead34e9eb">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+
+    <meta name="csrf-param" content="_csrf-frontend">
+<meta name="csrf-token" content="ep-AWMT4dJ5Fj97Z6WfDK4WpB-Xjdp6hA59101V4SDk35dgam6kh7SvnuYuPX4ta_4Q_ibkc8_Zb6COaIj09fw==">
+
+<link href="/assets/e6785df6/css/bootstrap.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet"></head>
+<body>
+
+<div class="wrap">
+    <nav id="w7" class="navbar navbar-light navbar-expand-md fixed-top bg-light navbar-transparency" style="height: 80px"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w7-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/index-test.php">Health Schedule</a></div><div id="w7-collapse" class="collapse navbar-collapse"><ul id="w8" class="navbar-nav navbar-right nav"><li><a href="/index-test.php/site/index">Inicio</a></li>
+<li><a href="/index-test.php/site/about">Serviços</a></li>
+<li><a href="/index-test.php/site/about">Corpo Clinico</a></li>
+<li class="active"><a href="/index-test.php/marcacao/create">Marcações</a></li>
+<li><form action="/index-test.php/site/logout" method="post">
+<input type="hidden" name="_csrf-frontend" value="ep-AWMT4dJ5Fj97Z6WfDK4WpB-Xjdp6hA59101V4SDk35dgam6kh7SvnuYuPX4ta_4Q_ibkc8_Zb6COaIj09fw=="><button type="submit" class="btn btn-link logout">Logout (tome)</button></form></li>
+<li><a href="/index-test.php/profile/view">Perfil</a></li></ul></div></div></nav>
+
+    <div class="container">
+                        <div class="marcacao-create">
+
+    <h1>Marcar Consulta</h1>
+
+    
+<div class="marcacao-form">
+
+    <form id="w6" action="/marcacao/create" method="post">
+<input type="hidden" name="_csrf-frontend" value="ep-AWMT4dJ5Fj97Z6WfDK4WpB-Xjdp6hA59101V4SDk35dgam6kh7SvnuYuPX4ta_4Q_ibkc8_Zb6COaIj09fw==">
+    <div class="form-group field-marcacao-date required">
+<label class="control-label" for="marcacao-date">Date</label>
+<input type="date" id="marcacao-date" class="form-control" name="Marcacao[date]" aria-required="true">
+
+<div class="help-block"></div>
+</div>
+    <div class="form-group field-marcacao-tempo required">
+<label class="control-label" for="marcacao-tempo">Tempo</label>
+<input type="time" id="marcacao-tempo" class="form-control" name="Marcacao[tempo]" aria-required="true">
+
+<div class="help-block"></div>
+</div>
+
+<div class="form-group field-marcacao-id_especialidade required">
+<label class="control-label" for="marcacao-id_especialidade">Id Especialidade</label>
+<select id="marcacao-id_especialidade" class="form-control" name="Marcacao[id_especialidade]" onchange="$.get( &quot;/index-test.php/marcacao/lists&quot;, { id: $(this).val() } )
+                            .done(function( data ) {
+                                $( &quot;#marcacao-id_medico&quot; ).html( data );
+                            }
+                        );
+                    " aria-required="true">
+<option value="">-Choose a especialidade-</option>
+<option value="1">213312</option>
+<option value="2">1232313</option>
+<option value="3">1212212</option>
+</select>
+
+<div class="help-block"></div>
+</div><div class="form-group field-marcacao-id_medico required">
+<label class="control-label" for="marcacao-id_medico">Id Medico</label>
+<select id="marcacao-id_medico" class="form-control" name="Marcacao[id_Medico]" aria-required="true">
+<option value="prompt">-Choose o medico-</option>
+</select>
+
+<div class="help-block"></div>
+</div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Save</button>    </div>
+
+    </form>
+</div>
+
+</div>
+    </div>
+</div>
+
+
+    <div class="row" style="background-color: rgb(41,44,47); margin-right: 0;">
+        <div class="col-sm-6 col-md-4 footer-navigation">
+            <h3 style="color: blue">Health Schedule</h3>
+            <p class="company-name " style="     margin-left: 50px; margin-top: 25%;">Health schedule © 2020</p>
+        </div>
+        <div class="col-sm-6 col-md-4 footer-contacts">
+            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                <p style="color: #ffffff;"><span class="new-line-span">Algures em</span> Leiria, Portugal</p>
+            </div>
+            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                <p class="footer-center-info email text-left" style="color: #ffffff;"> +1 555 123456</p>
+            </div>
+            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                <p style="color: #ffffff;"> <a href="#" target="_blank">hospital@hospital.com</a></p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-4 footer-about">
+            <h4 style="color: #ffffff;">Sobre</h4>
+            <p style="color: #ffffff;"><strong>O&nbsp;</strong>Health schedule&nbsp;<strong>é uma unidade vocacionada para a prestação de cuidados de saúde. Temos ao seu dispor uma ampla oferta de serviços nas várias especialidades médicas e cirúrgicas.</strong><br><strong>Contando com profissionais de excelência e infra-estruturas equipadas, o Hospital tem como objetivo prestar um eficaz tratamento aos seus pacientes.</strong><br></p>
+            <div
+                    class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+        </div>
+    </div>
+</footer>
+
+<script src="/assets/8fe25452/jquery.js"></script>
+<script src="/assets/dce73b17/yii.js"></script>
+<script src="/assets/dce73b17/yii.validation.js"></script>
+<script src="/assets/dce73b17/yii.activeForm.js"></script>
+<script src="/assets/e6785df6/js/bootstrap.js"></script>
+<script>jQuery(function ($) {
+jQuery('#w6').yiiActiveForm([{"id":"marcacao-date","name":"date","container":".field-marcacao-date","input":"#marcacao-date","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Date cannot be blank."});}},{"id":"marcacao-tempo","name":"tempo","container":".field-marcacao-tempo","input":"#marcacao-tempo","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Tempo cannot be blank."});}},{"id":"marcacao-id_especialidade","name":"id_especialidade","container":".field-marcacao-id_especialidade","input":"#marcacao-id_especialidade","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Especialidade cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Id Especialidade must be an integer.","skipOnEmpty":1});}},{"id":"marcacao-id_medico","name":"id_Medico","container":".field-marcacao-id_medico","input":"#marcacao-id_medico","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Medico cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Id Medico must be an integer.","skipOnEmpty":1});}}], []);
+});</script></body>
+</html>
