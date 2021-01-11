@@ -1,4 +1,5 @@
-<?php use \yii\widgets\LinkPager;
+<?php use yii\helpers\Html;
+use \yii\widgets\LinkPager;
 
 /* @var $medicos array */?>
 
@@ -53,7 +54,8 @@
                                     <th>Data de Nascimento</th>
                                     <th>Codigo Postal</th>
                                     <th>Morada</th>
-
+                                    <th>Editar os Medicos</th>
+                                    <th>Eliminar os Medicos</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -74,8 +76,14 @@
                                     <td><?= $medico->Birth_date  ?></td>
                                     <td><?= $medico->postal_code  ?></td>
                                     <td><?= $medico->Address  ?></td>
-
-
+                                    <td><?= Html::a('Update', ['medicos/update', 'id' => $medico->id], ['class' => 'btn btn-primary']) ?></td>
+                                    <td><?= Html::a('Delete', ['delete', 'id' => $medico->id], [
+                            'class' => 'btn btn-danger',
+                            'data' => [
+                                'confirm' => 'Are you sure you want to delete this item?',
+                                'method' => 'post',
+                            ],
+                        ])?></td>
 
 
 
