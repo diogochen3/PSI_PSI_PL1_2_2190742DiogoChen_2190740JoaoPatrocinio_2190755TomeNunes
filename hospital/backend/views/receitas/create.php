@@ -6,8 +6,6 @@ use yii\helpers\Html;
 /* @var $model common\models\Receitas */
 
 $this->title = 'Create Receitas';
-$this->params['breadcrumbs'][] = ['label' => 'Receitas', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="receitas-create">
 

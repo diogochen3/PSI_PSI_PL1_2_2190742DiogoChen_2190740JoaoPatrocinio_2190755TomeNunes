@@ -33,6 +33,7 @@ $this->title = 'Health Schedule';
                     <th>Médico</th>
                     <th>Especialidade</th>
                     <th>Aceito</th>
+                    <th>Editar</th>
                     <th>Eliminar</th>
                 </tr>
                 </thead>
@@ -43,9 +44,12 @@ $this->title = 'Health Schedule';
                     <td><?= $item->medico->id0->First_name; ?> <?= $item->medico->id0->Last_name; ?></td>
                     <td><?= $item->especialidade->Name; ?></td>
                     <?php if ($item->Aceitar == 0) { ?>
-                        <td> <?= Html::a('Não foi aceite', ['update', 'id' => $item->id], ['class' => 'btn btn-primary']) ?></td>
+                        <td> <?= Html::a('Não foi aceite', '', ['class' => 'btn btn-primary']) ?></td>
+                        <td> <?= Html::a('editar', ['update', 'id' => $item->id], ['class' => 'btn btn-primary']) ?></td>
+
                     <?php }elseif($item->Aceitar == 1){  ?>
-                    <td><?= "Aceite" ?></td>
+                        <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-success']) ?></td>
+                        <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-danger']) ?></td>
                     <?php }else{ ?>
                     <td><?= "Ainda não foi visto" ?></td>
                     <?php } ?>
