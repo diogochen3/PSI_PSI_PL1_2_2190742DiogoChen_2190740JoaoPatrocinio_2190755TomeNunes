@@ -66,7 +66,6 @@ use yii\bootstrap\ActiveForm;
              
             </div>
 
-             <?= $form->field($model, 'username')->textInput()->label("Username") ?>
             <?= $form->field($model, 'password')->passwordInput() ?>
 
             <div class="form-group">

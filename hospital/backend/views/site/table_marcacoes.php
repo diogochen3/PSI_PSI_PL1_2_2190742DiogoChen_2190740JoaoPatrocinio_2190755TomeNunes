@@ -56,9 +56,11 @@
 
                                 <tr>
                                     <?php
+
                                     foreach ($marcacoes as $marcacao) : ?>
 
                                     <td></td>
+
                                     <td><?= $marcacao->utente->username  ?></td>
                                     <td><?= $marcacao->medico->username  ?></td>
                                     <td><?= $marcacao->especialidade->Name  ?></td>

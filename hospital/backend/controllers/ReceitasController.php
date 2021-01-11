@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Receitas;
-use yii\data\ActiveDataProvider;
+use backend\models\ReceitasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,11 +35,11 @@ class ReceitasController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Receitas::find(),
-        ]);
+        $searchModel = new ReceitasSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -67,7 +67,7 @@ class ReceitasController extends Controller
         $model = new Receitas();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['../index']);
         }
 
         return $this->render('create', [
@@ -87,7 +87,7 @@ class ReceitasController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['../index']);
         }
 
         return $this->render('update', [
@@ -106,7 +106,7 @@ class ReceitasController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['../index']);
     }
 
     /**

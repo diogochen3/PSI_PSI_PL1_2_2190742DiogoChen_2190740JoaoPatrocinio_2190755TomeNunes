@@ -208,6 +208,27 @@ class SiteController extends Controller
             ]);
 
         }
+
+    public function actionTable_medicos(){
+        $query = Profile::find()->where("is_medico = 1");
+
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 10,
+            'totalCount' => $query->count()
+        ]);
+
+        $medicos = $query->orderBy('id')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('table_medicos', [
+            'medicos' => $medicos,
+            'pagination' => $pagination
+        ]);
+
+    }
         public function actionNotifications(){
 
             $list = NotificationController::Receive("user_".Yii::$app->user->id);
