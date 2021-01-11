@@ -34,13 +34,9 @@ use yii\widgets\ActiveForm;
                             }
                         );
                     '
-        /* '$.post( "'.Yii::$app->urlManager->createUrl('marcacao/lists?id=').'"+$(this).val(), function( data ) {
-           $( "select#id_medico" ).html( data );*/
-				  	//		});'
-    ]);
+    ]);?>
 
-$dataPost=ArrayHelper::map(Profile::find()->all(), 'id', 'First_name');
-echo $form->field($model, 'id_Medico')
+<?= $form->field($model, 'id_Medico')
     ->dropDownList(
         ['prompt'=>'-Choose o medico-']
     );?>
