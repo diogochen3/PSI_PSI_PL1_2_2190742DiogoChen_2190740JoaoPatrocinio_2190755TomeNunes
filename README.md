@@ -14,10 +14,10 @@ Admin: tome.nunes902@gmail.com\
 pass: 1234567890
 
 Medico\
-pass: 123
+pass: 1234567890
 
 Utente\
-pass: 123
+pass: 1234567890
 
 
 jira: https://2190719.atlassian.net/jira/software/projects/PP2222/boards/5
