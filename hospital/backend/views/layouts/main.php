@@ -73,11 +73,9 @@ AppAsset::register($this);
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
 
 
-                    <li class="nav-item">  <?= Html::a('Inicio', ['site/index']) ?></li>
                     <li class="nav-item">  <?= Html::a('Perfil', ['site/profile']) ?></li>
                     <li class="nav-item">  <?= Html::a('Criar diagnostico', ['diagnostico/create']) ?></li>
                     <li class="nav-item">  <?= Html::a('Criar receita', ['receitas/create']) ?></li>
-                    <li class="nav-item">  <?= Html::a('Lista de Marcaçoes', ['site/table_marcacoes']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Marcaçoes', ['site/table_marcacoes']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Utentes', ['site/table']) ?></li>
                     <li class="nav-item">
@@ -85,8 +83,8 @@ AppAsset::register($this);
                     $user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
 
                     if(isset($user['admin'])){
-                        ?><li class="nav-item">  <?= Html::a('Lista de medicos', ['site/table_utentes']);?><?php
-                        ?><li class="nav-item"> <?= Html::a('Definições', ['site/table_utentes']);?><?php
+                        ?><li class="nav-item">  <?= Html::a('Lista de medicos', ['site/table_medicos']);?><?php
+                        ?><li class="nav-item"> <?php
                     }
 
 
