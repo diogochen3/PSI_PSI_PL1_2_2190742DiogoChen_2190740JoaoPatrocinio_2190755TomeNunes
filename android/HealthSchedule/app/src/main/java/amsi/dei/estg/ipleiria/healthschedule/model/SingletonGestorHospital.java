@@ -43,7 +43,7 @@ public class SingletonGestorHospital {
     }
 
 
-    public void loginAPI(final String email, final String pass, final Context applicationContext) {
+   /* public void loginAPI(final String email, final String pass, final Context applicationContext) {
 
         StringRequest req =new StringRequest(Request.Method.POST,
                     mUrlAPILogin, new Response.Listener<String>() {
@@ -76,5 +76,7 @@ public class SingletonGestorHospital {
 
             volleyQueue.add(req);
 
-    }
+    }*/
+
+
 }

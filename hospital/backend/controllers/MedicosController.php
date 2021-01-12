@@ -62,7 +62,11 @@ class MedicosController extends Controller
         $this->findModel($id)->delete();
         $this->findModelUser($id)->delete();
 
+<<<<<<< Updated upstream
         return $this->redirect(['site/table_medicos']);
+=======
+        return $this->redirect(['index']);
+>>>>>>> Stashed changes
     }
 
     /**
