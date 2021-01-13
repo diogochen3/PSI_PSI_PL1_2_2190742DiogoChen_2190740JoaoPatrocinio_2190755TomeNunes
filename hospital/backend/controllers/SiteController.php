@@ -3,6 +3,7 @@ namespace backend\controllers;
 
 
 use backend\models\profileSearch;
+use backend\models\SignupForm;
 use common\models\Marcacao;
 use common\models\Profile;
 use frontend\mosquitto\controllers\NotificationController;
@@ -207,6 +208,27 @@ class SiteController extends Controller
             ]);
 
         }
+
+    public function actionTable_medicos(){
+        $query = Profile::find()->where("is_medico = 1");
+
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 10,
+            'totalCount' => $query->count()
+        ]);
+
+        $medicos = $query->orderBy('id')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('table_medicos', [
+            'medicos' => $medicos,
+            'pagination' => $pagination
+        ]);
+
+    }
         public function actionNotifications(){
 
             $list = NotificationController::Receive("user_".Yii::$app->user->id);
@@ -239,5 +261,16 @@ class SiteController extends Controller
 
             return implode("",$array) . "|||" . $count;
         }
-
+        public function actionSignup()
+        {
+            $model = new SignupForm();
+            VarDumper::dump($model->NIF);
+            if ($model->load(Yii::$app->request->post()) && $model->signup()) {
+                Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+                return $this->goHome();
+            }
+            return $this->render('signup', [
+                'model' => $model,
+                ]);
+    }
 }

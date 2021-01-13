@@ -1,7 +1,6 @@
 <?php
 namespace common\models;
 
-use frontend\models\Especialidade;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
@@ -247,6 +246,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasOne(Profile::className(), ['id' => 'id']);
     }
+
     /**
      * Gets query for [[Medicos]].
      *
@@ -256,4 +256,76 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
     }
+
+    /**
+     * Gets query for [[Consultas]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConsultas()
+    {
+        return $this->hasMany(Consultas::className(), ['id_medico' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Consultas0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConsultas0()
+    {
+        return $this->hasMany(Consultas::className(), ['id_utente' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Diagnosticos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDiagnosticos()
+    {
+        return $this->hasMany(Diagnostico::className(), ['id_medico' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Diagnosticos0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDiagnosticos0()
+    {
+        return $this->hasMany(Diagnostico::className(), ['id_utente' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Marcacaos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMarcacaos()
+    {
+        return $this->hasMany(Marcacao::className(), ['id_Medico' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Marcacaos0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMarcacaos0()
+    {
+        return $this->hasMany(Marcacao::className(), ['id_Utente' => 'id']);
+    }
+
+    /**
+     * Gets query for [[MedicoEspecialidades]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedicoEspecialidades()
+    {
+        return $this->hasMany(MedicoEspecialidade::className(), ['id_medico' => 'id']);
+    }
+
+
 }

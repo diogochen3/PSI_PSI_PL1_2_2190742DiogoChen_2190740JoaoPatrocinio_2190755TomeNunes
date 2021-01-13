@@ -17,9 +17,9 @@ use yii\bootstrap\ActiveForm;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'email')->textInput(['autofocus' => true , 'class' => 'loginform-email']) ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password')->passwordInput( ['class' => 'loginform-password']) ?>
 
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 

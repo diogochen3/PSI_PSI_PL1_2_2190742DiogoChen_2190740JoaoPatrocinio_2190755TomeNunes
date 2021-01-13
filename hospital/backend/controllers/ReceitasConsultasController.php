@@ -63,28 +63,7 @@ class ReceitasConsultasController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
-        $model = new ReceitasConsultas();
-        $receitaConsultas = ReceitasConsultas::find()->all();
-        $listRec = [];
-        $listCon = [];
-        foreach ($receitaConsultas as $item) {
-            $listRec[$item->Receitas->id] = $item->Receitas->Name;
-            $listCon[$item->consultas->id] = $item->consultas->Utente->id0->First_name;
-        }
 
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id_receitas' => $model->id_receitas, 'id_consultas' => $model->id_consultas]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-            'conculstas' => $listCon,
-            'receitas' => $listRec
-        ]);
-    }
 
     /**
      * Updates an existing ReceitasConsultas model.

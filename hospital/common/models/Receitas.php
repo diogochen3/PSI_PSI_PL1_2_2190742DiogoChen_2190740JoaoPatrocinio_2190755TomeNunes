@@ -2,15 +2,14 @@
 
 namespace common\models;
 
-use frontend\models\Consultas;
-use frontend\models\ReceitasConsultas;
 use Yii;
 
 /**
  * This is the model class for table "receitas".
  *
  * @property int $id
- * @property int $Name
+ * @property string $Nome_medicamento
+ * @property int $quantidade
  *
  * @property ReceitasConsultas[] $receitasConsultas
  * @property Consultas[] $consultas
@@ -31,9 +30,9 @@ class Receitas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'Name'], 'required'],
-            [['id', 'Name'], 'integer'],
-            [['id'], 'unique'],
+            [['Nome_medicamento', 'quantidade'], 'required'],
+            [['quantidade'], 'integer'],
+            [['Nome_medicamento'], 'string', 'max' => 255],
         ];
     }
 
@@ -44,7 +43,8 @@ class Receitas extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'Name' => 'Name',
+            'Nome_medicamento' => 'Nome Medicamento',
+            'quantidade' => 'Quantidade',
         ];
     }
 
@@ -62,7 +62,6 @@ class Receitas extends \yii\db\ActiveRecord
      * Gets query for [[Consultas]].
      *
      * @return \yii\db\ActiveQuery
-     * @throws \yii\base\InvalidConfigException
      */
     public function getConsultas()
     {

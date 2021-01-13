@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Consultas;
 use Yii;
 use common\models\Profile;
 use yii\data\ActiveDataProvider;
@@ -139,5 +140,32 @@ class ProfileController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionConsultas()
+    {
+        $id = Yii::$app->user->id;
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
+    public function actionDiagnostica()
+    {
+        $id = Yii::$app->user->id;
+
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
+
+    }
+    public function actionReceitas($id)
+    {
+        $Consultas = Consultas::find()->where([$id => 'id']);
+
+        return $this->render('receitas', [
+            'model' => $Consultas,
+        ]);
     }
 }

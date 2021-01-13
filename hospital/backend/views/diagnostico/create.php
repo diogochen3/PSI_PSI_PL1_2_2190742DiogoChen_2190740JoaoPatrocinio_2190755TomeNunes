@@ -4,10 +4,10 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Diagnostico */
+/* @var $utente common\models\Diagnostico */
 
 $this->title = 'Create Diagnostico';
-$this->params['breadcrumbs'][] = ['label' => 'Diagnosticos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="diagnostico-create">
 
@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'utente' => $utente
     ]) ?>
 
 </div>

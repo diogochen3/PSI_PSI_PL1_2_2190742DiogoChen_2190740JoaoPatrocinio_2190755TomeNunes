@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
 
     <?= $form->field($model, 'id_utente')->dropDownList($utente,
-            ['prompt'=>'-Choose o utente-']
+            ['prompt'=>'-escolher o utente-']
         );?>
 
     <div class="form-group">

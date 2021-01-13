@@ -2,10 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\Especialidade;
+use common\models\MedicoEspecialidade;
 use common\models\User;
 use common\models\Profile;
-use frontend\models\Especialidade;
-use frontend\models\MedicoEspecialidade;
 use frontend\mosquitto\controllers\NotificationController;
 use Yii;
 use common\models\Marcacao;
@@ -101,7 +101,7 @@ class MarcacaoController extends Controller
 
         //VarDumper::dump(Yii::$app->user->can('createMarcacao'));
 
-        if (Yii::$app->user->can('createMarcacao') === true){
+        if (Yii::$app->user->can('createMarcacao')){
 
             $user = Profile::find();
             $medicoId = User::isMedico();
@@ -125,15 +125,15 @@ class MarcacaoController extends Controller
 
                 NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
 
-        }else {
-                return $this->redirect(['../index.php']);
-            }
+        }
 
         return $this->render('create', [
             'model' => $model,
             'especialidades' => $listEsp,
             'medico' => $listmed,
         ]);
+        }else {
+            return $this->redirect(['../index.php']);
         }
 
 
@@ -151,7 +151,7 @@ class MarcacaoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['historico']);
         }
 
         return $this->render('update', [
@@ -170,7 +170,7 @@ class MarcacaoController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['historico']);
     }
 
     /**

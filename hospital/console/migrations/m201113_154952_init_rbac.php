@@ -65,6 +65,7 @@ class m201113_154952_init_rbac extends Migration
         $updateMedico->description = 'Alterar Medico';
         $auth->add($updateMedico);
 
+
         // add "author" role and give this role the "createPost" permission
         $utente = $auth->createRole('utente');
         $auth->add($utente);

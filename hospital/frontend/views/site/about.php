@@ -3,11 +3,6 @@ use \yii\widgets\LinkPager;
 
 
 
-
-$server = '127.0.0.1';     // change if necessary
-$port = 1883;                     // change if necessary
-
-
 ?>
 
 <ul>

@@ -5,7 +5,7 @@ namespace common\models;
 use Yii;
 
 use common\models\User;
-use frontend\models\Especialidade;
+use common\models\Especialidade;
 
 /**
  * This is the model class for table "marcacao".

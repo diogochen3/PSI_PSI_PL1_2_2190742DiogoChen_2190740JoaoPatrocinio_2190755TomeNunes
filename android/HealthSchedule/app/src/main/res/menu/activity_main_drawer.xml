@@ -1,4 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
 
+        <item
+            android:id="@+id/nav_perfil"
+            android:title="Perfil" />
+
+    <item android:title="Lista">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_consultas"
+                    android:title="Lista de Consultas" />
+                <item
+                    android:id="@+id/nav_marcacao"
+                    android:title="Lista de marcações" />
+                <item
+                    android:id="@+id/nav_medicos"
+                    android:title="Lista de medicos" />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Outros">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_contato"
+                    android:title="Contato" />
+                <item
+                    android:id="@+id/nav_outros"
+                    android:title="Lista de marcações" />
+            </group>
+        </menu>
+    </item>
 </menu>
