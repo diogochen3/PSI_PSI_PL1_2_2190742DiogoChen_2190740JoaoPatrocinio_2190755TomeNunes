@@ -16,9 +16,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import com.example.healthschedule.R;
 import com.google.android.material.navigation.NavigationView;
 
-import amsi.dei.estg.ipleiria.healthschedule.R;
 
 public class MenuMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 

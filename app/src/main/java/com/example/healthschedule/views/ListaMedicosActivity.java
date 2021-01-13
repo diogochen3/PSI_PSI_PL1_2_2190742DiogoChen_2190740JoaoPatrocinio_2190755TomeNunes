@@ -4,7 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import amsi.dei.estg.ipleiria.healthschedule.R;
+import com.example.healthschedule.R;
+
 
 public class ListaMedicosActivity extends AppCompatActivity {
 

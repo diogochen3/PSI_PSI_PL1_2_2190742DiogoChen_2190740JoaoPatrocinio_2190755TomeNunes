@@ -8,9 +8,10 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import amsi.dei.estg.ipleiria.healthschedule.R;
-import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
-import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
+import com.example.healthschedule.R;
+import com.example.healthschedule.listeners.HospitalLoginListener;
+import com.example.healthschedule.model.SingletonGestorHospital;
+
 
 public class LoginActivity extends AppCompatActivity implements HospitalLoginListener {
 
@@ -21,7 +22,7 @@ public class LoginActivity extends AppCompatActivity implements HospitalLoginLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        setTitle(getString(R.string.Title_login));
+       // setTitle(getString(R.string.));
 
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPassword);

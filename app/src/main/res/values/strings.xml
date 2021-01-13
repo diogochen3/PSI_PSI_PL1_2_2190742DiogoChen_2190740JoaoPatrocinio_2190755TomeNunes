@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HealthSchedule</string>
+    <string name="ndOpen">open</string>
+    <string name="ndClose">close</string>
+    <string name="email">email</string>
+    <string name="palavra_passe">palavra-passe</string>
+    <string name="entrar">entrar</string>
 </resources>
