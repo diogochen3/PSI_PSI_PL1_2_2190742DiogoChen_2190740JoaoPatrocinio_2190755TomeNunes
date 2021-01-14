@@ -80,8 +80,8 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
         switch (menuItem.getItemId()) {
             case R.id.nav_perfil:
-               /* fragment=new ListaLivrosFragment();
-                setTitle(menuItem.getTitle());*/
+                fragment=new PerfilFragment();
+                setTitle(menuItem.getTitle());
                 //  System.out.println("-->Nav Estatico");
                 break;
             case R.id.nav_consultas:

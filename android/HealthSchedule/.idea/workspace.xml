@@ -9,6 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="951b08b2-0cbb-4748-b17b-0c74301fae0e" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../../Health_Schedule/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../Health_Schedule/.gradle/checksums/checksums.lock" afterDir="false" />
@@ -815,13 +816,21 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/Receita.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/Receita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+=======
+    <list default="true" id="12803b02-0713-4fd5-83c9-f980010392a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_perfil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_perfil.xml" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_XL_API_28]" />
+=======
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[88f8fc85]" />
+>>>>>>> master
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -932,7 +941,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="951b08b2-0cbb-4748-b17b-0c74301fae0e" name="Default Changelist" comment="" />
+      <changelist id="12803b02-0713-4fd5-83c9-f980010392a4" name="Default Changelist" comment="" />
       <created>1608910169981</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -966,6 +975,7 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1610464042639" />
+<<<<<<< HEAD
     <state x="651" y="170" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610635221200" />
     <state width="1860" height="273" key="GridCell.Tab.0.bottom" timestamp="1610637636480">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -989,6 +999,26 @@
     <state width="1860" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610637636480" />
     <state x="259" y="11" key="SettingsEditor" timestamp="1610638635376">
       <screen x="0" y="0" width="1920" height="1040" />
+=======
+    <state width="661" height="178" key="GridCell.Tab.0.bottom" timestamp="1610639590195">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610639590195" />
+    <state width="661" height="178" key="GridCell.Tab.0.center" timestamp="1610639590195">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610639590195" />
+    <state width="661" height="178" key="GridCell.Tab.0.left" timestamp="1610639590195">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610639590195" />
+    <state width="661" height="178" key="GridCell.Tab.0.right" timestamp="1610639590195">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="661" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610639590195" />
+    <state x="184" y="8" key="SettingsEditor" timestamp="1610573822453">
+      <screen x="0" y="0" width="1366" height="728" />
+>>>>>>> master
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1610573822453" />
     <state x="259" y="11" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610638635376" />

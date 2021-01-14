@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc0ed476-cd75-4ead-b820-0617a872a75c" name="Default Changelist" comment="">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileChanges/last-build.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileContent/fileContent.lock" beforeDir="false" />
@@ -722,6 +723,9 @@
       <change beforePath="$PROJECT_DIR$/../android/HealthSchedule/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/HealthSchedule/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../android/HealthSchedule/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/HealthSchedule/.idea/gradle.xml" afterDir="false" />
 >>>>>>> Stashed changes
+=======
+      <change beforePath="$PROJECT_DIR$/../android/HealthSchedule/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/HealthSchedule/.idea/workspace.xml" afterDir="false" />
+>>>>>>> master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -860,6 +864,7 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="331" y="192" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1610556370854" />
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1610572464809">
       <screen x="0" y="0" width="1366" height="728" />
@@ -873,20 +878,27 @@
     <state x="651" y="170" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610634666462" />
 >>>>>>> Stashed changes
     <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1610557938159">
+=======
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1610639607100">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610557938159" />
-    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1610557938159">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1610639607100" />
+    <state width="1285" height="163" key="GridCell.Tab.0.bottom" timestamp="1610639617582">
+>>>>>>> master
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610557938159" />
-    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1610557938159">
+    <state width="1285" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610639617582" />
+    <state width="1285" height="163" key="GridCell.Tab.0.center" timestamp="1610639617582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610557938159" />
-    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1610557938159">
+    <state width="1285" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610639617582" />
+    <state width="1285" height="163" key="GridCell.Tab.0.left" timestamp="1610639617581">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610557938159" />
+    <state width="1285" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610639617581" />
+    <state width="1285" height="163" key="GridCell.Tab.0.right" timestamp="1610639617582">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1285" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610639617582" />
   </component>
 </project>
