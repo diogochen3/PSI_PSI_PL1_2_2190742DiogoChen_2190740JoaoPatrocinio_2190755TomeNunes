@@ -1,4 +1,4 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
-public class Marcaco {
+public class Marcacao {
 }

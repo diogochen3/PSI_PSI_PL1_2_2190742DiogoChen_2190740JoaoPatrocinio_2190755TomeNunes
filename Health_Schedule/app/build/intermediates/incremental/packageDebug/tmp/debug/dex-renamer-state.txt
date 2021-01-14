@@ -1,4 +1,4 @@
-#Wed Jan 13 17:32:15 GMT 2021
-base.0=C\:\\wamp64\\www\\PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes\\Health_Schedule\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Thu Jan 14 14:28:43 GMT 2021
+base.0=C\:\\wamp64\\www\\PSI\\Health_Schedule\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
