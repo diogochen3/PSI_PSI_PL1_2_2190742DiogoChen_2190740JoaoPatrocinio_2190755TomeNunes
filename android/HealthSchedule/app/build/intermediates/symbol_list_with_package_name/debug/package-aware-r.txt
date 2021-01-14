@@ -1984,7 +1984,15 @@ id transition_transform
 id triangle
 id tvAno
 id tvAutor
+id tvDNascimento
+id tvEmail
+id tvEndereco
+id tvGenero
+id tvLNome
+id tvNif
+id tvPNome
 id tvSerie
+id tvTelefone
 id tvTitulo
 id unchecked
 id uniform

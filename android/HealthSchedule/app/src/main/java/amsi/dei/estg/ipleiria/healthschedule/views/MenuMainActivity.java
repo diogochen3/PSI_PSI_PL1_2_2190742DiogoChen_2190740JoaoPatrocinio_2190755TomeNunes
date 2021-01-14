@@ -71,7 +71,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         email = sharedPreferences.getString(EMAIL, "sem email");
         View hview= navigationView.getHeaderView(0);
         TextView tvEmail= findViewById(R.id.Email);
-        tvEmail.setText(email);
+      //  tvEmail.setText(email);
     }
 
     @Override
@@ -80,9 +80,9 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
         switch (menuItem.getItemId()) {
             case R.id.nav_perfil:
-               /* fragment=new ListaLivrosFragment();
-                setTitle(menuItem.getTitle());*/
-                //  System.out.println("-->Nav Estatico");
+                fragment=new PerfilFragment();
+                setTitle(menuItem.getTitle());
+              //   System.out.println("-->Nav Estatico");
                 break;
             case R.id.nav_consultas:
              /*   fragment=new DinamicoFragment();
