@@ -71,7 +71,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         email = sharedPreferences.getString(EMAIL, "sem email");
         View hview= navigationView.getHeaderView(0);
         TextView tvEmail= findViewById(R.id.Email);
-        tvEmail.setText(email);
+
     }
 
     @Override
