@@ -123,7 +123,7 @@ class MarcacaoController extends Controller
                 $model->id_Utente = Yii::$app->user->id;
                 $model->save(false);
 
-                NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->First_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
+                NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->Last_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
 
         }
 

@@ -34,10 +34,17 @@ amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.java
  amsi.dei.estg.ipleiria.healthschedule.model.Marcacao
 amsi/dei/estg/ipleiria/healthschedule/model/Receita.java
  amsi.dei.estg.ipleiria.healthschedule.model.Receita
+<<<<<<< HEAD
 amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java
  amsi.dei.estg.ipleiria.healthschedule.views.MenuMainActivity
 amsi/dei/estg/ipleiria/healthschedule/views/ContatoFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.ContatoFragment
+=======
+amsi/dei/estg/ipleiria/healthschedule/views/ContatoFragment.java
+ amsi.dei.estg.ipleiria.healthschedule.views.ContatoFragment
+amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java
+ amsi.dei.estg.ipleiria.healthschedule.views.MenuMainActivity
+>>>>>>> e5a610bdf20877f84a14457011b934921a66913a
 amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment
  amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment$1

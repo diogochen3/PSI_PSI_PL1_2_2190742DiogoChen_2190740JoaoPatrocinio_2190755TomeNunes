@@ -20,7 +20,7 @@ class DiagnosticoController extends ActiveController
         $recs= $climodel::find()->all();
         return['total' => count($recs)];
     }
-    public function actionEspecialidadedel($id)
+    public function actionDiagnosticodel($id)
     {
 
         $climodel= new$this->modelClass;
@@ -42,7 +42,7 @@ class DiagnosticoController extends ActiveController
         $recs = $climodel::find()->limit($limit)->all();
         return ['limite' => $limit, 'Records' => $recs];
     }
-    public function actionCespecialidade()    {
+    public function actionCdiagnostico()    {
         $descricao = Yii::$app->request->post("descricao");
         $date = Yii::$app->request->post("date");
         $situacao = Yii::$app->request->post("situacao");
@@ -63,7 +63,7 @@ class DiagnosticoController extends ActiveController
             throw new \yii\web\HttpException(422, $err );
         }
     }
-    public function actionEspecialidadenew($id)    {
+    public function actionDiagnosticonew($id)    {
         $descricao = Yii::$app->request->post("descricao");
         $date = Yii::$app->request->post("date");
         $situacao = Yii::$app->request->post("situacao");
@@ -82,7 +82,7 @@ class DiagnosticoController extends ActiveController
             $rec->save();
             return['SaveError' => 'Ok'];
         }
-        throw new NotFoundHttpException(" ID Especialidade notfound!");
+        throw new NotFoundHttpException(" ID Diagnostico notfound!");
 
 
 

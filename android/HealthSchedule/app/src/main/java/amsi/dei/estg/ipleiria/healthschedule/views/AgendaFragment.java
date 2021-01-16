@@ -73,7 +73,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
     @Override
     public void onRefresh() {
-        SingletonGestorHospital.getInstance(getContext()).getAllLivroAPI(getContext());
+        SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         swipeRefreshLayout.setRefreshing(false);
         //Toast.makeText(getContext(),"Toquei no refresh",Toast.LENGTH_SHORT).show();
     }

@@ -82,7 +82,7 @@ public class SingletonGestorHospital {
             volleyQueue.add(req);
 
     }*/
-   public void getAllLivroAPI(final Context context){
+   public void getAllMarcacaoAPI(final Context context){
        if (!HospitalJsonParser.isConnectionInternet(context)) {
 
        }else {
@@ -90,7 +90,7 @@ public class SingletonGestorHospital {
                @Override
                public void onResponse(JSONArray response) {
                    Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
-                   adicionarLivrosBD(Marcacao);
+                   adicionarMarcacoesBD(Marcacao);
 
 
                    if(MarcacoesListener != null){
@@ -107,14 +107,14 @@ public class SingletonGestorHospital {
 
        }
    }
-    public void adicionarLivrosBD(ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> marcacoes){
+    public void adicionarMarcacoesBD(ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> marcacoes){
         MarcacaoDB.removerAllMarcacoesBD();
             for(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao l: marcacoes){
-            adicionarLivroBD(l);
+                adicionarMarcacaoBD(l);
         }
 
     }
-    public void adicionarLivroBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
+    public void adicionarMarcacaoBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
         MarcacaoDB.adicionarMarcacaoBD(marcacao);
 
 
