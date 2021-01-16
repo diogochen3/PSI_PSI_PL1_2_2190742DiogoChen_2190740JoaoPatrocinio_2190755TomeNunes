@@ -1,6 +1,9 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
+import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
+import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
+import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,8 +25,10 @@ import com.google.android.material.navigation.NavigationView;
 public class MenuMainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
 
     private static final String EMAIL = "email";
-
     private String email="";
+
+    private Profile perfil;
+
     private NavigationView navigationView;
     private DrawerLayout drawer;
 
@@ -53,7 +58,6 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
 
         navigationView.setNavigationItemSelectedListener(this);
-
         carregarFragmentoInicial();
     }
 
@@ -81,27 +85,28 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         switch (menuItem.getItemId()) {
             case R.id.nav_perfil:
                 fragment=new PerfilFragment();
+                SingletonGestorHospital.getInstance(getApplicationContext()).getAllProfileAPI(getApplicationContext());
                 setTitle(menuItem.getTitle());
               //   System.out.println("-->Nav Estatico");
                 break;
             case R.id.nav_consultas:
-             /*   fragment=new DinamicoFragment();
-                setTitle(menuItem.getTitle());*/
+                fragment=new ListaConsultasFragment();
+                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Dinamico");
                 break;
             case R.id.nav_marcacao:
-               /* fragment=new DinamicoFragment();
-                setTitle(menuItem.getTitle());*/
+                fragment=new AgendaFragment();
+                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Dinamico");
                 break;
             case R.id.nav_medicos:
-               /* fragment=new DinamicoFragment();
-                setTitle(menuItem.getTitle());*/
+                fragment=new ListaMedicosFragment();
+                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Dinamico");
                 break;
             case R.id.nav_contato:
-//                fragment=new DinamicoFragment();
-//                setTitle(menuItem.getTitle());
+                fragment=new ContatoFragment();
+                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Dinamico");
                 break;
             default:

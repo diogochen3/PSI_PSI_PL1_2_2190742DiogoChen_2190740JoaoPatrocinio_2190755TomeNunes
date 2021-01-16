@@ -30,10 +30,14 @@ amsi/dei/estg/ipleiria/healthschedule/model/Profile.java
  amsi.dei.estg.ipleiria.healthschedule.model.Profile
 amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosActivity.java
  amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosActivity
+amsi/dei/estg/ipleiria/healthschedule/listeners/ProfileListener.java
+ amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener
 amsi/dei/estg/ipleiria/healthschedule/model/Receita.java
  amsi.dei.estg.ipleiria.healthschedule.model.Receita
 amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$1
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$2
 amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java
  amsi.dei.estg.ipleiria.healthschedule.views.LoginActivity
 amsi/dei/estg/ipleiria/healthschedule/views/ContatoFragment.java

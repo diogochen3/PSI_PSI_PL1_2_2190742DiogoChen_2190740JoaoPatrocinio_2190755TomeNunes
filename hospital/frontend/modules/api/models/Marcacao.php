@@ -99,7 +99,7 @@ class Marcacao extends \yii\db\ActiveRecord
 
     public function FazPublish($canal,$msg)
     {
-        $server = "127.0.0.1";
+        $server = "front.test";
         $port = 1883;
         $client_id = "phpMQTT-publisher"; // unique!
         $mqtt = new phpMQTT($server, $port, $client_id);

@@ -9,12 +9,14 @@ use yii\web\NotFoundHttpException;
 
 class ProfileController extends ActiveController
 {
+
     public $modelClass = 'frontend\modules\api\models\Profile';
 
     public function actionIndex()
     {
         return $this->render('index');
     }
+
     public function actionTotal()
     {
         $climodel= new$this->modelClass;
