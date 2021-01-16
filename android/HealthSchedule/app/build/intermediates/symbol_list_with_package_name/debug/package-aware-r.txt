@@ -1543,6 +1543,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_action_adicionar
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
@@ -1750,6 +1751,7 @@ id etPassword
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fade
 id fill
 id fill_horizontal
@@ -1797,6 +1799,7 @@ id line3
 id linear
 id listMode
 id list_item
+id lv_agenda
 id masked
 id media_actions
 id message
@@ -1930,6 +1933,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id swipe_refresh_layout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -1984,7 +1988,15 @@ id transition_transform
 id triangle
 id tvAno
 id tvAutor
+id tvDNascimento
+id tvEmail
+id tvEndereco
+id tvGenero
+id tvLNome
+id tvNif
+id tvPNome
 id tvSerie
+id tvTelefone
 id tvTitulo
 id unchecked
 id uniform

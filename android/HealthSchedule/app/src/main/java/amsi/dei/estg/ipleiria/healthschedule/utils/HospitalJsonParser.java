@@ -4,8 +4,13 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 
 public class HospitalJsonParser {
 
@@ -31,5 +36,32 @@ public class HospitalJsonParser {
         NetworkInfo ni = cm.getActiveNetworkInfo();
 
         return ni!=null && ni.isConnected();
+    }
+
+
+    public static ArrayList<Marcacao> parserJsonMarcacao(JSONArray response) {
+        ArrayList<Marcacao> marcacoes = new ArrayList<>();
+        if (response!= null){
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject marcacao = (JSONObject) response.get(i);
+                    int id = marcacao.getInt("id");
+                    String date = marcacao.getString("date");
+                    String tempo = marcacao.getString("tempo");
+                    String Aceitar = marcacao.getString("Aceitar");
+                    int id_especialidade = marcacao.getInt("id_especialidade");
+                    int id_Utente = marcacao.getInt("id_Utente");
+                    int id_Medico = marcacao.getInt("id_Medico");
+                    Marcacao l = new Marcacao(id, id_especialidade, id_Utente, id_Medico, date, tempo, Aceitar);
+                    marcacoes.add(l);
+
+                } catch(JSONException e){
+                    e.printStackTrace();
+                }
+
+            }
+        }
+
+        return marcacoes;
     }
 }

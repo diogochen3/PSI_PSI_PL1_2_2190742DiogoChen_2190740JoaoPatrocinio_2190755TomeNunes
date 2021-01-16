@@ -1,17 +1,10 @@
 {
     "logs": [
         {
-<<<<<<< HEAD
             "outputFile": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\tome\\.gradle\\caches\\transforms-2\\files-2.1\\c63d4a666c0a1ba98c2e2f24b9638d9e\\material-1.2.1\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
-=======
-            "outputFile": "C:\\wamp64\\www\\PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes\\android\\HealthSchedule\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
-            "map": [
-                {
-                    "source": "C:\\Users\\jtiag\\.gradle\\caches\\transforms-2\\files-2.1\\c63d4a666c0a1ba98c2e2f24b9638d9e\\material-1.2.1\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
->>>>>>> master
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

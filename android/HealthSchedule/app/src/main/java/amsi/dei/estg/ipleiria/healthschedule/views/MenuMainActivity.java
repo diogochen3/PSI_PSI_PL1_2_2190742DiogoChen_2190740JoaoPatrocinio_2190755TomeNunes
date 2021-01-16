@@ -90,8 +90,8 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
                 // System.out.println("-->Nav Dinamico");
                 break;
             case R.id.nav_marcacao:
-               /* fragment=new DinamicoFragment();
-                setTitle(menuItem.getTitle());*/
+             fragment=new AgendaFragment();
+                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Dinamico");
                 break;
             case R.id.nav_medicos:

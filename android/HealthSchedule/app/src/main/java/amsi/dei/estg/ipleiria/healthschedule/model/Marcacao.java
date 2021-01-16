@@ -1,65 +1,74 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
-import java.util.Date;
-
 public class Marcacao {
- private int id,id_Utente,id_Medico,Aceitar;
- private Date date,tempo;
 
- public Marcacao(int id, int id_Utente, int id_Medico, int aceitar, Date date, Date tempo) {
-  this.id = id;
-  this.id_Utente = id_Utente;
-  this.id_Medico = id_Medico;
-  Aceitar = aceitar;
-  this.date = date;
-  this.tempo = tempo;
- }
+    private int id,id_especialidade,id_Utente,id_Medico;
+    private String date, tempo, Aceitar;
 
- public int getId() {
-  return id;
- }
 
- public void setId(int id) {
-  this.id = id;
- }
 
- public int getId_Utente() {
-  return id_Utente;
- }
+    public Marcacao(int id, int id_especialidade, int id_Utente, int id_Medico, String date, String tempo, String aceitar) {
+        this.id = id;
+        this.id_especialidade = id_especialidade;
+        this.id_Utente = id_Utente;
+        this.id_Medico = id_Medico;
+        this.date = date;
+        this.tempo = tempo;
+        Aceitar = aceitar;
+    }
+    public int getId() {
+        return id;
+    }
 
- public void setId_Utente(int id_Utente) {
-  this.id_Utente = id_Utente;
- }
+    public void setId(int id) {
+        this.id = id;
+    }
 
- public int getId_Medico() {
-  return id_Medico;
- }
+    public int getId_especialidade() {
+        return id_especialidade;
+    }
 
- public void setId_Medico(int id_Medico) {
-  this.id_Medico = id_Medico;
- }
+    public void setId_especialidade(int id_especialidade) {
+        this.id_especialidade = id_especialidade;
+    }
 
- public int getAceitar() {
-  return Aceitar;
- }
+    public int getId_Utente() {
+        return id_Utente;
+    }
 
- public void setAceitar(int aceitar) {
-  Aceitar = aceitar;
- }
+    public void setId_Utente(int id_Utente) {
+        this.id_Utente = id_Utente;
+    }
 
- public Date getDate() {
-  return date;
- }
+    public int getId_Medico() {
+        return id_Medico;
+    }
 
- public void setDate(Date date) {
-  this.date = date;
- }
+    public void setId_Medico(int id_Medico) {
+        this.id_Medico = id_Medico;
+    }
 
- public Date getTempo() {
-  return tempo;
- }
+    public String getDate() {
+        return date;
+    }
 
- public void setTempo(Date tempo) {
-  this.tempo = tempo;
- }
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTempo() {
+        return tempo;
+    }
+
+    public void setTempo(String tempo) {
+        this.tempo = tempo;
+    }
+
+    public String getAceitar() {
+        return Aceitar;
+    }
+
+    public void setAceitar(String aceitar) {
+        Aceitar = aceitar;
+    }
 }

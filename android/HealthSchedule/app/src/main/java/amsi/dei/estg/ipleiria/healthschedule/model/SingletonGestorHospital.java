@@ -7,22 +7,27 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 
 public class SingletonGestorHospital {
+    private ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> Marcacao;
     private static RequestQueue volleyQueue;
+
     private static SingletonGestorHospital instance = null;
     private static final  String  mUrlAPILogin =  "http://front.test/index.php/api/default";
+        private static final  String  mUrlAPIMarcacao =  "http://front.test/index.php/api/marcacao";
     private HospitalLoginListener hospitalLoginListener;
-
+    private HospitalBDHelper MarcacaoDB =null;
+    private amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener MarcacoesListener;
     public static synchronized SingletonGestorHospital getInstance(Context context) {
         if (instance == null)
         {
@@ -77,6 +82,41 @@ public class SingletonGestorHospital {
             volleyQueue.add(req);
 
     }*/
+   public void getAllLivroAPI(final Context context){
+       if (!HospitalJsonParser.isConnectionInternet(context)) {
+
+       }else {
+           JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+               @Override
+               public void onResponse(JSONArray response) {
+                   Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
+                   adicionarLivrosBD(Marcacao);
 
 
+                   if(MarcacoesListener != null){
+                       MarcacoesListener.onRefreshListaLivros(MarcacaoDB.getAllMarcacoesBD());
+                   }
+               }
+           }, new Response.ErrorListener() {
+               @Override
+               public void onErrorResponse(VolleyError error) {
+                   Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+               }
+           });
+           volleyQueue.add(req);
+
+       }
+   }
+    public void adicionarLivrosBD(ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> marcacoes){
+        MarcacaoDB.removerAllMarcacoesBD();
+            for(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao l: marcacoes){
+            adicionarLivroBD(l);
+        }
+
+    }
+    public void adicionarLivroBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
+        MarcacaoDB.adicionarMarcacaoBD(marcacao);
+
+
+    }
 }
