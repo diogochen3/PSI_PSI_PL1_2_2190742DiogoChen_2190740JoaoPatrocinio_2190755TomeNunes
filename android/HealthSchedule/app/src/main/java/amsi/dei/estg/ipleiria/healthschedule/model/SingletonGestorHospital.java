@@ -31,9 +31,12 @@ public class SingletonGestorHospital {
 
     private static SingletonGestorHospital instance = null;
     private static final  String  mUrlAPILogin =  "http://front.test/index.php/api/default";
-        private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
     private HospitalLoginListener hospitalLoginListener;
-    private final HospitalBDHelper hospitalDB ;
+    private final HospitalBDHelper hospitalDB;
+
+    /************************ variaveis marcacao ******************************************/
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
+    private ArrayList<Marcacao> marcacoes;
 
     private MarcacoesListener MarcacoesListener;
 
@@ -64,7 +67,6 @@ public class SingletonGestorHospital {
     }
 
     /*********************************** Profile ******************************************/
-
     public Profile getProfile(int id){
         for (Profile l: profiles)
             if (l.getId() == id)
@@ -97,7 +99,7 @@ public class SingletonGestorHospital {
     }
 
 
-    /*******  metodo aceder base dados localmente     *////////
+    /*******  metodo aceder base dados profile localmente     *////////
 
     public void adicionarProfilesBD(ArrayList<Profile> profiles){
         hospitalDB.removerAllProfilesBD();
@@ -174,7 +176,7 @@ public class SingletonGestorHospital {
                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                }
            });
-           Toast.makeText(context, "Helo", Toast.LENGTH_SHORT).show();
+           //Toast.makeText(context, "Helo", Toast.LENGTH_SHORT).show();
            /*req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
 
 
@@ -211,9 +213,12 @@ public class SingletonGestorHospital {
     public void adicionarMarcacaoBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
     }
+    public ArrayList<Marcacao> getMarcacaoBD() {
+         = hospitalDB.getAllLivrosBD();
+        return livros;
+    }
 
     public void setMarcacaoListener(MarcacoesListener marcacaoesListener) {
         this.MarcacoesListener = marcacaoesListener;
-
    }
 }

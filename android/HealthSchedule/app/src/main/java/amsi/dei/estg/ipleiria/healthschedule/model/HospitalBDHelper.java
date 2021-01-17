@@ -22,12 +22,12 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_MARCACAO="marcacao";
     private static final String ID_MARCACAO="id";
-    private static final String id_especialidade="id_especialidade";
-    private static final String id_Utente="id_Utente";
-    private static final String id_Medico="id_Medico";
-    private static final String date="date";
-    private static final String tempo="tempo";
-    private static final String Aceitar="Aceitar";
+    private static final String ID_ESPECIALIDADE_MARCACAO="id_especialidade";
+    private static final String ID_UTENTE_MARCACAO="id_Utente";
+    private static final String ID_MEDICO_MARCACAO="id_Medico";
+    private static final String DATE_MARCACAO="date";
+    private static final String TEMPO_MARCACAO="tempo";
+    private static final String ACEITAR_MACACAO="Aceitar";
 
     private static final String IS_MEDICO_PROFILE = "is_medico";
     private static final String TABLE_PROFILE="profile";
@@ -67,17 +67,32 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 IS_MEDICO_PROFILE+ " TEXT NOT NULL "+
                 ");";
 
+        String sqlCreateTableMarcacao="CREATE TABLE "+TABLE_MARCACAO+"("+
+                ID_MARCACAO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                DATE_MARCACAO + " TEXT NOT NULL, "+
+                TEMPO_MARCACAO+ " TEXT NOT NULL, "+
+                ACEITAR_MACACAO+ " INTEGER NOT NULL, "+
+                ID_ESPECIALIDADE_MARCACAO+ " INTEGER NOT NULL, "+
+                ID_UTENTE_MARCACAO+ " INTEGER NOT NULL, "+
+                ID_MEDICO_MARCACAO+ " INTEGER NOT NULL " +
+                ");";
+
+
         sqLiteDatabase.execSQL(sqlCreateTableProfile);
+        sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        String sqlDropTableLivro="DROP TABLE IF EXISTS "+ TABLE_PROFILE;
-        db.execSQL(sqlDropTableLivro);
+        String sqlDropTableProfile="DROP TABLE IF EXISTS "+ TABLE_PROFILE;
+        db.execSQL(sqlDropTableProfile);
+        String sqlDropTableMarcacao="DROP TABLE IF EXISTS "+ TABLE_MARCACAO;
+        db.execSQL(sqlDropTableMarcacao);
         this.onCreate(db);
     }
 
+    /***************************    PROFILE      ********************  *////////////////////////
     public ArrayList<Profile> getAllProfilesBD(){
         ArrayList<Profile> profiles=new ArrayList<>();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -151,24 +166,21 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return livro;
         //return null;
     }
-    public void  removergetProfileBD(){
-
-    }
 
     public void  removerAllProfilesBD(){
         this.db.delete(TABLE_PROFILE,null,null);
     }
 
 
+    /***************************    MARCACAO         ******************************////////////////////////
+
     public void  removerAllMarcacoesBD(){
         this.db.delete(TABLE_MARCACAO,null,null);
     }
 
-
-
     public ArrayList<Marcacao> getAllMarcacoesBD(){
         ArrayList<Marcacao> marcacoes=new ArrayList<>();
-        Cursor cursor=this.db.query(TABLE_MARCACAO, new String[]{ID_MARCACAO,id_especialidade,id_Medico,id_Utente,date,tempo,Aceitar},
+        Cursor cursor=this.db.query(TABLE_MARCACAO, new String[]{ID_MARCACAO,ID_ESPECIALIDADE_MARCACAO,ID_MEDICO_MARCACAO,ID_UTENTE_MARCACAO,DATE_MARCACAO,TEMPO_MARCACAO,ACEITAR_MACACAO},
                 null,null,null,null,null);
 
         if (cursor.moveToFirst()){
@@ -188,12 +200,12 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     public void adicionarMarcacaoBD(Marcacao marcacao){
         ContentValues values= new ContentValues();
         values.put(ID_MARCACAO,marcacao.getId());
-        values.put(id_especialidade,marcacao.getId_especialidade());
-        values.put(id_Medico,marcacao.getId_Medico());
-        values.put(id_Utente,marcacao.getId_Utente());
-        values.put(date,marcacao.getDate());
-        values.put(tempo,marcacao.getTempo());
-        values.put(Aceitar,marcacao.getAceitar());
+        values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
+        values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
+        values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
+        values.put(DATE_MARCACAO ,marcacao.getDate());
+        values.put(TEMPO_MARCACAO ,marcacao.getTempo());
+        values.put(ACEITAR_MACACAO ,marcacao.getAceitar());
 
         this.db.insert(TABLE_MARCACAO,null,values);
 

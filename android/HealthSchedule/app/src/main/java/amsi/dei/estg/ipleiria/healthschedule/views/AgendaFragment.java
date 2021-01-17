@@ -32,6 +32,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private ArrayList<Marcacao> listaMarcacoes;
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefreshLayout;
+
     public AgendaFragment() {
 
     }
@@ -46,7 +47,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
-       // lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
+        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI();
+        lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
@@ -74,17 +76,21 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
         });
         SingletonGestorHospital.getInstance(getContext()).setMarcacaoListener(marcacoesListener);
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
-        if (listaMarcacoes != null){
+      /*  if (listaMarcacoes != null){
             lvListaMarcacoes.setAdapter(new AdapterConsultas(getActivity(),listaMarcacoes));
         }else{
             Toast.makeText(getContext(), "FODASE", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
         return view;
 
 
     }
-
+    @Override
+    public void onResume() {
+        SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+        super.onResume();
+    }
     @Override
     public void onRefresh() {
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
