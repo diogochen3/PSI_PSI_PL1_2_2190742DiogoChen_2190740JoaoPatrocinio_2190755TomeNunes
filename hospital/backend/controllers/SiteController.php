@@ -248,7 +248,7 @@ class SiteController extends Controller
 
                 $link = "/";
                 switch ($decode->type){
-                    case NotificationController::NotificationsTypes_Marcacao: $link = "/site/table_marcacoes"; break;
+                    case NotificationController::NotificationsTypes_Marcacao: $link = "index.php/site/table_marcacoes"; break;
                 }
                 $content = str_replace("[[LINK]]", $link,str_replace("[[DATE]]", $decode->date,str_replace("[[MESSAGE]]", $decode->message,$html)));
                 $array[strtotime($decode->date)] = $content;

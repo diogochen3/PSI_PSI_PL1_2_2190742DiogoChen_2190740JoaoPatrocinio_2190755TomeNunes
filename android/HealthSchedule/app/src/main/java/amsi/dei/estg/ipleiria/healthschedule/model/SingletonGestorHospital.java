@@ -1,6 +1,7 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
 import android.content.Context;
+import android.os.PowerManager;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -16,8 +17,10 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
+import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
+import amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment;
 
 public class SingletonGestorHospital {
     private ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> Marcacao;
@@ -25,10 +28,10 @@ public class SingletonGestorHospital {
 
     private static SingletonGestorHospital instance = null;
     private static final  String  mUrlAPILogin =  "http://front.test/index.php/api/default";
-        private static final  String  mUrlAPIMarcacao =  "http://192.168.1.20/hospital/frontend/web/index.php/api/marcacao";
+        private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
     private HospitalLoginListener hospitalLoginListener;
-    private HospitalBDHelper hospitalDB =null;
-    private amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener MarcacoesListener;
+    private final HospitalBDHelper hospitalDB ;
+    private MarcacoesListener MarcacoesListener;
 
     /************************ variaveis Profile ******************************************/
     private static final  String  mUrlAPIProfile =  "http://192.168.1.20/hospital/frontend/web/index.php/api/profile";
@@ -137,17 +140,48 @@ public class SingletonGestorHospital {
 
     }*/
    public void getAllMarcacaoAPI(final Context context){
+
        if (!HospitalJsonParser.isConnectionInternet(context)) {
 
+
        }else {
-           JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+
+           JsonArrayRequest req;
+           req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+
                @Override
                public void onResponse(JSONArray response) {
+                   Toast.makeText(context, "POutasE VINHO VERDE", Toast.LENGTH_SHORT).show();
+                   Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
+                   //adicionarMarcacoesBD(Marcacao);
+
+
+                   if(MarcacoesListener != null){
+
+                       MarcacoesListener.onRefreshListaLivros(hospitalDB.getAllMarcacoesBD());
+                   }
+
+               }
+           }, new Response.ErrorListener() {
+               @Override
+               public void onErrorResponse(VolleyError error) {
+                   Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+               }
+           });
+           Toast.makeText(context, "Helo", Toast.LENGTH_SHORT).show();
+           /*req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+
+
+               @Override
+
+               public void onResponse(JSONArray response) {
+
                    Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
                    adicionarMarcacoesBD(Marcacao);
 
 
                    if(MarcacoesListener != null){
+
                        MarcacoesListener.onRefreshListaLivros(hospitalDB.getAllMarcacoesBD());
                    }
                }
@@ -156,13 +190,13 @@ public class SingletonGestorHospital {
                public void onErrorResponse(VolleyError error) {
                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                }
-           });
+           });*/
            volleyQueue.add(req);
 
        }
    }
     public void adicionarMarcacoesBD(ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> marcacoes){
-        hospitalDB.removerAllMarcacoesBD();
+        //hospitalDB.removerAllMarcacoesBD();
             for(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao l: marcacoes){
                 adicionarMarcacaoBD(l);
         }
@@ -171,4 +205,9 @@ public class SingletonGestorHospital {
     public void adicionarMarcacaoBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
     }
+
+    public void setMarcacaoListener(MarcacoesListener marcacaoesListener) {
+        this.MarcacoesListener = marcacaoesListener;
+
+   }
 }

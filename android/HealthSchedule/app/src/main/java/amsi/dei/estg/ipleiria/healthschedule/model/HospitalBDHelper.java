@@ -15,10 +15,11 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     private static final int DB_VERSION=1;
+    private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
 
-    private static final String TABLE_MARCACAO="marcacoes";
+    private static final String TABLE_MARCACAO="marcacao";
     private static final String ID_MARCACAO="id";
     private static final String id_especialidade="id_especialidade";
     private static final String id_Utente="id_Utente";
@@ -51,22 +52,23 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sqlCreateTableLivro="CREATE TABLE "+TABLE_PROFILE+"("+
+        String sqlCreateTableProfile="CREATE TABLE "+TABLE_PROFILE+"("+
                 ID_PROFILE +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 PRIMEIRO_NOME_PROFILE+ " TEXT NOT NULL, "+
                 APELIDO_PROFILE+ " TEXT NOT NULL, "+
                 EMAIL_PROFILE+ " TEXT NOT NULL, "+
-                TELEFONE_PROFILE+ " TEXT NOT NULL, "+
+                TELEFONE_PROFILE+ " INTEGER NOT NULL, "+
                 NIF_PROFILE+ " INTEGER NOT NULL, "+
                 ENDERECO_PROFILE+ " TEXT NOT NULL, " +
                 DATANASCIMENTO_PROFILE+ " INTEGER NOT NULL, "+
-                GENERO_PROFILE+ " INTEGER NOT NULL, " +
+                GENERO_PROFILE+ " TEXT NOT NULL, " +
                 CODPOSTAL_PROFILE+ " TEXT NOT NULL, "+
                 IS_MEDICO_PROFILE+ " TEXT NOT NULL "+
                 ");";
 
-        db.execSQL(sqlCreateTableLivro);
+        sqLiteDatabase.execSQL(sqlCreateTableProfile);
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
@@ -74,7 +76,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         db.execSQL(sqlDropTableLivro);
         this.onCreate(db);
     }
-
 
     public ArrayList<Profile> getAllProfilesBD(){
         ArrayList<Profile> profiles=new ArrayList<>();
