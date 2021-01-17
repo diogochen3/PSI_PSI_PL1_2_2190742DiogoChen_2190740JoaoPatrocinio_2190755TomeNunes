@@ -1801,6 +1801,8 @@ id linear
 id listMode
 id list_item
 id lv_agenda
+id lv_medicamento
+id lv_medico
 id masked
 id media_actions
 id message

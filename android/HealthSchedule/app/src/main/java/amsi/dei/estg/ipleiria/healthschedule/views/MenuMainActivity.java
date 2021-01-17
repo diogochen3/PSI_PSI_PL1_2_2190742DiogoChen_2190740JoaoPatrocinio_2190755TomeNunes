@@ -53,7 +53,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
         carregarCabecalho();
 
-        SingletonGestorHospital.getInstance(getApplicationContext()).getAllProfileAPI(getApplicationContext());
+
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -85,7 +85,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         switch (menuItem.getItemId()) {
             case R.id.nav_perfil:
                 fragment=new PerfilFragment();
-
+                SingletonGestorHospital.getInstance(getApplicationContext()).getAllProfileAPI(getApplicationContext());
                 setTitle(menuItem.getTitle());
                //   System.out.println("-->Nav Perfil");
                 break;

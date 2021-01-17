@@ -47,7 +47,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
-        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI();
+       // listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI();
         lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);

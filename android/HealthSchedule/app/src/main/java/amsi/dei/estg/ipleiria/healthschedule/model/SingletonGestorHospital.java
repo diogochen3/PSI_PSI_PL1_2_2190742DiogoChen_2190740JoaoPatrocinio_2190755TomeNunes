@@ -213,10 +213,6 @@ public class SingletonGestorHospital {
     public void adicionarMarcacaoBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
     }
-    public ArrayList<Marcacao> getMarcacaoBD() {
-         = hospitalDB.getAllLivrosBD();
-        return livros;
-    }
 
     public void setMarcacaoListener(MarcacoesListener marcacaoesListener) {
         this.MarcacoesListener = marcacaoesListener;
