@@ -4,19 +4,20 @@ import java.util.Date;
 
 public class Profile {
 private int id, Phone_number,NIF,is_medico;
-private String First_name,Last_name,Email,Address,postal_code;
+private String First_name,Last_name,Email,Address,postal_code, gender;
 private Date Birth_date;
 
-    public Profile(int id, int phone_number, int nif, int is_medico, String first_name, String last_name, String email, String address, String postal_code, Date birth_date) {
+    public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date) {
         this.id = id;
         Phone_number = phone_number;
-        NIF = nif;
+        this.NIF = NIF;
         this.is_medico = is_medico;
         First_name = first_name;
         Last_name = last_name;
         Email = email;
         Address = address;
         this.postal_code = postal_code;
+        this.gender = gender;
         Birth_date = birth_date;
     }
 
@@ -90,6 +91,14 @@ private Date Birth_date;
 
     public void setPostal_code(String postal_code) {
         this.postal_code = postal_code;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public Date getBirth_date() {

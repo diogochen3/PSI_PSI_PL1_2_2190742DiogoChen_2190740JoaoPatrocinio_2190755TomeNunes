@@ -1,6 +1,7 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
+import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -74,6 +77,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment= null;
@@ -81,8 +85,9 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         switch (menuItem.getItemId()) {
             case R.id.nav_perfil:
                 fragment=new PerfilFragment();
+                SingletonGestorHospital.getInstance(getApplicationContext()).getAllProfileAPI(getApplicationContext());
                 setTitle(menuItem.getTitle());
-                //  System.out.println("-->Nav Estatico");
+               //   System.out.println("-->Nav Perfil");
                 break;
             case R.id.nav_consultas:
              /*   fragment=new DinamicoFragment();

@@ -2,65 +2,110 @@ package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import android.os.Bundle;
 
+import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
+import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PerfilFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class PerfilFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+   // public static final String ID = "ID";
+    private TextView tvPNome, tvApelido, tvEmail, tvTelefone, tvNif, tvEndereco, tvDNascimento , tvgenero, tvcodPostal;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Profile perfil;
+    private int id = 6;
 
     public PerfilFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PerfilFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PerfilFragment newInstance(String param1, String param2) {
-        PerfilFragment fragment = new PerfilFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false);
+        View view = inflater.inflate(R.layout.fragment_perfil, container, false);
+
+
+
+
+        //SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.TOKEN, Context.MODE_PRIVATE);
+        // token = sharedPreferences.getString(MenuMainActivity.TOKEN, "sem email");
+
+        tvPNome = view.findViewById(R.id.tvPNome);
+        tvApelido = view.findViewById(R.id.tvLNome);
+        tvEmail = view.findViewById(R.id.tvEmail);
+        tvTelefone = view.findViewById(R.id.tvTelefone);
+        tvNif = view.findViewById(R.id.tvNif);
+        tvEndereco = view.findViewById(R.id.tvEndereco);
+        tvDNascimento = view.findViewById(R.id.tvDNascimento);
+        tvgenero = view.findViewById(R.id.tvGenero);
+        tvcodPostal = view.findViewById(R.id.tvCodPostal);
+
+        perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
+
+        /// FloatingActionButton fab = findViewById(R.id.fab);
+
+        // SingletonGestorLivros.getInstance(getApplicationContext()).setLivrosListener(this);
+
+        if (perfil != null){
+            //"Perfil: "+perfil.getpNome() + perfil.getApelido());
+            carregarPerfil();
+            //fab.setImageResource(R.drawable.ic_action_guardar);
+        }else{
+
+            //setTitle("Adicionar Livro");
+            //fab.setImageResource(R.drawable.ic_action_adicionar);
+        }
+
+
+      /*  fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(LivroJsonParser.isConnectionInternet(getApplicationContext())){
+                    if (livro!=null)
+                        if (validarLivro()==true){
+                            livro.setTitulo(etTitulo.getText().toString());
+                            livro.setSerie(etSerie.getText().toString());
+                            livro.setAutor(etAutor.getText().toString());
+                            livro.setAno(Integer.parseInt(etAno.getText().toString()));
+                            SingletonGestorLivros.getInstance(getApplicationContext()).editarLivroAPI(livro,getApplicationContext(),token);
+                        }else return;
+                    else
+                    if (validarLivro()==true){
+                        livro = new Livro(0,Integer.parseInt(etAno.getText().toString()),"http://amsi.dei.estg.ipleiria.pt/img/ipl_semfundo.png",etTitulo.getText().toString(),etSerie.getText().toString(),etAutor.getText().toString());
+                        SingletonGestorLivros.getInstance(getApplicationContext()).adicionarLivroAPI(livro,getApplicationContext(),token);
+                    }else return;
+                    // setResult(RESULT_OK);
+                    //finish();
+                }
+
+            }
+        });*/
+        return view;
+    }
+
+    private void carregarPerfil() {
+        tvPNome.setText(perfil.getFirst_name());
+        tvApelido.setText(perfil.getLast_name());
+        tvEmail.setText(perfil.getEmail());
+        tvTelefone.setText(perfil.getPhone_number());
+        tvNif.setText(perfil.getNIF());
+        tvEndereco.setText(perfil.getAddress());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
+        String date = formatter.format(perfil.getBirth_date());
+        tvDNascimento.setText(date);
+        tvgenero.setText(perfil.getGender());
+        tvcodPostal.setText(perfil.getPostal_code());
+
     }
 }

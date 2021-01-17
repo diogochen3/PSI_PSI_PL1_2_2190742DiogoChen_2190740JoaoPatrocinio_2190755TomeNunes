@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
 
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setHospitalLoginListener(this);
-
     }
 
 
@@ -46,6 +45,7 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
             etPass.setError("password invalido");
             return;
         }
+
         Intent intent = new Intent(this, MenuMainActivity.class);
         ///  intent.putExtra(MenuMainActivity.EMAIL,email);
         startActivity(intent);
