@@ -51,13 +51,13 @@ public class PerfilFragment extends Fragment {
         tvgenero = view.findViewById(R.id.tvGenero);
         tvcodPostal = view.findViewById(R.id.tvCodPostal);
 
-        perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
+        Profile perfil1 = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
 
         /// FloatingActionButton fab = findViewById(R.id.fab);
 
         // SingletonGestorLivros.getInstance(getApplicationContext()).setLivrosListener(this);
 
-        if (perfil != null){
+        if (perfil1 != null){
             //"Perfil: "+perfil.getpNome() + perfil.getApelido());
             carregarPerfil();
             //fab.setImageResource(R.drawable.ic_action_guardar);

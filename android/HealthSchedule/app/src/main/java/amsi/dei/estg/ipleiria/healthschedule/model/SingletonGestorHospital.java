@@ -9,6 +9,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -74,7 +75,7 @@ public class SingletonGestorHospital {
                 public void onResponse(JSONArray response) {
                     profiles = HospitalJsonParser.parserJsonProfiles(response);
                     adicionarProfilesBD(profiles);
-
+                    Toast.makeText(context, "Funcionou", Toast.LENGTH_SHORT).show();
                     if(profileListener != null){
                         profileListener.onRefreshListaProfiles(hospitalDB.getAllProfilesBD());
                     }
@@ -88,6 +89,7 @@ public class SingletonGestorHospital {
             volleyQueue.add(req);
         }
     }
+
 
     /*******  metodo aceder base dados localmente     *////////
 

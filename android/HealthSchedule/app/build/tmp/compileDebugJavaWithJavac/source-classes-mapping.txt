@@ -16,8 +16,8 @@ amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener
 amsi/dei/estg/ipleiria/healthschedule/views/ContatoFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.ContatoFragment
-amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java
- amsi.dei.estg.ipleiria.healthschedule.model.HospitalBDHelper
+amsi/dei/estg/ipleiria/healthschedule/model/Receita.java
+ amsi.dei.estg.ipleiria.healthschedule.model.Receita
 amsi/dei/estg/ipleiria/healthschedule/BuildConfig.java
  amsi.dei.estg.ipleiria.healthschedule.BuildConfig
 amsi/dei/estg/ipleiria/healthschedule/model/Especialidade.java
@@ -34,10 +34,10 @@ amsi/dei/estg/ipleiria/healthschedule/listeners/ProfileListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener
 amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.java
  amsi.dei.estg.ipleiria.healthschedule.model.Marcacao
-amsi/dei/estg/ipleiria/healthschedule/model/Receita.java
- amsi.dei.estg.ipleiria.healthschedule.model.Receita
-amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java
- amsi.dei.estg.ipleiria.healthschedule.views.MenuMainActivity
+amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java
+ amsi.dei.estg.ipleiria.healthschedule.model.HospitalBDHelper
+amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java
+ amsi.dei.estg.ipleiria.healthschedule.views.LoginActivity
 amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment
  amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment$1
@@ -47,7 +47,7 @@ amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$2
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$3
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$4
-amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java
- amsi.dei.estg.ipleiria.healthschedule.views.LoginActivity
+amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java
+ amsi.dei.estg.ipleiria.healthschedule.views.MenuMainActivity
 amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.PerfilFragment

@@ -65,7 +65,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 IS_MEDICO_PROFILE+ " TEXT NOT NULL "+
                 ");";
 
-        db.execSQL(sqlCreateTableLivro);
+        sqLiteDatabase.execSQL(sqlCreateTableLivro);
     }
 
     @Override
