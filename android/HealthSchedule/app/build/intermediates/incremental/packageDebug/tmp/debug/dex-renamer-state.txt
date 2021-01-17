@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Sun Jan 17 15:19:57 GMT 2021
+#Sun Jan 17 17:10:24 GMT 2021
 base.0=C\:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-=======
-#Sun Jan 17 10:17:44 GMT 2021
-base.0=C\:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
->>>>>>> 732a24e4e815ecb19857993b6f8a9763eb6bb128
 path.0=classes.dex
 renamed.0=classes.dex

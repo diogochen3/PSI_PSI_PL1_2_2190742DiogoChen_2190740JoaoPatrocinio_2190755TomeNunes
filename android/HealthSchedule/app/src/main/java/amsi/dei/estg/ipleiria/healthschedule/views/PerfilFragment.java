@@ -51,13 +51,13 @@ public class PerfilFragment extends Fragment {
         tvgenero = view.findViewById(R.id.tvGenero);
         tvcodPostal = view.findViewById(R.id.tvCodPostal);
 
-        Profile perfil1 = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
+        perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
 
         /// FloatingActionButton fab = findViewById(R.id.fab);
 
         // SingletonGestorLivros.getInstance(getApplicationContext()).setLivrosListener(this);
 
-        if (perfil1 != null){
+        if (perfil != null){
             //"Perfil: "+perfil.getpNome() + perfil.getApelido());
             carregarPerfil();
             //fab.setImageResource(R.drawable.ic_action_guardar);
@@ -95,11 +95,12 @@ public class PerfilFragment extends Fragment {
     }
 
     private void carregarPerfil() {
+
         tvPNome.setText(perfil.getFirst_name());
         tvApelido.setText(perfil.getLast_name());
         tvEmail.setText(perfil.getEmail());
-        tvTelefone.setText(perfil.getPhone_number());
-        tvNif.setText(perfil.getNIF());
+        tvTelefone.setText(String.valueOf(perfil.getPhone_number()));
+        tvNif.setText(String.valueOf(perfil.getNIF()));
         tvEndereco.setText(perfil.getAddress());
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
         String date = formatter.format(perfil.getBirth_date());
