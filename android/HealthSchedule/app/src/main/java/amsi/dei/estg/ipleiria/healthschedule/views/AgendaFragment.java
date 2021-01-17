@@ -1,5 +1,6 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,10 +9,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
+import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterConsultas;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
@@ -26,7 +29,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private MarcacoesListener marcacoesListener;
     private static final int EDITAR=2;
     private static final int ADICIONAR=1;
-    private ArrayList<Marcacao> listaLivros;
+    private ArrayList<Marcacao> listaMarcacoes;
     private SearchView searchView;
     private SwipeRefreshLayout swipeRefreshLayout;
     public AgendaFragment() {
@@ -43,7 +46,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
-
+       // lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
@@ -71,6 +74,12 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
         });
         SingletonGestorHospital.getInstance(getContext()).setMarcacaoListener(marcacoesListener);
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+        if (listaMarcacoes != null){
+            lvListaMarcacoes.setAdapter(new AdapterConsultas(getActivity(),listaMarcacoes));
+        }else{
+            Toast.makeText(getContext(), "FODASE", Toast.LENGTH_SHORT).show();
+        }
+
         return view;
 
 
@@ -80,6 +89,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onRefresh() {
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         swipeRefreshLayout.setRefreshing(false);
+        if(listaMarcacoes!=null)
+            lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
         //Toast.makeText(getContext(),"Toquei no refresh",Toast.LENGTH_SHORT).show();
     }
 }

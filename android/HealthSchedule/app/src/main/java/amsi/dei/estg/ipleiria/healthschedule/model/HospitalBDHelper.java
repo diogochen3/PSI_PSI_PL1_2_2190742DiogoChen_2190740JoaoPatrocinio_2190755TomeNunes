@@ -14,6 +14,7 @@ import java.util.Date;
 public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
+    
     private static final int DB_VERSION=1;
     private static final int DATABASE_VERSION = 2;
 

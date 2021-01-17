@@ -1537,6 +1537,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable custom_output
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1999,6 +2000,11 @@ id tvPNome
 id tvSerie
 id tvTelefone
 id tvTitulo
+id txtDataMarcacao
+id txtEspecialidadeMarcacao
+id txtHoraMarcacao
+id txtMedicoMarcacao
+id txtUtenteMarcacao
 id unchecked
 id uniform
 id unlabeled
@@ -2099,6 +2105,7 @@ layout fragment_contato
 layout fragment_lista_consultas
 layout fragment_lista_medicos
 layout fragment_perfil
+layout item_lista_marcacao
 layout item_lista_medicamento
 layout item_lista_medico
 layout mtrl_alert_dialog

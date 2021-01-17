@@ -11,6 +11,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:id="@+id/txtDataMarcacao"
+            android:gravity="center"
+            android:background="@drawable/custom_output"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/txtHoraMarcacao"
+            android:gravity="center"
+            android:layout_below="@+id/txtDataMarcacao"
+            android:background="@drawable/custom_output"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/txtEspecialidadeMarcacao"
+            android:gravity="center"
+            android:layout_below="@+id/txtHoraMarcacao"
+            android:background="@drawable/custom_output"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/txtMedicoMarcacao"
+            android:gravity="center"
+            android:layout_below="@+id/txtEspecialidadeMarcacao"
+            android:background="@drawable/custom_output"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+        <TextView
+            android:id="@+id/txtUtenteMarcacao"
+            android:gravity="center"
+            android:layout_below="@+id/txtMedicoMarcacao"
+            android:background="@drawable/custom_output"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
 
 
     </RelativeLayout>

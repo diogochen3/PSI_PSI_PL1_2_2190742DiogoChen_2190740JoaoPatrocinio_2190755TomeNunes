@@ -16,6 +16,8 @@ import org.json.JSONArray;
 
 import java.util.ArrayList;
 
+import javax.crypto.Mac;
+
 import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener;
@@ -31,6 +33,7 @@ public class SingletonGestorHospital {
         private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB ;
+
     private MarcacoesListener MarcacoesListener;
 
     /************************ variaveis Profile ******************************************/
@@ -146,14 +149,15 @@ public class SingletonGestorHospital {
 
        }else {
 
-           JsonArrayRequest req;
-           req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+           //JsonRequest req;
+          // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
+           JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
 
                @Override
                public void onResponse(JSONArray response) {
                    Toast.makeText(context, "POutasE VINHO VERDE", Toast.LENGTH_SHORT).show();
                    Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
-                   //adicionarMarcacoesBD(Marcacao);
+                   adicionarMarcacoesBD(Marcacao);
 
 
                    if(MarcacoesListener != null){
@@ -195,9 +199,9 @@ public class SingletonGestorHospital {
 
        }
    }
-    public void adicionarMarcacoesBD(ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> marcacoes){
-        //hospitalDB.removerAllMarcacoesBD();
-            for(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao l: marcacoes){
+    public void adicionarMarcacoesBD(ArrayList<Marcacao> marcacoes){
+            hospitalDB.removerAllMarcacoesBD();
+            for(Marcacao l: marcacoes){
                 adicionarMarcacaoBD(l);
         }
 
