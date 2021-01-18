@@ -15,7 +15,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=5;
+    private static final int DB_VERSION=7;
     private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
@@ -55,9 +55,16 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String ID_MEDICO_DIAGNOSTICO="id_medico";
     private static final String DID_UTENTE_DIAGNOSTICO="id_utente";
 
+
     private static final String TABLE_MEDICO_ESPECIALIDADE ="diagnostico";
     private static final String ID_MEDICO_MEDICO_ESPECIALIDADE="id_medico";
     private static final String ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE="id_utente";
+
+    private static final String TABLE_RECEITA="receitas";
+    private static final String ID_RECEITA="id";
+    private static final String QUANTIDADE_RECEITA="quantidade";
+    private static final String NOME_MEDICAMENTO_RECEITA="Nome_medicamento";
+
 
     public HospitalBDHelper(Context context) {
         super(context,DB_NAME,null, DB_VERSION);
@@ -105,12 +112,20 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_MEDICO_DIAGNOSTICO+ " INTEGER NOT NULL, "+
                 DID_UTENTE_DIAGNOSTICO+ " INTEGER NOT NULL "+
                 ");";
+        String sqlCreateTableReceita="CREATE TABLE IF NOT EXISTS "+TABLE_RECEITA+"("+
+                ID_RECEITA +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                QUANTIDADE_RECEITA + " INTEGER NOT NULL, "+
+                NOME_MEDICAMENTO_RECEITA+ " TEXT NOT NULL "+
+                ");";
 
         sqLiteDatabase.execSQL(sqlCreateTableEspecialidade);
         sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
         sqLiteDatabase.execSQL(sqlCreateTableProfile);
         sqLiteDatabase.execSQL(sqlCreateTableDiagnostico);
         sqLiteDatabase.execSQL(sqlCreateTableMedicoEspecialidade);
+
+        sqLiteDatabase.execSQL(sqlCreateTableReceita);
+
     }
 
 
@@ -126,6 +141,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlDropTableDiagnostico);
         String sqlDropTableMedicoEspecialidade="DROP TABLE IF EXISTS "+ TABLE_MEDICO_ESPECIALIDADE;
         sqLiteDatabase.execSQL(sqlDropTableMedicoEspecialidade);
+        String sqlDropTableReceita="DROP TABLE IF EXISTS "+ TABLE_RECEITA;
+        sqLiteDatabase.execSQL(sqlDropTableReceita);
         this.onCreate(sqLiteDatabase);
     }
 
@@ -233,27 +250,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         }
         return marcacoes;
     }
-    public void adicionarMarcacaoBD(Marcacao marcacao){
-        ContentValues values= new ContentValues();
-        values.put(ID_MARCACAO,marcacao.getId());
-        values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
-        values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
-        values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
-        values.put(DATE_MARCACAO ,marcacao.getDate());
-        values.put(TEMPO_MARCACAO ,marcacao.getTempo());
-        values.put(ACEITAR_MACACAO ,marcacao.getAceitar());
 
-        this.db.insert(TABLE_MARCACAO,null,values);
-
-       /* long id= this.db.insert(TABLE_LIVROS,null,values);
-        if (id>-1){
-            livro.setId((int)id);
-            return livro;
-        }*/
-
-        //return livro;
-        //return null;
-    }
 
     public boolean editarMarcacaoBD(Marcacao marcacao) {
         ContentValues values= new ContentValues();
@@ -300,6 +297,43 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         return diagnosticos;
     }
 
+    public ArrayList<Receita> getAllReceitasBD(){
+        ArrayList<Receita> receitas=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_RECEITA, new String[]{
+                        ID_RECEITA,
+                        QUANTIDADE_RECEITA,
+                        NOME_MEDICAMENTO_RECEITA},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Receita auxReceita=new Receita(cursor.getInt(0),
+                        cursor.getInt(1),
+                        cursor.getString(2));
+                receitas.add(auxReceita);
+            }while (cursor.moveToNext());
+        }
+        return receitas;
+    }
+    public void adicionarMarcacaoBD(Marcacao marcacao){
+        ContentValues values= new ContentValues();
+        values.put(ID_MARCACAO,marcacao.getId());
+        values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
+        values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
+        values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
+        values.put(DATE_MARCACAO ,marcacao.getDate());
+        values.put(TEMPO_MARCACAO ,marcacao.getTempo());
+        values.put(ACEITAR_MACACAO ,marcacao.getAceitar());
+
+        this.db.insert(TABLE_MARCACAO,null,values);
+
+       /* long id= this.db.insert(TABLE_LIVROS,null,values);
+        if (id>-1){
+            livro.setId((int)id);
+            return livro;
+        }*/
+    }
+
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){
         ContentValues values= new ContentValues();
         values.put(ID_DIAGNOSTICO,diagnostico.getId());
@@ -321,9 +355,31 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return null;
     }
 
+    public void adicionarReceitaBD(Receita receita){
+        ContentValues values= new ContentValues();
+        values.put(ID_RECEITA,receita.getId());
+        values.put(QUANTIDADE_RECEITA,receita.getQuantidade());
+        values.put(NOME_MEDICAMENTO_RECEITA,receita.getNome_medicamento());
+
+        this.db.insert(TABLE_RECEITA,null,values);
+
+       /* long id= this.db.insert(TABLE_LIVROS,null,values);
+        if (id>-1){
+            livro.setId((int)id);
+            return livro;
+        }*/
+
+        //return livro;
+        //return null;
+    }
+
+
 
     public void  removerAllDiagnosticosBD(){
         this.db.delete(TABLE_DIAGNOSTICO,null,null);
+    }
+    public void  removerAllReceitasBD(){
+        this.db.delete(TABLE_RECEITA,null,null);
     }
 
 

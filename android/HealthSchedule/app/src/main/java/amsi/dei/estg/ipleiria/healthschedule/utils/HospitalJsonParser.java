@@ -18,6 +18,7 @@ import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
+import amsi.dei.estg.ipleiria.healthschedule.model.Receita;
 
 public class HospitalJsonParser {
 
@@ -100,6 +101,27 @@ public class HospitalJsonParser {
         }
 
         return diagnosticos;
+    }
+    public static ArrayList<Receita> parserJsonReceitas(JSONArray response) {
+        ArrayList<Receita> receitas = new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject receita = (JSONObject) response.get(i);
+                    int id = receita.getInt("id");
+                    String nome_medicamento = receita.getString("Nome_medicamento");
+                    int quantidade = receita.getInt("quantidade");
+
+                    Receita l = new Receita(id, quantidade, nome_medicamento);
+                    receitas.add(l);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return receitas;
     }
     /// Profile
     public static ArrayList<Profile> parserJsonProfiles(JSONArray response) {

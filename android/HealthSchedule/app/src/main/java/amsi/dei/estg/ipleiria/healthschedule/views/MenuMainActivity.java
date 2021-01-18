@@ -109,7 +109,12 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 //                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Dinamico");
                 break;
-            default:
+            case R.id.nav_receitas:
+                 fragment=new ListaReceitasFragment();
+                 setTitle(menuItem.getTitle());
+                 // System.out.println("-->Nav Dinamico");
+                break;
+                default:
 //                fragment=new EstaticoFragment();
 //                setTitle(menuItem.getTitle());
                 // System.out.println("-->Nav Estatico");

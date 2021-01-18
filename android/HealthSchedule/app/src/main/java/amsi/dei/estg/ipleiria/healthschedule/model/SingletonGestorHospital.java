@@ -29,6 +29,7 @@ import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MedicoEspecialidadeListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener;
+import amsi.dei.estg.ipleiria.healthschedule.listeners.ReceitasListener;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment;
 import amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity;
@@ -38,36 +39,41 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.20/hospital/frontend/web/api/user";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.113/index.php/api/user";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.20/hospital/frontend/web/index.php/api/marcacao";
+
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.113/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
-    private DiagnosticoListener DiagnosticosListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
     private static final int EDITAR_MARCACAO_BD = 2;
     private static final int REMOVER_MARCACAO_BD = 3;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.20/hospital/frontend/web/index.php/api/profile";
+
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.113/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
-    /************************ variaveis Especialidade ******************************************/
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.20/hospital/frontend/web/index.php/api/especialidade";
+    /************************ variaveis Profile ******************************************/
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.113/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
-    /************************ variaveis Diagnostico ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.20/hospital/frontend/web/index.php/api/diagnostico";
+    /************************ variaveis Profile ******************************************/
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.113/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
-    private DiagnosticoListener diagnosticoListener;
+    private DiagnosticoListener DiagnosticosListener;
+    /************************ variaveis Profile ******************************************/
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.113/index.php/api/receitas";
+    private ArrayList<Receita> receitas;
+    private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.20/hospital/frontend/web/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.113/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
@@ -271,6 +277,40 @@ public class SingletonGestorHospital {
 
         }
     }
+    public void getAllReceitasAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIReceitas, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    receitas = HospitalJsonParser.parserJsonReceitas(response);
+
+
+                    adicionarReceitasBD(receitas);
+
+
+                    if(ReceitasListener != null){
+                        ReceitasListener.onRefreshListaReceitas(hospitalDB.getAllReceitasBD());
+                    }
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            volleyQueue.add(req);
+
+        }
+    }
+
 
     public void adicionarMarcacaoAPI(final Marcacao marcacao, final Context context){
 
@@ -394,12 +434,21 @@ public class SingletonGestorHospital {
             adicionarDiagnosticoBD(l);
         }
     }
+    public void adicionarReceitasBD(ArrayList<Receita> receitas){
+        hospitalDB.removerAllReceitasBD();
+        for(Receita l: receitas){
+            adicionarReceitaBD(l);
+        }
+    }
 
     public void adicionarMarcacaoBD(Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
     }
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){
         hospitalDB.adicionarDiagnosticoBD(diagnostico);
+    }
+    public void adicionarReceitaBD(Receita receita){
+        hospitalDB.adicionarReceitaBD(receita);
     }
 
     private void editarMarcacaoBD(Marcacao marcacao) {
@@ -433,6 +482,9 @@ public class SingletonGestorHospital {
    }
     public void setDiagnosticosListener(DiagnosticoListener diagnosticosListener) {
         this.DiagnosticosListener = diagnosticosListener;
+    }
+    public void setReceitasListener(ReceitasListener receitasListener) {
+        this.ReceitasListener = receitasListener;
     }
 
    /**************************** Especialidade **************************************/

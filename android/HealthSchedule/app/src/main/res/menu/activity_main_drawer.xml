@@ -32,8 +32,8 @@
                     android:id="@+id/nav_contato"
                     android:title="@string/contato" />
                 <item
-                    android:id="@+id/nav_outros"
-                    android:title="@string/lista_de_marcacao" />
+                    android:id="@+id/nav_receitas"
+                    android:title="@string/lista_de_receitas" />
             </group>
         </menu>
     </item>
