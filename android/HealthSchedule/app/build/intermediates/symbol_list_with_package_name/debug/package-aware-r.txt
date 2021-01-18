@@ -1548,11 +1548,8 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_adicionar
 drawable ic_action_guardar
-<<<<<<< Updated upstream
-=======
 drawable ic_baseline_email_24
 drawable ic_baseline_lock_24
->>>>>>> Stashed changes
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
@@ -1760,7 +1757,6 @@ id enterAlways
 id enterAlwaysCollapsed
 id etEmail
 id etPassword
-id etTime
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu

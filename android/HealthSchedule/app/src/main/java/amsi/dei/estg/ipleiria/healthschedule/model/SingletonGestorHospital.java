@@ -36,12 +36,12 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.113/index.php/api/user";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.119/index.php/api/user";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.113/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private DiagnosticoListener DiagnosticosListener;
@@ -50,17 +50,17 @@ public class SingletonGestorHospital {
     private static final int REMOVER_MARCACAO_BD = 3;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.113/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.119/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.113/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.119/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.113/index.php/api/diagnostico";
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.119/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener diagnosticoListener;
 
