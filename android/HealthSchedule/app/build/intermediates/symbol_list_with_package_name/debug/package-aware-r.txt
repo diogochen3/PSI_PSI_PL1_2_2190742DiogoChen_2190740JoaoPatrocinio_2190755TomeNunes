@@ -1814,6 +1814,7 @@ id lv_agenda
 id lv_diagnostico
 id lv_medicamento
 id lv_medico
+id lv_receita
 id masked
 id media_actions
 id message
@@ -1852,8 +1853,8 @@ id nav_contato
 id nav_diagnosticos
 id nav_marcacao
 id nav_medicos
-id nav_outros
 id nav_perfil
+id nav_receitas
 id nav_view
 id navigation_header_container
 id never
@@ -2018,8 +2019,10 @@ id tvTitulo
 id txtDataMarcacao
 id txtDescricao
 id txtHoraMarcacao
+id txtMedicamento
 id txtMedicoMarcacao
 id txtNomeEspecialidade
+id txtQuantidade
 id txtSituacao
 id unchecked
 id uniform
@@ -2120,11 +2123,13 @@ layout fragment_agenda
 layout fragment_contato
 layout fragment_lista_diagnosticos
 layout fragment_lista_medicos
+layout fragment_lista_receitas
 layout fragment_perfil
 layout item_lista_diagnostico
 layout item_lista_marcacao
 layout item_lista_medicamento
 layout item_lista_medico
+layout item_lista_receitas
 layout item_spinner_especialidade
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2243,6 +2248,7 @@ string lista
 string lista_de_diagnosticos
 string lista_de_marcacao
 string lista_de_medicos
+string lista_de_receitas
 string material_slider_range_end
 string material_slider_range_start
 string mtrl_badge_numberless_content_description

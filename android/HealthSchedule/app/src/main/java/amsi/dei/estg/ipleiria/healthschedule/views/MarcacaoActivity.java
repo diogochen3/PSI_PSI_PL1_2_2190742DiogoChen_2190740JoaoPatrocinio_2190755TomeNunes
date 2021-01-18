@@ -109,7 +109,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
         }
 
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,6 +141,19 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
             }
         });
 
+
+        spEspecialidade.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"Especialidade com o id="+ position,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                Toast.makeText(getApplicationContext(),"Especialidade com o id=nada",Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }
