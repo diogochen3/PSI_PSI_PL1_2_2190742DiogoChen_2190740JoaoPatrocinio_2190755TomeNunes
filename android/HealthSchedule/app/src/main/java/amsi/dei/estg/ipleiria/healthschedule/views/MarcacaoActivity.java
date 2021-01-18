@@ -76,6 +76,19 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         tpTime.setIs24HourView(true);
 
 
+        spEspecialidade.setOnItemSelectedListener(new OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"pos"+position,Toast.LENGTH_LONG);
+                Toast.makeText(getApplicationContext(),"id"+id,Toast.LENGTH_LONG);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         cvDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
@@ -126,21 +139,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                     //finish();
                 }
 
-            }
-        });
-
-
-
-        spMedico.setOnItemSelectedListener(new OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"Especialidade com o id="+  spMedico.getOnItemSelectedListener(),Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                Toast.makeText(getApplicationContext(),"Especialidade com o id=nada",Toast.LENGTH_LONG).show();
             }
         });
 

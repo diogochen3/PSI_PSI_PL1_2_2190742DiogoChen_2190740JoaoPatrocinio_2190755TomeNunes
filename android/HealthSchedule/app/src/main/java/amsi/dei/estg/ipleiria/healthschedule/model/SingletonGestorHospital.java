@@ -3,6 +3,7 @@ package amsi.dei.estg.ipleiria.healthschedule.model;
 import android.content.ContentValues;
 import android.content.Context;
 import android.os.PowerManager;
+import android.os.ProxyFileDescriptorCallback;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -185,6 +186,8 @@ public class SingletonGestorHospital {
             volleyQueue.add(req);
 
     }
+
+
 
    public void getAllMarcacaoAPI(final Context context){
 
@@ -469,7 +472,6 @@ public class SingletonGestorHospital {
                public void onResponse(JSONArray response) {
                    especialidades = HospitalJsonParser.parserJsonEspecialidades(response);
                    adicionarEspecialidadesBD(especialidades);
-
 
                    if(especialidadeListener != null){
                        especialidadeListener.onRefreshListaEspecialidade(hospitalDB.getAllEspecialidadeBD());
