@@ -8,32 +8,32 @@
 <group android:checkableBehavior="single">
     <item
         android:id="@+id/nav_perfil"
-        android:title="Perfil" />
+        android:title="@string/perfil" />
 </group>
-    <item android:title="Lista">
+    <item android:title="@string/lista">
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_consultas"
-                    android:title="Lista de Consultas" />
+                    android:id="@+id/nav_diagnosticos"
+                    android:title="@string/lista_de_diagnosticos" />
                 <item
                     android:id="@+id/nav_marcacao"
-                    android:title="Lista de marcações" />
+                    android:title="@string/lista_de_marcacao" />
                 <item
                     android:id="@+id/nav_medicos"
-                    android:title="Lista de medicos" />
+                    android:title="@string/lista_de_medicos" />
             </group>
         </menu>
     </item>
-    <item android:title="Outros">
+    <item android:title="@string/outros">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_contato"
-                    android:title="Contato" />
+                    android:title="@string/contato" />
                 <item
                     android:id="@+id/nav_outros"
-                    android:title="Lista de marcações" />
+                    android:title="@string/lista_de_marcacao" />
             </group>
         </menu>
     </item>

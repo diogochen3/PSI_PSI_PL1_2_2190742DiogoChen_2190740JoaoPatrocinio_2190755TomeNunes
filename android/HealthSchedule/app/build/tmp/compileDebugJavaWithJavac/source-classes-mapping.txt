@@ -1,7 +1,5 @@
 amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.java
  amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser
-amsi/dei/estg/ipleiria/healthschedule/views/ListaConsultasFragment.java
- amsi.dei.estg.ipleiria.healthschedule.views.ListaConsultasFragment
 amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.java
  amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico
 amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java
@@ -26,6 +24,11 @@ amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java
  amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity$1
  amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity$2
  amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity$3
+<<<<<<< Updated upstream
+=======
+ amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity$4
+ amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity$4$1
+>>>>>>> Stashed changes
 amsi/dei/estg/ipleiria/healthschedule/model/Consultas.java
  amsi.dei.estg.ipleiria.healthschedule.model.Consultas
 amsi/dei/estg/ipleiria/healthschedule/listeners/EspecialidadeListener.java
@@ -38,6 +41,14 @@ amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$10
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$11
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$12
+<<<<<<< Updated upstream
+=======
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$13
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$14
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$15
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$16
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$17
+>>>>>>> Stashed changes
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$2
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$3
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$4
@@ -46,6 +57,11 @@ amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$7
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$8
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$9
+<<<<<<< Updated upstream
+=======
+amsi/dei/estg/ipleiria/healthschedule/views/ListaDiagnosticosFragment.java
+ amsi.dei.estg.ipleiria.healthschedule.views.ListaDiagnosticosFragment
+>>>>>>> Stashed changes
 amsi/dei/estg/ipleiria/healthschedule/views/ContatoFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.ContatoFragment
 amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicamentosActivity.java
@@ -56,10 +72,21 @@ amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener
 amsi/dei/estg/ipleiria/healthschedule/model/MedicoEspecialidade.java
  amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade
+<<<<<<< Updated upstream
+=======
+amsi/dei/estg/ipleiria/healthschedule/listeners/DiagnosticoListener.java
+ amsi.dei.estg.ipleiria.healthschedule.listeners.DiagnosticoListener
+>>>>>>> Stashed changes
 amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener
 amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java
  amsi.dei.estg.ipleiria.healthschedule.model.HospitalBDHelper
+<<<<<<< Updated upstream
+=======
+amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterDiagnostico.java
+ amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterDiagnostico
+ amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterDiagnostico$ViewHolderLista
+>>>>>>> Stashed changes
 amsi/dei/estg/ipleiria/healthschedule/model/Especialidade.java
  amsi.dei.estg.ipleiria.healthschedule.model.Especialidade
 amsi/dei/estg/ipleiria/healthschedule/model/Profile.java

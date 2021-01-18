@@ -1,6 +1,7 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import android.content.Intent;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -23,7 +24,6 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setTitle(getString(R.string.Title_login));
-
         etEmail = findViewById(R.id.etEmail);
         etPass = findViewById(R.id.etPassword);
 
@@ -51,11 +51,11 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
         startActivity(intent);
         finish();
 
-     /*   if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
+        if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
             Toast.makeText(getApplicationContext(),"É preciso net",Toast.LENGTH_SHORT);
         }else
             SingletonGestorHospital.getInstance(getApplicationContext()).loginAPI(email, pass,getApplicationContext());
-        */
+
     }
 
     private boolean isEmailvalido(String email){

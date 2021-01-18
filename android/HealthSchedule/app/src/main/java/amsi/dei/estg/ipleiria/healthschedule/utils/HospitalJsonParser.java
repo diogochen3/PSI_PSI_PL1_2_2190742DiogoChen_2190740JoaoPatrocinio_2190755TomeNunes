@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
@@ -74,7 +75,31 @@ public class HospitalJsonParser {
 
         return marcacoes;
     }
+    public static ArrayList<Diagnostico> parserJsonDiagnosticos(JSONArray response) {
+        ArrayList<Diagnostico> diagnosticos = new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject diagnostico = (JSONObject) response.get(i);
+                    int id = diagnostico.getInt("id");
+                    String descricao = diagnostico.getString("descricao");
+                    String date = diagnostico.getString("date");
+                    String situacao = diagnostico.getString("situacao");
+                    int id_Utente = diagnostico.getInt("id_utente");
+                    int id_Medico = diagnostico.getInt("id_medico");
 
+
+                    Diagnostico l = new Diagnostico(id, id_Medico, id_Utente,date, descricao, situacao);
+                    diagnosticos.add(l);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return diagnosticos;
+    }
     /// Profile
     public static ArrayList<Profile> parserJsonProfiles(JSONArray response) {
 

@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -72,7 +73,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
     private void carregarCabecalho() {
         SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.EMAIL, Context.MODE_PRIVATE);
         email = sharedPreferences.getString(EMAIL, "sem email");
-        View hview= navigationView.getHeaderView(0);
+       // View hview= navigationView.getHeaderView(0);
         TextView tvEmail= findViewById(R.id.Email);
 
     }
@@ -86,17 +87,17 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
             case R.id.nav_perfil:
                 fragment=new PerfilFragment();
                 setTitle(menuItem.getTitle());
-               //   System.out.println("-->Nav Perfil");
                 break;
-            case R.id.nav_consultas:
-             /*   fragment=new DinamicoFragment();
-                setTitle(menuItem.getTitle());*/
-                // System.out.println("-->Nav Dinamico");
+            case R.id.nav_diagnosticos:
+
+                fragment=new ListaDiagnosticosFragment();
+                setTitle(menuItem.getTitle());
+
+
                 break;
             case R.id.nav_marcacao:
              fragment=new AgendaFragment();
                 setTitle(menuItem.getTitle());
-                // System.out.println("-->Nav Dinamico");
                 break;
             case R.id.nav_medicos:
                /* fragment=new DinamicoFragment();
@@ -118,4 +119,6 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

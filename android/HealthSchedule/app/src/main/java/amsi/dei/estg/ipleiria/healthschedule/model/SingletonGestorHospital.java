@@ -22,6 +22,7 @@ import java.util.Map;
 
 import javax.crypto.Mac;
 
+import amsi.dei.estg.ipleiria.healthschedule.listeners.DiagnosticoListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.EspecialidadeListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
@@ -35,28 +36,33 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://front.test/index.php/api/default";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.113/index.php/api/user";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.20/hospital/frontend/web/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.113/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
+    private DiagnosticoListener DiagnosticosListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
     private static final int EDITAR_MARCACAO_BD = 2;
     private static final int REMOVER_MARCACAO_BD = 3;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.20/hospital/frontend/web/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.113/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.20/hospital/frontend/web/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.113/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
+    /************************ variaveis Profile ******************************************/
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.113/index.php/api/diagnostico";
+    private ArrayList<Diagnostico> diagnosticos;
+    private DiagnosticoListener diagnosticoListener;
 
 
 
@@ -111,7 +117,6 @@ public class SingletonGestorHospital {
                 public void onResponse(JSONArray response) {
                     profiles = HospitalJsonParser.parserJsonProfiles(response);
                     adicionarProfilesBD(profiles);
-                    Toast.makeText(context, "Funcionou", Toast.LENGTH_SHORT).show();
                     if(profileListener != null){
                         profileListener.onRefreshListaProfiles(hospitalDB.getAllProfilesBD());
                     }
@@ -140,7 +145,7 @@ public class SingletonGestorHospital {
         hospitalDB.adicionarProfileBD(profile);
     }
 
-   /* public void loginAPI(final String email, final String pass, final Context applicationContext) {
+   public void loginAPI(final String email, final String pass, final Context applicationContext) {
 
         StringRequest req =new StringRequest(Request.Method.POST,
                     mUrlAPILogin, new Response.Listener<String>() {
@@ -173,7 +178,7 @@ public class SingletonGestorHospital {
 
             volleyQueue.add(req);
 
-    }*/
+    }
 
    public void getAllMarcacaoAPI(final Context context){
 
@@ -187,7 +192,6 @@ public class SingletonGestorHospital {
 
                @Override
                public void onResponse(JSONArray response) {
-                   Toast.makeText(context, "POutasE VINHO VERDE", Toast.LENGTH_SHORT).show();
                    marcacoes = HospitalJsonParser.parserJsonMarcacoes(response);
                    adicionarMarcacoesBD(marcacoes);
 
@@ -230,6 +234,37 @@ public class SingletonGestorHospital {
 
        }
    }
+    public void getAllDiagnosticoAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIDiagnostico, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    diagnosticos = HospitalJsonParser.parserJsonDiagnosticos(response);
+                    adicionarDiagnosticosBD(diagnosticos);
+
+
+                    if(DiagnosticosListener != null){
+                        DiagnosticosListener.onRefreshListaDiagnostico(hospitalDB.getAllDiagnosticosBD());
+                    }
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            volleyQueue.add(req);
+
+        }
+    }
 
     public void adicionarMarcacaoAPI(final Marcacao marcacao, final Context context){
 
@@ -328,6 +363,12 @@ public class SingletonGestorHospital {
                 return l;
         return null;
     }
+    public Diagnostico getDiagnostico(int id){
+        for (Diagnostico l: diagnosticos)
+            if (l.getId() == id)
+                return l;
+        return null;
+    }
 
     public ArrayList<Marcacao> getallMarcacaoBD() {
         marcacoes = hospitalDB.getAllMarcacoesBD();
@@ -341,8 +382,18 @@ public class SingletonGestorHospital {
         }
     }
 
+    public void adicionarDiagnosticosBD(ArrayList<Diagnostico> diagnosticos){
+        hospitalDB.removerAllDiagnosticosBD();
+        for(Diagnostico l: diagnosticos){
+            adicionarDiagnosticoBD(l);
+        }
+    }
+
     public void adicionarMarcacaoBD(Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
+    }
+    public void adicionarDiagnosticoBD(Diagnostico diagnostico){
+        hospitalDB.adicionarDiagnosticoBD(diagnostico);
     }
 
     private void editarMarcacaoBD(Marcacao marcacao) {
@@ -375,6 +426,9 @@ public class SingletonGestorHospital {
     public void setMarcacaoListener(MarcacoesListener marcacaoesListener) {
         this.MarcacoesListener = marcacaoesListener;
    }
+    public void setDiagnosticosListener(DiagnosticoListener diagnosticosListener) {
+        this.DiagnosticosListener = diagnosticosListener;
+    }
 
    /**************************** Especialidade **************************************/
 
@@ -408,7 +462,6 @@ public class SingletonGestorHospital {
 
                @Override
                public void onResponse(JSONArray response) {
-                   Toast.makeText(context, "POutasE VINHO VERDE", Toast.LENGTH_SHORT).show();
                    especialidades = HospitalJsonParser.parserJsonEspecialidades(response);
                    adicionarEspecialidadesBD(especialidades);
 
