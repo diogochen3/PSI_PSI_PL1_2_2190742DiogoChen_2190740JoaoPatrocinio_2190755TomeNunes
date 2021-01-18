@@ -73,9 +73,9 @@ public class AdapterConsultas extends BaseAdapter {
         public void update(Marcacao marcacao) {
             txtDataMarcacao.setText(marcacao.getDate());
             txtHoraMarcacao.setText(marcacao.getTempo());
-            txtEspecialidadeMarcacao.setText(marcacao.getId_especialidade());
-            txtMedicoMarcacao.setText(marcacao.getId_Medico());
-            txtUtenteMarcacao.setText(marcacao.getId_Utente());
+            txtEspecialidadeMarcacao.setText(marcacao.getId_especialidade() +"");
+            txtMedicoMarcacao.setText(marcacao.getId_Medico()+ "");
+            txtUtenteMarcacao.setText(marcacao.getId_Utente()+ "");
         }
 
     }
