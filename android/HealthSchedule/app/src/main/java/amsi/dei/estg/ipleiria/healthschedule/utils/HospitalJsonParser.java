@@ -16,6 +16,7 @@ import java.util.Date;
 import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
+import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 
 public class HospitalJsonParser {
@@ -125,9 +126,7 @@ public class HospitalJsonParser {
 
                     Profile p = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date);
                     profiles.add(p);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
+                } catch (ParseException | JSONException e) {
                     e.printStackTrace();
                 }
             }
@@ -168,19 +167,10 @@ public class HospitalJsonParser {
                 try {
                     JSONObject profile = (JSONObject) response.get(i);
                     int id = profile.getInt("id");
-                    String pNome = profile.getString("First_name");
-                    String apelido = profile.getString("Last_name");
-                    String email = profile.getString("Email");
-                    int telefone = profile.getInt("Phone_number");
-                    int nif = profile.getInt("NIF");
-                    String endereco = profile.getString("Address");
-                    String dNascimento = profile.getString("Birth_date");
-                    String genero = profile.getString("gender");
-                    String codPostal = profile.getString("postal_code");
-                    int is_medico = profile.getInt("is_medico");
+                    String name = profile.getString("Name");
 
-                   // Profile p = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date);
-                   // especialidades.add(p);
+                    Especialidade p = new Especialidade(id, name);
+                    especialidades.add(p);
                 /*} catch (ParseException e) {
                     e.printStackTrace();*/
                 } catch (JSONException e) {
@@ -191,4 +181,23 @@ public class HospitalJsonParser {
         return especialidades;
     }
 
+    public static ArrayList<MedicoEspecialidade> parserJsonMedicoEspecialidades(JSONArray response) {
+
+        ArrayList<MedicoEspecialidade> medicoEspecialidades = new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject medicoEpecialidade = (JSONObject) response.get(i);
+                    int id_especialidade = medicoEpecialidade.getInt("id");
+                    int id_medico = medicoEpecialidade.getInt("");
+
+                    MedicoEspecialidade me = new MedicoEspecialidade(id_especialidade, id_medico);
+                    medicoEspecialidades.add(me);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return medicoEspecialidades;
+    }
 }

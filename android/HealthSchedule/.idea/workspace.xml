@@ -11,16 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="951b08b2-0cbb-4748-b17b-0c74301fae0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterDiagnostico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/listeners/DiagnosticoListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/ListaDiagnosticosFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_input.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custombutton.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_email_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_lock_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/image4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logo3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_lista_diagnostico.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -31,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
@@ -45,25 +36,13 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/ListaConsultasFragment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/out/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-af.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-af.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-am.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-am.json" afterDir="false" />
@@ -178,24 +157,13 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-zu.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values-zu.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/values.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/ListaConsultasFragment.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_launcher_background.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_launcher_background.png.flat" afterDir="false" />
@@ -214,7 +182,6 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_app_bar_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_app_bar_main.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_agenda.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_agenda.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_contato.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_contato.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_lista_consultas.xml.flat" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_lista_medicos.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_lista_medicos.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_perfil.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_perfil.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_lista_medicamento.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_lista_medicamento.xml.flat" afterDir="false" />
@@ -350,27 +317,39 @@
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMarcacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMarcacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/Diagnostico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/utils/HospitalJsonParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/ListaConsultasFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_marcacao.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_perfil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_perfil.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_agenda.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lista_consultas.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lista_diagnosticos.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_perfil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_perfil.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_lista_marcacao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_lista_marcacao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600525cbdc21e.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600525d1b5521.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6005277074a2d.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60052772bbe5a.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60052781d1221.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60052781df6b3.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527a0e07b2.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527a0f01e4.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527dadc375.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527ddb32c6.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527e520790.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527e52b50e.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527efd6943.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527efddf00.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527faab08e.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/600527faade4f.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60052814bc9ac.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60052814c94c7.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6005283301baa.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60052836b4147.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059b6fdfff4.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059b75839a8.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059d512a4e7.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059d547905a.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059d58ad0ac.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059d58e5bdb.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059d6285de3.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60059d6285de4.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/index.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/runtime/logs/app.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,6 +357,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[88f8fc85]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -394,9 +374,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -426,11 +406,14 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\res\drawable" />
-    </key>
     <key name="android.template.-1141919963">
       <recent name="amsi.dei.estg.ipleiria.healthschedule.views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\res\drawable" />
+      <recent name="C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\res\layout" />
+      <recent name="C:\wamp64\www\android\HealthSchedule\app\src\main\res\layout" />
+      <recent name="C:\wamp64\www\android\HealthSchedule\.idea\libraries" />
     </key>
     <key name="android.template.1895762991">
       <recent name="amsi.dei.estg.ipleiria.healthschedule.views" />
@@ -440,11 +423,8 @@
       <recent name="amsi.dei.estg.ipleiria.healthschedule.views" />
       <recent name="amsi.dei.estg.ipleiria.healthschedule.listeners" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\res\drawable" />
-      <recent name="C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\res\layout" />
-      <recent name="C:\wamp64\www\android\HealthSchedule\app\src\main\res\layout" />
-      <recent name="C:\wamp64\www\android\HealthSchedule\.idea\libraries" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -563,24 +543,15 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1610908331075" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1610985713196">
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1610999225773">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1610985713196" />
-    <state x="686" y="103" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610640018956" />
-    <state x="686" y="103" key="#com.intellij.ide.util.MemberChooser" timestamp="1610982897078">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1610947257763" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1610999225773" />
     <state x="686" y="103" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610982897078" />
     <state x="447" y="232" width="474" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610930511467">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="447" y="232" width="474" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1610930511467" />
-    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610982533812">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610982533812" />
     <state x="580" y="161" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610983067121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -605,65 +576,43 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1610873054160" />
-    <state x="651" y="170" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610635221200" />
-    <state width="1323" height="222" key="GridCell.Tab.0.bottom" timestamp="1610986380083">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610986380083" />
-    <state width="1877" height="178" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610878660344" />
-    <state width="1323" height="222" key="GridCell.Tab.0.center" timestamp="1610986380082">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="222" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610986380082" />
-    <state width="1877" height="178" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610878660344" />
-    <state width="1323" height="222" key="GridCell.Tab.0.left" timestamp="1610986380082">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="222" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610986380082" />
-    <state width="1877" height="178" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610878660344" />
-    <state width="1323" height="222" key="GridCell.Tab.0.right" timestamp="1610986380083">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="222" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610986380083" />
-    <state width="1877" height="178" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610878660344" />
     <state x="651" y="170" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610986005786" />
-    <state width="1860" height="429" key="GridCell.Tab.0.bottom" timestamp="1610987120218">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.0.bottom" timestamp="1611000825268">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610931229378" />
+    <state width="1323" height="222" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611000825268" />
     <state width="1860" height="429" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610987120218" />
-    <state width="1860" height="429" key="GridCell.Tab.0.center" timestamp="1610987120218">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.0.center" timestamp="1611000825268">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1610931229377" />
+    <state width="1323" height="222" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611000825268" />
     <state width="1860" height="429" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610987120218" />
-    <state width="1860" height="429" key="GridCell.Tab.0.left" timestamp="1610987120218">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.0.left" timestamp="1611000825267">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1610931229377" />
+    <state width="1323" height="222" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611000825267" />
     <state width="1860" height="429" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610987120218" />
-    <state width="1860" height="429" key="GridCell.Tab.0.right" timestamp="1610987120218">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1323" height="222" key="GridCell.Tab.0.right" timestamp="1611000825268">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="661" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1610931229378" />
+    <state width="1323" height="222" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611000825268" />
     <state width="1860" height="429" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610987120218" />
-    <state width="661" height="222" key="GridCell.Tab.1.bottom" timestamp="1610929231988">
-      &gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes
+    <state width="1323" height="222" key="GridCell.Tab.1.bottom" timestamp="1611000825269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="222" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1610986380084" />
-    <state width="1323" height="222" key="GridCell.Tab.1.center" timestamp="1610986380083">
+    <state width="1323" height="222" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611000825269" />
+    <state width="1323" height="222" key="GridCell.Tab.1.center" timestamp="1611000825269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="222" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1610986380083" />
-    <state width="1323" height="222" key="GridCell.Tab.1.left" timestamp="1610986380083">
+    <state width="1323" height="222" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1611000825269" />
+    <state width="1323" height="222" key="GridCell.Tab.1.left" timestamp="1611000825269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="222" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1610986380083" />
-    <state width="1323" height="222" key="GridCell.Tab.1.right" timestamp="1610986380084">
+    <state width="1323" height="222" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1611000825269" />
+    <state width="1323" height="222" key="GridCell.Tab.1.right" timestamp="1611000825269">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="222" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1610986380084" />
+    <state width="1323" height="222" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1611000825269" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1610932168733">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -677,6 +626,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1610462163062" />
+    <state x="492" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610994736546">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1610994736546" />
     <state x="459" y="122" key="refactoring.ChangeSignatureDialog" timestamp="1610870867049">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -687,6 +640,15 @@
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1610983424536" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="185" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo typeName="amsi.dei.estg.ipleiria.healthschedule.model.Profile" fieldName="id" />

@@ -2019,6 +2019,7 @@ id txtDataMarcacao
 id txtDescricao
 id txtHoraMarcacao
 id txtMedicoMarcacao
+id txtNomeEspecialidade
 id txtSituacao
 id unchecked
 id uniform
@@ -2124,6 +2125,7 @@ layout item_lista_diagnostico
 layout item_lista_marcacao
 layout item_lista_medicamento
 layout item_lista_medico
+layout item_spinner_especialidade
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title

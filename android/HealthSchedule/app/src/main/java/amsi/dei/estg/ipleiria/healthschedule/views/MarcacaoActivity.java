@@ -1,11 +1,14 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
+import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.EspecialidadeListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
+import amsi.dei.estg.ipleiria.healthschedule.listeners.MedicoEspecialidadeListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
+import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
@@ -31,23 +34,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesListener, EspecialidadeListener {
+public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesListener, EspecialidadeListener, MedicoEspecialidadeListener {
 
     public static final String ID = "ID";
     private Marcacao marcacao;
 
-
+    private ArrayList<MedicoEspecialidade> medicoEspecialidades;
 
     private Spinner spMedico, spEspecialidade;
-
     private ArrayAdapter arrayAdapter;
-    private ArrayList<String> especialidade;
-    private ArrayList<String> medico;
+    private ArrayList<Especialidade> especialidade;
+    private ArrayList<Profile> medico;
 
     private TimePicker tpTime;
     private CalendarView cvDate;
     private String date, time;
     private int hour, minute;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +66,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setMarcacaoListener(this);
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
 
         FloatingActionButton fab = findViewById(R.id.fab);
         spEspecialidade = findViewById(R.id.spEspecialidade);
@@ -70,8 +74,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         tpTime = findViewById(R.id.tpTime);
         cvDate = findViewById(R.id.cvDate);
         tpTime.setIs24HourView(true);
-
-
 
 
         cvDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
@@ -129,21 +131,16 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
 
 
-
         spMedico.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                if (position== 0)
-                {
-                    arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, medico);
-                    //spMedico.setAdapter(medico);
-                }
+                Toast.makeText(getApplicationContext(),"Especialidade com o id="+  spMedico.getOnItemSelectedListener(),Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                Toast.makeText(getApplicationContext(),"Especialidade com o id=nada",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -177,10 +174,12 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
     @Override
     public void onRefreshListaEspecialidade(ArrayList<Especialidade> especialidades) {
-        especialidade = SingletonGestorHospital.getInstance(getApplicationContext()).getallEspecialidadeNomeBD();
-        arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, especialidade);
-        spEspecialidade.setAdapter(arrayAdapter);
+        spEspecialidade.setAdapter(new AdapterEspecialidade(getApplicationContext(),especialidades));
         //spEspecialidade.setAdapter(new Adapter(getApplicationContext(),especialidades));
     }
 
+    @Override
+    public void onRefreshListaMedicoEspecialidade(ArrayList<MedicoEspecialidade> medicoEspecialidade) {
+        medicoEspecialidades = medicoEspecialidade;
+    }
 }

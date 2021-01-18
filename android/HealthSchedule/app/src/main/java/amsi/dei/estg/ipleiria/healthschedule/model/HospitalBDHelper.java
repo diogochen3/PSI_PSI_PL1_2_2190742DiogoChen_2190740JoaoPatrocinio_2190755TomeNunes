@@ -55,6 +55,9 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String ID_MEDICO_DIAGNOSTICO="id_medico";
     private static final String DID_UTENTE_DIAGNOSTICO="id_utente";
 
+    private static final String TABLE_MEDICO_ESPECIALIDADE ="diagnostico";
+    private static final String ID_MEDICO_MEDICO_ESPECIALIDADE="id_medico";
+    private static final String ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE="id_utente";
 
     public HospitalBDHelper(Context context) {
         super(context,DB_NAME,null, DB_VERSION);
@@ -86,6 +89,10 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_UTENTE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_MEDICO_MARCACAO+ " INTEGER NOT NULL " +
                 ");";
+        String sqlCreateTableMedicoEspecialidade="CREATE TABLE IF NOT EXISTS "+TABLE_MEDICO_ESPECIALIDADE+"("+
+                ID_MEDICO_MEDICO_ESPECIALIDADE+ " INTEGER NOT NULL, "+
+                ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE+ " INTEGER NOT NULL " +
+                ");";
         String sqlCreateTableEspecialidade="CREATE TABLE IF NOT EXISTS "+TABLE_ESPECIALIDADE+"("+
                 ID_ESPECIALIDADE +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 NOME_ESPECIALIDADE + " TEXT NOT NULL " +
@@ -103,7 +110,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
         sqLiteDatabase.execSQL(sqlCreateTableProfile);
         sqLiteDatabase.execSQL(sqlCreateTableDiagnostico);
-
+        sqLiteDatabase.execSQL(sqlCreateTableMedicoEspecialidade);
     }
 
 
@@ -117,6 +124,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlDropTableEspecialidade);
         String sqlDropTableDiagnostico="DROP TABLE IF EXISTS "+ TABLE_DIAGNOSTICO;
         sqLiteDatabase.execSQL(sqlDropTableDiagnostico);
+        String sqlDropTableMedicoEspecialidade="DROP TABLE IF EXISTS "+ TABLE_MEDICO_ESPECIALIDADE;
+        sqLiteDatabase.execSQL(sqlDropTableMedicoEspecialidade);
         this.onCreate(sqLiteDatabase);
     }
 
@@ -224,27 +233,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         }
         return marcacoes;
     }
-    public ArrayList<Diagnostico> getAllDiagnosticosBD(){
-        ArrayList<Diagnostico> diagnosticos=new ArrayList<>();
-        Cursor cursor=this.db.query(TABLE_DIAGNOSTICO, new String[]{
-                ID_DIAGNOSTICO,
-                        ID_MEDICO_DIAGNOSTICO,
-                        DID_UTENTE_DIAGNOSTICO,DESCRICAO_DIAGNOSTICO,DATE_DIAGNOSTICO,SITUACAO_DIAGNOSTICO},
-                null,null,null,null,null);
-
-        if (cursor.moveToFirst()){
-            do {
-                Diagnostico auxDiagnostico=new Diagnostico(cursor.getInt(0),
-                        cursor.getInt(1),
-                        cursor.getInt(2),
-                        cursor.getString(3),
-                        cursor.getString(4),
-                        cursor.getString(5));
-                diagnosticos.add(auxDiagnostico);
-            }while (cursor.moveToNext());
-        }
-        return diagnosticos;
-    }
     public void adicionarMarcacaoBD(Marcacao marcacao){
         ContentValues values= new ContentValues();
         values.put(ID_MARCACAO,marcacao.getId());
@@ -266,6 +254,52 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return livro;
         //return null;
     }
+
+    public boolean editarMarcacaoBD(Marcacao marcacao) {
+        ContentValues values= new ContentValues();
+        values.put(DATE_MARCACAO, marcacao.getDate());
+        values.put(TEMPO_MARCACAO,marcacao.getTempo());
+        //values.put(ACEITAR_MACACAO,marcacao.getAceitar());
+        //  values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
+        //  values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
+        // values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
+
+        return this.db.update(TABLE_MARCACAO,values,"id=? ",new String[]{marcacao.getId() +""}) >0;
+    }
+
+
+
+    public void  removerAllMarcacoesBD(){
+        this.db.delete(TABLE_MARCACAO,null,null);
+    }
+
+    public boolean removerMarcacaoBD(int id) {
+        return this.db.delete(TABLE_MARCACAO,"id=? ",new String[]{id +""}) >0;
+    }
+
+    /********************************************** Diagnostico  ****************************/
+    public ArrayList<Diagnostico> getAllDiagnosticosBD(){
+        ArrayList<Diagnostico> diagnosticos=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_DIAGNOSTICO, new String[]{
+                ID_DIAGNOSTICO,
+                        ID_MEDICO_DIAGNOSTICO,
+                        DID_UTENTE_DIAGNOSTICO,DESCRICAO_DIAGNOSTICO,DATE_DIAGNOSTICO,SITUACAO_DIAGNOSTICO},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Diagnostico auxDiagnostico=new Diagnostico(cursor.getInt(0),
+                        cursor.getInt(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5));
+                diagnosticos.add(auxDiagnostico);
+            }while (cursor.moveToNext());
+        }
+        return diagnosticos;
+    }
+
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){
         ContentValues values= new ContentValues();
         values.put(ID_DIAGNOSTICO,diagnostico.getId());
@@ -287,31 +321,12 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return null;
     }
 
-    public boolean editarMarcacaoBD(Marcacao marcacao) {
-        ContentValues values= new ContentValues();
-        values.put(DATE_MARCACAO, marcacao.getDate());
-        values.put(TEMPO_MARCACAO,marcacao.getTempo());
-        //values.put(ACEITAR_MACACAO,marcacao.getAceitar());
-      //  values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
-      //  values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
-       // values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
-
-        return this.db.update(TABLE_MARCACAO,values,"id=? ",new String[]{marcacao.getId() +""}) >0;
-    }
-
-
-
-    public void  removerAllMarcacoesBD(){
-        this.db.delete(TABLE_MARCACAO,null,null);
-    }
 
     public void  removerAllDiagnosticosBD(){
         this.db.delete(TABLE_DIAGNOSTICO,null,null);
     }
 
-    public boolean removerLivroBD(int id) {
-        return this.db.delete(TABLE_MARCACAO,"id=? ",new String[]{id +""}) >0;
-    }
+
 
     /*************************   ESpecialidade   ******************************************************///
     public ArrayList<Especialidade> getAllEspecialidadeBD(){
@@ -360,4 +375,37 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     public void  removerAllEspecialidadesBD(){
         this.db.delete(TABLE_MARCACAO,null,null);
     }
+
+    /*************************** MedicoEspecialidade ***********************************************************/
+    public ArrayList<MedicoEspecialidade> getAllMedicoEspecialidadeBD(){
+        ArrayList<MedicoEspecialidade> medicoEspecialidades=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_MEDICO_ESPECIALIDADE, new String[]{
+                        ID_MEDICO_MEDICO_ESPECIALIDADE,ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                MedicoEspecialidade auxMedicoEspecialidade =new MedicoEspecialidade(cursor.getInt(1),
+                        cursor.getInt(0));
+                medicoEspecialidades.add(auxMedicoEspecialidade);
+            }while (cursor.moveToNext());
+        }
+        return medicoEspecialidades;
+    }
+
+
+    public void adicionarMedicoEspecialidadeBD(MedicoEspecialidade medicoEspecialidade){
+
+        ContentValues values= new ContentValues();
+
+        values.put(ID_MEDICO_MEDICO_ESPECIALIDADE,medicoEspecialidade.getId_Medico());
+        values.put(ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE,medicoEspecialidade.getId_Especialidade());
+
+        this.db.insert(TABLE_MEDICO_ESPECIALIDADE,null,values);
+
+    }
+    public void  removerAllMedicoEspecialidadesBD(){
+        this.db.delete(TABLE_MEDICO_ESPECIALIDADE,null,null);
+    }
+
 }
