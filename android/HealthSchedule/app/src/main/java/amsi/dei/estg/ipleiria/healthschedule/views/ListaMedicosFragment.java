@@ -9,16 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
-
 import amsi.dei.estg.ipleiria.healthschedule.R;
-import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterConsultas;
-import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
-import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 
 
 public class ListaMedicosFragment extends Fragment {
@@ -32,7 +26,7 @@ public class ListaMedicosFragment extends Fragment {
 
 
         lvListaMedicos= view.findViewById(R.id.lv_agenda);
-        // lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
+        // lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes));
 
 
         lvListaMedicos.setOnItemClickListener(new AdapterView.OnItemClickListener() {

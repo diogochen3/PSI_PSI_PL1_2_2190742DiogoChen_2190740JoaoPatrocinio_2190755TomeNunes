@@ -1,6 +1,6 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
-import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterConsultas;
+import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
+import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
-public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
+public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, MarcacoesListener {
     private ListView lvListaMarcacoes;
     private MarcacoesListener marcacoesListener;
     private static final int EDITAR=2;
@@ -47,8 +49,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
-       // listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI();
-        lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
+
+       // lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes));
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
@@ -67,17 +69,19 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
         FloatingActionButton fab= view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //if(LivroJsonParser.isConnectionInternet(getContext())){
-                  //  Intent intent= new Intent(getContext(),DetalhesLivroActivity.class);
+                if(HospitalJsonParser.isConnectionInternet(getContext())){
+                    Intent intent= new Intent(getContext(),MarcacaoActivity.class);
                     //startActivity(intent);
-                 //   startActivityForResult(intent,ADICIONAR);
-               // }
+                    startActivityForResult(intent,ADICIONAR);
+                }
             }
         });
-        SingletonGestorHospital.getInstance(getContext()).setMarcacaoListener(marcacoesListener);
+
+        SingletonGestorHospital.getInstance(getContext()).setMarcacaoListener(this);
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+
       /*  if (listaMarcacoes != null){
-            lvListaMarcacoes.setAdapter(new AdapterConsultas(getActivity(),listaMarcacoes));
+            lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes));
         }else{
             Toast.makeText(getContext(), "FODASE", Toast.LENGTH_SHORT).show();
         }*/
@@ -86,17 +90,49 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
     }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode== Activity.RESULT_OK){
+            switch (resultCode){
+                case ADICIONAR:
+                    SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+                    //lvListalivros.setAdapter(new ListaLivroAdaptador(getContext(),listaLivros));
+                    Toast.makeText(getContext(),"Livro adicionado com sucesso",Toast.LENGTH_LONG);
+                    //  Snackbar.make(getView(),"Livro adicionado com sucesso",Snackbar.LENGTH_LONG).show();
+                    break;
+                case EDITAR:
+                    SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+                    //lvListalivros.setAdapter(new ListaLivroAdaptador(getContext(),listaLivros));
+                    Toast.makeText(getContext(),"Livro editado com sucesso",Toast.LENGTH_LONG);
+                    //  Snackbar.make(getView(),"Livro editado com sucesso",Snackbar.LENGTH_LONG).show();
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
     @Override
     public void onResume() {
-        SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+       // SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         super.onResume();
     }
     @Override
     public void onRefresh() {
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         swipeRefreshLayout.setRefreshing(false);
-        if(listaMarcacoes!=null)
-            lvListaMarcacoes.setAdapter(new AdapterConsultas(getContext(),listaMarcacoes));
         //Toast.makeText(getContext(),"Toquei no refresh",Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRefreshListaLivros(ArrayList<Marcacao> marcacoes) {
+        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),marcacoes));
+    }
+
+    @Override
+    public void onRefreshdetalhesLivros() {
+
     }
 }

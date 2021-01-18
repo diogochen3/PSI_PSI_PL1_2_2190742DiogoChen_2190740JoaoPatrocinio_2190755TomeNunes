@@ -35,7 +35,7 @@ public class SingletonGestorHospital {
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.20/hospital/frontend/web/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
 
     private MarcacoesListener MarcacoesListener;
@@ -57,6 +57,7 @@ public class SingletonGestorHospital {
 
     private SingletonGestorHospital(Context context) {
         profiles= new ArrayList<>();
+        marcacoes= new ArrayList<>();
         hospitalDB =new HospitalBDHelper(context);
     }
 
@@ -74,6 +75,13 @@ public class SingletonGestorHospital {
         return null;
     }
 
+    public Profile getMedico(int id){
+        for (Profile l: profiles)
+
+            if (l.getId() == id)
+                return l;
+        return null;
+    }
     public void getAllProfileAPI(final Context context){
         if (!HospitalJsonParser.isConnectionInternet(context)) {
             Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
@@ -149,8 +157,7 @@ public class SingletonGestorHospital {
    public void getAllMarcacaoAPI(final Context context){
 
        if (!HospitalJsonParser.isConnectionInternet(context)) {
-
-
+           Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
        }else {
 
            //JsonRequest req;
@@ -160,8 +167,8 @@ public class SingletonGestorHospital {
                @Override
                public void onResponse(JSONArray response) {
                    Toast.makeText(context, "POutasE VINHO VERDE", Toast.LENGTH_SHORT).show();
-                   Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
-                   adicionarMarcacoesBD(Marcacao);
+                   marcacoes = HospitalJsonParser.parserJsonMarcacao(response);
+                   adicionarMarcacoesBD(marcacoes);
 
 
                    if(MarcacoesListener != null){
@@ -203,13 +210,19 @@ public class SingletonGestorHospital {
 
        }
    }
+
     public void adicionarMarcacoesBD(ArrayList<Marcacao> marcacoes){
             hospitalDB.removerAllMarcacoesBD();
             for(Marcacao l: marcacoes){
                 adicionarMarcacaoBD(l);
         }
-
     }
+
+    public ArrayList<Marcacao> getallMarcacaoBD() {
+        marcacoes = hospitalDB.getAllMarcacoesBD();
+        return marcacoes;
+    }
+
     public void adicionarMarcacaoBD(amsi.dei.estg.ipleiria.healthschedule.model.Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
     }

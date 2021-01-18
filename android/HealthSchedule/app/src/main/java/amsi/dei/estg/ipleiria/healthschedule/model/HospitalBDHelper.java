@@ -15,7 +15,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=1;
+    private static final int DB_VERSION=2;
     private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
@@ -28,8 +28,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String DATE_MARCACAO="date";
     private static final String TEMPO_MARCACAO="tempo";
     private static final String ACEITAR_MACACAO="Aceitar";
-
     private static final String IS_MEDICO_PROFILE = "is_medico";
+
     private static final String TABLE_PROFILE="profile";
     private static final String ID_PROFILE="id";
     private static final String PRIMEIRO_NOME_PROFILE="primeiroNome";
@@ -71,25 +71,26 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_MARCACAO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 DATE_MARCACAO + " TEXT NOT NULL, "+
                 TEMPO_MARCACAO+ " TEXT NOT NULL, "+
-                ACEITAR_MACACAO+ " INTEGER NOT NULL, "+
+                ACEITAR_MACACAO+ " INTEGER, "+
                 ID_ESPECIALIDADE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_UTENTE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_MEDICO_MARCACAO+ " INTEGER NOT NULL " +
                 ");";
 
 
-        sqLiteDatabase.execSQL(sqlCreateTableProfile);
         sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
+        sqLiteDatabase.execSQL(sqlCreateTableProfile);
+
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         String sqlDropTableProfile="DROP TABLE IF EXISTS "+ TABLE_PROFILE;
-        db.execSQL(sqlDropTableProfile);
+        sqLiteDatabase.execSQL(sqlDropTableProfile);
         String sqlDropTableMarcacao="DROP TABLE IF EXISTS "+ TABLE_MARCACAO;
-        db.execSQL(sqlDropTableMarcacao);
-        this.onCreate(db);
+        sqLiteDatabase.execSQL(sqlDropTableMarcacao);
+        this.onCreate(sqLiteDatabase);
     }
 
     /***************************    PROFILE      ********************  *////////////////////////
@@ -174,13 +175,12 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     /***************************    MARCACAO         ******************************////////////////////////
 
-    public void  removerAllMarcacoesBD(){
-        this.db.delete(TABLE_MARCACAO,null,null);
-    }
-
     public ArrayList<Marcacao> getAllMarcacoesBD(){
         ArrayList<Marcacao> marcacoes=new ArrayList<>();
-        Cursor cursor=this.db.query(TABLE_MARCACAO, new String[]{ID_MARCACAO,ID_ESPECIALIDADE_MARCACAO,ID_MEDICO_MARCACAO,ID_UTENTE_MARCACAO,DATE_MARCACAO,TEMPO_MARCACAO,ACEITAR_MACACAO},
+        Cursor cursor=this.db.query(TABLE_MARCACAO, new String[]{
+                ID_MARCACAO,
+                        ID_ESPECIALIDADE_MARCACAO,
+                        ID_MEDICO_MARCACAO,ID_UTENTE_MARCACAO,DATE_MARCACAO,TEMPO_MARCACAO,ACEITAR_MACACAO},
                 null,null,null,null,null);
 
         if (cursor.moveToFirst()){
@@ -219,4 +219,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return null;
     }
 
+    public void  removerAllMarcacoesBD(){
+        this.db.delete(TABLE_MARCACAO,null,null);
+    }
 }

@@ -98,8 +98,8 @@ public class PerfilFragment extends Fragment {
         tvPNome.setText(perfil.getFirst_name());
         tvApelido.setText(perfil.getLast_name());
         tvEmail.setText(perfil.getEmail());
-        tvTelefone.setText(perfil.getPhone_number());
-        tvNif.setText(perfil.getNIF());
+        tvTelefone.setText(String.valueOf(perfil.getPhone_number()));
+        tvNif.setText(String.valueOf(perfil.getNIF()));
         tvEndereco.setText(perfil.getAddress());
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
         String date = formatter.format(perfil.getBirth_date());

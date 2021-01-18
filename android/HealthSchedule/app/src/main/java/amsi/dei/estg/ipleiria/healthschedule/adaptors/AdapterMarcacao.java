@@ -11,15 +11,15 @@ import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import java.util.ArrayList;
 
-public class AdapterConsultas extends BaseAdapter {
+public class AdapterMarcacao extends BaseAdapter {
 
-    //public AdapterConsultas(){}
+    //public AdapterMarcacao(){}
 
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Marcacao> marcacoes;
 
-    public AdapterConsultas(Context context, ArrayList<Marcacao> marcacoes) {
+    public AdapterMarcacao(Context context, ArrayList<Marcacao> marcacoes) {
         this.context = context;
         this.marcacoes = marcacoes;
     }

@@ -23,7 +23,12 @@
     </SearchView>
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spEspecialidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/spMedico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0" />
@@ -32,6 +37,14 @@
         android:id="@+id/calendarView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Escolhe o tempo"
+        />
 
     <Button
         android:id="@+id/button"
