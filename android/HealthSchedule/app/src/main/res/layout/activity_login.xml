@@ -4,31 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.LoginActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".views.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo3" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="29dp" />
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
+        android:drawablePadding="12dp"
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:ems="10"
+        android:textSize="14sp"
         android:hint="@string/email"
+        android:background="@drawable/custom_input"
         android:inputType="textEmailAddress" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="18dp" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="12dp"
+
+        android:background="@drawable/custom_input"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_weight="0"
         android:ems="10"
         android:hint="@string/palavra_passe"
         android:inputType="textPassword" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="18dp" />
 
     <Button
         android:id="@+id/btnEntrar"
@@ -36,8 +59,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="0"
-        android:text="@string/entrar"
+        android:width="200dp"
+        android:height="60dp"
+        android:background="@drawable/custombutton"
         android:onClick="onClickLogin"
-         />
+        android:text="@string/entrar"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>

@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class AdapterMarcacao extends BaseAdapter {
 
-    //public AdapterMarcacao(){}
 
     private Context context;
     private LayoutInflater inflater;
@@ -64,18 +63,15 @@ public class AdapterMarcacao extends BaseAdapter {
         public ViewHolderLista(View view) {
             txtDataMarcacao = view.findViewById(R.id.txtDataMarcacao);
             txtHoraMarcacao = view.findViewById(R.id.txtHoraMarcacao);
-            txtEspecialidadeMarcacao = view.findViewById(R.id.txtEspecialidadeMarcacao);
             txtMedicoMarcacao = view.findViewById(R.id.txtMedicoMarcacao);
-            txtUtenteMarcacao = view.findViewById(R.id.txtUtenteMarcacao);
 
         }
 
         public void update(Marcacao marcacao) {
             txtDataMarcacao.setText(marcacao.getDate());
             txtHoraMarcacao.setText(marcacao.getTempo());
-            txtEspecialidadeMarcacao.setText(marcacao.getId_especialidade() +"");
             txtMedicoMarcacao.setText(marcacao.getId_Medico()+ "");
-            txtUtenteMarcacao.setText(marcacao.getId_Utente()+ "");
+
         }
 
     }

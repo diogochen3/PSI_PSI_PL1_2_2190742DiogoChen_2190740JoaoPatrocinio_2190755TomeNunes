@@ -15,7 +15,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=2;
+    private static final int DB_VERSION=5;
     private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
@@ -47,6 +47,14 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String NOME_ESPECIALIDADE="Name";
 
 
+    private static final String TABLE_DIAGNOSTICO="diagnostico";
+    private static final String ID_DIAGNOSTICO="id";
+    private static final String DESCRICAO_DIAGNOSTICO="descricao";
+    private static final String DATE_DIAGNOSTICO="date";
+    private static final String SITUACAO_DIAGNOSTICO="situacao";
+    private static final String ID_MEDICO_DIAGNOSTICO="id_medico";
+    private static final String DID_UTENTE_DIAGNOSTICO="id_utente";
+
 
     public HospitalBDHelper(Context context) {
         super(context,DB_NAME,null, DB_VERSION);
@@ -55,7 +63,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String sqlCreateTableProfile="CREATE TABLE "+TABLE_PROFILE+"("+
+        String sqlCreateTableProfile="CREATE TABLE IF NOT EXISTS "+TABLE_PROFILE+"("+
                 ID_PROFILE +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 PRIMEIRO_NOME_PROFILE+ " TEXT NOT NULL, "+
                 APELIDO_PROFILE+ " TEXT NOT NULL, "+
@@ -69,7 +77,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 IS_MEDICO_PROFILE+ " TEXT NOT NULL "+
                 ");";
 
-        String sqlCreateTableMarcacao="CREATE TABLE "+TABLE_MARCACAO+"("+
+        String sqlCreateTableMarcacao="CREATE TABLE IF NOT EXISTS "+TABLE_MARCACAO+"("+
                 ID_MARCACAO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 DATE_MARCACAO + " TEXT NOT NULL, "+
                 TEMPO_MARCACAO+ " TEXT NOT NULL, "+
@@ -78,14 +86,23 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_UTENTE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_MEDICO_MARCACAO+ " INTEGER NOT NULL " +
                 ");";
-        String sqlCreateTableEspecialidade="CREATE TABLE "+TABLE_ESPECIALIDADE+"("+
+        String sqlCreateTableEspecialidade="CREATE TABLE IF NOT EXISTS "+TABLE_ESPECIALIDADE+"("+
                 ID_ESPECIALIDADE +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 NOME_ESPECIALIDADE + " TEXT NOT NULL " +
+                ");";
+        String sqlCreateTableDiagnostico="CREATE TABLE IF NOT EXISTS "+TABLE_DIAGNOSTICO+"("+
+                ID_DIAGNOSTICO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                DESCRICAO_DIAGNOSTICO + " TEXT NOT NULL, "+
+                DATE_DIAGNOSTICO+ " TEXT NOT NULL, "+
+                SITUACAO_DIAGNOSTICO+ " TEXT NOT NULL, "+
+                ID_MEDICO_DIAGNOSTICO+ " INTEGER NOT NULL, "+
+                DID_UTENTE_DIAGNOSTICO+ " INTEGER NOT NULL "+
                 ");";
 
         sqLiteDatabase.execSQL(sqlCreateTableEspecialidade);
         sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
         sqLiteDatabase.execSQL(sqlCreateTableProfile);
+        sqLiteDatabase.execSQL(sqlCreateTableDiagnostico);
 
     }
 
@@ -98,6 +115,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlDropTableMarcacao);
         String sqlDropTableEspecialidade="DROP TABLE IF EXISTS "+ TABLE_ESPECIALIDADE;
         sqLiteDatabase.execSQL(sqlDropTableEspecialidade);
+        String sqlDropTableDiagnostico="DROP TABLE IF EXISTS "+ TABLE_DIAGNOSTICO;
+        sqLiteDatabase.execSQL(sqlDropTableDiagnostico);
         this.onCreate(sqLiteDatabase);
     }
 
@@ -205,6 +224,27 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         }
         return marcacoes;
     }
+    public ArrayList<Diagnostico> getAllDiagnosticosBD(){
+        ArrayList<Diagnostico> diagnosticos=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_DIAGNOSTICO, new String[]{
+                ID_DIAGNOSTICO,
+                        ID_MEDICO_DIAGNOSTICO,
+                        DID_UTENTE_DIAGNOSTICO,DESCRICAO_DIAGNOSTICO,DATE_DIAGNOSTICO,SITUACAO_DIAGNOSTICO},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Diagnostico auxDiagnostico=new Diagnostico(cursor.getInt(0),
+                        cursor.getInt(1),
+                        cursor.getInt(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5));
+                diagnosticos.add(auxDiagnostico);
+            }while (cursor.moveToNext());
+        }
+        return diagnosticos;
+    }
     public void adicionarMarcacaoBD(Marcacao marcacao){
         ContentValues values= new ContentValues();
         values.put(ID_MARCACAO,marcacao.getId());
@@ -226,6 +266,27 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return livro;
         //return null;
     }
+    public void adicionarDiagnosticoBD(Diagnostico diagnostico){
+        ContentValues values= new ContentValues();
+        values.put(ID_DIAGNOSTICO,diagnostico.getId());
+        values.put(DESCRICAO_DIAGNOSTICO,diagnostico.getDescricao());
+        values.put(DATE_DIAGNOSTICO,diagnostico.getDate());
+        values.put(SITUACAO_DIAGNOSTICO,diagnostico.getSituacao());
+        values.put(ID_MEDICO_DIAGNOSTICO ,diagnostico.getId_medico());
+        values.put(DID_UTENTE_DIAGNOSTICO,diagnostico.getId_utente());
+
+        this.db.insert(TABLE_DIAGNOSTICO,null,values);
+
+       /* long id= this.db.insert(TABLE_LIVROS,null,values);
+        if (id>-1){
+            livro.setId((int)id);
+            return livro;
+        }*/
+
+        //return livro;
+        //return null;
+    }
+
     public boolean editarMarcacaoBD(Marcacao marcacao) {
         ContentValues values= new ContentValues();
         values.put(DATE_MARCACAO, marcacao.getDate());
@@ -244,6 +305,9 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         this.db.delete(TABLE_MARCACAO,null,null);
     }
 
+    public void  removerAllDiagnosticosBD(){
+        this.db.delete(TABLE_DIAGNOSTICO,null,null);
+    }
 
     public boolean removerLivroBD(int id) {
         return this.db.delete(TABLE_MARCACAO,"id=? ",new String[]{id +""}) >0;

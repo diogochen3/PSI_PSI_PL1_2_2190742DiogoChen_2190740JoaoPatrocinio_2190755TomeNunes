@@ -5,11 +5,11 @@ import java.util.Date;
 public class Diagnostico {
 
 private int id,id_medico,id_utente;
-private Date date;
+private String date;
 
 private String descricao,situacao;
 
-    public Diagnostico(int id, int id_medico, int id_utente, Date date, String descricao, String situacao) {
+    public Diagnostico(int id, int id_medico, int id_utente, String date, String descricao, String situacao) {
         this.id = id;
         this.id_medico = id_medico;
         this.id_utente = id_utente;
@@ -42,11 +42,11 @@ private String descricao,situacao;
         this.id_utente = id_utente;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

@@ -1537,7 +1537,9 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable custom_input
 drawable custom_output
+drawable custombutton
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1546,12 +1548,16 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_adicionar
 drawable ic_action_guardar
+drawable ic_baseline_email_24
+drawable ic_baseline_lock_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable image4
+drawable logo3
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1594,6 +1600,7 @@ id CTRL
 id Email
 id FUNCTION
 id META
+id Medico
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
@@ -1777,6 +1784,7 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id hora
 id icon
 id icon_group
 id ifRoom
@@ -1786,6 +1794,7 @@ id image
 id imageView
 id imageView2
 id imageView3
+id imageView4
 id info
 id invisible
 id italic
@@ -1802,6 +1811,7 @@ id linear
 id listMode
 id list_item
 id lv_agenda
+id lv_diagnostico
 id lv_medicamento
 id lv_medico
 id masked
@@ -1838,8 +1848,8 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
-id nav_consultas
 id nav_contato
+id nav_diagnosticos
 id nav_marcacao
 id nav_medicos
 id nav_outros
@@ -2006,10 +2016,10 @@ id tvSerie
 id tvTelefone
 id tvTitulo
 id txtDataMarcacao
-id txtEspecialidadeMarcacao
+id txtDescricao
 id txtHoraMarcacao
 id txtMedicoMarcacao
-id txtUtenteMarcacao
+id txtSituacao
 id unchecked
 id uniform
 id unlabeled
@@ -2107,9 +2117,10 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_agenda
 layout fragment_contato
-layout fragment_lista_consultas
+layout fragment_lista_diagnosticos
 layout fragment_lista_medicos
 layout fragment_perfil
+layout item_lista_diagnostico
 layout item_lista_marcacao
 layout item_lista_medicamento
 layout item_lista_medico
@@ -2215,6 +2226,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string contato
 string email
 string entrar
 string error_icon_content_description
@@ -2225,6 +2237,10 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string lista
+string lista_de_diagnosticos
+string lista_de_marcacao
+string lista_de_medicos
 string material_slider_range_end
 string material_slider_range_start
 string mtrl_badge_numberless_content_description
@@ -2265,12 +2281,14 @@ string mtrl_picker_toggle_to_year_selection
 string ndClose
 string ndOpen
 string numero_de_identifica_o
+string outros
 string palavra_passe
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string perfil
 string search_menu_title
 string status_bar_notification_info_overflow
 string text
