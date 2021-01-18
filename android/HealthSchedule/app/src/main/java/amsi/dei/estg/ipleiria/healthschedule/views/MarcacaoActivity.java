@@ -13,14 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.TimePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -32,19 +36,19 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     public static final String ID = "ID";
     private Marcacao marcacao;
 
-    private ArrayList<Profile> medico;
+
 
     private Spinner spMedico, spEspecialidade;
+
     private ArrayAdapter arrayAdapter;
     private ArrayList<String> especialidade;
+    private ArrayList<String> medico;
 
-    private EditText etTime;
-    private TimePickerDialog timePickerDialog;
-    private Calendar calendar;
+    private TimePicker tpTime;
     private CalendarView cvDate;
-    private int currentHour;
-    private int currentMinute;
-    private String date;
+    private String date, time;
+    private int hour, minute;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,14 +59,27 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         marcacao = SingletonGestorHospital.getInstance(getApplicationContext()).getMarcacao(id);
 
 
+        SingletonGestorHospital.getInstance(getApplicationContext()).setEspecialidadeListener(this);
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setMarcacaoListener(this);
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
 
         FloatingActionButton fab = findViewById(R.id.fab);
         spEspecialidade = findViewById(R.id.spEspecialidade);
         spMedico = findViewById(R.id.spMedico);
-        etTime = findViewById(R.id.etTime);
+        tpTime = findViewById(R.id.tpTime);
         cvDate = findViewById(R.id.cvDate);
+        tpTime.setIs24HourView(true);
+
+
+
+
+        cvDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
+                date = i+"/" + i1 + "/" +i2;
+            }
+        });
 
 
         if (marcacao != null){
@@ -72,8 +89,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         }else{
             setTitle("Marcar");
             fab.setImageResource(R.drawable.ic_action_adicionar);
-            arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, especialidade);
-            spEspecialidade.setAdapter(arrayAdapter);
+           /* arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, especialidade);
+            spEspecialidade.setAdapter(arrayAdapter);*/
 
         }
 
@@ -83,14 +100,24 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
             public void onClick(View view) {
                 if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
                     if (marcacao!=null){
-                        marcacao.setDate(date);
-                        marcacao.setTempo(etTime.getText().toString());
+
+                        /*marcacao.setDate(date);
+                        marcacao.setTempo(etTime.getText().toString());*/
 
                         SingletonGestorHospital.getInstance(getApplicationContext()).editarMarcacaoAPI(marcacao,getApplicationContext());
                     }
                     else
                     if (validarMarcaco()==true){
-                        marcacao = new Marcacao(0,5,2,6,date,etTime.getText().toString(),0/*,Integer.parseInt(etAno.getText().toString())*/);
+                        if (Build.VERSION.SDK_INT >= 23 ){
+                            hour = tpTime.getHour();
+                            minute = tpTime.getMinute();
+                        }
+                        else{
+                            hour = tpTime.getCurrentHour();
+                            minute = tpTime.getCurrentMinute();
+                        }
+                        time = hour +":" +minute+ ":00";
+                        marcacao = new Marcacao(0,5,2,6,date,time,0/*,Integer.parseInt(etAno.getText().toString())*/);
                         SingletonGestorHospital.getInstance(getApplicationContext()).adicionarMarcacaoAPI(marcacao,getApplicationContext());
                     }else return;
                     // setResult(RESULT_OK);
@@ -100,51 +127,32 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
             }
         });
 
-        cvDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+
+
+
+        spMedico.setOnItemSelectedListener(new OnItemSelectedListener() {
+
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                date = i + "/"+ i1+ "/"+i2;
-            }
-        });
-
-
-
-        spMedico.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
                 if (position== 0)
                 {
                     arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, medico);
+                    //spMedico.setAdapter(medico);
                 }
-                //spMedico.setAdapter(medico);
             }
-        });
 
-
-
-
-
-
-        etTime.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                calendar = Calendar.getInstance();
-                currentHour = calendar.get(Calendar.HOUR_OF_DAY);
-                currentMinute = calendar.get(Calendar.MINUTE);
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-                timePickerDialog = new TimePickerDialog(getApplicationContext(), new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
-                        etTime.setText(hourOfDay +":"+ minute+ ":00");
-                    }
-
-                },currentHour,currentMinute,true);
-
-                timePickerDialog.show();
             }
         });
+
+
 
     }
+
+
+
 
     private void carregarDetalhesMarcacao() {
 
@@ -169,6 +177,10 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
     @Override
     public void onRefreshListaEspecialidade(ArrayList<Especialidade> especialidades) {
-     //   spEspecialidade.setAdapter(new Adapter(getApplicationContext(),especialidades));
+        especialidade = SingletonGestorHospital.getInstance(getApplicationContext()).getallEspecialidadeNomeBD();
+        arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, especialidade);
+        spEspecialidade.setAdapter(arrayAdapter);
+        //spEspecialidade.setAdapter(new Adapter(getApplicationContext(),especialidades));
     }
+
 }

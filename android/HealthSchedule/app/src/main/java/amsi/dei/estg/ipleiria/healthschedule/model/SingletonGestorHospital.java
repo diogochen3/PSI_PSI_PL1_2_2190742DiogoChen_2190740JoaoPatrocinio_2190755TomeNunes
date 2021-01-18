@@ -28,6 +28,7 @@ import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment;
+import amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity;
 
 public class SingletonGestorHospital {
     private ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> Marcacao;
@@ -54,6 +55,7 @@ public class SingletonGestorHospital {
     /************************ variaveis Profile ******************************************/
     private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.20/hospital/frontend/web/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
+    private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
 
 
@@ -71,7 +73,7 @@ public class SingletonGestorHospital {
         profiles= new ArrayList<>();
         marcacoes= new ArrayList<>();
         especialidades= new ArrayList<>();
-
+        especialidadesNome= new ArrayList<>();
         hospitalDB =new HospitalBDHelper(context);
     }
 
@@ -79,6 +81,10 @@ public class SingletonGestorHospital {
 
     public void setHospitalLoginListener(HospitalLoginListener hospitalLoginListener) {
         this.hospitalLoginListener = hospitalLoginListener;
+    }
+
+    public void setEspecialidadeListener(EspecialidadeListener especialidadeListener) {
+        this.especialidadeListener = especialidadeListener;
     }
 
     /*********************************** Profile ******************************************/
@@ -371,6 +377,7 @@ public class SingletonGestorHospital {
    }
 
    /**************************** Especialidade **************************************/
+
    public String getEspecialidadeNome(int id){
        for (Especialidade l: especialidades)
            if (l.getId() == id)
@@ -383,6 +390,10 @@ public class SingletonGestorHospital {
                 return l;
 
             return null;
+    }
+    public ArrayList<String> getallEspecialidadeNomeBD() {
+        especialidadesNome = hospitalDB.getAllEspecialidadeNomeBD();
+        return especialidadesNome;
     }
 
    public void getAllEspecialidadeAPI(final Context context){
@@ -428,5 +439,6 @@ public class SingletonGestorHospital {
     public void adicionarEspecialidadeBD(Especialidade especialidade){
         hospitalDB.adicionarEspecialidadeBD(especialidade);
     }
+
 
 }

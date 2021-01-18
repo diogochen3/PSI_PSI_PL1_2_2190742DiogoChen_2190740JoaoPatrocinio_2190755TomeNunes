@@ -3,10 +3,12 @@
 namespace frontend\modules\api\controllers;
 
 use Yii;
+use yii\rest\ActiveController;
 use yii\web\NotFoundHttpException;
 
-class EspecialidadeController extends \yii\web\Controller
+class EspecialidadeController extends ActiveController
 {
+    public $modelClass = 'frontend\modules\api\models\Especialidade';
     public function actionIndex()
     {
         return $this->render('index');

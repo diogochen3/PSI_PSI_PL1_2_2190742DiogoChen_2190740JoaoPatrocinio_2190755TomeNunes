@@ -1545,6 +1545,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_adicionar
+drawable ic_action_guardar
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_checked_circle
@@ -1678,11 +1679,10 @@ id blocking
 id bottom
 id bounce
 id btnEntrar
-id button
+id btnTime
 id button2
 id buttonPanel
 id cache_measures
-id calendarView2
 id cancel_action
 id cancel_button
 id center
@@ -1713,6 +1713,7 @@ id cos
 id custom
 id customPanel
 id cut
+id cvDate
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1914,8 +1915,9 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id spEspecialidade
+id spMedico
 id spacer
-id spinner2
 id spinner3
 id spline
 id split_action_bar
@@ -1981,6 +1983,7 @@ id toolbar
 id top
 id topPanel
 id touch_outside
+id tpTime
 id transitionToEnd
 id transitionToStart
 id transition_current_scene

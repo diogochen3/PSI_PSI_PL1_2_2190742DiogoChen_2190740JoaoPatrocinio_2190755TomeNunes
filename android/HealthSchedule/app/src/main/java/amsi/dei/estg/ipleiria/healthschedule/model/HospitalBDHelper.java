@@ -266,6 +266,21 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         return especialidades;
     }
 
+    public ArrayList<String> getAllEspecialidadeNomeBD(){
+        ArrayList<String> especialidades=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_ESPECIALIDADE, new String[]{
+                        ID_MARCACAO,NOME_ESPECIALIDADE},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Especialidade auxEspecialidade =new Especialidade(cursor.getInt(0),
+                        cursor.getString(1));
+                especialidades.add(auxEspecialidade.getName());
+            }while (cursor.moveToNext());
+        }
+        return especialidades;
+    }
 
 
     public void adicionarEspecialidadeBD(Especialidade especialidade){

@@ -38,20 +38,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/etTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Escolhe o tempo"
-        />
-
-    <Button
-        android:id="@+id/button"
+    <TimePicker
+        android:id="@+id/tpTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Marcar" />
+        android:timePickerMode="spinner"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -62,4 +53,6 @@
         android:backgroundTint="#E91E63"
         android:clickable="true"
         android:src="@drawable/ic_action_adicionar" />
+
+
 </LinearLayout>
