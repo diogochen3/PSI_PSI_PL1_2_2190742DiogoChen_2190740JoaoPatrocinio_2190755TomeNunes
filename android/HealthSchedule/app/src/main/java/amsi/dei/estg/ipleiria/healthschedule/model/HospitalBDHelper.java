@@ -42,7 +42,9 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String GENERO_PROFILE="genero";
     private static final String CODPOSTAL_PROFILE="codPostal";
 
-
+    private static final String TABLE_ESPECIALIDADE="especialidade";
+    private static final String ID_ESPECIALIDADE="id";
+    private static final String NOME_ESPECIALIDADE="Name";
 
 
 
@@ -76,8 +78,12 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_UTENTE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_MEDICO_MARCACAO+ " INTEGER NOT NULL " +
                 ");";
+        String sqlCreateTableEspecialidade="CREATE TABLE "+TABLE_ESPECIALIDADE+"("+
+                ID_ESPECIALIDADE +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                NOME_ESPECIALIDADE + " TEXT NOT NULL " +
+                ");";
 
-
+        sqLiteDatabase.execSQL(sqlCreateTableEspecialidade);
         sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
         sqLiteDatabase.execSQL(sqlCreateTableProfile);
 
@@ -90,6 +96,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlDropTableProfile);
         String sqlDropTableMarcacao="DROP TABLE IF EXISTS "+ TABLE_MARCACAO;
         sqLiteDatabase.execSQL(sqlDropTableMarcacao);
+        String sqlDropTableEspecialidade="DROP TABLE IF EXISTS "+ TABLE_ESPECIALIDADE;
+        sqLiteDatabase.execSQL(sqlDropTableEspecialidade);
         this.onCreate(sqLiteDatabase);
     }
 
@@ -191,7 +199,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                         cursor.getInt(3),
                         cursor.getString(4),
                         cursor.getString(5),
-                        cursor.getString(6));
+                        cursor.getInt(6));
                 marcacoes.add(auxMarcacao);
             }while (cursor.moveToNext());
         }
@@ -218,8 +226,59 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return livro;
         //return null;
     }
+    public boolean editarMarcacaoBD(Marcacao marcacao) {
+        ContentValues values= new ContentValues();
+        values.put(DATE_MARCACAO, marcacao.getDate());
+        values.put(TEMPO_MARCACAO,marcacao.getTempo());
+        //values.put(ACEITAR_MACACAO,marcacao.getAceitar());
+      //  values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
+      //  values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
+       // values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
+
+        return this.db.update(TABLE_MARCACAO,values,"id=? ",new String[]{marcacao.getId() +""}) >0;
+    }
+
+
 
     public void  removerAllMarcacoesBD(){
+        this.db.delete(TABLE_MARCACAO,null,null);
+    }
+
+
+    public boolean removerLivroBD(int id) {
+        return this.db.delete(TABLE_MARCACAO,"id=? ",new String[]{id +""}) >0;
+    }
+
+    /*************************   ESpecialidade   ******************************************************///
+    public ArrayList<Especialidade> getAllEspecialidadeBD(){
+        ArrayList<Especialidade> especialidades=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_ESPECIALIDADE, new String[]{
+                        ID_MARCACAO,NOME_ESPECIALIDADE},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Especialidade auxEspecialidade =new Especialidade(cursor.getInt(0),
+                        cursor.getString(1));
+                especialidades.add(auxEspecialidade);
+            }while (cursor.moveToNext());
+        }
+        return especialidades;
+    }
+
+
+
+    public void adicionarEspecialidadeBD(Especialidade especialidade){
+
+        ContentValues values= new ContentValues();
+
+        values.put(ID_ESPECIALIDADE,especialidade.getId());
+        values.put(NOME_ESPECIALIDADE,especialidade.getName());
+
+        this.db.insert(TABLE_ESPECIALIDADE,null,values);
+
+    }
+    public void  removerAllEspecialidadesBD(){
         this.db.delete(TABLE_MARCACAO,null,null);
     }
 }

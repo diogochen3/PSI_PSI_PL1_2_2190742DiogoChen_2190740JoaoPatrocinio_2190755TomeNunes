@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 
@@ -49,7 +50,7 @@ public class HospitalJsonParser {
     }
 
 
-    public static ArrayList<Marcacao> parserJsonMarcacao(JSONArray response) {
+    public static ArrayList<Marcacao> parserJsonMarcacoes(JSONArray response) {
         ArrayList<Marcacao> marcacoes = new ArrayList<>();
         if (response != null) {
             for (int i = 0; i < response.length(); i++) {
@@ -58,7 +59,7 @@ public class HospitalJsonParser {
                     int id = marcacao.getInt("id");
                     String date = marcacao.getString("date");
                     String tempo = marcacao.getString("tempo");
-                    String Aceitar = marcacao.getString("Aceitar");
+                    int Aceitar = marcacao.getInt("Aceitar");
                     int id_especialidade = marcacao.getInt("id_especialidade");
                     int id_Utente = marcacao.getInt("id_Utente");
                     int id_Medico = marcacao.getInt("id_Medico");
@@ -68,7 +69,6 @@ public class HospitalJsonParser {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }
 
@@ -110,5 +110,60 @@ public class HospitalJsonParser {
         return profiles;
     }
 
+
+    public static Marcacao parserJsonMarcacao(String response) {
+        Marcacao auxMarcacao = null;
+
+
+        try {
+
+            JSONObject marcacao = new JSONObject(response);
+            int id = marcacao.getInt("id");
+            String date = marcacao.getString("date");
+            String tempo = marcacao.getString("tempo");
+            int aceitar = marcacao.getInt("Aceitar");
+            int id_especialidade = marcacao.getInt("id_especialidade");
+            int id_utente = marcacao.getInt("id_Utente");
+            int id_medico = marcacao.getInt("id_Medico");
+
+            auxMarcacao= new Marcacao(id,id_especialidade,id_utente,id_medico,date,tempo,aceitar);
+
+        } catch(JSONException e) {
+            e.printStackTrace();
+        }
+
+        return auxMarcacao;
+    }
+
+    public static ArrayList<Especialidade> parserJsonEspecialidades(JSONArray response) {
+
+        ArrayList<Especialidade> especialidades = new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject profile = (JSONObject) response.get(i);
+                    int id = profile.getInt("id");
+                    String pNome = profile.getString("First_name");
+                    String apelido = profile.getString("Last_name");
+                    String email = profile.getString("Email");
+                    int telefone = profile.getInt("Phone_number");
+                    int nif = profile.getInt("NIF");
+                    String endereco = profile.getString("Address");
+                    String dNascimento = profile.getString("Birth_date");
+                    String genero = profile.getString("gender");
+                    String codPostal = profile.getString("postal_code");
+                    int is_medico = profile.getInt("is_medico");
+
+                   // Profile p = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date);
+                   // especialidades.add(p);
+                /*} catch (ParseException e) {
+                    e.printStackTrace();*/
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return especialidades;
+    }
 
 }

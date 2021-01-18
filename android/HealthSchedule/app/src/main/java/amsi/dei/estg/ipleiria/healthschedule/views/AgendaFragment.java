@@ -59,10 +59,10 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getContext(),"Livro com o id="+l,Toast.LENGTH_LONG).show();
-                //Intent intent=new Intent(getContext(),DetalhesLivroActivity.class);
-               // intent.putExtra("ID",(int) id);
+                Intent intent=new Intent(getContext(),MarcacaoActivity.class);
+                intent.putExtra("ID",(int) id);
                 //startActivity(intent);
-                //startActivityForResult(intent,EDITAR);
+                startActivityForResult(intent,EDITAR);
 
             }
         });
@@ -99,7 +99,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 case ADICIONAR:
                     SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
                     //lvListalivros.setAdapter(new ListaLivroAdaptador(getContext(),listaLivros));
-                    Toast.makeText(getContext(),"Livro adicionado com sucesso",Toast.LENGTH_LONG);
+                    Toast.makeText(getContext(),"Marcacao adicionado com sucesso",Toast.LENGTH_LONG);
                     //  Snackbar.make(getView(),"Livro adicionado com sucesso",Snackbar.LENGTH_LONG).show();
                     break;
                 case EDITAR:
@@ -127,7 +127,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     }
 
     @Override
-    public void onRefreshListaLivros(ArrayList<Marcacao> marcacoes) {
+    public void onRefreshListaMarcacoes(ArrayList<Marcacao> marcacoes) {
         lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),marcacoes));
     }
 

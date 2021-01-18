@@ -6,7 +6,7 @@ import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 
 public interface MarcacoesListener {
 
-    void onRefreshListaLivros(ArrayList<Marcacao> marcacoes);
+    void onRefreshListaMarcacoes(ArrayList<Marcacao> marcacoes);
 
     void onRefreshdetalhesLivros();
 

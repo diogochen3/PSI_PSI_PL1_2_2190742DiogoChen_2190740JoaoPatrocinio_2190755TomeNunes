@@ -3,11 +3,11 @@ package amsi.dei.estg.ipleiria.healthschedule.model;
 public class Marcacao {
 
     private int id,id_especialidade,id_Utente,id_Medico;
-    private String date, tempo, Aceitar;
+    private String date, tempo;
+    private int Aceitar;
 
 
-
-    public Marcacao(int id, int id_especialidade, int id_Utente, int id_Medico, String date, String tempo, String aceitar) {
+    public Marcacao(int id, int id_especialidade, int id_Utente, int id_Medico, String date, String tempo, int aceitar) {
         this.id = id;
         this.id_especialidade = id_especialidade;
         this.id_Utente = id_Utente;
@@ -64,11 +64,11 @@ public class Marcacao {
         this.tempo = tempo;
     }
 
-    public String getAceitar() {
+    public int getAceitar() {
         return Aceitar;
     }
 
-    public void setAceitar(String aceitar) {
+    public void setAceitar(int aceitar) {
         Aceitar = aceitar;
     }
 }
