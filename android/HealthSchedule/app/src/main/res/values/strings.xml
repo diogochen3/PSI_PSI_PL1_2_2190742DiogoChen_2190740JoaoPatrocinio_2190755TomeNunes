@@ -18,4 +18,5 @@
     <string name="contato">Contato</string>
     <string name="outros">Outros</string>
     <string name="lista_de_receitas">Lista de Receitas</string>
+    <string name="menu_remover">remover</string>
 </resources>
