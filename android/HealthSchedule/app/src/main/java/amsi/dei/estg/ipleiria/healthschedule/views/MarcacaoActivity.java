@@ -3,6 +3,7 @@ package amsi.dei.estg.ipleiria.healthschedule.views;
 import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao;
+import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterNomeMedicos;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.EspecialidadeListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MedicoEspecialidadeListener;
@@ -15,9 +16,14 @@ import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -38,7 +44,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
     public static final String ID = "ID";
     private Marcacao marcacao;
-
+    private int id_especialidade;
+    private int id_medico;
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
 
     private Spinner spMedico, spEspecialidade;
@@ -118,7 +125,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                             minute = tpTime.getCurrentMinute();
                         }
                         time = hour +":" +minute+ ":00";
-                        marcacao = new Marcacao(0,5,2,6,date,time,0/*,Integer.parseInt(etAno.getText().toString())*/);
+                        marcacao = new Marcacao(0,id_especialidade,21,id_medico,date,time,0);
                         SingletonGestorHospital.getInstance(getApplicationContext()).adicionarMarcacaoAPI(marcacao,getApplicationContext());
                     }else return;
                     // setResult(RESULT_OK);
@@ -128,21 +135,39 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
             }
         });
 
+          SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
+
 
         spEspecialidade.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"Especialidade com o id="+ position,Toast.LENGTH_LONG).show();
+                medico = SingletonGestorHospital.getInstance(getApplicationContext()).getMedico(id);
+                spMedico.setAdapter(new AdapterNomeMedicos(getApplicationContext(),medico));
+                id_especialidade = (int) id;
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                Toast.makeText(getApplicationContext(),"Especialidade com o id=nada",Toast.LENGTH_LONG).show();
+
             }
+
         });
 
 
+        spMedico.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                id_medico = (int) id;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+        });
 
     }
 
@@ -179,5 +204,50 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     @Override
     public void onRefreshListaMedicoEspecialidade(ArrayList<MedicoEspecialidade> medicoEspecialidade) {
         medicoEspecialidades = medicoEspecialidade;
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if (marcacao!= null){
+            MenuInflater inflater=getMenuInflater();
+            inflater.inflate(R.menu.menu_remover_marcaco,menu);
+            return super.onCreateOptionsMenu(menu);
+        }
+        return false;
+    }
+
+    /**
+     * ejetar operações do um item do menu é clicado
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.remover:
+                if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
+                    dialogRemover();
+                }else return true;
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void dialogRemover() {
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+        builder.setTitle("Remover Livro").setMessage("Pretende mesmo remover o livro").setIcon(android.R.drawable.ic_delete)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        SingletonGestorHospital.getInstance(getApplicationContext()).removerMarcacaoAPI(marcacao,getApplicationContext());
+                        setResult(RESULT_OK);
+                        finish();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // não vai fazer nada
+                    }
+                }).show();
     }
 }

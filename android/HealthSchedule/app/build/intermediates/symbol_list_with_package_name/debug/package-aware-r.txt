@@ -1756,7 +1756,10 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id etEmail
+id etFirstname
+id etLastname
 id etPassword
+id etPhoneNumber
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2022,6 +2025,7 @@ id txtHoraMarcacao
 id txtMedicamento
 id txtMedicoMarcacao
 id txtNomeEspecialidade
+id txtNomeMedico
 id txtQuantidade
 id txtSituacao
 id unchecked
@@ -2125,12 +2129,14 @@ layout fragment_lista_diagnosticos
 layout fragment_lista_medicos
 layout fragment_lista_receitas
 layout fragment_perfil
+layout fragment_perfil_alterar
 layout item_lista_diagnostico
 layout item_lista_marcacao
 layout item_lista_medicamento
 layout item_lista_medico
 layout item_lista_receitas
 layout item_spinner_especialidade
+layout item_spinner_medicos
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title

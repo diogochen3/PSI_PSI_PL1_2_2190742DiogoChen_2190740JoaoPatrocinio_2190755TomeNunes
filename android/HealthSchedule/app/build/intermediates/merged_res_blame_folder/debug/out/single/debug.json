@@ -108,6 +108,10 @@
         "source": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\src\\main\\res\\drawable\\custom_input.xml"
     },
     {
+        "merged": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_perfil_alterar.xml.flat",
+        "source": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\fragment_perfil_alterar.xml"
+    },
+    {
         "merged": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_action_guardar.png.flat",
         "source": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\src\\main\\res\\drawable-hdpi\\ic_action_guardar.png"
     },
@@ -194,6 +198,10 @@
     {
         "merged": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_guardar.png.flat",
         "source": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_guardar.png"
+    },
+    {
+        "merged": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_spinner_medicos.xml.flat",
+        "source": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\item_spinner_medicos.xml"
     },
     {
         "merged": "C:\\wamp64\\www\\PSI\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_lock_24.png.flat",

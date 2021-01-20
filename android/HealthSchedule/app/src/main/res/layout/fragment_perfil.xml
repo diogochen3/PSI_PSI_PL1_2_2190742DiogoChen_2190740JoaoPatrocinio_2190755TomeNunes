@@ -194,13 +194,15 @@
         android:layout_weight="0"
         android:orientation="horizontal">
 
+
         <Button
             android:id="@+id/btnTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="onClickBtn"
             android:layout_weight="1"
-            android:text="Altear" />
-
+            android:text="Alterar" />
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"

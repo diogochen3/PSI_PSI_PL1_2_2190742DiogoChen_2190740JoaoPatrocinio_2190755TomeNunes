@@ -9,7 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 
@@ -20,7 +25,7 @@ public class PerfilFragment extends Fragment {
 
    // public static final String ID = "ID";
     private TextView tvPNome, tvApelido, tvEmail, tvTelefone, tvNif, tvEndereco, tvDNascimento , tvgenero, tvcodPostal;
-
+    private Button btnTime;
     private Profile perfil;
     private int id = 11;
 
@@ -50,6 +55,7 @@ public class PerfilFragment extends Fragment {
         tvDNascimento = view.findViewById(R.id.tvDNascimento);
         tvgenero = view.findViewById(R.id.tvGenero);
         tvcodPostal = view.findViewById(R.id.tvCodPostal);
+        btnTime = view.findViewById(R.id.btnTime);
 
         perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
 
@@ -93,6 +99,8 @@ public class PerfilFragment extends Fragment {
         });*/
         return view;
     }
+
+
 
     private void carregarPerfil() {
         tvPNome.setText(perfil.getFirst_name());

@@ -210,8 +210,8 @@ public class HospitalJsonParser {
             for (int i = 0; i < response.length(); i++) {
                 try {
                     JSONObject medicoEpecialidade = (JSONObject) response.get(i);
-                    int id_especialidade = medicoEpecialidade.getInt("id");
-                    int id_medico = medicoEpecialidade.getInt("");
+                    int id_especialidade = medicoEpecialidade.getInt("id_especialidade");
+                    int id_medico = medicoEpecialidade.getInt("id_medico");
 
                     MedicoEspecialidade me = new MedicoEspecialidade(id_especialidade, id_medico);
                     medicoEspecialidades.add(me);

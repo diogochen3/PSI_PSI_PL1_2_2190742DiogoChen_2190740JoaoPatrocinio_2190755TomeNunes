@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,13 +40,13 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.113/index.php/api/user";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.119/index.php/api/user";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
 
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.113/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
@@ -54,26 +55,26 @@ public class SingletonGestorHospital {
 
     /************************ variaveis Profile ******************************************/
 
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.113/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.119/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.113/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.119/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.113/index.php/api/diagnostico";
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.119/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener DiagnosticosListener;
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIReceitas =  "http://192.168.1.113/index.php/api/receitas";
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.119/index.php/api/receitas";
     private ArrayList<Receita> receitas;
     private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.113/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.119/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
@@ -336,9 +337,14 @@ public class SingletonGestorHospital {
 
 
 
-                }) {
+                })
+
+        {
+
             protected Map<String, String> params() {
+
                 Map<String, String> params = new HashMap<>();
+                params.put("Content-Type", "application/json");
                 params.put("date", marcacao.getDate());
                 params.put("tempo", marcacao.getTempo());
                 params.put("Aceitar", marcacao.getAceitar()+"");
@@ -617,5 +623,52 @@ public class SingletonGestorHospital {
 
     public void adicionarMedicoEspecialidadeBD(MedicoEspecialidade medicoEspecialidade){
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
+    }
+
+    public ArrayList<Profile> getMedico(long id) {
+
+        ArrayList<Profile> profile = new ArrayList<>();
+
+            for (MedicoEspecialidade me: medicoEspecialidades)
+            {
+                for (Profile p: profiles)
+                {
+                    if ( (int)id == me.getId_Especialidade() && me.getId_Medico() == p.getId())  {
+
+
+                            profile.add(p);
+
+
+
+                }
+
+                }
+
+
+            }
+
+        return profile;
+
+
+
+    }
+
+    public void removerMarcacaoAPI (final  Marcacao marcacao, final  Context context){
+        StringRequest req =new StringRequest(Request.Method.DELETE, mUrlAPIMarcacao+'/'+marcacao.getId(), new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Marcacao m = HospitalJsonParser.parserJsonMarcacao(response);
+                onUpdateLitaMarcacaoBD(m,REMOVER_MARCACAO_BD);
+
+                //TODO: informar a vista -> listener
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
     }
 }
