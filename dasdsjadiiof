@@ -1,0 +1,1022 @@
+[33mcommit 0ac6b5e4e9097183e2896db8fd20a28a04e5fd1d[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Jan 20 21:14:40 2021 +0000
+
+    final
+
+[33mcommit 1774eedcde82667e3c60c885ea25b93bab648f26[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 18 21:09:34 2021 +0000
+
+    especialidade
+
+[33mcommit 4804a46ee54f5deb74b4145818a9f2038eaba5b4[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 20:33:50 2021 +0000
+
+    problemas no spinner
+
+[33mcommit 802364e4347b7738f2c04035bf35f420cfceda87[m
+Merge: 96e4c35a 83f2e95a
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 17:07:55 2021 +0000
+
+    Conflitos
+
+[33mcommit 96e4c35ae54555df2334be2572aa2bb6690d753d[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 17:02:55 2021 +0000
+
+    conflito
+
+[33mcommit 83f2e95abec1dd2f13efa6805102ca7a8cbd1896[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 18 16:58:46 2021 +0000
+
+    resto
+
+[33mcommit 8b0baf3569d4fcf1c7e5ebbcd9cc074360a1ca58[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 18 16:50:15 2021 +0000
+
+    marcacao
+
+[33mcommit 403237e261341879c52f4cad5411138a7098d999[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 16:26:16 2021 +0000
+
+    quase a fazer marcacao
+
+[33mcommit cb085ac6dbaf68f5427d699bc7e8b3a56e7fc153[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 05:30:48 2021 +0000
+
+    Estou metade de fazer macaçoes
+
+[33mcommit 37047c36a334966cc539f2597c943b8c91495aa3[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 02:42:40 2021 +0000
+
+    Listagem de marcacao
+
+[33mcommit 11144cecb11ede724677a1de31e34d0ad40cb80e[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 18 02:41:28 2021 +0000
+
+    Listagem de marcacao
+
+[33mcommit 6ea162901a70556cf878b91cc247e303bcf90811[m
+Merge: 3e9d32bd d098c33a
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sun Jan 17 21:19:06 2021 +0000
+
+    Conflito
+
+[33mcommit 3e9d32bd7a958b3ce1e62f094453c548fb5c5da6[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sun Jan 17 21:08:37 2021 +0000
+
+    Tentar fazer marcacao
+
+[33mcommit d098c33a8b510bc1f46179a731d59a2cd1408711[m
+Merge: 61bd88c7 914c0f7b
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Sun Jan 17 17:33:26 2021 +0000
+
+    Merge branch 'master' of github.com:diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit 61bd88c7516f0bd4ac9947a4bdc8d5dffa09270f[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Sun Jan 17 17:31:15 2021 +0000
+
+    update medicos
+
+[33mcommit 914c0f7bee12769564cbaca9c67bbbb899f9d2ef[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sun Jan 17 17:18:05 2021 +0000
+
+    Mostrar profile
+
+[33mcommit 30fa5919891e029b9ab9fb5c0950f052def1d2e4[m
+Merge: 95a0085c 732a24e4
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sun Jan 17 16:31:47 2021 +0000
+
+    Conflito
+
+[33mcommit 95a0085c7c34f4dfd9b1de640046f10adaccc479[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sun Jan 17 15:25:10 2021 +0000
+
+    Profile quase a funcionar
+
+[33mcommit 732a24e4e815ecb19857993b6f8a9763eb6bb128[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Sun Jan 17 10:37:33 2021 +0000
+
+    tentar o marcacao
+
+[33mcommit fbfa844746d108f8550a1a81b5451afe94662e61[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Sun Jan 17 09:28:34 2021 +0000
+
+    Auto stash before merge of "master" and "origin/master"
+
+[33mcommit 0191ed3cc52d637549930fd261e9d0b471f54fdd[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Sun Jan 17 09:25:19 2021 +0000
+
+    marcacao
+
+[33mcommit 3ce516347ba8e0795869ee93f23c963088fb9527[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sun Jan 17 01:15:08 2021 +0000
+
+    profile quase completo
+
+[33mcommit fcfc231e8ec65ae041563982a53ddf3b3475874b[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Sat Jan 16 17:35:15 2021 +0000
+
+    teste
+
+[33mcommit f410e6e704af375f12e4ffcb10582b2ef3cac0ca[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sat Jan 16 17:10:50 2021 +0000
+
+    adicionamento ignore
+
+[33mcommit 66de11925c3044aa1a96d48fabcc3a2d77180992[m
+Merge: 0db8eddc e5a610bd
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sat Jan 16 17:05:27 2021 +0000
+
+    merging
+
+[33mcommit 0db8eddc315b6a82096d9b1c5a5ed7598c2bc108[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sat Jan 16 17:02:47 2021 +0000
+
+    adicionamento do gitingnore
+
+[33mcommit e5a610bdf20877f84a14457011b934921a66913a[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 16 16:37:12 2021 +0000
+
+    mudancas do android
+
+[33mcommit 14d51a5f81250938d629c7b66fe6f2b2c74062b0[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 16 16:11:22 2021 +0000
+
+    teste
+
+[33mcommit 8cbf3e8f841e975e0d7e6db7d350a8daf9e819b5[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 16 16:10:06 2021 +0000
+
+    cont
+
+[33mcommit f1d9f7ff5ed74d94b52ea74fa013c157d0a5bb95[m
+Merge: 41389ade 9fc976c1
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Thu Jan 14 18:08:27 2021 +0000
+
+    continuaçao
+
+[33mcommit 9fc976c13160441d6501f64a1015ca28aeee9c7d[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Thu Jan 14 17:17:32 2021 +0000
+
+    Mini adicionamento
+
+[33mcommit adb603d446ffb94b28b50a42d608596c270231db[m
+Merge: d28fc372 15976884
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Thu Jan 14 17:07:17 2021 +0000
+
+    Merge branch 'master' of github.com:diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit 15976884a09fc89433da96a78119951590a0368d[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Thu Jan 14 16:43:41 2021 +0000
+
+    tentar conflito
+
+[33mcommit 41389adee1c95e06d6f2d7b9ad9c6b75c3980c6f[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Thu Jan 14 16:07:08 2021 +0000
+
+    android
+
+[33mcommit d9df0c68b4c037c53b58f05d77a826a5abc5fd28[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Thu Jan 14 16:06:56 2021 +0000
+
+    models
+
+[33mcommit d28fc372ba944ae68c5dbe784bfac12798532dcd[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Thu Jan 14 15:54:52 2021 +0000
+
+    Update Gradle__com_android_volley_volley_1_1_1_aar.xml
+
+[33mcommit 558328fe79dbf52d1d86f42ef499d8af90700ef0[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Thu Jan 14 15:54:22 2021 +0000
+
+    update
+
+[33mcommit ce3d5ce5a613f1c4752c2dde89aca1b30e4c8922[m
+Merge: f39983d7 3d561c9f
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Thu Jan 14 14:32:34 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 3d561c9f98626e7f161ccc6a8c0ac23d6ecc08a7[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Thu Jan 14 14:29:40 2021 +0000
+
+    tentativa de update
+
+[33mcommit f39983d7a61213c8280e00a34888071ed3f025b4[m
+Merge: a493f850 88c76f32
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Thu Jan 14 14:18:07 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit a493f8500d96b33105bb357fa1ccf260924eda86[m
+Merge: 3a54f95a 794cbb58
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Thu Jan 14 14:16:25 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 88c76f32aee161e7b96a88fc0059e6cc891163a0[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Jan 13 17:48:51 2021 +0000
+
+    update android
+
+[33mcommit 84c681f5b1bbaad79a59c0b41b34714c8c63dc2b[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Jan 13 17:28:04 2021 +0000
+
+    troca de pasta
+
+[33mcommit 72c67edc965ca5919917fd72cc92fcc7f8ef3e4b[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Jan 13 17:23:52 2021 +0000
+
+    remove gitignore
+
+[33mcommit 279c9bf414645aad82a801b7c1ea64bb3061a051[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Jan 13 17:10:36 2021 +0000
+
+    update android
+
+[33mcommit 794cbb5824989df1b22f949c1a7089ed026821bd[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Jan 13 16:30:22 2021 +0000
+
+    update android
+
+[33mcommit 9598df2887a8d586c25f29f6ee80c1aaedab8e2d[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Jan 13 15:55:45 2021 +0000
+
+    android
+
+[33mcommit 3a54f95a1c712e4580e3ebf7f8c983a360673fef[m
+Merge: ff3688be b1296ae9
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Jan 13 14:42:29 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit b1296ae9abdb9f669ded98a0a733afbc243112fa[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Jan 12 17:43:12 2021 +0000
+
+    Possiveis erros
+
+[33mcommit 7bc7daf7146c7226e8d20c97f08cf0ececdd6fb4[m
+Merge: 3be4b9ff 78e1ca42
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Jan 12 17:21:19 2021 +0000
+
+    Merge branch 'master' of https://github.com/diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit 3be4b9ff3c8abdd2aa477b1d079386f75d41b1b9[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Jan 12 17:20:01 2021 +0000
+
+    Login simples e ida para o menu
+
+[33mcommit 78e1ca426ea7fd53b54927b604b2eda8460dea60[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 23:51:00 2021 +0000
+
+    base de dados
+
+[33mcommit 8eb89ada9d5a680ae73ea0e2aa5415a71897676d[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 23:49:43 2021 +0000
+
+    final profile,historico
+
+[33mcommit ee55a9b5fce93458933ca84bab0e42de0cf599c0[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 23:40:15 2021 +0000
+
+    historico utente
+
+[33mcommit 6cce4d4db6e3301ac950888366f6da8454bca48f[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 11 23:35:23 2021 +0000
+
+    Editar eliminar o medico
+
+[33mcommit 736d061af864a41ba8097c3f810be0fa899dc467[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 11 23:34:11 2021 +0000
+
+    Editar eliminar o medico
+
+[33mcommit 57802f6e317434ba497dc2a1995ca22c38aa9624[m
+Merge: c612640a 537bb667
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 23:16:06 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit c612640ad8d5b150f010993fa5189e0944f3472f[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 23:15:01 2021 +0000
+
+    Acceptance
+
+[33mcommit 537bb6670ed0a2c5ecb7833a6743ca2151b4eab2[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 23:15:01 2021 +0000
+
+    Auto stash before merge of "master" and "origin/master"
+
+[33mcommit 1bd3a7f612bd0c6f70098909c0b4f117e06c2c4e[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 11 23:13:43 2021 +0000
+
+    adicionar uma teste unitario
+
+[33mcommit be10270f5c225add0beed998e969becaefcb371d[m
+Merge: 0bdf5e6f 7af279b3
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 21:06:57 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 7af279b3454006e7b308044514b0242ac30dc9e3[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Jan 11 20:57:42 2021 +0000
+
+    Update README.md
+
+[33mcommit 0bdf5e6faa72c17e88be9a7dc88956a25bb99984[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 11 20:55:52 2021 +0000
+
+    tests
+
+[33mcommit 9afceb12a256873f16ce25f7e1cd9db8b4821660[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Jan 11 20:48:05 2021 +0000
+
+    Update README.md
+
+[33mcommit e126ea8d31494e7b71893c59ed642b3dd2540529[m
+Merge: 333664ae cb93c74e
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 9 23:29:27 2021 +0000
+
+    resolvido profile & backend
+
+[33mcommit cb93c74e2b8f7c364ef8337ebf8f9b7dfbbee072[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sat Jan 9 21:01:44 2021 +0000
+
+    Diagnostico e receitas estão completos mas falta ligação para o menu
+
+[33mcommit 333664ae094210e04e37adc59f9e7c2b2fff0483[m
+Merge: fc979b6c 7a5ccd42
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 9 06:12:01 2021 +0000
+
+    rests
+
+[33mcommit ff3688be7aa4dc04335e259a587345194ed7a33f[m
+Merge: 324dc660 7a5ccd42
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Fri Jan 8 20:44:26 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 7a5ccd42252cd2efaefa04ed80e0bbec72202a72[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Fri Jan 8 15:32:17 2021 +0000
+
+    backend receitas e diagnostico
+
+[33mcommit 324dc660b439856f6ee84062dc0fe183f1608135[m
+Merge: 57594e3b c5a1afa9
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Jan 6 23:20:01 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit c5a1afa96c07b57805d06e39e3c4ba8ad55216e2[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Jan 6 17:55:05 2021 +0000
+
+    Perfil do utente
+
+[33mcommit fc979b6c2752101a177c909461cd25f1626b16ad[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Wed Jan 6 15:02:15 2021 +0000
+
+    Auto stash before merge of "master" and "origin/master"
+
+[33mcommit 1ecb87f89e30eeca94777811cac2f1967aa24472[m
+Merge: 0723b8c7 099b3307
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Wed Jan 6 15:02:05 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 57594e3b57f564050cd2f340f3fc373da5074475[m
+Merge: 715e30ed 099b3307
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Jan 6 14:25:23 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 099b3307ca177486c011e39a9fd7904d677675b6[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Jan 5 23:03:28 2021 +0000
+
+    Já é possivel fazer acceptance
+
+[33mcommit 0723b8c76541236aa926a001eba271796939331c[m
+Merge: 933be115 999c0ff2
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 4 23:06:27 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 933be115401ae44dc1da6e2c37fc4c73c0031a02[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 4 22:07:21 2021 +0000
+
+    api
+
+[33mcommit 999c0ff2fcef72fea00a3942211111a625cf734c[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 4 22:51:10 2021 +0000
+
+    Api adicional
+
+[33mcommit dc6bb709d837b45383487ae2273bc96679bec50b[m
+Merge: 81a340e0 ea9366f7
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 4 22:21:03 2021 +0000
+
+    adicionar api
+
+[33mcommit 81a340e0c944f208ad92ac6bbbf3559022eb26a8[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 4 22:14:54 2021 +0000
+
+    api adicional
+
+[33mcommit ea9366f797f8d525453a7e5b40f2879bdc7df5fc[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 4 22:07:21 2021 +0000
+
+    api
+
+[33mcommit 3f187b941f3a78d61f929d25c15ce56077c4ba9f[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Jan 4 21:54:15 2021 +0000
+
+    publics
+
+[33mcommit d388ce4614b4c7d732ee9a7b9636a886e2d455f1[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 4 20:18:42 2021 +0000
+
+    resto publish
+
+[33mcommit 01f7ab1627d6a11245f1fd1f7b95217fb48d5230[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 4 19:26:53 2021 +0000
+
+    publish subscribe
+
+[33mcommit 9ef2eeafdda0be7a9fa2e36f17799db84217bad2[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Jan 4 14:37:17 2021 +0000
+
+    mqtt
+
+[33mcommit 715e30ed7bdfc30fd15681385e5e3f2d3be24b88[m
+Merge: 356727d5 b898b5da
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 2 16:38:40 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit b898b5da17adbc3c038eca6a33301cbc9804bfb6[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Sat Jan 2 15:22:34 2021 +0000
+
+    backend login finish
+
+[33mcommit a5541ba84aaf5c849e428490c35c8f89fd32650d[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Fri Jan 1 22:02:50 2021 +0000
+
+    api e backend menu para admins
+
+[33mcommit c94f89e52e33a34e769a6e4ada86ef3842919206[m
+Merge: 70671ec3 535e9d5e
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Fri Jan 1 16:25:54 2021 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 535e9d5eac979e50a6a10551f7ae347dd86533f8[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Fri Jan 1 16:13:00 2021 +0000
+
+    correção da api
+
+[33mcommit 356727d545b9bf9481cb353cbba373f6ea498662[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Dec 30 21:40:33 2020 +0000
+
+    Auto stash before merge of "master" and "origin/master"
+
+[33mcommit 70671ec3c698a70ce4a3c85e529eda47a148f3b7[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Tue Dec 29 19:51:59 2020 +0000
+
+    commit probs
+
+[33mcommit 08c57c53ce36329385f2a22a13dd148699d335cb[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Dec 29 16:35:21 2020 +0000
+
+    Marcação completo
+
+[33mcommit 36f2fafac19f51c82ab525dfada9beeb304d3c55[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Dec 28 20:35:57 2020 +0000
+
+    Api
+
+[33mcommit 94cc6803a20bafb8133859460ac89721fe2ed417[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 28 20:32:33 2020 +0000
+
+    backend, perfil, lista utentes e marcacoes
+
+[33mcommit 4b2d468d177f62a54b96154127f157c7879a81b1[m
+Merge: 0d247044 9740ae0b
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 28 20:32:04 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 9740ae0b68a2400336478f318da8c109494450e5[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Dec 28 17:37:49 2020 +0000
+
+    ajuste no registar
+
+[33mcommit f17dd3880a547243e3f63fbb1ae3b49fcc11b6ea[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Dec 28 15:29:01 2020 +0000
+
+    Update testehospital .bsdesign
+
+[33mcommit 0d247044a2dd9cd9e729162183cb4fa764e57e1f[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 28 14:19:18 2020 +0000
+
+    problemas
+
+[33mcommit a548be9e846f67b800cf40da113cb3c263be3fed[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Thu Dec 24 16:32:46 2020 +0000
+
+    Correção de alguns erros e API
+
+[33mcommit 2ad5901344da1f4754774363345e54f6246b89a3[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Wed Dec 23 18:59:07 2020 +0000
+
+    marcacao
+
+[33mcommit 835d5c76ab1c45d317ae4339c7e27463b5b8eff1[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 23 18:37:09 2020 +0000
+
+    Api(profile)
+
+[33mcommit e7891e75711a8806ffe73339e3877452c78a36d7[m
+Merge: 1fa81367 bcdaa78d
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Wed Dec 23 18:34:14 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 1fa81367a72623879c0a865dd8918516f737c174[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Wed Dec 23 18:34:07 2020 +0000
+
+    marcacao
+
+[33mcommit bcdaa78d10a2b135e3501307e3c1fb7d12674eee[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Dec 23 16:44:21 2020 +0000
+
+    Update testehospital .bsdesign
+
+[33mcommit 5b2150e3e200daf1499900071ce70c8a6722c1eb[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Tue Dec 22 17:46:51 2020 +0000
+
+    register done
+
+[33mcommit d732e9b8bba999182d9c900d0d1f67ca3a0b0636[m
+Merge: 499b8d2f 307b8804
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Tue Dec 22 17:33:55 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 307b8804abcace7197c21791719dede57264c0b5[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Dec 22 17:30:29 2020 +0000
+
+    Historico das consultas
+
+[33mcommit 499b8d2f66386e7eb50a167febb5976e36b27e37[m
+Merge: fac6404c cfa9a246
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 21 21:27:32 2020 +0000
+
+    reg
+
+[33mcommit fac6404cd7f3636aaec38e7d1ef221762f718cf7[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 21 21:26:37 2020 +0000
+
+    register
+
+[33mcommit cfa9a246215503a6a8f80b31da740024f36199c6[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Dec 21 21:05:32 2020 +0000
+
+    Update MainActivity.java
+
+[33mcommit e607d1c1ff6b343d6f513f7058e9df3692d701ae[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Dec 21 20:34:11 2020 +0000
+
+    Backend index e profile
+
+[33mcommit 7c2b4ed9c2a02f0c749682b62b476f566ed25e00[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Dec 21 20:04:03 2020 +0000
+
+    notificações_android
+
+[33mcommit fe9cd198d09fae442898b0930f6fb0226268adc3[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Dec 21 19:18:12 2020 +0000
+
+    Android_tests
+    
+    projeto para testar codigo de android a ser implementado no projeto principal
+
+[33mcommit 87498eb12ef072710fc12bbefa8185ab3b34c896[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 21 18:38:33 2020 +0000
+
+    backend
+
+[33mcommit 7295eb6e8c1cb413f579ecf2713b9342139ee092[m
+Merge: 453f77ce ff8825ab
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 21 18:37:41 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 453f77cebbcea03cc384c0d5e1cc9f5e28d64109[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 21 18:37:34 2020 +0000
+
+    index
+
+[33mcommit d40d197ce9f0d2e45aa2a394b19978785241de59[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 21 18:36:05 2020 +0000
+
+    bd medicos
+
+[33mcommit ff8825ab1e0d20f38d503922d2e945339fc48db8[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Sat Dec 19 16:07:39 2020 +0000
+
+    Alguns modelos android
+
+[33mcommit 823fdeb69c1108b87b4a46ada499c8d7ccd9241a[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Fri Dec 18 14:41:59 2020 +0000
+
+    profile
+
+[33mcommit 083b0c1e6ea9e114a4994d56acfcd9c00ad067ee[m
+Merge: d78586b6 62788dcd
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 16 14:38:35 2020 +0000
+
+    Merge branch 'master' of https://github.com/diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit d78586b6f001334b4ba7307cf553936a3c342193[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 16 14:37:09 2020 +0000
+
+    Correção do modelo
+
+[33mcommit 62788dcdcb6f6be4ffb822b6689897573fb2e1b3[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Tue Dec 15 16:25:50 2020 +0000
+
+    Update testehospital .bsdesign
+
+[33mcommit ef91d0441716e06165cc1f5b1229b5489e7835a9[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Dec 15 12:48:34 2020 +0000
+
+    Mudança de modelos
+
+[33mcommit 43603933b0662d6cfca95ef673a40808aef2cd39[m
+Merge: f7f82210 19e8d65b
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 14 17:38:10 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit f7f82210c7492089a854107152c7405b05dc2198[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 14 17:37:51 2020 +0000
+
+    registo feito & corpo clinico(+-)
+
+[33mcommit 19e8d65bad119a81718dee4da18cc3e322de87f7[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Dec 14 15:35:54 2020 +0000
+
+    Update misc.xml
+
+[33mcommit 79e1625a44bae8fc30d5b08fb449d21a042a4477[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 14 14:21:10 2020 +0000
+
+    views
+
+[33mcommit 1faee2b1fd2ee8f151fd6e745903c243a01e96c9[m
+Author: Tomé Nunes <2190755@my.ipleiria.pt>
+Date:   Mon Dec 14 14:20:39 2020 +0000
+
+    Index ,login & registo etc...
+
+[33mcommit 7ace6d89bd60ca07de4e05becd217ecbf59c898a[m
+Merge: 911e8e80 2e01b311
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 9 16:42:33 2020 +0000
+
+    Merge branch 'master' of https://github.com/diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit 911e8e800a4517acbc164b79433241a80b023414[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 9 16:42:12 2020 +0000
+
+    Base de dados com relações
+
+[33mcommit 2e01b311cb0da6859f123406a2bc9abe519946d8[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Dec 2 15:07:16 2020 +0000
+
+    iml
+
+[33mcommit 4ac22701f98ebcb81c6555dc5b8e6720072b8a40[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 2 14:37:31 2020 +0000
+
+    index  exemplo
+
+[33mcommit 644d1485c3e63c19fe176a5c33feb49e4588e608[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Dec 2 14:32:11 2020 +0000
+
+    Coisas de android
+
+[33mcommit 55ac83be1c8630a2576ff1248b736bd3d64d9840[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Nov 25 15:19:09 2020 +0000
+
+    teste
+
+[33mcommit fa17f93d7b7411ed4ac6efa1721ba765f92f80cb[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Nov 25 14:54:31 2020 +0000
+
+    historico de consultas
+
+[33mcommit 90324ac3b55e4126d1efde32953f3d1afa38dfbe[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Nov 24 15:12:44 2020 +0000
+
+    base de dados
+
+[33mcommit 6cae704b0a3c8650eb83ceb0c22d938e8b6e1513[m
+Merge: 0ae59238 5391046a
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Nov 24 14:57:41 2020 +0000
+
+    Merge branch 'master' of https://github.com/diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit 0ae592387ec816902ea7953cb6b7bc4e0e7dd795[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Nov 24 14:57:15 2020 +0000
+
+    vistas
+
+[33mcommit 5391046a4f76d620085b0a49609f93c7f122890d[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Nov 23 14:46:37 2020 +0000
+
+    Update testehospital.bsdesign
+
+[33mcommit e743cd28aa048f2754fd6ad4dc7e9f33be0ad329[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Fri Nov 20 16:10:08 2020 +0000
+
+    Inicio Android
+
+[33mcommit e2b5163214626235a821aa9e9c123900d6497fee[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Wed Nov 18 14:54:06 2020 +0000
+
+    Testes de aceitação
+
+[33mcommit aae5d7f5fbcaca7be14d9136ff6e379e4a52c122[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Nov 16 17:58:33 2020 +0000
+
+    base de dados
+
+[33mcommit 8d5debfd1f45438ee3ddee7f03723ee06173cca7[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Nov 16 17:57:23 2020 +0000
+
+    crud e models
+
+[33mcommit bb74c17d0db6a636246aad361135c069513bb9ed[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Nov 16 17:38:12 2020 +0000
+
+    Update testehospital.bsdesign
+
+[33mcommit 6819e4570e94cd3002ba720427e86406fcb5c7b3[m
+Merge: c78d4a2f c7c7b9c8
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Nov 16 15:47:55 2020 +0000
+
+    Merge branch 'master' of github.com:diogochen3/PSI_PSI_PL1_2_2190742DiogoChen_2190740JoaoPatrocinio_2190755TomeNunes
+
+[33mcommit c78d4a2f634b7d80292b01327395108d5ea4169c[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Mon Nov 16 15:47:28 2020 +0000
+
+    Update testehospital.bsdesign
+
+[33mcommit c7c7b9c840a790ca60160c91ff3fba3e151aa2a9[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Nov 16 15:20:22 2020 +0000
+
+    models
+
+[33mcommit 97a198c637e81d994dafe9fba9cf63cc0d7683f3[m
+Merge: 09b6c8c2 0a15e029
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Nov 16 15:20:14 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 0a15e029469595516f79aa446ca4de43fd4ff0fc[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Nov 16 15:19:41 2020 +0000
+
+    Sem ignore2
+
+[33mcommit 09b6c8c268a27098e60f0bfcdf4bb9fa19d9e177[m
+Merge: ffbf6e8b bbdfe4ea
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Mon Nov 16 14:57:03 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit bbdfe4ea4a2bd5370f825e5e8eb1541a8b9fc2d7[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Mon Nov 16 14:49:36 2020 +0000
+
+    sem gitignore
+
+[33mcommit ffbf6e8bd7fb3580025ac09445e1c5e599dbabe1[m
+Merge: 1baf96e6 377927f8
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Fri Nov 13 16:24:04 2020 +0000
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 377927f8e5cff3d68a5e7d73c681b96d6fe1e326[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Fri Nov 13 16:23:29 2020 +0000
+
+    Recomeço
+
+[33mcommit 120bf8d69f0245f5523e9ba53b08e0e33b5533a1[m
+Author: João Patrocínio <2190740@my.ipleiria.pt>
+Date:   Wed Nov 11 15:58:06 2020 +0000
+
+    Create testehospital.bsdesign
+
+[33mcommit 0c4153be0f9a3f208a1dc03e05c81c83bc1ff61c[m
+Author: spotsut <32023509+spotsut@users.noreply.github.com>
+Date:   Wed Nov 11 15:49:25 2020 +0000
+
+    Rename bd_hospital (1).sql to bd_hospital.sql
+
+[33mcommit 489930d7ea34d244112efa7c1a37f4aa13c43f20[m
+Author: spotsut <32023509+spotsut@users.noreply.github.com>
+Date:   Wed Nov 11 15:48:54 2020 +0000
+
+    Delete yii-application.zip
+
+[33mcommit 1baf96e6a62237fc91652bb0fafba8d5b919040e[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Nov 11 15:46:58 2020 +0000
+
+    backend
+
+[33mcommit 13f8692dd8cef4db2118c817d02346a369200651[m
+Author: spotsut <32023509+spotsut@users.noreply.github.com>
+Date:   Wed Nov 11 15:46:08 2020 +0000
+
+    Update .gitignore
+
+[33mcommit d15ad0ede5bc9f84fc6539c4ec03d1628de35632[m
+Author: tome nunes <2190755@my.ipleiria.pt>
+Date:   Wed Nov 11 14:35:43 2020 +0000
+
+    index from ignored
+
+[33mcommit 18a7ed604f75261d728474cbcaaba6ec1ac1e68f[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Nov 10 16:54:03 2020 +0000
+
+    teste
+
+[33mcommit fe89e50faa405e911e2632a005c7a96546808959[m
+Author: 2190742@ipleiria.pt <2190742@my.ipleiria.pt>
+Date:   Tue Nov 10 15:33:11 2020 +0000
+
+    Inicio
+
+[33mcommit c4989e7a0c39b059a4af922ebce7c4471629cb3b[m
+Author: tomenunes <71711821+tomenunes@users.noreply.github.com>
+Date:   Tue Nov 10 15:27:36 2020 +0000
+
+    base de dados
+
+[33mcommit cc535b3169b608b41e860904e244a664d844afcf[m
+Author: diogochen3 <55530886+diogochen3@users.noreply.github.com>
+Date:   Tue Sep 22 14:37:03 2020 +0100
+
+    Initial commit

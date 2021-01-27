@@ -168,8 +168,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         });
 
 
-<<<<<<< HEAD
-=======
         spMedico.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
@@ -184,7 +182,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
         });
 
->>>>>>> 0ac6b5e4e9097183e2896db8fd20a28a04e5fd1d
     }
 
 

@@ -32364,3 +32364,1203 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1610870590.514
     'REQUEST_TIME' => 1610870590
 ]
+2021-01-25 10:45:55 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:45:51 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64254'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571551.967
+    'REQUEST_TIME' => 1611571551
+]
+2021-01-25 10:46:10 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:46:00 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64265'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571560.502
+    'REQUEST_TIME' => 1611571560
+]
+2021-01-25 10:46:14 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:46:09 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64270'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571569.288
+    'REQUEST_TIME' => 1611571569
+]
+2021-01-25 10:46:20 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:46:18 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64274'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571578.399
+    'REQUEST_TIME' => 1611571578
+]
+2021-01-25 10:46:45 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:46:43 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64280'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571603.693
+    'REQUEST_TIME' => 1611571603
+]
+2021-01-25 10:48:46 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:48:43 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64303'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571723.036
+    'REQUEST_TIME' => 1611571723
+]
+2021-01-25 10:49:01 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:48:59 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64306'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571739.052
+    'REQUEST_TIME' => 1611571739
+]
+2021-01-25 10:49:28 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:49:25 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64313'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571764.938
+    'REQUEST_TIME' => 1611571764
+]
+2021-01-25 10:49:42 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:49:39 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_medicos'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64317'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571779.498
+    'REQUEST_TIME' => 1611571779
+]
+2021-01-25 10:49:51 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:49:48 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_medicos'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64328'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571788.331
+    'REQUEST_TIME' => 1611571788
+]
+2021-01-25 10:49:55 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:49:50 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64333'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611571790.951
+    'REQUEST_TIME' => 1611571790
+]
+2021-01-25 10:54:12 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 10:54:09 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64452'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611572048.942
+    'REQUEST_TIME' => 1611572048
+]
+2021-01-25 11:06:01 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 11:05:59 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64537'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611572759.141
+    'REQUEST_TIME' => 1611572759
+]
+2021-01-25 11:06:09 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 11:06:07 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64540'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611572767.508
+    'REQUEST_TIME' => 1611572767
+]
+2021-01-25 11:06:18 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 11:06:15 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64543'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611572775.876
+    'REQUEST_TIME' => 1611572775
+]
+2021-01-25 11:06:26 [::1][1][j43ivjsp8p026dsif7uaaerc35][error][yii\base\ErrorException:2] yii\base\ErrorException: stream_socket_client(): unable to connect to tcp://127.0.0.1:1883 (Nenhuma liga��o p�de ser feita porque o computador de destino
+as recusou ativamente.
+) in C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php:145
+Stack trace:
+#0 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\hospital\frontend\mosquitto\phpMQTT.php(145): ::stream_socket_client()
+#2 C:\wamp64\www\hospital\frontend\mosquitto\controllers\NotificationController.php(39): frontend\mosquitto\phpMQTT->connect()
+#3 C:\wamp64\www\hospital\backend\controllers\SiteController.php(234): frontend\mosquitto\controllers\NotificationController::Receive()
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionNotifications()
+#5 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#6 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\web\Application->runAction()
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest()
+#10 C:\wamp64\www\hospital\backend\web\index.php(17): yii\web\Application->run()
+#11 {main}
+2021-01-25 11:06:24 [::1][1][j43ivjsp8p026dsif7uaaerc35][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'j43ivjsp8p026dsif7uaaerc35'
+    '_identity-backend' => '425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S\",2592000]\";}'
+    '_csrf-backend' => '0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2tWJVI7BzsVahqn867m1OjVhXiXVMz5X\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://back.test/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=j43ivjsp8p026dsif7uaaerc35; _identity-backend=425e992f04989f3fc4e748409d7da68be263c39a0e258effd03420ea78f35b82a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22PVDeGQu6bE8ZW3a5dDifQ_SXR84F9_3S%22%2C2592000%5D%22%3B%7D; _csrf-backend=0e7ca1069f8a81676e574902757eb82a60f3d77087a851eee4bc4a4cccc2ecb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222tWJVI7BzsVahqn867m1OjVhXiXVMz5X%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '64548'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/notifications'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/notifications'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\site\\notifications'
+    'PHP_SELF' => '/index.php/site/notifications'
+    'REQUEST_TIME_FLOAT' => 1611572784.248
+    'REQUEST_TIME' => 1611572784
+]

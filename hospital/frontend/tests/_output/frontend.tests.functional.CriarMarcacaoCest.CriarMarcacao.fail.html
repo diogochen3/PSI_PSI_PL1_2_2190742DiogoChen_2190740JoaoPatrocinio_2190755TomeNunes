@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Marcar Consulta</title>
+        <title>Not Found (#404)</title>
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=e6119be3d1e93121c763c07412516b02">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
@@ -15,77 +15,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 
     <meta name="csrf-param" content="_csrf-frontend">
-<meta name="csrf-token" content="6ijwTaGbd9HDgVrjNeRWxYo83PEgucP17X6f3rVpJL-yeMIAkaNPmrf1Y9FAkRWz4G-GpWTR8pqPOcmWwwMW2g==">
+<meta name="csrf-token" content="aPc3IHw8OGV37jGKTdcjcZye0thtiGUsVGsMA-LCeeEehUNyTgldSBuNeuUOsVJGw92Ukz_eJh9lNF1605ZPiw==">
 
 <link href="/assets/165ed999/css/bootstrap.css" rel="stylesheet">
 <link href="/css/site.css" rel="stylesheet"></head>
 <body>
 
 <div class="wrap">
-    <nav id="w7" class="navbar navbar-light navbar-expand-md fixed-top bg-light navbar-transparency" style="height: 80px"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w7-collapse"><span class="sr-only">Toggle navigation</span>
+    <nav id="w6" class="navbar navbar-light navbar-expand-md fixed-top bg-light navbar-transparency" style="height: 80px"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w6-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="/index-test.php">Health Schedule</a></div><div id="w7-collapse" class="collapse navbar-collapse"><ul id="w8" class="navbar-nav navbar-right nav"><li><a href="/index-test.php/site/index">Inicio</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/index-test.php">Health Schedule</a></div><div id="w6-collapse" class="collapse navbar-collapse"><ul id="w7" class="navbar-nav navbar-right nav"><li><a href="/index-test.php/site/index">Inicio</a></li>
 <li><a href="/index-test.php/site/about">Serviços</a></li>
 <li><a href="/index-test.php/site/about">Corpo Clinico</a></li>
-<li class="active"><a href="/index-test.php/marcacao/create">Marcações</a></li>
-<li><form action="/index-test.php/site/logout" method="post">
-<input type="hidden" name="_csrf-frontend" value="6ijwTaGbd9HDgVrjNeRWxYo83PEgucP17X6f3rVpJL-yeMIAkaNPmrf1Y9FAkRWz4G-GpWTR8pqPOcmWwwMW2g=="><button type="submit" class="btn btn-link logout">Logout (sawdwqqwe)</button></form></li>
-<li><a href="/index-test.php/profile/view">Perfil</a></li></ul></div></div></nav>
+<li><a href="/index-test.php/marcacao/create">Marcações</a></li>
+<li><a href="/index-test.php/site/signup">Registar</a></li>
+<li><a href="/index-test.php/site/login">Entrar</a></li></ul></div></div></nav>
 
     <div class="container">
-                        <div class="marcacao-create">
+                        <div class="site-error">
 
+    <h1>Not Found (#404)</h1>
 
-    <h1>Marcar Consulta</h1>
+    <div class="alert alert-danger">
+        Page not found.    </div>
 
-    
-<div class="marcacao-form">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
-    <form id="w6" action="/marcacao/create" method="post">
-<input type="hidden" name="_csrf-frontend" value="6ijwTaGbd9HDgVrjNeRWxYo83PEgucP17X6f3rVpJL-yeMIAkaNPmrf1Y9FAkRWz4G-GpWTR8pqPOcmWwwMW2g==">
-    <div class="form-group field-marcacao-date required">
-<label class="control-label" for="marcacao-date">Date</label>
-<input type="date" id="marcacao-date" class="form-control" name="Marcacao[date]" aria-required="true">
-
-<div class="help-block"></div>
-</div>
-    <div class="form-group field-marcacao-tempo required">
-<label class="control-label" for="marcacao-tempo">Tempo</label>
-<input type="time" id="marcacao-tempo" class="form-control" name="Marcacao[tempo]" aria-required="true">
-
-<div class="help-block"></div>
-</div>
-
-<div class="form-group field-marcacao-id_especialidade required">
-<label class="control-label" for="marcacao-id_especialidade">Id Especialidade</label>
-<select id="marcacao-id_especialidade" class="form-control" name="Marcacao[id_especialidade]" onchange="$.get( &quot;/index-test.php/marcacao/lists&quot;, { id: $(this).val() } )
-                            .done(function( data ) {
-                                $( &quot;#marcacao-id_medico&quot; ).html( data );
-                            }
-                        );
-                    " aria-required="true">
-<option value="">-Choose a especialidade-</option>
-<option value="1">213312</option>
-<option value="2">1232313</option>
-<option value="3">1212212</option>
-</select>
-
-<div class="help-block"></div>
-</div>
-<div class="form-group field-marcacao-id_medico required">
-<label class="control-label" for="marcacao-id_medico">Id Medico</label>
-<select id="marcacao-id_medico" class="form-control" name="Marcacao[id_Medico]" aria-required="true">
-<option value="prompt">-Choose o medico-</option>
-</select>
-
-<div class="help-block"></div>
-</div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">Save</button>    </div>
-
-    </form>
-</div>
+    <p>
+        The above error occurred while the Web server was processing your request.
+    </p>
+    <p>
+        Please contact us if you think this is a server error. Thank you.
+    </p>
 
 </div>
     </div>
@@ -120,10 +80,5 @@
 
 <script src="/assets/6cb8e8ff/jquery.js"></script>
 <script src="/assets/34faa425/yii.js"></script>
-<script src="/assets/34faa425/yii.validation.js"></script>
-<script src="/assets/34faa425/yii.activeForm.js"></script>
-<script src="/assets/165ed999/js/bootstrap.js"></script>
-<script>jQuery(function ($) {
-jQuery('#w6').yiiActiveForm([{"id":"marcacao-date","name":"date","container":".field-marcacao-date","input":"#marcacao-date","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Date cannot be blank."});}},{"id":"marcacao-tempo","name":"tempo","container":".field-marcacao-tempo","input":"#marcacao-tempo","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Tempo cannot be blank."});}},{"id":"marcacao-id_especialidade","name":"id_especialidade","container":".field-marcacao-id_especialidade","input":"#marcacao-id_especialidade","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Especialidade cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Id Especialidade must be an integer.","skipOnEmpty":1});}},{"id":"marcacao-id_medico","name":"id_Medico","container":".field-marcacao-id_medico","input":"#marcacao-id_medico","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Medico cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Id Medico must be an integer.","skipOnEmpty":1});}}], []);
-});</script></body>
+<script src="/assets/165ed999/js/bootstrap.js"></script></body>
 </html>
