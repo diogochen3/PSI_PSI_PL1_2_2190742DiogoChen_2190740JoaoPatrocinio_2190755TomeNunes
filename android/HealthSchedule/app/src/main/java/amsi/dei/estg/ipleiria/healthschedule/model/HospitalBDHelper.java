@@ -327,11 +327,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
         this.db.insert(TABLE_MARCACAO,null,values);
 
-       /* long id= this.db.insert(TABLE_LIVROS,null,values);
-        if (id>-1){
-            livro.setId((int)id);
-            return livro;
-        }*/
     }
 
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){

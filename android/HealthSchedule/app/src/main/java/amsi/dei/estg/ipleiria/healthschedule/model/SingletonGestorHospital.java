@@ -7,6 +7,7 @@ import android.os.ProxyFileDescriptorCallback;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -41,13 +42,13 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.119/index.php/api/user";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.24/hospital/frontend/web/index.php/api/user";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
 
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.24/hospital/frontend/web/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
@@ -56,26 +57,26 @@ public class SingletonGestorHospital {
 
     /************************ variaveis Profile ******************************************/
 
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.119/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.24/hospital/frontend/web/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.119/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.24/hospital/frontend/web/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.119/index.php/api/diagnostico";
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.24/hospital/frontend/web/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener DiagnosticosListener;
     /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIReceitas =  "http://192.168.1.119/index.php/api/receitas";
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.24/hospital/frontend/web/index.php/api/receitas";
     private ArrayList<Receita> receitas;
     private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.119/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.24/hospital/frontend/web/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
@@ -319,7 +320,7 @@ public class SingletonGestorHospital {
     public void adicionarMarcacaoAPI(final Marcacao marcacao, final Context context){
 
         StringRequest req =new StringRequest(Request.Method.POST,
-                mUrlAPIMarcacao,
+                mUrlAPIMarcacao+"/marcar",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -334,20 +335,14 @@ public class SingletonGestorHospital {
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
-
-
-
-
-
                 })
 
         {
 
-            protected Map<String, String> params() {
-
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("Content-Type", "application/json");
+
                 params.put("date", marcacao.getDate());
                 params.put("tempo", marcacao.getTempo());
                 params.put("Aceitar", marcacao.getAceitar()+"");
@@ -356,6 +351,7 @@ public class SingletonGestorHospital {
                 params.put("id_Medico", marcacao.getId_Utente()+"");
                 return params;
             }
+
         };
 
 

@@ -18,6 +18,7 @@
         <activity android:name=".views.ListaMedicosActivity" />
         <activity android:name=".views.PerfilActivity" />
         <activity android:name=".views.ListaMedicamentosActivity" />
+        <activity android:name=".views.MarcacaoActivity" />
         <activity android:name=".views.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

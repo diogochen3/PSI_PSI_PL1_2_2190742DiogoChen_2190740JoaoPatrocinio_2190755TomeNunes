@@ -37,8 +37,12 @@ import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesListener, EspecialidadeListener, MedicoEspecialidadeListener {
 
@@ -82,25 +86,23 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         cvDate = findViewById(R.id.cvDate);
         tpTime.setIs24HourView(true);
 
+        Date currentTime = Calendar.getInstance().getTime();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        date =  formatter.format(currentTime);
 
-        spEspecialidade.setOnItemSelectedListener(new OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"pos"+position,Toast.LENGTH_LONG);
-                Toast.makeText(getApplicationContext(),"id"+id,Toast.LENGTH_LONG);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
         cvDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                date = i+"/" + i1 + "/" +i2;
+                 i1 = i1 + 1;
+                 String mes;
+                if (i1 < 9)
+                    mes = "0"+ i1;
+                else
+                    mes = ""+i1;
+                date = i+"/" + mes + "/" +i2;
             }
+
         });
 
 
@@ -137,8 +139,19 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                             hour = tpTime.getCurrentHour();
                             minute = tpTime.getCurrentMinute();
                         }
-                        time = hour +":" +minute+ ":00";
-                        marcacao = new Marcacao(0,id_especialidade,21,id_medico,date,time,0);
+                        String horas, min;
+                        if (hour < 9)
+                            horas = "0"+ hour;
+                        else
+                            horas = hour+"";
+                        if (minute < 9)
+                            min = "0"+ minute;
+                        else
+                            min = minute+"";
+
+                        time = horas +":" +min+ ":00";
+
+                        marcacao = new Marcacao(0,id_especialidade,11,id_medico,date,time,0);
                         SingletonGestorHospital.getInstance(getApplicationContext()).adicionarMarcacaoAPI(marcacao,getApplicationContext());
                     }else return;
                     // setResult(RESULT_OK);
@@ -188,6 +201,38 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
 
     private void carregarDetalhesMarcacao() {
+        /*AdapterEspecialidade adapterEspecialidade = new AdapterEspecialidade(getApplicationContext(),especialidade);
+
+        int spinnerPosition = adapter.getPosition(compareValue);
+        mSpinner.setSelection(spinnerPosition);*/
+        /*spEspecialidade.setSelection(i);
+        spMedico.setSelection(i);*/
+        SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm:ss");
+        Date tempo = null;
+        try {
+            tempo = timeFormatter.parse(marcacao.getTempo());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar c = Calendar.getInstance();
+        c.setTime(tempo);
+        tpTime.setCurrentHour(c.get(Calendar.HOUR_OF_DAY));
+        tpTime.setCurrentMinute(c.get(Calendar.MINUTE));
+
+        String parts[] = marcacao.getDate().split("/");
+
+        int day = Integer.parseInt(parts[0]);
+        int month = Integer.parseInt(parts[1]);
+        int year = Integer.parseInt(parts[2]);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+
+
+        long milliTime = calendar.getTimeInMillis();
+        cvDate.setDate(milliTime, true, true);
 
     }
 
@@ -218,6 +263,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     public void onRefreshListaMedicoEspecialidade(ArrayList<MedicoEspecialidade> medicoEspecialidade) {
         medicoEspecialidades = medicoEspecialidade;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (marcacao!= null){

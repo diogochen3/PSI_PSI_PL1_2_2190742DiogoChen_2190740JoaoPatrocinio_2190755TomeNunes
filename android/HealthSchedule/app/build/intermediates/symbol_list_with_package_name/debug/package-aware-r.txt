@@ -1547,6 +1547,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_adicionar
+drawable ic_action_apagar
 drawable ic_action_guardar
 drawable ic_baseline_email_24
 drawable ic_baseline_lock_24
@@ -1889,6 +1890,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id remover
 id reverseSawtooth
 id right
 id right_icon
@@ -2200,6 +2202,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu activity_main_drawer
+menu menu_remover_marcaco
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -2257,6 +2260,7 @@ string lista_de_medicos
 string lista_de_receitas
 string material_slider_range_end
 string material_slider_range_start
+string menu_remover
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
