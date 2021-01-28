@@ -1,6 +1,8 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -47,14 +49,14 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
         }
 
         Intent intent = new Intent(this, MenuMainActivity.class);
-        ///  intent.putExtra(MenuMainActivity.EMAIL,email);
+        intent.putExtra(MenuMainActivity.EMAIL,email);
         startActivity(intent);
         finish();
 
-        if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
+      /*  if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
             Toast.makeText(getApplicationContext(),"É preciso net",Toast.LENGTH_SHORT);
         }else
-            SingletonGestorHospital.getInstance(getApplicationContext()).loginAPI(email, pass,getApplicationContext());
+            SingletonGestorHospital.getInstance(getApplicationContext()).loginAPI(email, pass,getApplicationContext());*/
 
     }
 
@@ -77,9 +79,17 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
 
 
     @Override
-    public void onValidateLogin(String token, String email) {
+    public void onValidateLogin(String email) {
 
+      /*  SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.USER, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =  sharedPreferences.edit();
+        editor.putString(MenuMainActivity.EMAIL, email);
+        editor.apply();
+        Intent intent = new Intent(this, MenuMainActivity.class);
+        ///  intent.putExtra(MenuMainActivity.EMAIL,email);
+        startActivity(intent);
+        finish();
+        Toast.makeText(getApplicationContext(),"Login invalido",Toast.LENGTH_SHORT);*/
     }
-
 
 }

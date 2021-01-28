@@ -26,11 +26,13 @@ public function actionTotal()
     {
 
         $climodel= new$this->modelClass;
+        $clidel = $climodel::find()->where(["id" => $id])->one();
         $ret=$climodel->deleteAll("id=".$id);
+
         if($ret)
         {
             Yii::$app->response->statusCode=200;
-            return['code'=>'ok'];
+            return[$clidel];
         }
         Yii::$app->response->statusCode=404;
         return ['code'=>'error'];

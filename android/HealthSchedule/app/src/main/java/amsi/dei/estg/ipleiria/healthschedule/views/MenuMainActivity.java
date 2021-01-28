@@ -25,8 +25,8 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MenuMainActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
 
-    private static final String EMAIL = "email";
-
+    public static final String EMAIL = "email";
+    public static final String USER = "USER_PREF_SHARE";
     private String email="";
     private NavigationView navigationView;
     private DrawerLayout drawer;
@@ -53,6 +53,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
 
         carregarCabecalho();
+
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllProfileAPI(getApplicationContext());
 
 

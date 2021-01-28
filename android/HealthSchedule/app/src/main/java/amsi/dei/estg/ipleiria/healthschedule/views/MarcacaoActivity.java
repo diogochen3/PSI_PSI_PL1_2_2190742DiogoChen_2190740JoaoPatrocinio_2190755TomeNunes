@@ -124,32 +124,15 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                 if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
                     if (marcacao!=null){
 
-                        /*marcacao.setDate(date);
-                        marcacao.setTempo(etTime.getText().toString());*/
+                        marcacao.setDate(date);
+                        marcacao.setTempo(time = validarHoras());
 
                         SingletonGestorHospital.getInstance(getApplicationContext()).editarMarcacaoAPI(marcacao,getApplicationContext());
-                    }
-                    else
-                    if (validarMarcaco()==true){
-                        if (Build.VERSION.SDK_INT >= 23 ){
-                            hour = tpTime.getHour();
-                            minute = tpTime.getMinute();
-                        }
-                        else{
-                            hour = tpTime.getCurrentHour();
-                            minute = tpTime.getCurrentMinute();
-                        }
-                        String horas, min;
-                        if (hour < 9)
-                            horas = "0"+ hour;
-                        else
-                            horas = hour+"";
-                        if (minute < 9)
-                            min = "0"+ minute;
-                        else
-                            min = minute+"";
 
-                        time = horas +":" +min+ ":00";
+                    }
+                    else if (validarMarcaco()==true){
+                        time = validarHoras();
+
 
                         marcacao = new Marcacao(0,id_especialidade,11,id_medico,date,time,0);
                         SingletonGestorHospital.getInstance(getApplicationContext()).adicionarMarcacaoAPI(marcacao,getApplicationContext());
@@ -168,7 +151,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                medico = SingletonGestorHospital.getInstance(getApplicationContext()).getMedico(id);
+                medico = SingletonGestorHospital.getInstance(getApplicationContext()).getMedicos(id);
                 spMedico.setAdapter(new AdapterNomeMedicos(getApplicationContext(),medico));
                 id_especialidade = (int) id;
             }
@@ -197,17 +180,42 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
     }
 
+    private String validarHoras() {
+        if (Build.VERSION.SDK_INT >= 23 ){
+            hour = tpTime.getHour();
+            minute = tpTime.getMinute();
+        }
+        else{
+            hour = tpTime.getCurrentHour();
+            minute = tpTime.getCurrentMinute();
+        }
+        String horas, min;
+        if (hour < 9)
+            horas = "0"+ hour;
+        else
+            horas = hour+"";
+        if (minute < 9)
+            min = "0"+ minute;
+        else
+            min = minute+"";
 
+        return horas +":" +min+ ":00";
+    }
 
 
     private void carregarDetalhesMarcacao() {
-        /*AdapterEspecialidade adapterEspecialidade = new AdapterEspecialidade(getApplicationContext(),especialidade);
+     /*  Especialidade especialidade1 =  SingletonGestorHospital.getInstance(getApplicationContext()).getEspecialidade(marcacao.getId_especialidade());
+       spEspecialidade.setSelection(especialidade.indexOf(especialidade1));
 
-        int spinnerPosition = adapter.getPosition(compareValue);
-        mSpinner.setSelection(spinnerPosition);*/
-        /*spEspecialidade.setSelection(i);
-        spMedico.setSelection(i);*/
-        SimpleDateFormat timeFormatter = new SimpleDateFormat("hh:mm:ss");
+       Profile profile = SingletonGestorHospital.getInstance(getApplicationContext()).getProfile(marcacao.getId_Medico());
+       spMedico.setSelection(medico.indexOf(profile));
+
+        spEspecialidade.setSelected(false);
+        spEspecialidade.setEnabled(false);
+        spMedico.setSelected(false);
+        spMedico.setEnabled(false);*/
+
+        SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm:ss");
         Date tempo = null;
         try {
             tempo = timeFormatter.parse(marcacao.getTempo());
@@ -219,17 +227,17 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         tpTime.setCurrentHour(c.get(Calendar.HOUR_OF_DAY));
         tpTime.setCurrentMinute(c.get(Calendar.MINUTE));
 
-        String parts[] = marcacao.getDate().split("/");
 
-        int day = Integer.parseInt(parts[0]);
+
+        String parts[] = marcacao.getDate().split("-");
+
+        int day = Integer.parseInt(parts[2]);
         int month = Integer.parseInt(parts[1]);
-        int year = Integer.parseInt(parts[2]);
-
+        int year = Integer.parseInt(parts[0]);
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, day);
-
 
         long milliTime = calendar.getTimeInMillis();
         cvDate.setDate(milliTime, true, true);
@@ -243,7 +251,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
     @Override
     public void onRefreshListaMarcacoes(ArrayList<Marcacao> marcacoes) {
-
+        //Para listas
     }
 
     @Override
@@ -256,7 +264,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     @Override
     public void onRefreshListaEspecialidade(ArrayList<Especialidade> especialidades) {
         spEspecialidade.setAdapter(new AdapterEspecialidade(getApplicationContext(),especialidades));
-        //spEspecialidade.setAdapter(new Adapter(getApplicationContext(),especialidades));
+        especialidade = especialidades;
     }
 
     @Override

@@ -161,16 +161,15 @@ public class SingletonGestorHospital {
     }
 
    public void loginAPI(final String email, final String pass, final Context applicationContext) {
-
         StringRequest req =new StringRequest(Request.Method.POST,
                     mUrlAPILogin, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    String token = HospitalJsonParser.parserJsonLogin(response);
+                    String user = HospitalJsonParser.parserJsonLogin(response);
 
                     if(hospitalLoginListener != null)
                     {
-                        hospitalLoginListener.onValidateLogin(token,email);
+                        hospitalLoginListener.onValidateLogin(email);
                     }
                     //TODO: informar a vista -> listener
                 }
@@ -494,16 +493,10 @@ public class SingletonGestorHospital {
 
    /**************************** Especialidade **************************************/
 
-   public String getEspecialidadeNome(int id){
-       for (Especialidade l: especialidades)
-           if (l.getId() == id)
-               return l.getName();
-       return null;
-   }
-    public Especialidade getEspecialidade(String nome){
-        for (Especialidade l: especialidades)
-            if (l.getName().equals(nome))
-                return l;
+    public Especialidade getEspecialidade(int id){
+        for (Especialidade e: especialidades)
+            if (e.getId() == id)
+                return e;
 
             return null;
     }
@@ -623,7 +616,7 @@ public class SingletonGestorHospital {
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
     }
 
-    public ArrayList<Profile> getMedico(long id) {
+    public ArrayList<Profile> getMedicos(long id) {
 
         ArrayList<Profile> profile = new ArrayList<>();
 
@@ -632,27 +625,15 @@ public class SingletonGestorHospital {
                 for (Profile p: profiles)
                 {
                     if ( (int)id == me.getId_Especialidade() && me.getId_Medico() == p.getId())  {
-
-
                             profile.add(p);
-
-
-
+                    }
                 }
-
-                }
-
-
             }
-
         return profile;
-
-
-
     }
 
     public void removerMarcacaoAPI (final  Marcacao marcacao, final  Context context){
-        StringRequest req =new StringRequest(Request.Method.DELETE, mUrlAPIMarcacao+'/'+marcacao.getId(), new Response.Listener<String>() {
+        StringRequest req =new StringRequest(Request.Method.DELETE, mUrlAPIMarcacao+ "/marcardel/"+marcacao.getId(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Marcacao m = HospitalJsonParser.parserJsonMarcacao(response);
@@ -668,5 +649,6 @@ public class SingletonGestorHospital {
 
         });
 
+        volleyQueue.add(req);
     }
 }

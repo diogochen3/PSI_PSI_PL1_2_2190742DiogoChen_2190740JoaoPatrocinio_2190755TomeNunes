@@ -38,6 +38,8 @@ public class AdapterMarcacao extends BaseAdapter {
         return marcacoes.get(i).getId();
     }
 
+
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (inflater == null)
