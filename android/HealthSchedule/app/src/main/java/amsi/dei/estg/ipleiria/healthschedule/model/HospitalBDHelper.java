@@ -15,7 +15,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=7;
+    private static final int DB_VERSION=9;
     private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
@@ -56,7 +56,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String DID_UTENTE_DIAGNOSTICO="id_utente";
 
 
-    private static final String TABLE_MEDICO_ESPECIALIDADE ="diagnostico";
+    private static final String TABLE_MEDICO_ESPECIALIDADE ="medico_especialidade";
     private static final String ID_MEDICO_MEDICO_ESPECIALIDADE="id_medico";
     private static final String ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE="id_utente";
 
@@ -424,7 +424,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     }
     public void  removerAllEspecialidadesBD(){
-        this.db.delete(TABLE_MARCACAO,null,null);
+        this.db.delete(TABLE_ESPECIALIDADE,null,null);
     }
 
     /*************************** MedicoEspecialidade ***********************************************************/

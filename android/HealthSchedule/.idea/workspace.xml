@@ -18,78 +18,37 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMarcacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMarcacao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/listeners/HospitalLoginListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129959c6015.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012995c1f320.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012995e6ce34.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012995e8165b.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012995eac43c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601299e32bdc4.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601299e615df3.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601299e8bf139.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601299e8c9219.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601299e937d61.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129a26d08f3.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b0b1a668.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b0b2cfc4.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b0da16f5.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b0da4ef1.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b0deefa9.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b2eb8491.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b7c1ea2e.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b7eaabd7.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b88aed9d.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b88af2ed.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129b89327f9.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129ba6e2936.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129ba801223.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129ba8012d7.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129c0b1864f.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129c0b23140.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129c0b59aab.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129c2f0e334.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129c2fcde76.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129c2fe1c7f.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129ca287401.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129ca50cedf.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129cac49b1c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129cac4f846.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129cac89c51.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129cc02722b.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129cc0eb3bf.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129f676de7b.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129f69a4fcb.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129f6bd2ec1.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129f6beddb7.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129f6c59770.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129fc944b94.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129fcb80b4c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129fce5f23a.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/60129fe132951.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012a154ba519.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012a1574bc8a.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012a15a89b81.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012a170cb4c3.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/modules/api/controllers/MarcacaoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/modules/api/controllers/MarcacaoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f81b244e4.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f81b36a49.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f81ba4795.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f86a26583.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f86eb5e2b.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f871bb961.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f872b6aa8.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f881ad74a.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f887db118.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f923f0952.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f926115c0.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f938d94a1.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f939d3533.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f93a30460.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012f94218b67.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012fa73d77fc.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012fa7eca6f6.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012fac520fc2.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012fb3cb16b2.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012fb41be92b.data" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/6012fb4eb095c.data" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/index.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/runtime/logs/app.log" afterDir="false" />
     </list>
@@ -318,54 +277,54 @@
     </state>
     <state x="539" y="193" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1610894425282" />
     <state x="758" y="275" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610638445459" />
-    <state width="425" height="438" key="DebuggerActiveHint" timestamp="1611854535813">
+    <state width="544" height="438" key="DebuggerActiveHint" timestamp="1611937728177">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="425" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1611854535813" />
+    <state width="544" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1611937728177" />
     <state x="651" y="170" width="440" height="487" key="FileChooserDialogImpl" timestamp="1610986005786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1610873054160" />
     <state x="651" y="170" width="440" height="487" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610986005786" />
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1611857308016">
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1611940201963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611857308016" />
+    <state width="1323" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611940201962" />
     <state width="938" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611013321614" />
-    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1611857308016">
+    <state width="1323" height="223" key="GridCell.Tab.0.center" timestamp="1611940201961">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611857308016" />
+    <state width="1323" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1611940201961" />
     <state width="938" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611013321614" />
-    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1611857308016">
+    <state width="1323" height="223" key="GridCell.Tab.0.left" timestamp="1611940201961">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611857308016" />
+    <state width="1323" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1611940201961" />
     <state width="938" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611013321614" />
-    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1611857308016">
+    <state width="1323" height="223" key="GridCell.Tab.0.right" timestamp="1611940201962">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611857308016" />
+    <state width="1323" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1611940201962" />
     <state width="938" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611013321614" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1611857308021">
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1611940201963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611857308021" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1611940201963" />
     <state width="938" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1611011042914" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1611857308021">
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1611940201963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1611857308021" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1611940201963" />
     <state width="938" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1611011042914" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1611857308021">
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1611940201963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1611857308021" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1611940201963" />
     <state width="938" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1611011042914" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1611857308021">
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1611940201963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1611857308021" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1611940201963" />
     <state width="938" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1611011042914" />
     <state x="184" y="8" key="SettingsEditor" timestamp="1610932168733">
       <screen x="0" y="0" width="1366" height="728" />
@@ -399,38 +358,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>639</line>
+          <line>616</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>651</line>
+          <line>628</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>638</line>
-          <option name="timeStamp" value="19" />
+          <line>615</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.java</url>
-          <line>307</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>200</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>211</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>326</line>
-          <option name="timeStamp" value="25" />
+          <line>258</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

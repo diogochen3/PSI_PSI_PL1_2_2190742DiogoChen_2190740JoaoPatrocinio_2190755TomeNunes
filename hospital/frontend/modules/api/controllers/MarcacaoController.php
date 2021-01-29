@@ -24,7 +24,6 @@ public function actionTotal()
 
     public function actionMarcardel($id)
     {
-
         $climodel= new$this->modelClass;
         $clidel = $climodel::find()->where(["id" => $id])->one();
         $ret=$climodel->deleteAll("id=".$id);
@@ -32,7 +31,7 @@ public function actionTotal()
         if($ret)
         {
             Yii::$app->response->statusCode=200;
-            return[$clidel];
+            return $clidel;
         }
         Yii::$app->response->statusCode=404;
         return ['code'=>'error'];
@@ -61,15 +60,17 @@ public function actionTotal()
         $climodel->Aceitar=$aceitar;
         $climodel->id_Medico=$medico;
         $ret = $climodel->save();
+
         if($ret)
-            return 'Saved';
+            return $climodel;
         else
         {
             $err = json_encode( $climodel->getErrors() );
             throw new \yii\web\HttpException(422, $err );
         }
     }
-    public function actionMarcacaonew($id)    {
+    public function actionMarcacaonew($id)
+    {
         $date = Yii::$app->request->post("date");
         $tempo = Yii::$app->request->post("tempo");
         $especialidade = Yii::$app->request->post("id_especialidade");
@@ -88,11 +89,9 @@ public function actionTotal()
                 $rec->Aceitar=$aceitar;
                 $rec->id_Medico=$medico;
                 $rec->save();
-                return['SaveError' => 'Ok'];
+                return $rec;
     }
         throw new NotFoundHttpException("Clientid notfound!");
-
-
 
     }
 

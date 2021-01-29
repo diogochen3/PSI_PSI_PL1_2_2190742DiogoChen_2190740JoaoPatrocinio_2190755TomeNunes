@@ -32,6 +32,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private static final int ADICIONAR=1;
     private SwipeRefreshLayout swipeRefreshLayout;
 
+    private ArrayList<Marcacao> listaMarcacoes;
+
     public AgendaFragment() {
 
     }
@@ -113,6 +115,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
     @Override
     public void onResume() {
+        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
+        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes));
        // SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         super.onResume();
     }

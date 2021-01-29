@@ -38,7 +38,7 @@ import amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment;
 import amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity;
 
 public class SingletonGestorHospital {
-    private ArrayList<amsi.dei.estg.ipleiria.healthschedule.model.Marcacao> Marcacao;
+
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
@@ -201,9 +201,6 @@ public class SingletonGestorHospital {
        if (!HospitalJsonParser.isConnectionInternet(context)) {
            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
        }else {
-
-           //JsonRequest req;
-          // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
 
                @Override
@@ -223,29 +220,6 @@ public class SingletonGestorHospital {
                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
                }
            });
-           //Toast.makeText(context, "Helo", Toast.LENGTH_SHORT).show();
-           /*req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
-
-
-               @Override
-
-               public void onResponse(JSONArray response) {
-
-                   Marcacao = HospitalJsonParser.parserJsonMarcacao(response);
-                   adicionarMarcacoesBD(Marcacao);
-
-
-                   if(MarcacoesListener != null){
-
-                       MarcacoesListener.onRefreshListaLivros(hospitalDB.getAllMarcacoesBD());
-                   }
-               }
-           }, new Response.ErrorListener() {
-               @Override
-               public void onErrorResponse(VolleyError error) {
-                   Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-               }
-           });*/
            volleyQueue.add(req);
 
        }
@@ -358,8 +332,8 @@ public class SingletonGestorHospital {
     }
     public void editarMarcacaoAPI(final Marcacao marcacao, final Context context){
 
-        StringRequest req =new StringRequest(Request.Method.POST,
-                mUrlAPIMarcacao,
+        StringRequest req =new StringRequest(Request.Method.PUT,
+                mUrlAPIMarcacao+"/marcacaonew/"+marcacao.getId(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -376,8 +350,11 @@ public class SingletonGestorHospital {
                     }
 
                 }) {
-            protected Map<String, String> params() {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+
                 params.put("date", marcacao.getDate());
                 params.put("tempo", marcacao.getTempo());
                 params.put("Aceitar", marcacao.getAceitar()+"");
