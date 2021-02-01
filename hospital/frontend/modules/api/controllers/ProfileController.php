@@ -83,21 +83,25 @@ class ProfileController extends ActiveController
         $Address = Yii::$app->request->post("Address");
         $Birth_date = Yii::$app->request->post("Birth_date");
         $gender = Yii::$app->request->post("gender");
+        $codposta = Yii::$app->request->post("postal_code");
         $climodel= new $this->modelClass;
         $rec= $climodel::find()->where("id=".$id)->one();
 
 
         if($rec !== null){
-            $rec->date=$First_name;
-            $rec->tempo=$Last_name;
-            $rec->id_especialidade=$Email;
-            $rec->id_Utente=$Phone_number;
-            $rec->Aceitar=$NIF;
-            $rec->id_Medico=$Address;
-            $rec->id_Medico=$Birth_date;
-            $rec->id_Medico=$gender;
+            $rec->First_name=$First_name;
+            $rec->Last_name=$Last_name;
+            $rec->Email=$Email;
+            $rec->Phone_number=$Phone_number;
+            $rec->NIF=$NIF;
+            $rec->Address=$Address;
+            $rec->Birth_date=$Birth_date;
+            $rec->gender=$gender;
+            $rec->postal_code=$codposta;
+
             $rec->save();
-            return['SaveError' => 'Ok'];
+            
+            return $rec;
         }
         throw new NotFoundHttpException("Clientid notfound!");
 

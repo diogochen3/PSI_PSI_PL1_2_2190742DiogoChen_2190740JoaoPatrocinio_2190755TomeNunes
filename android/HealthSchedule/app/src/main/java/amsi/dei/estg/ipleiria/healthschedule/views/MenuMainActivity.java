@@ -51,11 +51,9 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
         fragmentManager=getSupportFragmentManager();
 
-
         carregarCabecalho();
 
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllProfileAPI(getApplicationContext());
-
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -63,10 +61,13 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
     }
 
     private void carregarFragmentoInicial() {
+        Bundle b2 = new Bundle();
+        b2.putInt("ID",id);
         navigationView.setCheckedItem(R.id.nav_perfil);
-        /*Fragment fragment = new ListaLivrosFragment();
-        setTitle(R.string.titleEstatico);
-        fragmentManager.beginTransaction().replace(R.id.contentFragment,fragment).commit();*/
+        Fragment fragment=new PerfilFragment();
+        fragment.setArguments(b2);
+        setTitle(R.string.nav_perfil);
+        fragmentManager.beginTransaction().replace(R.id.contentFragment,fragment).commit();
 
     }
 

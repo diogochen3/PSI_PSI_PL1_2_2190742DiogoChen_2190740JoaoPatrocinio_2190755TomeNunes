@@ -19,4 +19,5 @@
     <string name="outros">Outros</string>
     <string name="lista_de_receitas">Lista de Receitas</string>
     <string name="menu_remover">remover</string>
+    <string name="nav_perfil">nav_perfil</string>
 </resources>

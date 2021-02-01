@@ -142,7 +142,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     }
 
     @Override
-    public void onRefreshdetalhesLivros() {
+    public void onRefreshdetalhesMarcacoes() {
 
     }
 }

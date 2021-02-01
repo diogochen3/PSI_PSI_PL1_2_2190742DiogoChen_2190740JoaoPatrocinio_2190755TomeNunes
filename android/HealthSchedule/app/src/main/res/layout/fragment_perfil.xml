@@ -20,12 +20,15 @@
             android:layout_weight="0"
             android:text="Primeiro Nome:" />
 
-        <TextView
-            android:id="@+id/tvPNome"
+        <EditText
+            android:id="@+id/etPNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="TextView" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -40,8 +43,8 @@
             android:layout_weight="0"
             android:text="Apelido:" />
 
-        <TextView
-            android:id="@+id/tvLNome"
+        <EditText
+            android:id="@+id/etLNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -60,12 +63,14 @@
             android:layout_weight="0"
             android:text="Email:" />
 
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="TextView2" />
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -80,12 +85,13 @@
             android:layout_weight="0"
             android:text="Numero de Telefone:" />
 
-        <TextView
-            android:id="@+id/tvTelefone"
+        <EditText
+            android:id="@+id/etTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="TextView3" />
+            android:text="TextView3"
+            android:inputType="number"/>
     </LinearLayout>
 
     <LinearLayout
@@ -100,12 +106,13 @@
             android:layout_weight="0"
             android:text="NIF:" />
 
-        <TextView
-            android:id="@+id/tvNif"
+        <EditText
+            android:id="@+id/etNif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="TextView4" />
+            android:text="TextView4"
+            android:inputType="number"/>
     </LinearLayout>
 
     <LinearLayout
@@ -120,8 +127,8 @@
             android:layout_weight="0"
             android:text="Endereço:" />
 
-        <TextView
-            android:id="@+id/tvEndereco"
+        <EditText
+            android:id="@+id/etEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -140,12 +147,13 @@
             android:layout_weight="0"
             android:text="Data de Nascimento:" />
 
-        <TextView
-            android:id="@+id/tvDNascimento"
+        <EditText
+            android:id="@+id/etDNascimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="TextView6" />
+            android:text="TextView6"
+            android:inputType="date"/>
     </LinearLayout>
 
     <LinearLayout
@@ -160,8 +168,8 @@
             android:layout_weight="0"
             android:text="Género:" />
 
-        <TextView
-            android:id="@+id/tvGenero"
+        <EditText
+            android:id="@+id/etGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -180,8 +188,8 @@
             android:layout_weight="0"
             android:text="Codigo Postal:" />
 
-        <TextView
-            android:id="@+id/tvCodPostal"
+        <EditText
+            android:id="@+id/etCodPostal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
