@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
+import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
+
 import java.util.ArrayList;
 
 public class AdapterMarcacao extends BaseAdapter {
@@ -17,10 +19,12 @@ public class AdapterMarcacao extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Marcacao> marcacoes;
+    private ArrayList<Profile> medico;
 
-    public AdapterMarcacao(Context context, ArrayList<Marcacao> marcacoes) {
+    public AdapterMarcacao(Context context, ArrayList<Marcacao> marcacoes, ArrayList<Profile> medico) {
         this.context = context;
         this.marcacoes = marcacoes;
+        this.medico = medico;
     }
 
     @Override
@@ -53,6 +57,7 @@ public class AdapterMarcacao extends BaseAdapter {
             viewHolderLista = new ViewHolderLista(view);
             view.setTag(viewHolderLista);
         }
+
         viewHolderLista.update(marcacoes.get(i));
 
         return view;
@@ -72,7 +77,11 @@ public class AdapterMarcacao extends BaseAdapter {
         public void update(Marcacao marcacao) {
             txtDataMarcacao.setText(marcacao.getDate());
             txtHoraMarcacao.setText(marcacao.getTempo());
-            txtMedicoMarcacao.setText(marcacao.getId_Medico()+ "");
+            for (Profile p: medico) {
+                if (marcacao.getId_Medico() == p.getId())
+                    txtMedicoMarcacao.setText(p.getFirst_name() +" "+ p.getLast_name());
+            }
+
 
         }
 

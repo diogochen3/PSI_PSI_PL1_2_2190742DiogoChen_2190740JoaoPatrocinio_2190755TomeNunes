@@ -1686,9 +1686,9 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btnAlterar
 id btnEntrar
-id btnTime
-id button2
+id btnLogout
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -2014,8 +2014,10 @@ id tvCodPostal
 id tvDNascimento
 id tvEmail
 id tvEndereco
+id tvEspecialidade
 id tvGenero
 id tvLNome
+id tvMedico
 id tvNif
 id tvPNome
 id tvSerie

@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.os.PowerManager;
 import android.os.ProxyFileDescriptorCallback;
+import android.provider.SyncStateContract;
+import android.util.Base64;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -42,13 +44,13 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.24/hospital/frontend/web/index.php/api/user";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.27/hospital/frontend/web/index.php/api/user/login";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
 
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.24/hospital/frontend/web/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.27/hospital/frontend/web/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
@@ -57,28 +59,31 @@ public class SingletonGestorHospital {
 
     /************************ variaveis Profile ******************************************/
 
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.24/hospital/frontend/web/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.27/hospital/frontend/web/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
-    /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.24/hospital/frontend/web/index.php/api/especialidade";
+    /************************ variaveis Especialidade ******************************************/
+
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.27/hospital/frontend/web/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
-    /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.24/hospital/frontend/web/index.php/api/diagnostico";
+
+    /************************ variaveis Diagnostico ******************************************/
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.27/hospital/frontend/web/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener DiagnosticosListener;
-    /************************ variaveis Profile ******************************************/
-    private static final  String  mUrlAPIReceitas =  "http://192.168.1.24/hospital/frontend/web/index.php/api/receitas";
+    /************************ variaveis Receitas ******************************************/
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.27/hospital/frontend/web/index.php/api/receitas";
     private ArrayList<Receita> receitas;
     private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.24/hospital/frontend/web/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.27/hospital/frontend/web/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
+
 
     public static synchronized SingletonGestorHospital getInstance(Context context) {
         if (instance == null)
@@ -108,6 +113,15 @@ public class SingletonGestorHospital {
         this.especialidadeListener = especialidadeListener;
     }
 
+    public void setMarcacaoListener(MarcacoesListener marcacaoesListener) {
+        this.MarcacoesListener = marcacaoesListener;
+    }
+    public void setDiagnosticosListener(DiagnosticoListener diagnosticosListener) {
+        this.DiagnosticosListener = diagnosticosListener;
+    }
+    public void setReceitasListener(ReceitasListener receitasListener) {
+        this.ReceitasListener = receitasListener;
+    }
     /*********************************** Profile ******************************************/
     public Profile getProfile(int id){
         for (Profile l: profiles)
@@ -160,41 +174,87 @@ public class SingletonGestorHospital {
         hospitalDB.adicionarProfileBD(profile);
     }
 
-   public void loginAPI(final String email, final String pass, final Context applicationContext) {
-        StringRequest req =new StringRequest(Request.Method.POST,
-                    mUrlAPILogin, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    String user = HospitalJsonParser.parserJsonLogin(response);
+    public ArrayList<Profile> getMedicos(long id) {
 
-                    if(hospitalLoginListener != null)
-                    {
-                        hospitalLoginListener.onValidateLogin(email);
-                    }
+        ArrayList<Profile> profile = new ArrayList<>();
+
+        for (MedicoEspecialidade me: medicoEspecialidades)
+        {
+            for (Profile p: profiles)
+            {
+                if ( (int)id == me.getId_Especialidade() && me.getId_Medico() == p.getId())  {
+                    profile.add(p);
+                }
+            }
+        }
+        return profile;
+    }
+    public ArrayList<Profile> getallProfileBD() {
+        profiles = hospitalDB.getAllProfilesBD();
+        return profiles;
+    }
+
+    /******************************************           Login   **************************************************/
+   public void loginAPI(final String email, final String pass, final Context applicationContext) {
+        StringRequest req =new StringRequest(Request.Method.POST, mUrlAPILogin, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                int id = HospitalJsonParser.parserJsonLogin(response);
+
+                if(hospitalLoginListener != null)
+                {
+                    hospitalLoginListener.onValidateLogin(email,id);
+                }
                     //TODO: informar a vista -> listener
                 }
             },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(applicationContext, error.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-
-                    }) {
-                protected Map<String, String> params() {
+                new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(applicationContext, "Login invalido", Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
-                    params.put("email", email);
-                    params.put("password", pass);
-
+                    params.put("Email", email);
+                    params.put("Password", pass);
                     return params;
-                }
-            };
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+
+                Map<String,String> headers = new HashMap<>();
+                // add headers <key,value>
+                String credentials = email+":"+pass;
+                String auth = "Basic "
+                        + Base64.encodeToString(credentials.getBytes(),
+                        Base64.NO_WRAP);
+
+                headers.put("Authorization", auth);
+                return headers;
+
+            }
+        };
 
             volleyQueue.add(req);
 
     }
 
-
+    /************************************* Marcacao ****************************************************************/
+    public ArrayList<Marcacao> getMarcacoes(int id, ArrayList<Marcacao> marcacao)
+    {
+        ArrayList<Marcacao> auxmarcacao = new ArrayList<>();
+        for (Marcacao m: marcacao) {
+            if (id == m.getId_Utente())
+            {
+                auxmarcacao.add(m);
+            }
+        }
+        return auxmarcacao;
+    }
 
    public void getAllMarcacaoAPI(final Context context){
 
@@ -206,6 +266,16 @@ public class SingletonGestorHospital {
                @Override
                public void onResponse(JSONArray response) {
                    marcacoes = HospitalJsonParser.parserJsonMarcacoes(response);
+                   /*ArrayList<Marcacao> auxmarcacao;
+                   auxmarcacao = HospitalJsonParser.parserJsonMarcacoes(response);
+
+                   for (Marcacao m: auxmarcacao) {
+                       if (id == m.getId_Utente())
+                       {
+                           marcacoes.add(m);
+                       }
+                   }*/
+
                    adicionarMarcacoesBD(marcacoes);
 
 
@@ -224,70 +294,6 @@ public class SingletonGestorHospital {
 
        }
    }
-    public void getAllDiagnosticoAPI(final Context context){
-
-        if (!HospitalJsonParser.isConnectionInternet(context)) {
-            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
-        }else {
-
-
-            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIDiagnostico, null, new Response.Listener<JSONArray>() {
-
-                @Override
-                public void onResponse(JSONArray response) {
-                    diagnosticos = HospitalJsonParser.parserJsonDiagnosticos(response);
-                    adicionarDiagnosticosBD(diagnosticos);
-
-
-                    if(DiagnosticosListener != null){
-                        DiagnosticosListener.onRefreshListaDiagnostico(hospitalDB.getAllDiagnosticosBD());
-                    }
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            volleyQueue.add(req);
-
-        }
-    }
-    public void getAllReceitasAPI(final Context context){
-
-        if (!HospitalJsonParser.isConnectionInternet(context)) {
-            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
-        }else {
-
-
-            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIReceitas, null, new Response.Listener<JSONArray>() {
-
-                @Override
-                public void onResponse(JSONArray response) {
-                    receitas = HospitalJsonParser.parserJsonReceitas(response);
-
-
-                    adicionarReceitasBD(receitas);
-
-
-                    if(ReceitasListener != null){
-                        ReceitasListener.onRefreshListaReceitas(hospitalDB.getAllReceitasBD());
-                    }
-
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-
-            volleyQueue.add(req);
-
-        }
-    }
 
 
     public void adicionarMarcacaoAPI(final Marcacao marcacao, final Context context){
@@ -300,6 +306,9 @@ public class SingletonGestorHospital {
                         Marcacao l = HospitalJsonParser.parserJsonMarcacao(response);
                         onUpdateLitaMarcacaoBD(l,ADICIONAR_MARCACAO_BD);
 
+                        if(MarcacoesListener != null){
+                            MarcacoesListener.onRefreshdetalhesLivros();
+                        }
                         //TODO: informar a vista -> listener
                     }
                 },
@@ -339,8 +348,9 @@ public class SingletonGestorHospital {
                     public void onResponse(String response) {
                         Marcacao l = HospitalJsonParser.parserJsonMarcacao(response);
                         onUpdateLitaMarcacaoBD(l,EDITAR_MARCACAO_BD);
-
-                        //TODO: informar a vista -> listener
+                        if(MarcacoesListener != null){
+                            MarcacoesListener.onRefreshdetalhesLivros();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -369,6 +379,28 @@ public class SingletonGestorHospital {
         volleyQueue.add(req);
     }
 
+    public void removerMarcacaoAPI (final  Marcacao marcacao, final  Context context){
+        StringRequest req =new StringRequest(Request.Method.DELETE, mUrlAPIMarcacao+ "/marcardel/"+marcacao.getId(), new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Marcacao m = HospitalJsonParser.parserJsonMarcacao(response);
+                onUpdateLitaMarcacaoBD(m,REMOVER_MARCACAO_BD);
+
+                if(MarcacoesListener != null){
+                    MarcacoesListener.onRefreshdetalhesLivros();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+        volleyQueue.add(req);
+    }
+
     public  void onUpdateLitaMarcacaoBD(Marcacao marcacao, int operacao)
     {
         switch (operacao){
@@ -390,12 +422,6 @@ public class SingletonGestorHospital {
                 return l;
         return null;
     }
-    public Diagnostico getDiagnostico(int id){
-        for (Diagnostico l: diagnosticos)
-            if (l.getId() == id)
-                return l;
-        return null;
-    }
 
     public ArrayList<Marcacao> getallMarcacaoBD() {
         marcacoes = hospitalDB.getAllMarcacoesBD();
@@ -403,33 +429,14 @@ public class SingletonGestorHospital {
     }
 
     public void adicionarMarcacoesBD(ArrayList<Marcacao> marcacoes){
-            hospitalDB.removerAllMarcacoesBD();
-            for(Marcacao l: marcacoes){
-                adicionarMarcacaoBD(l);
-        }
-    }
-
-    public void adicionarDiagnosticosBD(ArrayList<Diagnostico> diagnosticos){
-        hospitalDB.removerAllDiagnosticosBD();
-        for(Diagnostico l: diagnosticos){
-            adicionarDiagnosticoBD(l);
-        }
-    }
-    public void adicionarReceitasBD(ArrayList<Receita> receitas){
-        hospitalDB.removerAllReceitasBD();
-        for(Receita l: receitas){
-            adicionarReceitaBD(l);
+        hospitalDB.removerAllMarcacoesBD();
+        for(Marcacao l: marcacoes){
+            adicionarMarcacaoBD(l);
         }
     }
 
     public void adicionarMarcacaoBD(Marcacao marcacao){
         hospitalDB.adicionarMarcacaoBD(marcacao);
-    }
-    public void adicionarDiagnosticoBD(Diagnostico diagnostico){
-        hospitalDB.adicionarDiagnosticoBD(diagnostico);
-    }
-    public void adicionarReceitaBD(Receita receita){
-        hospitalDB.adicionarReceitaBD(receita);
     }
 
     private void editarMarcacaoBD(Marcacao marcacao) {
@@ -437,15 +444,7 @@ public class SingletonGestorHospital {
         if (marcacaoAux!=null)
         {
             hospitalDB.editarMarcacaoBD(marcacaoAux);
-         /*   if (livrosBD.editarLivroBD(livroAux)){
-                livroAux.setTitulo(livro.getTitulo());
-                livroAux.setAutor(livro.getAutor());
-                livroAux.setCapa(livro.getCapa());
-                livro.setSerie(livro.getSerie());
-                livro.setAno(livro.getAno());
-            }*/
         }
-
 
     }
 
@@ -454,19 +453,108 @@ public class SingletonGestorHospital {
         if(marcacao!= null){
             hospitalDB.removerMarcacaoBD(id);
         }
-
     }
 
 
-    public void setMarcacaoListener(MarcacoesListener marcacaoesListener) {
-        this.MarcacoesListener = marcacaoesListener;
-   }
-    public void setDiagnosticosListener(DiagnosticoListener diagnosticosListener) {
-        this.DiagnosticosListener = diagnosticosListener;
+
+   /************************************************    Diagonostico   *******************************************************/
+    public void getAllDiagnosticoAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIDiagnostico, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    diagnosticos = HospitalJsonParser.parserJsonDiagnosticos(response);
+                    adicionarDiagnosticosBD(diagnosticos);
+
+
+                    if(DiagnosticosListener != null){
+                        DiagnosticosListener.onRefreshListaDiagnostico(hospitalDB.getAllDiagnosticosBD());
+                    }
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            volleyQueue.add(req);
+
+        }
     }
-    public void setReceitasListener(ReceitasListener receitasListener) {
-        this.ReceitasListener = receitasListener;
+
+    public Diagnostico getDiagnostico(int id){
+        for (Diagnostico l: diagnosticos)
+            if (l.getId() == id)
+                return l;
+        return null;
     }
+
+    public void adicionarDiagnosticosBD(ArrayList<Diagnostico> diagnosticos){
+        hospitalDB.removerAllDiagnosticosBD();
+        for(Diagnostico l: diagnosticos){
+            adicionarDiagnosticoBD(l);
+        }
+    }
+
+    public void adicionarDiagnosticoBD(Diagnostico diagnostico){
+        hospitalDB.adicionarDiagnosticoBD(diagnostico);
+    }
+    /******************************************************** Receitas ****************************************/
+    public void getAllReceitasAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIReceitas, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    receitas = HospitalJsonParser.parserJsonReceitas(response);
+
+
+                    adicionarReceitasBD(receitas);
+
+
+                    if(ReceitasListener != null){
+                        ReceitasListener.onRefreshListaReceitas(hospitalDB.getAllReceitasBD());
+                    }
+
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            volleyQueue.add(req);
+
+        }
+    }
+
+    public void adicionarReceitasBD(ArrayList<Receita> receitas){
+        hospitalDB.removerAllReceitasBD();
+        for(Receita l: receitas){
+            adicionarReceitaBD(l);
+        }
+    }
+
+    public void adicionarReceitaBD(Receita receita){
+        hospitalDB.adicionarReceitaBD(receita);
+    }
+
+
+
 
    /**************************** Especialidade **************************************/
 
@@ -477,6 +565,15 @@ public class SingletonGestorHospital {
 
             return null;
     }
+    public ArrayList<Especialidade> getArrayEspecialidade(int id_especialidade) {
+        ArrayList<Especialidade> auxEspecialidades = new ArrayList<>();
+        for (Especialidade e: especialidades) {
+            if (e.getId() == id_especialidade)
+                auxEspecialidades.add(e);
+        }
+        return auxEspecialidades;
+    }
+
     public ArrayList<Especialidade> getallEspecialidadeNomeBD() {
         especialidades = hospitalDB.getAllEspecialidadeBD();
         return especialidades;
@@ -535,7 +632,8 @@ public class SingletonGestorHospital {
         especialidadesNome = hospitalDB.getAllEspecialidadeNomeBD();
         return especialidadesNome;
     }*/
-    public ArrayList<String> getMedicoName(int id)
+
+    /*public ArrayList<String> getMedicoName(int id)
     {
         ArrayList<String> auMedico = new ArrayList<>();
             for (MedicoEspecialidade me: medicoEspecialidades)
@@ -547,7 +645,7 @@ public class SingletonGestorHospital {
                 }
             }
         return auMedico;
-    }
+    }*/
 
 
     public void getAllMedicoEspecialidadeAPI(final Context context){
@@ -593,39 +691,5 @@ public class SingletonGestorHospital {
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
     }
 
-    public ArrayList<Profile> getMedicos(long id) {
 
-        ArrayList<Profile> profile = new ArrayList<>();
-
-            for (MedicoEspecialidade me: medicoEspecialidades)
-            {
-                for (Profile p: profiles)
-                {
-                    if ( (int)id == me.getId_Especialidade() && me.getId_Medico() == p.getId())  {
-                            profile.add(p);
-                    }
-                }
-            }
-        return profile;
-    }
-
-    public void removerMarcacaoAPI (final  Marcacao marcacao, final  Context context){
-        StringRequest req =new StringRequest(Request.Method.DELETE, mUrlAPIMarcacao+ "/marcardel/"+marcacao.getId(), new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Marcacao m = HospitalJsonParser.parserJsonMarcacao(response);
-                onUpdateLitaMarcacaoBD(m,REMOVER_MARCACAO_BD);
-
-                //TODO: informar a vista -> listener
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-        volleyQueue.add(req);
-    }
 }

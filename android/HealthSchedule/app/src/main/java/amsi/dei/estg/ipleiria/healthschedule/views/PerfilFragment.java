@@ -1,5 +1,8 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
@@ -10,11 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 
@@ -25,9 +24,9 @@ public class PerfilFragment extends Fragment {
 
    // public static final String ID = "ID";
     private TextView tvPNome, tvApelido, tvEmail, tvTelefone, tvNif, tvEndereco, tvDNascimento , tvgenero, tvcodPostal;
-    private Button btnTime;
+    private Button btnTime, btnLogout;
     private Profile perfil;
-    private int id = 11;
+    private int id;
 
     public PerfilFragment() {
         // Required empty public constructor
@@ -40,8 +39,8 @@ public class PerfilFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
-
-
+        Bundle b3 = getArguments();
+        id =b3.getInt("ID");
 
         //SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.TOKEN, Context.MODE_PRIVATE);
         // token = sharedPreferences.getString(MenuMainActivity.TOKEN, "sem email");
@@ -55,7 +54,8 @@ public class PerfilFragment extends Fragment {
         tvDNascimento = view.findViewById(R.id.tvDNascimento);
         tvgenero = view.findViewById(R.id.tvGenero);
         tvcodPostal = view.findViewById(R.id.tvCodPostal);
-        btnTime = view.findViewById(R.id.btnTime);
+        btnTime = view.findViewById(R.id.btnAlterar);
+        btnLogout = view.findViewById(R.id.btnLogout);
 
         perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
 
@@ -73,6 +73,17 @@ public class PerfilFragment extends Fragment {
             //fab.setImageResource(R.drawable.ic_action_adicionar);
         }
 
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences preferences = getContext().getSharedPreferences(MenuMainActivity.USER, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+                Intent intent=new Intent(getContext(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
       /*  fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +125,7 @@ public class PerfilFragment extends Fragment {
         tvDNascimento.setText(date);
         tvgenero.setText(perfil.getGender());
         tvcodPostal.setText(perfil.getPostal_code());
-
     }
+
+
 }

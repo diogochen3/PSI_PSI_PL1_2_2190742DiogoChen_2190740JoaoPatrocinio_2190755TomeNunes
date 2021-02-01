@@ -15,7 +15,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=9;
+    private static final int DB_VERSION=12;
     private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
@@ -240,8 +240,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
             do {
                 Marcacao auxMarcacao=new Marcacao(cursor.getInt(0),
                         cursor.getInt(1),
-                        cursor.getInt(2),
                         cursor.getInt(3),
+                        cursor.getInt(2),
                         cursor.getString(4),
                         cursor.getString(5),
                         cursor.getInt(6));

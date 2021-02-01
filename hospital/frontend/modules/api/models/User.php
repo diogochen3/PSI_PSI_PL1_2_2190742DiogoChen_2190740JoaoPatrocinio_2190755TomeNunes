@@ -268,4 +268,5 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
     }
+
 }

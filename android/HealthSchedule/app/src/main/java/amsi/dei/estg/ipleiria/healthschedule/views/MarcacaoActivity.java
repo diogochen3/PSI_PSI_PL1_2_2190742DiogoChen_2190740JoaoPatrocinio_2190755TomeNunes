@@ -47,6 +47,7 @@ import java.util.Date;
 public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesListener, EspecialidadeListener, MedicoEspecialidadeListener {
 
     public static final String ID = "ID";
+    private static final String ID_USER = "ID_USER";
     private Marcacao marcacao;
     private int id_especialidade;
     private int id_medico;
@@ -56,7 +57,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     private ArrayAdapter arrayAdapter;
     private ArrayList<Especialidade> especialidade;
     private ArrayList<Profile> medico;
-
+    private TextView tvEspecialidade, tvMedico;
     private TimePicker tpTime;
     private CalendarView cvDate;
     private String date, time;
@@ -70,24 +71,30 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         final int id = getIntent().getIntExtra(ID,0);
+        final int id_user = getIntent().getIntExtra(ID_USER,0);
         marcacao = SingletonGestorHospital.getInstance(getApplicationContext()).getMarcacao(id);
 
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setEspecialidadeListener(this);
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setMarcacaoListener(this);
-        SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
+
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
+
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
 
         FloatingActionButton fab = findViewById(R.id.fab);
         spEspecialidade = findViewById(R.id.spEspecialidade);
         spMedico = findViewById(R.id.spMedico);
         tpTime = findViewById(R.id.tpTime);
         cvDate = findViewById(R.id.cvDate);
+        tvEspecialidade = findViewById(R.id.tvEspecialidade);
+        tvMedico = findViewById(R.id.tvMedico);
+
         tpTime.setIs24HourView(true);
 
         Date currentTime = Calendar.getInstance().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         date =  formatter.format(currentTime);
 
 
@@ -100,7 +107,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                     mes = "0"+ i1;
                 else
                     mes = ""+i1;
-                date = i+"/" + mes + "/" +i2;
+                date = i+"-" + mes + "-" +i2;
             }
 
         });
@@ -111,6 +118,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
             carregarDetalhesMarcacao();
             fab.setImageResource(R.drawable.ic_action_guardar);
         }else{
+            tvMedico.setVisibility(View.GONE);
+            tvEspecialidade.setVisibility(View.GONE);
             setTitle("Marcar");
             fab.setImageResource(R.drawable.ic_action_adicionar);
            /* arrayAdapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, especialidade);
@@ -126,7 +135,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
                         marcacao.setDate(date);
                         marcacao.setTempo(time = validarHoras());
-
+                        marcacao.setAceitar(0);
                         SingletonGestorHospital.getInstance(getApplicationContext()).editarMarcacaoAPI(marcacao,getApplicationContext());
 
                     }
@@ -134,7 +143,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                         time = validarHoras();
 
 
-                        marcacao = new Marcacao(0,id_especialidade,11,id_medico,date,time,0);
+                        marcacao = new Marcacao(0,id_especialidade,id_user,id_medico,date,time,0);
                         SingletonGestorHospital.getInstance(getApplicationContext()).adicionarMarcacaoAPI(marcacao,getApplicationContext());
                     }else return;
                     // setResult(RESULT_OK);
@@ -144,7 +153,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
             }
         });
 
-          SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
+
 
 
         spEspecialidade.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -204,13 +213,23 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
 
     private void carregarDetalhesMarcacao() {
-     /*  Especialidade especialidade1 =  SingletonGestorHospital.getInstance(getApplicationContext()).getEspecialidade(marcacao.getId_especialidade());
-       spEspecialidade.setSelection(especialidade.indexOf(especialidade1));
+        spEspecialidade.setVisibility(View.GONE);
+        spMedico.setVisibility(View.GONE);
 
-       Profile profile = SingletonGestorHospital.getInstance(getApplicationContext()).getProfile(marcacao.getId_Medico());
-       spMedico.setSelection(medico.indexOf(profile));
 
-        spEspecialidade.setSelected(false);
+
+        /*ArrayList<Especialidade> especialidades = new ArrayList<>();
+        ArrayList<Profile> profiles = new ArrayList<>();
+        especialidades = SingletonGestorHospital.getInstance(getApplicationContext()).getArrayEspecialidade(marcacao.getId_especialidade());
+        spEspecialidade.setAdapter(new AdapterEspecialidade(getApplicationContext(),especialidades));
+        profiles = SingletonGestorHospital.getInstance(getApplicationContext()).getArrayMedico(marcacao.getId_Medico());
+        spMedico.setAdapter(new AdapterNomeMedicos(getApplicationContext(),profiles));*/
+
+        tvMedico.setText(marcacao.getId_Medico()+"");
+
+
+
+        /*spEspecialidade.setSelected(false);
         spEspecialidade.setEnabled(false);
         spMedico.setSelected(false);
         spMedico.setEnabled(false);*/
@@ -264,8 +283,15 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     @Override
     public void onRefreshListaEspecialidade(ArrayList<Especialidade> especialidades) {
         spEspecialidade.setAdapter(new AdapterEspecialidade(getApplicationContext(),especialidades));
+      /*  if (marcacao!= null){
+            Especialidade especialidade1 = SingletonGestorHospital.getInstance(getApplicationContext()).getEspecialidade(marcacao.getId_especialidade());
+            tvEspecialidade.setText(especialidade1.getName());
+            Profile profile = SingletonGestorHospital.getInstance(getApplicationContext()).getProfile(marcacao.getId_Medico());
+            tvMedico.setText(profile.getFirst_name() +" "+profile.getLast_name());
+        }*/
         especialidade = especialidades;
     }
+
 
     @Override
     public void onRefreshListaMedicoEspecialidade(ArrayList<MedicoEspecialidade> medicoEspecialidade) {
@@ -306,8 +332,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         SingletonGestorHospital.getInstance(getApplicationContext()).removerMarcacaoAPI(marcacao,getApplicationContext());
-                        setResult(RESULT_OK);
-                        finish();
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {

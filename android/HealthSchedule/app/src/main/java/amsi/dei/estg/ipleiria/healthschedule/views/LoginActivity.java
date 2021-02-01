@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
     private EditText etEmail;
     private EditText etPass;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,18 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
 
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setHospitalLoginListener(this);
+        SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.USER, Context.MODE_PRIVATE);
+
+        if (sharedPreferences.getString(MenuMainActivity.EMAIL, "sem email").equals("sem email"))
+        {
+
+        }else
+        {
+            Intent intent = new Intent(this, MenuMainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
 
 
@@ -48,15 +61,20 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
             return;
         }
 
-        Intent intent = new Intent(this, MenuMainActivity.class);
+       /* Intent intent = new Intent(this, MenuMainActivity.class);
         intent.putExtra(MenuMainActivity.EMAIL,email);
         startActivity(intent);
-        finish();
+        finish();*/
+       // Toast.makeText(getApplicationContext(),"Resposta"+ sharedPreferences.contains("EMAIL"),Toast.LENGTH_LONG).show();
+       /* if (sharedPreferences.contains(email))
+        {
 
-      /*  if(HospitalJsonParser.isConnectionInternet(getApplicationContext())){
+        }*/
+
+        if(!HospitalJsonParser.isConnectionInternet(getApplicationContext())){
             Toast.makeText(getApplicationContext(),"É preciso net",Toast.LENGTH_SHORT);
         }else
-            SingletonGestorHospital.getInstance(getApplicationContext()).loginAPI(email, pass,getApplicationContext());*/
+            SingletonGestorHospital.getInstance(getApplicationContext()).loginAPI(email, pass,getApplicationContext());
 
     }
 
@@ -79,17 +97,20 @@ public class LoginActivity extends AppCompatActivity  implements HospitalLoginLi
 
 
     @Override
-    public void onValidateLogin(String email) {
-
-      /*  SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.USER, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor =  sharedPreferences.edit();
-        editor.putString(MenuMainActivity.EMAIL, email);
-        editor.apply();
-        Intent intent = new Intent(this, MenuMainActivity.class);
-        ///  intent.putExtra(MenuMainActivity.EMAIL,email);
-        startActivity(intent);
-        finish();
-        Toast.makeText(getApplicationContext(),"Login invalido",Toast.LENGTH_SHORT);*/
+    public void onValidateLogin(String email,int id) {
+        if (id != 0)
+        {
+            SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.USER, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor =  sharedPreferences.edit();
+            editor.putString(MenuMainActivity.EMAIL, email);
+            editor.putInt(MenuMainActivity.ID, id);
+            editor.apply();
+            Intent intent = new Intent(this, MenuMainActivity.class);
+            ///  intent.putExtra(MenuMainActivity.EMAIL,email);
+            startActivity(intent);
+            finish();
+        }else
+            Toast.makeText(getApplicationContext(),"Login invalido",Toast.LENGTH_SHORT);
     }
 
 }

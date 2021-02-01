@@ -5,6 +5,7 @@ namespace frontend\modules\api\controllers;
 
 
 use frontend\modules\api\models\User;
+use Yii;
 use yii\filters\auth\HttpBasicAuth;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
@@ -45,4 +46,20 @@ class UserController extends ActiveController
         }
     }
 
+    public function actionLogin()
+    {
+        $climodel= new$this->modelClass;
+        $email= Yii::$app->request->post("Email");
+        $pass= Yii::$app->request->post("Password");
+        $ret= $climodel::find()->where(["Email" => $email])->one();
+
+       if ($ret->validatePassword($pass) && $ret !== null)
+
+            return ["id" =>$ret->id];
+        else
+        {
+            $err = json_encode( $climodel->getErrors() );
+            throw new \yii\web\HttpException(422, $err );
+        }
+    }
 }

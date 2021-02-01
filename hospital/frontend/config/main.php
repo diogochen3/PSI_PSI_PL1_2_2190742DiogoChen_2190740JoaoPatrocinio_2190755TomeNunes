@@ -98,6 +98,8 @@ return [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => 'api/user',
                 'pluralize' => false,
+                    'extraPatterns' => ['POST login' => 'login',
+                    ],
             ],
                 [
                 'class' => 'yii\rest\UrlRule',

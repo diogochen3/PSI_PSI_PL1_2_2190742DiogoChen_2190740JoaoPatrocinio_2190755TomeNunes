@@ -27,7 +27,9 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
     public static final String EMAIL = "email";
     public static final String USER = "USER_PREF_SHARE";
+    public static final String ID = "id";
     private String email="";
+    private int id;
     private NavigationView navigationView;
     private DrawerLayout drawer;
 
@@ -37,8 +39,6 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_main);
-
-        email = getIntent().getStringExtra(EMAIL);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -72,32 +72,36 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
 
     private void carregarCabecalho() {
-        SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.EMAIL, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.USER, Context.MODE_PRIVATE);
         email = sharedPreferences.getString(EMAIL, "sem email");
+        id = sharedPreferences.getInt(ID,0);
        // View hview= navigationView.getHeaderView(0);
-        TextView tvEmail= findViewById(R.id.Email);
-
+       // TextView tvEmail= findViewById(R.id.Email);
+        Toast.makeText(getApplicationContext(),"id:"+id+"email:"+email,Toast.LENGTH_LONG).show();
     }
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment= null;
+        Bundle b2 = new Bundle();
+        b2.putInt("ID",id);
 
         switch (menuItem.getItemId()) {
             case R.id.nav_perfil:
                 fragment=new PerfilFragment();
+                fragment.setArguments(b2);
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_diagnosticos:
-
                 fragment=new ListaDiagnosticosFragment();
+                fragment.setArguments(b2);
                 setTitle(menuItem.getTitle());
-
 
                 break;
             case R.id.nav_marcacao:
-             fragment=new AgendaFragment();
+                fragment=new AgendaFragment();
+                fragment.setArguments(b2);
                 setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_medicos:
@@ -112,6 +116,7 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
                 break;
             case R.id.nav_receitas:
                  fragment=new ListaReceitasFragment();
+                 fragment.setArguments(b2);
                  setTitle(menuItem.getTitle());
                  // System.out.println("-->Nav Dinamico");
                 break;

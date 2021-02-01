@@ -17,6 +17,7 @@ import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
+import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import androidx.annotation.Nullable;
@@ -30,8 +31,9 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private ListView lvListaMarcacoes;
     private static final int EDITAR=2;
     private static final int ADICIONAR=1;
+    private int user_id;
     private SwipeRefreshLayout swipeRefreshLayout;
-
+    private ArrayList<Profile> medico;
     private ArrayList<Marcacao> listaMarcacoes;
 
     public AgendaFragment() {
@@ -48,7 +50,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
-
+        Bundle b3 = getArguments();
+        user_id =b3.getInt("ID");
        // lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes));
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -60,6 +63,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 //Toast.makeText(getContext(),"Livro com o id="+l,Toast.LENGTH_LONG).show();
                 Intent intent=new Intent(getContext(),MarcacaoActivity.class);
                 intent.putExtra("ID",(int) id);
+
                 //startActivity(intent);
                 startActivityForResult(intent,EDITAR);
 
@@ -70,6 +74,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
             public void onClick(View v) {
                 if(HospitalJsonParser.isConnectionInternet(getContext())){
                     Intent intent= new Intent(getContext(),MarcacaoActivity.class);
+                    intent.putExtra("ID_USER",(int) user_id);
                     //startActivity(intent);
                     startActivityForResult(intent,ADICIONAR);
                 }
@@ -116,7 +121,9 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     @Override
     public void onResume() {
         listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
-        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes));
+        medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
+        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,listaMarcacoes);
+        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes, medico));
        // SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         super.onResume();
     }
@@ -129,7 +136,9 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
     @Override
     public void onRefreshListaMarcacoes(ArrayList<Marcacao> marcacoes) {
-        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),marcacoes));
+        medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
+        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,marcacoes);
+        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes,medico));
     }
 
     @Override

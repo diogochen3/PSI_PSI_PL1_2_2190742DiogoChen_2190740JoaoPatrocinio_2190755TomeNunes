@@ -22,20 +22,20 @@ import amsi.dei.estg.ipleiria.healthschedule.model.Receita;
 
 public class HospitalJsonParser {
 
-    public static String parserJsonLogin(String response) {
-        String token = null;
-
+    public static int parserJsonLogin(String response) {
+        int auxId = 0;
         try {
             JSONObject login = new JSONObject(response);
-            if (login.getBoolean("success")) {
-                token = login.getString("token");
+            if (login.getInt("id") != 0)
+            {
+                auxId = login.getInt("id");
             }
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return token;
+        return auxId;
     }
 
     public static boolean isConnectionInternet(Context context) {
