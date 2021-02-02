@@ -46,4 +46,11 @@
         android:clickable="true"
         android:src="@drawable/ic_action_adicionar" />
 
+    <Button
+        android:id="@+id/btnCreatePdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="Criar Pdf" />
+
 </FrameLayout>

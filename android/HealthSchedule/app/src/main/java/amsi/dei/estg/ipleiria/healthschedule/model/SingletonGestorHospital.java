@@ -123,6 +123,11 @@ public class SingletonGestorHospital {
     public void setReceitasListener(ReceitasListener receitasListener) {
         this.ReceitasListener = receitasListener;
     }
+
+    public void setProfileListener(ProfileListener profileListener) {
+        this.profileListener = profileListener;
+    }
+
     /*********************************** Profile ******************************************/
     public Profile getProfile(int id){
         for (Profile l: profiles)
@@ -130,7 +135,13 @@ public class SingletonGestorHospital {
                 return l;
         return null;
     }
-
+    public Profile getProfileBD(int id){
+        ArrayList<Profile> profilesBD = getallProfileBD();
+        for (Profile l: profilesBD)
+            if (l.getId() == id)
+                return l;
+        return null;
+    }
     public Profile getProfileName(String nome){
         for (Profile l: profiles)
             if (l.getFirst_name().equals(nome))
@@ -140,7 +151,7 @@ public class SingletonGestorHospital {
 
     public void getAllProfileAPI(final Context context){
         if (!HospitalJsonParser.isConnectionInternet(context)) {
-            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+
         }else {
             JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIProfile, null, new Response.Listener<JSONArray>() {
                 @Override
@@ -160,6 +171,7 @@ public class SingletonGestorHospital {
             volleyQueue.add(req);
         }
     }
+
     public void editarProfileAPI(final Profile perfil, final Context context) {
         StringRequest req =new StringRequest(Request.Method.PUT,
                 mUrlAPIProfile+"/profilenew/"+perfil.getId(),
