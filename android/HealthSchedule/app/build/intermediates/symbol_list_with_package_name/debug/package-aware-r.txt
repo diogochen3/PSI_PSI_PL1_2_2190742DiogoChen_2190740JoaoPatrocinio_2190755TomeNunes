@@ -1559,6 +1559,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable image4
 drawable logo3
+drawable marcacao_icon
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
 drawable material_ic_edit_black_24dp
@@ -1709,6 +1710,7 @@ id chronometer
 id clear_text
 id clip_horizontal
 id clip_vertical
+id codigo_et
 id collapseActionView
 id collapsingToolbarLayout
 id confirm_button
@@ -1734,6 +1736,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id diagnosticos_label
+id diagnosticos_qt
 id dialog_button
 id dimensions
 id direct
@@ -1748,12 +1752,15 @@ id dragStart
 id dragUp
 id drawer_layout
 id dropdown_menu
+id dt_et
 id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id email_et
 id end
 id end_padder
+id endereco_et
 id enterAlways
 id enterAlwaysCollapsed
 id etCodPostal
@@ -1783,6 +1790,8 @@ id fixed
 id flip
 id floating
 id forever
+id full_name_profile
+id genero_et
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
@@ -1827,6 +1836,8 @@ id lv_diagnostico
 id lv_medicamento
 id lv_medico
 id lv_receita
+id marcacao_label
+id marcacao_qt
 id masked
 id media_actions
 id message
@@ -1870,6 +1881,7 @@ id nav_receitas
 id nav_view
 id navigation_header_container
 id never
+id nif_et
 id noScroll
 id none
 id normal
@@ -1893,6 +1905,7 @@ id percent
 id pin
 id position
 id postLayout
+id profile_image
 id progress_circular
 id progress_horizontal
 id radio
@@ -1972,6 +1985,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id telefone_et
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -2019,7 +2033,9 @@ id triangle
 id tvAno
 id tvAutor
 id tvEspecialidade
+id tvLNome
 id tvMedico
+id tvPNome
 id tvSerie
 id tvTitulo
 id txtDataMarcacao
@@ -2036,6 +2052,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id utimo_nome
 id view_offset_helper
 id visible
 id withText
@@ -2297,6 +2314,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string nav_perfil
 string ndClose
 string ndOpen
 string numero_de_identifica_o

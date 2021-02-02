@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ import amsi.dei.estg.ipleiria.healthschedule.R;
 public class PerfilFragment extends Fragment implements ProfileListener {
 
    // public static final String ID = "ID";
-    private TextView etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
+    private EditText etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
     private Button btnAlterar, btnLogout;
     private Profile perfil;
     private int id;
@@ -44,6 +45,7 @@ public class PerfilFragment extends Fragment implements ProfileListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
+
 
         Bundle b3 = getArguments();
         id =b3.getInt("ID");
@@ -137,15 +139,16 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         etgenero.setText(perfil.getGender());
         etcodPostal.setText(perfil.getPostal_code());
 
-        //etPNome.setEnabled(false);
-        etApelido.setEnabled(false);
+
+        etPNome.setEnabled(true);
+        etApelido.setEnabled(true);
         etEmail.setEnabled(false);
-        etTelefone.setEnabled(false);
+        etTelefone.setEnabled(true);
         etNif.setEnabled(false);
-        etEndereco.setEnabled(false);
+        etEndereco.setEnabled(true);
         etDNascimento.setEnabled(false);
         etgenero.setEnabled(false);
-        etcodPostal.setEnabled(false);
+        etcodPostal.setEnabled(true);
     }
 
 
