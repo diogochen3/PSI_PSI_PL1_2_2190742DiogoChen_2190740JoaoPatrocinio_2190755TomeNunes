@@ -33,7 +33,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosActivity" />
-        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.PerfilActivity" />
         <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicamentosActivity" />
         <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity" />
         <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.LoginActivity" >

@@ -1689,6 +1689,7 @@ id blocking
 id bottom
 id bounce
 id btnAlterar
+id btnCreatePdf
 id btnEntrar
 id btnLogout
 id btnUpload
@@ -2026,23 +2027,11 @@ id transition_transform
 id triangle
 id tvAno
 id tvAutor
-id tvCodPostal
-id tvDNascimento
-id tvEmail
-id tvEndereco
 id tvEspecialidade
-<<<<<<< HEAD
 id tvLNome
 id tvMedico
-=======
-id tvGenero
-id tvLNome
-id tvMedico
-id tvNif
->>>>>>> master
 id tvPNome
 id tvSerie
-id tvTelefone
 id tvTitulo
 id txtDataMarcacao
 id txtDescricao
@@ -2132,7 +2121,6 @@ layout activity_lista_medicos
 layout activity_login
 layout activity_marcacao
 layout activity_menu_main
-layout activity_perfil
 layout app_bar_main
 layout custom_dialog
 layout design_bottom_navigation_item

@@ -237,14 +237,14 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         etcodPostal.setText(perfil.getPostal_code());
 
         //etPNome.setEnabled(false);
-        etApelido.setEnabled(false);
+        //etApelido.setEnabled(false);
         etEmail.setEnabled(false);
-        etTelefone.setEnabled(false);
+        //etTelefone.setEnabled(false);
         etNif.setEnabled(false);
-        etEndereco.setEnabled(false);
+        //etEndereco.setEnabled(false);
         etDNascimento.setEnabled(false);
         etgenero.setEnabled(false);
-        etcodPostal.setEnabled(false);
+        //etcodPostal.setEnabled(false);
     }
 
     public String getStringImage(Bitmap bmp) {

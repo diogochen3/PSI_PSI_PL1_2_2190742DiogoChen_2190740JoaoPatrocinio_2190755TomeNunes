@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,225 +7,284 @@
     tools:context=".views.PerfilFragment"
     android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <ImageView
-        android:id="@+id/imgVProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="0"
-         />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:padding="20dp"
-        android:background="#00BCD4"
-        >
-
-        <ImageView
-            android:id="@+id/profile_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_centerVertical="true"/>
-
-        <TextView
-            android:id="@+id/tvPNome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="Primeiro Nome:" />
-
-        <TextView
-            android:id="@+id/tvPNome"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:layout_toRightOf="@+id/tvPNome"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            />
+            android:layout_height="300dp"
+            android:padding="20dp"
+            android:background="#00BCD4"
+            >
 
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"/>
 
-
-
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:layout_marginTop="-100dp">
-        <com.google.android.material.card.MaterialCardView
-            android:layout_height="125dp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            android:layout_margin="10dp"
-            android:background="#6FBCFF"
-            app:cardElevation="10dp"
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="Apelido:" />
-
-        <TextView
-            android:id="@+id/tvLNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="TextView1" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Primeiro Nome"
-            android:id="@+id/full_name_profile"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <TextView
-            android:id="@+id/tvTelefone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0"
-            android:text="TextView3"
-            android:inputType="number"/>
-    </LinearLayout>
-
-
-
-        <TextView
-            android:id="@+id/tvNif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLNome"
-                android:drawableLeft="@drawable/marcacao_icon"
-                android:drawablePadding="10dp"
+            <TextView
+                android:id="@+id/tvPNome"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/tvLNome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:layout_toRightOf="@+id/tvPNome"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                />
 
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tvEndereco"
+
+
+        </RelativeLayout>
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:padding="20dp"
+            android:layout_marginTop="-100dp">
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="125dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:layout_margin="10dp"
+                android:background="#6FBCFF"
+                app:cardElevation="10dp"
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEmail"
-                android:drawableLeft="@drawable/marcacao_icon"
-                android:drawablePadding="10dp"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Numero de telefone"
-            android:id="@+id/telefone_et"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/marcacao_icon"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/marcacao_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="marcações"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp"
+                        android:layout_centerInParent="true"/>
+                    <TextView
+                        android:id="@+id/marcacao_qt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/marcacao_label"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_height="125dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:background="#6FBCFF"
+                app:cardElevation="10dp"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/marcacao_icon"
+                        android:layout_centerHorizontal="true"/>
+                    <TextView
+                        android:id="@+id/diagnosticos_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Diagnosticos"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp"
+                        android:layout_centerInParent="true"/>
+                    <TextView
+                        android:id="@+id/diagnosticos_qt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/diagnosticos_label"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+        <LinearLayout
             android:layout_height="wrap_content"
-            android:layout_width="match_parent">
-
-        <TextView
-            android:id="@+id/tvDNascimento"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNif"
-                android:drawableLeft="@drawable/marcacao_icon"
-                android:drawablePadding="10dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Primeiro Nome"
+                android:id="@+id/full_name_profile"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
+                android:layout_width="match_parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Endereço"
-            android:id="@+id/endereco_et"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPNome"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
 
-        <TextView
-            android:id="@+id/tvGenero"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDNascimento"
-                android:drawableLeft="@drawable/marcacao_icon"
-                android:drawablePadding="10dp"
+
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="ultimo Nome"
+                android:id="@+id/utimo_nome"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
+                android:layout_width="match_parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:hint="Genero"
-            android:id="@+id/genero_et"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLNome"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
 
-        <TextView
-            android:id="@+id/tvCodPostal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCodPostal"
-                android:drawableLeft="@drawable/marcacao_icon"
-                android:drawablePadding="10dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Email"
+                android:id="@+id/email_et"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent" />
+                android:layout_width="match_parent">
 
-        </com.google.android.material.textfield.TextInputLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnAlterar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:text="Alterar" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEmail"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Logout" />
-</LinearLayout>
-    </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Numero de telefone"
+                android:id="@+id/telefone_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTelefone"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="NIF"
+                android:id="@+id/nif_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNif"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Endereço"
+                android:id="@+id/endereco_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etEndereco"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Data de Nascimento"
+                android:id="@+id/dt_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDNascimento"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Genero"
+                android:id="@+id/genero_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etGenero"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:hint="Codigo Postal"
+                android:id="@+id/codigo_et"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCodPostal"
+                    android:drawableLeft="@drawable/marcacao_icon"
+                    android:drawablePadding="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/btnAlterar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:text="Alterar" />
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Logout" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

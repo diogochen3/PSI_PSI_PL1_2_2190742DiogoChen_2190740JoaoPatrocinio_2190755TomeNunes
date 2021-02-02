@@ -28,6 +28,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +45,7 @@ public class PerfilFragment extends Fragment implements ProfileListener {
 
     private static final int EDITAR = 10;
     // public static final String ID = "ID";
-    private TextView tvPNome, tvApelido, tvEmail, tvTelefone, tvNif, tvEndereco, tvDNascimento , tvgenero, tvcodPostal;
+    private EditText etPNome, etApelido,etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
     private Button btnAlterar, btnLogout;
     private Profile perfil;
     private int id;
@@ -70,15 +71,15 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         //SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.TOKEN, Context.MODE_PRIVATE);
         // token = sharedPreferences.getString(MenuMainActivity.TOKEN, "sem email");
 
-        tvPNome = view.findViewById(R.id.tvPNome);
-        tvApelido = view.findViewById(R.id.tvLNome);
-        tvEmail = view.findViewById(R.id.tvEmail);
-        tvTelefone = view.findViewById(R.id.tvTelefone);
-        tvNif = view.findViewById(R.id.tvNif);
-        tvEndereco = view.findViewById(R.id.tvEndereco);
-        tvDNascimento = view.findViewById(R.id.tvDNascimento);
-        tvgenero = view.findViewById(R.id.tvGenero);
-        tvcodPostal = view.findViewById(R.id.tvCodPostal);
+        etPNome = view.findViewById(R.id.etPNome);
+        etApelido = view.findViewById(R.id.etLNome);
+        etEmail = view.findViewById(R.id.etEmail);
+        etTelefone = view.findViewById(R.id.etTelefone);
+        etNif = view.findViewById(R.id.etNif);
+        etEndereco = view.findViewById(R.id.etEndereco);
+        etDNascimento = view.findViewById(R.id.etDNascimento);
+        etgenero = view.findViewById(R.id.etGenero);
+        etcodPostal = view.findViewById(R.id.etCodPostal);
 
         btnAlterar = view.findViewById(R.id.btnAlterar);
         btnLogout = view.findViewById(R.id.btnLogout);
@@ -122,27 +123,27 @@ public class PerfilFragment extends Fragment implements ProfileListener {
 
         perfil = SingletonGestorHospital.getInstance(getContext()).getProfileBD(id);
         
-        tvPNome.setText(perfil.getFirst_name());
-        tvApelido.setText(perfil.getLast_name());
-        tvEmail.setText(perfil.getEmail());
-        tvTelefone.setText(String.valueOf(perfil.getPhone_number()));
-        tvNif.setText(String.valueOf(perfil.getNIF()));
-        tvEndereco.setText(perfil.getAddress());
+        etPNome.setText(perfil.getFirst_name());
+        etApelido.setText(perfil.getLast_name());
+        etEmail.setText(perfil.getEmail());
+        etTelefone.setText(String.valueOf(perfil.getPhone_number()));
+        etNif.setText(String.valueOf(perfil.getNIF()));
+        etEndereco.setText(perfil.getAddress());
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
         String date = formatter.format(perfil.getBirth_date());
-        tvDNascimento.setText(date);
-        tvgenero.setText(perfil.getGender());
-        tvcodPostal.setText(perfil.getPostal_code());
+        etDNascimento.setText(date);
+        etgenero.setText(perfil.getGender());
+        etcodPostal.setText(perfil.getPostal_code());
 
-        //tvPNome.setEnabled(false);
-        tvApelido.setEnabled(false);
-        tvEmail.setEnabled(false);
-        tvTelefone.setEnabled(false);
-        tvNif.setEnabled(false);
-        tvEndereco.setEnabled(false);
-        tvDNascimento.setEnabled(false);
-        tvgenero.setEnabled(false);
-        tvcodPostal.setEnabled(false);
+        etPNome.setEnabled(false);
+        etApelido.setEnabled(false);
+        etEmail.setEnabled(false);
+        etTelefone.setEnabled(false);
+        etNif.setEnabled(false);
+        etEndereco.setEnabled(false);
+        etDNascimento.setEnabled(false);
+        etgenero.setEnabled(false);
+        etcodPostal.setEnabled(false);
 
         super.onResume();
     }
@@ -152,17 +153,17 @@ public class PerfilFragment extends Fragment implements ProfileListener {
     public void onRefreshListaProfiles(ArrayList<Profile> profiles) {
 
         perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
-        tvPNome.setText(perfil.getFirst_name());
-        tvApelido.setText(perfil.getLast_name());
-        tvEmail.setText(perfil.getEmail());
-        tvTelefone.setText(String.valueOf(perfil.getPhone_number()));
-        tvNif.setText(String.valueOf(perfil.getNIF()));
-        tvEndereco.setText(perfil.getAddress());
+        etPNome.setText(perfil.getFirst_name());
+        etApelido.setText(perfil.getLast_name());
+        etEmail.setText(perfil.getEmail());
+        etTelefone.setText(String.valueOf(perfil.getPhone_number()));
+        etNif.setText(String.valueOf(perfil.getNIF()));
+        etEndereco.setText(perfil.getAddress());
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
         String date = formatter.format(perfil.getBirth_date());
-        tvDNascimento.setText(date);
-        tvgenero.setText(perfil.getGender());
-        tvcodPostal.setText(perfil.getPostal_code());
+        etDNascimento.setText(date);
+        etgenero.setText(perfil.getGender());
+        etcodPostal.setText(perfil.getPostal_code());
 
 
     }
