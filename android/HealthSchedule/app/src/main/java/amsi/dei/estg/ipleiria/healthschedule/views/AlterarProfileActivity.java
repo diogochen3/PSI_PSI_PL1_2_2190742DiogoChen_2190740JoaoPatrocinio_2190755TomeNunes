@@ -27,6 +27,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,7 +48,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
     private static final int CAMERA_REQUEST = 3;
     private static final int IMAGEM_REQUEST = 4;
     private static final String ID_USER = "ID_USER";
-    private TextView etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
+    private EditText etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
     private Profile perfil;
     private Button btnUpload;
     private FloatingActionButton fabEditar;
