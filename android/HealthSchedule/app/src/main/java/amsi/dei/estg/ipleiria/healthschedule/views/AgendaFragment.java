@@ -2,11 +2,15 @@ package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
+import android.print.PrintManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -35,6 +39,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private SwipeRefreshLayout swipeRefreshLayout;
     private ArrayList<Profile> medico;
     private ArrayList<Marcacao> listaMarcacoes;
+    private Button criarPDF;
 
     public AgendaFragment() {
 
@@ -43,11 +48,24 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
 
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_agenda, container, false);
         setHasOptionsMenu(true);
 
+        criarPDF= view.findViewById(R.id.btnCreatePdf);
+
+        criarPDF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PdfDocument mypPdfDocument = new PdfDocument();
+                PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(300,600,1).create();
+                PdfDocument.Page myPage = mypPdfDocument.startPage(myPageInfo);
+
+                Paint myPaint = new Paint();
+
+            }
+        });
 
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
         Bundle b3 = getArguments();
@@ -122,8 +140,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onResume() {
         listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
         medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
-        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,listaMarcacoes);
-        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes, medico));
+        ArrayList<Marcacao> listaUserMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,listaMarcacoes);
+        lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaUserMarcacoes, medico));
        // SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         super.onResume();
     }
@@ -145,4 +163,5 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onRefreshdetalhesMarcacoes() {
 
     }
+    
 }

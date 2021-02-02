@@ -1,20 +1,34 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
+import android.Manifest;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +42,15 @@ import amsi.dei.estg.ipleiria.healthschedule.R;
 
 public class PerfilFragment extends Fragment implements ProfileListener {
 
-   // public static final String ID = "ID";
-    private TextView etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
+    private static final int EDITAR = 10;
+    // public static final String ID = "ID";
+    private TextView tvPNome, tvApelido, tvEmail, tvTelefone, tvNif, tvEndereco, tvDNascimento , tvgenero, tvcodPostal;
     private Button btnAlterar, btnLogout;
     private Profile perfil;
     private int id;
+
+    private String currentPhotoPath;
+    private ImageView imgProfile;
 
     public PerfilFragment() {
         // Required empty public constructor
@@ -45,40 +63,31 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
-        Bundle b3 = getArguments();
+        final Bundle b3 = getArguments();
         id =b3.getInt("ID");
 
+        SingletonGestorHospital.getInstance(getContext()).getAllProfileAPI(getContext());
         //SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.TOKEN, Context.MODE_PRIVATE);
         // token = sharedPreferences.getString(MenuMainActivity.TOKEN, "sem email");
 
-        etPNome = view.findViewById(R.id.etPNome);
-        etApelido = view.findViewById(R.id.etLNome);
-        etEmail = view.findViewById(R.id.etEmail);
-        etTelefone = view.findViewById(R.id.etTelefone);
-        etNif = view.findViewById(R.id.etNif);
-        etEndereco = view.findViewById(R.id.etEndereco);
-        etDNascimento = view.findViewById(R.id.etDNascimento);
-        etgenero = view.findViewById(R.id.etGenero);
-        etcodPostal = view.findViewById(R.id.etCodPostal);
+        tvPNome = view.findViewById(R.id.tvPNome);
+        tvApelido = view.findViewById(R.id.tvLNome);
+        tvEmail = view.findViewById(R.id.tvEmail);
+        tvTelefone = view.findViewById(R.id.tvTelefone);
+        tvNif = view.findViewById(R.id.tvNif);
+        tvEndereco = view.findViewById(R.id.tvEndereco);
+        tvDNascimento = view.findViewById(R.id.tvDNascimento);
+        tvgenero = view.findViewById(R.id.tvGenero);
+        tvcodPostal = view.findViewById(R.id.tvCodPostal);
 
         btnAlterar = view.findViewById(R.id.btnAlterar);
         btnLogout = view.findViewById(R.id.btnLogout);
 
-        perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
 
         /// FloatingActionButton fab = findViewById(R.id.fab);
 
-        // SingletonGestorLivros.getInstance(getApplicationContext()).setLivrosListener(this);
+         SingletonGestorHospital.getInstance(getContext()).setProfileListener(this);
 
-        if (perfil != null){
-            //"Perfil: "+perfil.getpNome() + perfil.getApelido());
-            carregarPerfil();
-            //fab.setImageResource(R.drawable.ic_action_guardar);
-        }else{
-
-            //setTitle("Adicionar Livro");
-            //fab.setImageResource(R.drawable.ic_action_adicionar);
-        }
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,67 +104,84 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         btnAlterar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(HospitalJsonParser.isConnectionInternet(getContext())){
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-                    Date date = null;
-                    try {
-                        date = formatter.parse(etDNascimento.getText().toString());
-                    } catch (ParseException e) {
-                        e.printStackTrace();
-                    }
-                    perfil.setFirst_name(etPNome.getText().toString());
-                    perfil.setLast_name(etApelido.getText().toString());
-                    perfil.setEmail(etEmail.getText().toString());
-                    perfil.setPhone_number(Integer.parseInt(etTelefone.getText().toString()));
-                    perfil.setNIF(Integer.parseInt(etNif.getText().toString()));
-                    perfil.setAddress(etEndereco.getText().toString());
-                    perfil.setBirth_date(date);
-                    perfil.setGender(etgenero.getText().toString());
-                    perfil.setPostal_code(etcodPostal.getText().toString());
-
-                    SingletonGestorHospital.getInstance(getContext()).editarProfileAPI(perfil,getContext());
-                }
-
+                Intent intent= new Intent(getContext(),AlterarProfileActivity.class);
+                intent.putExtra("ID_USER", id);
+                //startActivity(intent);
+                startActivityForResult(intent,EDITAR);
             }
         });
+
+
+
 
         return view;
     }
 
+    @Override
+    public void onResume() {
 
-
-    private void carregarPerfil() {
-        etPNome.setText(perfil.getFirst_name());
-        etApelido.setText(perfil.getLast_name());
-        etEmail.setText(perfil.getEmail());
-        etTelefone.setText(String.valueOf(perfil.getPhone_number()));
-        etNif.setText(String.valueOf(perfil.getNIF()));
-        etEndereco.setText(perfil.getAddress());
+        perfil = SingletonGestorHospital.getInstance(getContext()).getProfileBD(id);
+        
+        tvPNome.setText(perfil.getFirst_name());
+        tvApelido.setText(perfil.getLast_name());
+        tvEmail.setText(perfil.getEmail());
+        tvTelefone.setText(String.valueOf(perfil.getPhone_number()));
+        tvNif.setText(String.valueOf(perfil.getNIF()));
+        tvEndereco.setText(perfil.getAddress());
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
         String date = formatter.format(perfil.getBirth_date());
-        etDNascimento.setText(date);
-        etgenero.setText(perfil.getGender());
-        etcodPostal.setText(perfil.getPostal_code());
+        tvDNascimento.setText(date);
+        tvgenero.setText(perfil.getGender());
+        tvcodPostal.setText(perfil.getPostal_code());
 
-        //etPNome.setEnabled(false);
-        etApelido.setEnabled(false);
-        etEmail.setEnabled(false);
-        etTelefone.setEnabled(false);
-        etNif.setEnabled(false);
-        etEndereco.setEnabled(false);
-        etDNascimento.setEnabled(false);
-        etgenero.setEnabled(false);
-        etcodPostal.setEnabled(false);
+        //tvPNome.setEnabled(false);
+        tvApelido.setEnabled(false);
+        tvEmail.setEnabled(false);
+        tvTelefone.setEnabled(false);
+        tvNif.setEnabled(false);
+        tvEndereco.setEnabled(false);
+        tvDNascimento.setEnabled(false);
+        tvgenero.setEnabled(false);
+        tvcodPostal.setEnabled(false);
+
+        super.onResume();
     }
 
 
     @Override
     public void onRefreshListaProfiles(ArrayList<Profile> profiles) {
-        
-    }
 
+        perfil = SingletonGestorHospital.getInstance(getContext()).getProfile(id);
+        tvPNome.setText(perfil.getFirst_name());
+        tvApelido.setText(perfil.getLast_name());
+        tvEmail.setText(perfil.getEmail());
+        tvTelefone.setText(String.valueOf(perfil.getPhone_number()));
+        tvNif.setText(String.valueOf(perfil.getNIF()));
+        tvEndereco.setText(perfil.getAddress());
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
+        String date = formatter.format(perfil.getBirth_date());
+        tvDNascimento.setText(date);
+        tvgenero.setText(perfil.getGender());
+        tvcodPostal.setText(perfil.getPostal_code());
+
+
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode== Activity.RESULT_OK){
+            switch (requestCode){
+                case EDITAR:
+                    SingletonGestorHospital.getInstance(getContext()).getAllProfileAPI(getContext());
+                    //lvListalivros.setAdapter(new ListaLivroAdaptador(getContext(),listaLivros));
+                    Toast.makeText(getContext(),"Profile editado com sucesso",Toast.LENGTH_LONG);
+                    //  Snackbar.make(getView(),"Livro editado com sucesso",Snackbar.LENGTH_LONG).show();
+                    break;
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
     @Override
     public void onRefreshdetalhesProfiles() {
-        Toast.makeText(getContext(), "Foi editado com sucesso",Toast.LENGTH_LONG);
+        //Toast.makeText(getContext(), "Foi editado com sucesso",Toast.LENGTH_LONG);
     }
 }

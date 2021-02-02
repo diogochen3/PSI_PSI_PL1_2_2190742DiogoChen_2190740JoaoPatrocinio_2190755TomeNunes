@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +8,14 @@
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imgVProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0"
+         />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,8 +29,8 @@
             android:layout_weight="0"
             android:text="Primeiro Nome:" />
 
-        <EditText
-            android:id="@+id/etPNome"
+        <TextView
+            android:id="@+id/tvPNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -43,8 +52,8 @@
             android:layout_weight="0"
             android:text="Apelido:" />
 
-        <EditText
-            android:id="@+id/etLNome"
+        <TextView
+            android:id="@+id/tvLNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -63,8 +72,8 @@
             android:layout_weight="0"
             android:text="Email:" />
 
-        <EditText
-            android:id="@+id/etEmail"
+        <TextView
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -85,8 +94,8 @@
             android:layout_weight="0"
             android:text="Numero de Telefone:" />
 
-        <EditText
-            android:id="@+id/etTelefone"
+        <TextView
+            android:id="@+id/tvTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -106,8 +115,8 @@
             android:layout_weight="0"
             android:text="NIF:" />
 
-        <EditText
-            android:id="@+id/etNif"
+        <TextView
+            android:id="@+id/tvNif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -127,8 +136,8 @@
             android:layout_weight="0"
             android:text="Endereço:" />
 
-        <EditText
-            android:id="@+id/etEndereco"
+        <TextView
+            android:id="@+id/tvEndereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -147,8 +156,8 @@
             android:layout_weight="0"
             android:text="Data de Nascimento:" />
 
-        <EditText
-            android:id="@+id/etDNascimento"
+        <TextView
+            android:id="@+id/tvDNascimento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -168,8 +177,8 @@
             android:layout_weight="0"
             android:text="Género:" />
 
-        <EditText
-            android:id="@+id/etGenero"
+        <TextView
+            android:id="@+id/tvGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
@@ -188,8 +197,8 @@
             android:layout_weight="0"
             android:text="Codigo Postal:" />
 
-        <EditText
-            android:id="@+id/etCodPostal"
+        <TextView
+            android:id="@+id/tvCodPostal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"

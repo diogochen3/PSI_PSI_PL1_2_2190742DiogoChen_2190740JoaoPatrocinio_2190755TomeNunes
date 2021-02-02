@@ -1549,6 +1549,7 @@ drawable design_snackbar_background
 drawable ic_action_adicionar
 drawable ic_action_apagar
 drawable ic_action_guardar
+drawable ic_action_upload
 drawable ic_baseline_email_24
 drawable ic_baseline_lock_24
 drawable ic_launcher_background
@@ -1689,6 +1690,7 @@ id bounce
 id btnAlterar
 id btnEntrar
 id btnLogout
+id btnUpload
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1760,19 +1762,17 @@ id etCodPostal
 id etDNascimento
 id etEmail
 id etEndereco
-id etFirstname
 id etGenero
 id etLNome
-id etLastname
 id etNif
 id etPNome
 id etPassword
-id etPhoneNumber
 id etTelefone
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab
+id fabEditar
 id fade
 id fill
 id fill_horizontal
@@ -1803,10 +1803,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id imageView2
 id imageView3
 id imageView4
+id imgVProfile
 id info
 id invisible
 id italic
@@ -1984,12 +1984,6 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView12
-id textView2
-id textView4
-id textView5
-id textView6
-id textView7
-id textView8
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2018,9 +2012,18 @@ id transition_transform
 id triangle
 id tvAno
 id tvAutor
+id tvCodPostal
+id tvDNascimento
+id tvEmail
+id tvEndereco
 id tvEspecialidade
+id tvGenero
+id tvLNome
 id tvMedico
+id tvNif
+id tvPNome
 id tvSerie
+id tvTelefone
 id tvTitulo
 id txtDataMarcacao
 id txtDescricao
@@ -2103,6 +2106,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_alterar_profile
 layout activity_lista_medicamentos
 layout activity_lista_medicos
 layout activity_login
@@ -2132,7 +2136,6 @@ layout fragment_lista_diagnosticos
 layout fragment_lista_medicos
 layout fragment_lista_receitas
 layout fragment_perfil
-layout fragment_perfil_alterar
 layout item_lista_diagnostico
 layout item_lista_marcacao
 layout item_lista_medicamento
@@ -2297,6 +2300,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string nav_perfil
 string ndClose
 string ndOpen
 string numero_de_identifica_o
@@ -3135,6 +3139,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_paths
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start
