@@ -1,4 +1,4 @@
-ipackage amsi.dei.estg.ipleiria.healthschedule.model;
+package amsi.dei.estg.ipleiria.healthschedule.model;
 
 import android.content.ContentValues;
 import android.content.Context;
