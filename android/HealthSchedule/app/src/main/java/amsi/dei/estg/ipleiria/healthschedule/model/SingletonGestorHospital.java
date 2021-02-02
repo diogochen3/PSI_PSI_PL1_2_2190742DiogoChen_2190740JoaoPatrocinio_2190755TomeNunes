@@ -22,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -159,7 +160,59 @@ public class SingletonGestorHospital {
             volleyQueue.add(req);
         }
     }
+    public void editarProfileAPI(final Profile perfil, final Context context) {
+        StringRequest req =new StringRequest(Request.Method.PUT,
+                mUrlAPIProfile+"/profilenew/"+perfil.getId(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Profile p = HospitalJsonParser.parserJsonProfile(response);
+                        editarProfileBD(p);
+                        if(profileListener != null){
+                            profileListener.onRefreshdetalhesProfiles();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
 
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+
+                }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+                String date = dateFormatter.format(perfil.getBirth_date());
+
+                params.put("First_name", perfil.getFirst_name());
+                params.put("Last_name", perfil.getLast_name());
+                params.put("Email", perfil.getEmail());
+                params.put("Phone_number", perfil.getPhone_number()+"");
+                params.put("NIF", perfil.getNIF()+"");
+                params.put("Address", perfil.getAddress());
+                params.put("Birth_date", date);
+                params.put("gender", perfil.getGender());
+                params.put("postal_code", perfil.getPostal_code());
+
+                return params;
+            }
+        };
+
+
+        volleyQueue.add(req);
+    }
+    private void editarProfileBD(Profile profile) {
+        Profile profileAux = getProfile(profile.getId());
+        if (profileAux!=null)
+        {
+            hospitalDB.editarProfileBD(profileAux);
+        }
+
+    }
 
     /*******  metodo aceder base dados profile localmente     *////////
 
@@ -307,7 +360,7 @@ public class SingletonGestorHospital {
                         onUpdateLitaMarcacaoBD(l,ADICIONAR_MARCACAO_BD);
 
                         if(MarcacoesListener != null){
-                            MarcacoesListener.onRefreshdetalhesLivros();
+                            MarcacoesListener.onRefreshdetalhesMarcacoes();
                         }
                         //TODO: informar a vista -> listener
                     }
@@ -349,7 +402,7 @@ public class SingletonGestorHospital {
                         Marcacao l = HospitalJsonParser.parserJsonMarcacao(response);
                         onUpdateLitaMarcacaoBD(l,EDITAR_MARCACAO_BD);
                         if(MarcacoesListener != null){
-                            MarcacoesListener.onRefreshdetalhesLivros();
+                            MarcacoesListener.onRefreshdetalhesMarcacoes();
                         }
                     }
                 },
@@ -387,7 +440,7 @@ public class SingletonGestorHospital {
                 onUpdateLitaMarcacaoBD(m,REMOVER_MARCACAO_BD);
 
                 if(MarcacoesListener != null){
-                    MarcacoesListener.onRefreshdetalhesLivros();
+                    MarcacoesListener.onRefreshdetalhesMarcacoes();
                 }
             }
         }, new Response.ErrorListener() {
@@ -690,6 +743,7 @@ public class SingletonGestorHospital {
     public void adicionarMedicoEspecialidadeBD(MedicoEspecialidade medicoEspecialidade){
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
     }
+
 
 
 }

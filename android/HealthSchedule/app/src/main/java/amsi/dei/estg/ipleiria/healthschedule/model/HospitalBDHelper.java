@@ -220,6 +220,26 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         //return livro;
         //return null;
     }
+    public boolean editarProfileBD(Profile profile) {
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd");
+        ContentValues values= new ContentValues();
+        String date = dateFormatter.format(profile.getBirth_date());
+        values.put(PRIMEIRO_NOME_PROFILE, profile.getFirst_name());
+        values.put(APELIDO_PROFILE, profile.getLast_name());
+        values.put(EMAIL_PROFILE, profile.getEmail());
+        values.put(TELEFONE_PROFILE, profile.getPhone_number()+"");
+        values.put(NIF_PROFILE, profile.getNIF()+"");
+        values.put(ENDERECO_PROFILE, profile.getAddress());
+        values.put(DATANASCIMENTO_PROFILE, date);
+        values.put(GENERO_PROFILE, profile.getGender());
+        values.put(CODPOSTAL_PROFILE, profile.getPostal_code());
+        //values.put(ACEITAR_MACACAO,marcacao.getAceitar());
+        //  values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
+        //  values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
+        // values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
+
+        return this.db.update(TABLE_PROFILE,values,"id=? ",new String[]{profile.getId() +""}) >0;
+    }
 
     public void  removerAllProfilesBD(){
         this.db.delete(TABLE_PROFILE,null,null);
@@ -458,5 +478,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     public void  removerAllMedicoEspecialidadesBD(){
         this.db.delete(TABLE_MEDICO_ESPECIALIDADE,null,null);
     }
+
 
 }

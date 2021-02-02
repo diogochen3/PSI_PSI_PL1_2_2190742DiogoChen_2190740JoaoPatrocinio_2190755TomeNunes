@@ -156,6 +156,33 @@ public class HospitalJsonParser {
         return profiles;
     }
 
+    public static Profile parserJsonProfile(String response) {
+        Profile auxProfile = null;
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+            JSONObject profile = new JSONObject(response);
+            int id = profile.getInt("id");
+            String pNome = profile.getString("First_name");
+            String apelido = profile.getString("Last_name");
+            String email = profile.getString("Email");
+            int telefone = profile.getInt("Phone_number");
+            int nif = profile.getInt("NIF");
+            String endereco = profile.getString("Address");
+            String dNascimento = profile.getString("Birth_date");
+            String genero = profile.getString("gender");
+            String codPostal = profile.getString("postal_code");
+            int is_medico = profile.getInt("is_medico");
+            Date date = formatter.parse(dNascimento);
+
+            auxProfile = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date);
+
+        } catch(JSONException | ParseException e) {
+            e.printStackTrace();
+        }
+
+        return auxProfile;
+    }
 
     public static Marcacao parserJsonMarcacao(String response) {
         Marcacao auxMarcacao = null;
@@ -222,4 +249,6 @@ public class HospitalJsonParser {
         }
         return medicoEspecialidades;
     }
+
+
 }

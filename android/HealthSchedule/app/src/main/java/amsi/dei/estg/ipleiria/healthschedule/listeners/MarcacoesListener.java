@@ -8,6 +8,6 @@ public interface MarcacoesListener {
 
     void onRefreshListaMarcacoes(ArrayList<Marcacao> marcacoes);
 
-    void onRefreshdetalhesLivros();
+    void onRefreshdetalhesMarcacoes();
 
 }

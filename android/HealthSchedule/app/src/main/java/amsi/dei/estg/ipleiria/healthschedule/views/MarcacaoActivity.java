@@ -274,10 +274,11 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     }
 
     @Override
-    public void onRefreshdetalhesLivros() {
+    public void onRefreshdetalhesMarcacoes() {
         setResult(RESULT_OK);
         finish();
     }
+
 
 
     @Override
