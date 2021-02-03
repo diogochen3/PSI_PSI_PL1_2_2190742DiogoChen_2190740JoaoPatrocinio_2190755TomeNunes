@@ -2,10 +2,16 @@ package amsi.dei.estg.ipleiria.healthschedule.views;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
+import android.graphics.pdf.PdfDocument.Page;
+import android.graphics.pdf.PdfDocument.PageInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.print.PrintManager;
@@ -16,12 +22,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
@@ -33,6 +41,7 @@ import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -43,7 +52,9 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private ListView lvListaMarcacoes;
     private static final int EDITAR=2;
     private static final int ADICIONAR=1;
-    private int user_id;
+    private int user_id,x=100,y=40;
+    private Marcacao marcacao;
+    private CardView marcacao_card;
     private SwipeRefreshLayout swipeRefreshLayout;
     private ArrayList<Profile> medico;
     private ArrayList<Marcacao> listaMarcacoes;
@@ -103,13 +114,48 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
                 mypPdfDocument.close();
 
+                Canvas canvas = myPage.getCanvas();
+                myPaint.setTextSize(30);
+                for (Marcacao marcacaoitem : AdapterMarcacao.marcacoeslista){
+
+                    canvas.drawText(marcacaoitem.getDate(), x, y , myPaint);
+                }
+
+                mypPdfDocument.finishPage(myPage);
+
+                ContextWrapper cw = new ContextWrapper(getActivity().getApplicationContext());
+                File directory = cw.getExternalCacheDir();
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                Uri URI =Uri.fromFile(directory);
+                emailIntent.setData(Uri.parse("mailto:tome.nunes80@gmail.com"));
+                emailIntent.setType("text/plain");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"Recipient"});
+                emailIntent.putExtra(Intent.EXTRA_STREAM, URI);
+                emailIntent.putExtra(Intent.EXTRA_TEXT   , "Message Body");
+                File file = new File(directory , "marcacoes" + ".PDF");
+                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+
+                try {
+                    mypPdfDocument.writeTo(new FileOutputStream(file));
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+                mypPdfDocument.close();
+
+                /*String fileDirectory =;*/
+
+
+
             }
         });
 
+
+
         lvListaMarcacoes= view.findViewById(R.id.lv_agenda);
+        marcacao_card = view.findViewById(R.id.marcacao_card);
         Bundle b3 = getArguments();
         user_id =b3.getInt("ID");
-       // lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes));
+        // lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes));
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
@@ -144,7 +190,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
       /*  if (listaMarcacoes != null){
             lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes));
         }else{
-            Toast.makeText(getContext(), "FODASE", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
         }*/
 
         return view;
@@ -166,7 +212,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 case EDITAR:
                     SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
                     //lvListalivros.setAdapter(new ListaLivroAdaptador(getContext(),listaLivros));
-                    Toast.makeText(getContext(),"Livro editado com sucesso",Toast.LENGTH_LONG);
+                    Toast.makeText(getContext(),"Marcacao editado com sucesso",Toast.LENGTH_LONG);
                     //  Snackbar.make(getView(),"Livro editado com sucesso",Snackbar.LENGTH_LONG).show();
                     break;
             }
@@ -179,16 +225,20 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onResume() {
         listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
         medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
+
+
         ArrayList<Marcacao> listaUserMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,listaMarcacoes);
+
+
         lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaUserMarcacoes, medico));
-       // SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
+        // SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         super.onResume();
     }
     @Override
     public void onRefresh() {
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         swipeRefreshLayout.setRefreshing(false);
-        //Toast.makeText(getContext(),"Toquei no refresh",Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
@@ -202,5 +252,5 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onRefreshdetalhesMarcacoes() {
 
     }
-    
+
 }

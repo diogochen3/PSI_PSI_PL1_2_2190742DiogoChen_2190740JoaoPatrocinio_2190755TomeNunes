@@ -37,6 +37,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.security.KeyStore;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -49,6 +50,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
     private static final int CAMERA_REQUEST = 3;
     private static final int IMAGEM_REQUEST = 4;
     private static final String ID_USER = "ID_USER";
+    private TextView tvPNome,tvLNome;
     private EditText etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
     private Profile perfil;
     private Button btnUpload;
@@ -63,6 +65,8 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alterar_profile);
 
+        tvPNome = findViewById(R.id.tvPNome);
+        tvLNome = findViewById(R.id.tvLNome);
         etPNome = findViewById(R.id.etPNome);
         etApelido = findViewById(R.id.etLNome);
         etEmail = findViewById(R.id.etEmail);
@@ -235,6 +239,9 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
     }
 
     private void carregarPerfil() {
+
+
+
         etPNome.setText(perfil.getFirst_name());
         etApelido.setText(perfil.getLast_name());
         etEmail.setText(perfil.getEmail());
@@ -257,7 +264,6 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         etgenero.setEnabled(false);
         //etcodPostal.setEnabled(false);
     }
-
 
 
     @Override

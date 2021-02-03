@@ -282,7 +282,7 @@ public class SingletonGestorHospital {
     }
 
     /******************************************           Login   **************************************************/
-   public void loginAPI(final String email, final String pass, final Context applicationContext) {
+    public void loginAPI(final String email, final String pass, final Context applicationContext) {
         StringRequest req =new StringRequest(Request.Method.POST, mUrlAPILogin, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -292,22 +292,22 @@ public class SingletonGestorHospital {
                 {
                     hospitalLoginListener.onValidateLogin(email,id);
                 }
-                    //TODO: informar a vista -> listener
-                }
-            },
-                new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(applicationContext, "Login invalido", Toast.LENGTH_SHORT).show();
+                //TODO: informar a vista -> listener
             }
-        })
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(applicationContext, "Login invalido", Toast.LENGTH_SHORT).show();
+                    }
+                })
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-                    params.put("Email", email);
-                    params.put("Password", pass);
-                    return params;
+                Map<String, String> params = new HashMap<>();
+                params.put("Email", email);
+                params.put("Password", pass);
+                return params;
             }
 
             @Override
@@ -326,7 +326,7 @@ public class SingletonGestorHospital {
             }
         };
 
-            volleyQueue.add(req);
+        volleyQueue.add(req);
 
     }
 
@@ -343,16 +343,17 @@ public class SingletonGestorHospital {
         return auxmarcacao;
     }
 
-   public void getAllMarcacaoAPI(final Context context){
 
-       if (!HospitalJsonParser.isConnectionInternet(context)) {
-           Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
-       }else {
-           JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+    public void getAllMarcacaoAPI(final Context context){
 
-               @Override
-               public void onResponse(JSONArray response) {
-                   marcacoes = HospitalJsonParser.parserJsonMarcacoes(response);
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+        }else {
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    marcacoes = HospitalJsonParser.parserJsonMarcacoes(response);
                    /*ArrayList<Marcacao> auxmarcacao;
                    auxmarcacao = HospitalJsonParser.parserJsonMarcacoes(response);
 
@@ -363,24 +364,24 @@ public class SingletonGestorHospital {
                        }
                    }*/
 
-                   adicionarMarcacoesBD(marcacoes);
+                    adicionarMarcacoesBD(marcacoes);
 
 
-                   if(MarcacoesListener != null){
-                       MarcacoesListener.onRefreshListaMarcacoes(hospitalDB.getAllMarcacoesBD());
-                   }
+                    if(MarcacoesListener != null){
+                        MarcacoesListener.onRefreshListaMarcacoes(hospitalDB.getAllMarcacoesBD());
+                    }
 
-               }
-           }, new Response.ErrorListener() {
-               @Override
-               public void onErrorResponse(VolleyError error) {
-                   Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-               }
-           });
-           volleyQueue.add(req);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+            volleyQueue.add(req);
 
-       }
-   }
+        }
+    }
 
 
     public void adicionarMarcacaoAPI(final Marcacao marcacao, final Context context){
@@ -514,6 +515,10 @@ public class SingletonGestorHospital {
         marcacoes = hospitalDB.getAllMarcacoesBD();
         return marcacoes;
     }
+    public ArrayList<Diagnostico> getallDiagnosticoBD() {
+        diagnosticos = hospitalDB.getAllDiagnosticosBD();
+        return diagnosticos;
+    }
 
     public void adicionarMarcacoesBD(ArrayList<Marcacao> marcacoes){
         hospitalDB.removerAllMarcacoesBD();
@@ -544,7 +549,7 @@ public class SingletonGestorHospital {
 
 
 
-   /************************************************    Diagonostico   *******************************************************/
+    /************************************************    Diagonostico   *******************************************************/
     public void getAllDiagnosticoAPI(final Context context){
 
         if (!HospitalJsonParser.isConnectionInternet(context)) {
@@ -590,6 +595,18 @@ public class SingletonGestorHospital {
             adicionarDiagnosticoBD(l);
         }
     }
+    public ArrayList<Diagnostico> getDiagnosticos(int id, ArrayList<Diagnostico> diagnosticos)
+    {
+        ArrayList<Diagnostico> auxdiagnostico = new ArrayList<>();
+        for (Diagnostico m: diagnosticos) {
+            if (id == m.getId_utente())
+            {
+                auxdiagnostico.add(m);
+            }
+        }
+        return auxdiagnostico;
+    }
+
 
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){
         hospitalDB.adicionarDiagnosticoBD(diagnostico);
@@ -643,14 +660,14 @@ public class SingletonGestorHospital {
 
 
 
-   /**************************** Especialidade **************************************/
+    /**************************** Especialidade **************************************/
 
     public Especialidade getEspecialidade(int id){
         for (Especialidade e: especialidades)
             if (e.getId() == id)
                 return e;
 
-            return null;
+        return null;
     }
     public ArrayList<Especialidade> getArrayEspecialidade(int id_especialidade) {
         ArrayList<Especialidade> auxEspecialidades = new ArrayList<>();
@@ -666,36 +683,36 @@ public class SingletonGestorHospital {
         return especialidades;
     }
 
-   public void getAllEspecialidadeAPI(final Context context){
+    public void getAllEspecialidadeAPI(final Context context){
 
-       if (!HospitalJsonParser.isConnectionInternet(context)) {
-           Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
-       }else {
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+        }else {
 
-           //JsonRequest req;
-           // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
-           JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIEspecialidade, null, new Response.Listener<JSONArray>() {
+            //JsonRequest req;
+            // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIEspecialidade, null, new Response.Listener<JSONArray>() {
 
-               @Override
-               public void onResponse(JSONArray response) {
-                   especialidades = HospitalJsonParser.parserJsonEspecialidades(response);
-                   adicionarEspecialidadesBD(especialidades);
+                @Override
+                public void onResponse(JSONArray response) {
+                    especialidades = HospitalJsonParser.parserJsonEspecialidades(response);
+                    adicionarEspecialidadesBD(especialidades);
 
-                   if(especialidadeListener != null){
-                       especialidadeListener.onRefreshListaEspecialidade(hospitalDB.getAllEspecialidadeBD());
-                   }
+                    if(especialidadeListener != null){
+                        especialidadeListener.onRefreshListaEspecialidade(hospitalDB.getAllEspecialidadeBD());
+                    }
 
-               }
-           }, new Response.ErrorListener() {
-               @Override
-               public void onErrorResponse(VolleyError error) {
-                   Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-               }
-           });
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
 
-           volleyQueue.add(req);
-       }
-   }
+            volleyQueue.add(req);
+        }
+    }
 
     public void adicionarEspecialidadesBD(ArrayList<Especialidade> especialidades){
         hospitalDB.removerAllEspecialidadesBD();

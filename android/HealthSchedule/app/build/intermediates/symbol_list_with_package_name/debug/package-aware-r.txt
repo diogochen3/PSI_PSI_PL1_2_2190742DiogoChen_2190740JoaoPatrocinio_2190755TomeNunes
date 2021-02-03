@@ -1546,6 +1546,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_aceite
 drawable ic_action_adicionar
 drawable ic_action_apagar
 drawable ic_action_guardar
@@ -1558,6 +1559,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_naoaceite
 drawable image4
 drawable logo3
 drawable marcacao_icon
@@ -1590,6 +1592,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable poraceitar
 drawable programarandroid1
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1646,6 +1649,7 @@ id accessibility_custom_action_6
 id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
+id aceite
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1839,6 +1843,7 @@ id lv_diagnostico
 id lv_medicamento
 id lv_medico
 id lv_receita
+id marcacao_card
 id marcacao_label
 id marcacao_qt
 id masked
@@ -1875,6 +1880,7 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id naoaceite
 id nav_contato
 id nav_diagnosticos
 id nav_marcacao
@@ -1907,6 +1913,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id poraceitar
 id position
 id postLayout
 id profile_image
