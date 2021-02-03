@@ -240,8 +240,6 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
 
     private void carregarPerfil() {
 
-
-
         etPNome.setText(perfil.getFirst_name());
         etApelido.setText(perfil.getLast_name());
         etEmail.setText(perfil.getEmail());
@@ -253,6 +251,13 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         etDNascimento.setText(date);
         etgenero.setText(perfil.getGender());
         etcodPostal.setText(perfil.getPostal_code());
+
+        if (perfil.getImage() != null)
+        {
+            byte[] decodeByte = Base64.decode(perfil.getImage(),Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decodeByte, 0,decodeByte.length);
+            imgProfile.setImageBitmap(bitmap);
+        }
 
         //etPNome.setEnabled(false);
         //etApelido.setEnabled(false);

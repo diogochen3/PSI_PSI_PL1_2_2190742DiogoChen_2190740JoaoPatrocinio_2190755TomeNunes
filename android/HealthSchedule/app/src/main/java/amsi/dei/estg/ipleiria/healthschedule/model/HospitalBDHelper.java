@@ -15,7 +15,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=12;
+    private static final int DB_VERSION=13;
     private static final int DATABASE_VERSION = 2;
 
     private final SQLiteDatabase db;
@@ -41,6 +41,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String ENDERECO_PROFILE="endereco";
     private static final String GENERO_PROFILE="genero";
     private static final String CODPOSTAL_PROFILE="codPostal";
+    private static final String IMAGE_PROFILE="imagem";
 
     private static final String TABLE_ESPECIALIDADE="especialidade";
     private static final String ID_ESPECIALIDADE="id";
@@ -84,7 +85,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 DATANASCIMENTO_PROFILE+ " INTEGER NOT NULL, "+
                 GENERO_PROFILE+ " TEXT NOT NULL, " +
                 CODPOSTAL_PROFILE+ " TEXT NOT NULL, "+
-                IS_MEDICO_PROFILE+ " TEXT NOT NULL "+
+                IS_MEDICO_PROFILE+ " TEXT NOT NULL, "+
+                IMAGE_PROFILE+ " TEXT "+
                 ");";
 
         String sqlCreateTableMarcacao="CREATE TABLE IF NOT EXISTS "+TABLE_MARCACAO+"("+
@@ -160,7 +162,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 DATANASCIMENTO_PROFILE,
                 GENERO_PROFILE,
                 CODPOSTAL_PROFILE,
-                IS_MEDICO_PROFILE}, null,null,null,null,null);
+                IS_MEDICO_PROFILE,
+                IMAGE_PROFILE}, null,null,null,null,null);
 
         if (cursor.moveToFirst()){
             do {
@@ -183,7 +186,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                         cursor.getString(6),//ENDERECO_PROFILE
                         cursor.getString(9),//CODPOSTAL_PROFILE
                         cursor.getString(8),//GENERO_PROFILE
-                        date
+                        date,
+                        cursor.getString(11)
                 );
                 profiles.add(auxProfile);
             }while (cursor.moveToNext());
@@ -208,6 +212,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         values.put(GENERO_PROFILE,profile.getGender());
         values.put(CODPOSTAL_PROFILE,profile.getPostal_code());
         values.put(IS_MEDICO_PROFILE,profile.getIs_medico());
+        values.put(IMAGE_PROFILE,profile.getImage());
 
         this.db.insert(TABLE_PROFILE,null,values);
 
@@ -233,6 +238,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         values.put(DATANASCIMENTO_PROFILE, date);
         values.put(GENERO_PROFILE, profile.getGender());
         values.put(CODPOSTAL_PROFILE, profile.getPostal_code());
+        values.put(IMAGE_PROFILE,profile.getImage());
         //values.put(ACEITAR_MACACAO,marcacao.getAceitar());
         //  values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
         //  values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());

@@ -88,7 +88,6 @@ class ProfileController extends ActiveController
         $climodel= new $this->modelClass;
         $rec= $climodel::find()->where("id=".$id)->one();
 
-
         if($rec !== null){
             $rec->First_name=$First_name;
             $rec->Last_name=$Last_name;

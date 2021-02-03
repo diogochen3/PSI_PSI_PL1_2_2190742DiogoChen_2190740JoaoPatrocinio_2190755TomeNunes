@@ -49,6 +49,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, MarcacoesListener {
+
     private ListView lvListaMarcacoes;
     private static final int EDITAR=2;
     private static final int ADICIONAR=1;

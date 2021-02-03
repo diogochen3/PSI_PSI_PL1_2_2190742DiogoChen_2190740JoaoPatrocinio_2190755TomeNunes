@@ -25,6 +25,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,7 +87,7 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         etDNascimento = view.findViewById(R.id.etDNascimento);
         etgenero = view.findViewById(R.id.etGenero);
         etcodPostal = view.findViewById(R.id.etCodPostal);
-
+        imgProfile = view.findViewById(R.id.profile_image);
         btnAlterar = view.findViewById(R.id.btnAlterar);
         btnLogout = view.findViewById(R.id.btnLogout);
         marcacao_qt = view.findViewById(R.id.marcacao_qt);
@@ -183,7 +184,9 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         etDNascimento.setText(date);
         etgenero.setText(perfil.getGender());
         etcodPostal.setText(perfil.getPostal_code());
-
+        byte[] decodeByte = Base64.decode(perfil.getImage(),Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(decodeByte, 0,decodeByte.length);
+        imgProfile.setImageBitmap(bitmap);
 
     }
     @Override

@@ -171,6 +171,7 @@ public class SingletonGestorHospital {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+
                 }
             });
             volleyQueue.add(req);
@@ -183,17 +184,9 @@ public class SingletonGestorHospital {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        String respon = null;
-                        try {
-                            JSONObject profile = new JSONObject(response);
-                            respon = profile.getString("response");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        Toast.makeText(context,"responce:"+respon, Toast.LENGTH_LONG).show();
-                       /* Profile p = HospitalJsonParser.parserJsonProfile(response);
+                        Profile p = HospitalJsonParser.parserJsonProfile(response);
 
-                        editarProfileBD(p);*/
+                        editarProfileBD(p);
                         if(profileListener != null){
                             profileListener.onRefreshdetalhesProfiles();
                         }

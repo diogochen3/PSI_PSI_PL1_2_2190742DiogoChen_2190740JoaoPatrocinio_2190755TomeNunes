@@ -25,7 +25,7 @@ public class ListaMedicosFragment extends Fragment {
         setHasOptionsMenu(true);
 
 
-        lvListaMedicos= view.findViewById(R.id.lv_agenda);
+        lvListaMedicos= view.findViewById(R.id.lv_medico);
         // lvListaMarcacoes.setAdapter(new AdapterMarcacao(getContext(),listaMarcacoes));
 
 

@@ -144,9 +144,10 @@ public class HospitalJsonParser {
                     String genero = profile.getString("gender");
                     String codPostal = profile.getString("postal_code");
                     int is_medico = profile.getInt("is_medico");
+                    String image = profile.getString("imagem");
                     Date date = formatter.parse(dNascimento);
 
-                    Profile p = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date);
+                    Profile p = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date,image);
                     profiles.add(p);
                 } catch (ParseException | JSONException e) {
                     e.printStackTrace();
@@ -174,8 +175,8 @@ public class HospitalJsonParser {
             String codPostal = profile.getString("postal_code");
             int is_medico = profile.getInt("is_medico");
             Date date = formatter.parse(dNascimento);
-
-            auxProfile = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date);
+            String image = profile.getString("image");
+            auxProfile = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date,image);
 
         } catch(JSONException | ParseException e) {
             e.printStackTrace();

@@ -14,8 +14,8 @@
     >
     <ImageView
         android:id="@+id/imgVProfile"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_gravity="center"
         android:layout_weight="0"
         tools:src="@tools:sample/avatars" />
