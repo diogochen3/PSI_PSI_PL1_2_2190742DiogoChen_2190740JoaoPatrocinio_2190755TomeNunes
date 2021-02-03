@@ -1769,6 +1769,7 @@ id end_padder
 id endereco_et
 id enterAlways
 id enterAlwaysCollapsed
+id esp_medico
 id etBody
 id etCodPostal
 id etDNascimento
@@ -2054,15 +2055,9 @@ id txtMedicoMarcacao
 id txtNome
 id txtNomeEspecialidade
 id txtNomeMedico
-<<<<<<< Updated upstream
 id txtNumeroTL
-=======
-id txtNomeMedico_esp
->>>>>>> Stashed changes
 id txtQuantidade
 id txtSituacao
-id txtemailmedico
-id txttelefonemedico
 id unchecked
 id uniform
 id unlabeled

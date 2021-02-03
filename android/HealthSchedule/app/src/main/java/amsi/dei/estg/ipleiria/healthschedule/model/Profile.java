@@ -1,11 +1,5 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
-
-<<<<<<< Updated upstream
-=======
 import android.media.Image;
-
->>>>>>> Stashed changes
-import java.sql.Blob;
 import java.util.Date;
 
 public class Profile {
@@ -14,12 +8,11 @@ private String First_name,Last_name,Email,Address,postal_code, gender;
 private Date Birth_date;
 private String image;
 
-<<<<<<< Updated upstream
-    public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date, String image) {
-=======
 
-    public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date) {
->>>>>>> Stashed changes
+    public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date, String image) {
+
+
+
         this.id = id;
         Phone_number = phone_number;
         this.NIF = NIF;
@@ -41,19 +34,6 @@ private String image;
     public void setImage(String image) {
         this.image = image;
     }
-/* public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date) {
-        this.id = id;
-        Phone_number = phone_number;
-        this.NIF = NIF;
-        this.is_medico = is_medico;
-        First_name = first_name;
-        Last_name = last_name;
-        Email = email;
-        Address = address;
-        this.postal_code = postal_code;
-        this.gender = gender;
-        Birth_date = birth_date;
-    }*/
 
     public int getId() {
         return id;

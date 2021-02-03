@@ -62,14 +62,11 @@ public class AdapterNomeMedicos extends BaseAdapter {
 
 
     private class ViewHolderSpinner {
-        private TextView txtNomeMedico,txtNomeMedico_esp,txtemailmedico,txttelefonemedico;
+        private TextView txtNomeMedico;
         // private ImageView imgCapa;
 
         public ViewHolderSpinner(View view) {
             txtNomeMedico = view.findViewById(R.id.txtNomeMedico);
-            txtNomeMedico_esp = view.findViewById(R.id.txtNomeMedico_esp);
-            txtemailmedico = view.findViewById(R.id.txtemailmedico);
-            txttelefonemedico = view.findViewById(R.id.txttelefonemedico);
         }
 
         public void update(Profile profile) {

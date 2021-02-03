@@ -74,7 +74,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         final int id_user = getIntent().getIntExtra(ID_USER,0);
         marcacao = SingletonGestorHospital.getInstance(getApplicationContext()).getMarcacao(id);
 
-
+        SingletonGestorHospital.getInstance(getApplicationContext()).setMedicoEspecialidadeListener(this);
         SingletonGestorHospital.getInstance(getApplicationContext()).setEspecialidadeListener(this);
 
         SingletonGestorHospital.getInstance(getApplicationContext()).setMarcacaoListener(this);

@@ -50,13 +50,13 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.119/index.php/api/user/login";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.113/index.php/api/user/login";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
 
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.113/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
@@ -65,28 +65,28 @@ public class SingletonGestorHospital {
 
     /************************ variaveis Profile ******************************************/
 
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.119/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.113/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Especialidade ******************************************/
 
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.119/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.113/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
 
     /************************ variaveis Diagnostico ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.119/index.php/api/diagnostico";
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.113/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener DiagnosticosListener;
     /************************ variaveis Receitas ******************************************/
-    private static final  String  mUrlAPIReceitas =  "http://192.168.1.119/index.php/api/receitas";
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.113/index.php/api/receitas";
     private ArrayList<Receita> receitas;
     private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.119/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.113/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
@@ -131,6 +131,10 @@ public class SingletonGestorHospital {
 
     public void setProfileListener(ProfileListener profileListener) {
         this.profileListener = profileListener;
+    }
+
+    public void setMedicoEspecialidadeListener(MedicoEspecialidadeListener medicoEspecialidadeListener) {
+        this.medicoEspecialidadeListener = medicoEspecialidadeListener;
     }
 
     /*********************************** Profile ******************************************/
@@ -662,6 +666,7 @@ public class SingletonGestorHospital {
 
         return null;
     }
+
     public ArrayList<Especialidade> getArrayEspecialidade(int id_especialidade) {
         ArrayList<Especialidade> auxEspecialidades = new ArrayList<>();
         for (Especialidade e: especialidades) {
@@ -671,7 +676,7 @@ public class SingletonGestorHospital {
         return auxEspecialidades;
     }
 
-    public ArrayList<Especialidade> getallEspecialidadeNomeBD() {
+    public ArrayList<Especialidade> getallEspecialidadeBD() {
         especialidades = hospitalDB.getAllEspecialidadeBD();
         return especialidades;
     }
@@ -719,17 +724,17 @@ public class SingletonGestorHospital {
     }
 
     /*************************** MedicoEspecialidade ****************************/
+
    /* public Especialidade getEspecialidade(String nome){
         for (Especialidade l: especialidades)
             if (l.getName().equals(nome))
                 return l;
         return null;
     }*/
-   /* public ArrayList<String> getallEspecialidadeNomeBD() {
-        especialidadesNome = hospitalDB.getAllEspecialidadeNomeBD();
-        return especialidadesNome;
-    }*/
-
+    public ArrayList<MedicoEspecialidade> getallMedicoEspecialidadeBD() {
+        medicoEspecialidades = hospitalDB.getAllMedicoEspecialidadeBD();
+        return medicoEspecialidades;
+    }
     /*public ArrayList<String> getMedicoName(int id)
     {
         ArrayList<String> auMedico = new ArrayList<>();

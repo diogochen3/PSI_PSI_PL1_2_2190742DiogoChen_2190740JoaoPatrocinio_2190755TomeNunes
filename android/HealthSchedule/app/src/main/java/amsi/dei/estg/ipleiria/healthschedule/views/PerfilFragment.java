@@ -151,6 +151,9 @@ public class PerfilFragment extends Fragment implements ProfileListener {
             etDNascimento.setText(date);
             etgenero.setText(perfil.getGender());
             etcodPostal.setText(perfil.getPostal_code());
+            byte[] decodeByte = Base64.decode(perfil.getImage(),Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(decodeByte, 0,decodeByte.length);
+            imgProfile.setImageBitmap(bitmap);
 
             etPNome.setEnabled(false);
             etApelido.setEnabled(false);

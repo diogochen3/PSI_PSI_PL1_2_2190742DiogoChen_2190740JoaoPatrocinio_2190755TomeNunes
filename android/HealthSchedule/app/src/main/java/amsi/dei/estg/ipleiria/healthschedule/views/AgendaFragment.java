@@ -98,9 +98,17 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 //String myString = myEditText.getText().toString();
 
 
-                for (Marcacao marcacaoitem : AdapterMarcacao.marcacoeslista){
+                for (Marcacao marcacaoitem : listaMarcacoes){
 
+                    myPage.getCanvas().drawText(marcacaoitem.getTempo(), x, y , myPaint);
+                    /*myPage.getCanvas().drawText(marcacaoitem.getId_Utente(), x, y , myPaint);*/
                     myPage.getCanvas().drawText(marcacaoitem.getDate(), x, y , myPaint);
+                    myPage.getCanvas().drawText(marcacaoitem.getDate(), x, y , myPaint);
+
+
+
+
+                    x = x+100;
                 }
                 mypPdfDocument.finishPage(myPage);
 
