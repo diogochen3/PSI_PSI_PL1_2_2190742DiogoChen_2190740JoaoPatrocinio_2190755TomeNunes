@@ -1,11 +1,16 @@
 package amsi.dei.estg.ipleiria.healthschedule.views;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
+import android.os.Environment;
 import android.print.PrintManager;
+import android.util.AndroidException;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +20,8 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
@@ -25,6 +32,7 @@ import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -58,11 +66,42 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
         criarPDF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED
+                    && ActivityCompat.checkSelfPermission(getContext(),
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                                    Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            PackageManager.PERMISSION_GRANTED);
+                } else {
+                    Log.e("DB", "PERMISSION GRANTED");
+                }
+
                 PdfDocument mypPdfDocument = new PdfDocument();
                 PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(300,600,1).create();
                 PdfDocument.Page myPage = mypPdfDocument.startPage(myPageInfo);
 
                 Paint myPaint = new Paint();
+                //String myString = myEditText.getText().toString();
+                int x = 10, y=25;
+                myPage.getCanvas().drawText("ola",x,y,myPaint);
+              /*  for (String line:myString.split(“\n”)){
+                    myPage.getCanvas().drawText(line, x, y, myPaint);
+                    y+=myPaint.descent()-myPaint.ascent();
+                }*/
+                mypPdfDocument.finishPage(myPage);
+
+                String myFilePath = Environment.getExternalStorageDirectory().getPath() + "/myPDFFile.pdf";
+                File myFile = new File(myFilePath);
+                try {
+                    mypPdfDocument.writeTo(new FileOutputStream(myFile));
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+
+                mypPdfDocument.close();
 
             }
         });

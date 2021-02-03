@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -54,6 +55,8 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
     private FloatingActionButton fabEditar;
     private String currentPhotoPath;
     private ImageView imgProfile;
+    private Bitmap bitmap;
+    private String image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,8 +101,8 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                     perfil.setBirth_date(date);
                     perfil.setGender(etgenero.getText().toString());
                     perfil.setPostal_code(etcodPostal.getText().toString());
-
-                    SingletonGestorHospital.getInstance(getApplicationContext()).editarProfileAPI(perfil, getApplicationContext());
+                    image = SingletonGestorHospital.getInstance(getApplicationContext()).getStringImage(bitmap);
+                    SingletonGestorHospital.getInstance(getApplicationContext()).editarProfileAPI(perfil, getApplicationContext(), image);
                 }
             }
         });
@@ -198,7 +201,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
             case CAMERA_REQUEST:
                 if (resultCode == Activity.RESULT_OK) {
                     String[] paths = new String[]{currentPhotoPath};
-                    Bitmap bitmap = BitmapFactory.decodeFile(currentPhotoPath);
+                    bitmap = BitmapFactory.decodeFile(currentPhotoPath);
                     imgProfile.setImageBitmap(bitmap);
                     MediaScannerConnection.scanFile(this, paths, null, new
                             MediaScannerConnection.MediaScannerConnectionClient() {
@@ -216,7 +219,15 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                 }
                 break;
             case IMAGEM_REQUEST:
-                imgProfile.setImageURI(intent.getData());
+                Uri path = intent.getData();
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
+                    imgProfile.setImageBitmap(bitmap);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
                 break;
 
         }
@@ -247,13 +258,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         //etcodPostal.setEnabled(false);
     }
 
-    public String getStringImage(Bitmap bmp) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] imageBytes = baos.toByteArray();
-        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        return encodedImage;
-    }
+
 
     @Override
     public void onRefreshListaProfiles(ArrayList<Profile> profiles) {

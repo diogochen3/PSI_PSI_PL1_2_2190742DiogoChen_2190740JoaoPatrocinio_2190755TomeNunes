@@ -84,6 +84,7 @@ class ProfileController extends ActiveController
         $Birth_date = Yii::$app->request->post("Birth_date");
         $gender = Yii::$app->request->post("gender");
         $codposta = Yii::$app->request->post("postal_code");
+        $imagem =Yii::$app->request->post("image");
         $climodel= new $this->modelClass;
         $rec= $climodel::find()->where("id=".$id)->one();
 
@@ -98,6 +99,7 @@ class ProfileController extends ActiveController
             $rec->Birth_date=$Birth_date;
             $rec->gender=$gender;
             $rec->postal_code=$codposta;
+            $rec->imagem = $imagem;
 
             $rec->save();
             

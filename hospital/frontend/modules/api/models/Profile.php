@@ -18,6 +18,7 @@ use Yii;
  * @property string|null $gender
  * @property string|null $postal_code
  * @property int $is_medico
+ * @property resource $imagem
  *
  * @property User $id0
  */
@@ -37,10 +38,10 @@ class Profile extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'First_name', 'Last_name', 'Email', 'Phone_number', 'NIF'], 'required'],
+            [['id', 'First_name', 'Last_name', 'Email', 'Phone_number', 'NIF', 'imagem'], 'required'],
             [['id', 'Phone_number', 'NIF', 'is_medico'], 'integer'],
             [['Birth_date'], 'safe'],
-            [['gender'], 'string'],
+            [['gender', 'imagem'], 'string'],
             [['First_name', 'Last_name', 'postal_code'], 'string', 'max' => 20],
             [['Email'], 'string', 'max' => 25],
             [['Address'], 'string', 'max' => 255],
@@ -68,6 +69,7 @@ class Profile extends \yii\db\ActiveRecord
             'gender' => 'Gender',
             'postal_code' => 'Postal Code',
             'is_medico' => 'Is Medico',
+            'imagem' => 'Imagem',
         ];
     }
 
