@@ -23,6 +23,8 @@
             <ImageView
                 android:id="@+id/profile_image"
                 android:layout_width="100dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"
                 android:layout_height="100dp"
                 android:layout_centerVertical="true"/>
 
@@ -31,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
+                android:text="sadasd"
                 android:layout_toRightOf="@+id/profile_image"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
@@ -40,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
+                android:text="sadasd"
                 android:layout_toRightOf="@+id/tvPNome"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
@@ -96,7 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:theme="@style/Theme.MaterialComponents.Light"
                 android:background="#6FBCFF"
                 app:cardElevation="10dp"
                 >

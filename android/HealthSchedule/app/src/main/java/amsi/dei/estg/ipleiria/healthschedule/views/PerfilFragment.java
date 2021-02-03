@@ -16,6 +16,8 @@ import android.os.Build;
 import android.os.Bundle;
 
 import amsi.dei.estg.ipleiria.healthschedule.listeners.ProfileListener;
+import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
+import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
@@ -45,11 +47,13 @@ public class PerfilFragment extends Fragment implements ProfileListener {
 
     private static final int EDITAR = 10;
     // public static final String ID = "ID";
+    private TextView tvPNome,tvLNome,marcacao_qt,diagnosticos_qt;
     private EditText etPNome, etApelido,etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
     private Button btnAlterar, btnLogout;
     private Profile perfil;
     private int id;
-
+    private ArrayList<Marcacao> listaMarcacoes;
+    private ArrayList<Diagnostico> listaDiagnosticos;
     private String currentPhotoPath;
     private ImageView imgProfile;
 
@@ -72,6 +76,8 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         // token = sharedPreferences.getString(MenuMainActivity.TOKEN, "sem email");
 
         etPNome = view.findViewById(R.id.etPNome);
+        tvPNome = view.findViewById(R.id.tvPNome);
+        tvLNome = view.findViewById(R.id.tvLNome);
         etApelido = view.findViewById(R.id.etLNome);
         etEmail = view.findViewById(R.id.etEmail);
         etTelefone = view.findViewById(R.id.etTelefone);
@@ -83,11 +89,19 @@ public class PerfilFragment extends Fragment implements ProfileListener {
 
         btnAlterar = view.findViewById(R.id.btnAlterar);
         btnLogout = view.findViewById(R.id.btnLogout);
+        marcacao_qt = view.findViewById(R.id.marcacao_qt);
+        diagnosticos_qt = view.findViewById(R.id.diagnosticos_qt);
+        listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
+        listaDiagnosticos = SingletonGestorHospital.getInstance(getContext()).getallDiagnosticoBD();
+        ArrayList<Marcacao> listaUserMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(id,listaMarcacoes);
+        ArrayList<Diagnostico> listaUserDiagnosticos = SingletonGestorHospital.getInstance(getContext()).getDiagnosticos(id,listaDiagnosticos);
+        marcacao_qt.setText(String.valueOf(listaUserMarcacoes.size()));
+        diagnosticos_qt.setText(String.valueOf(listaUserDiagnosticos.size()));
 
 
         /// FloatingActionButton fab = findViewById(R.id.fab);
 
-         SingletonGestorHospital.getInstance(getContext()).setProfileListener(this);
+        SingletonGestorHospital.getInstance(getContext()).setProfileListener(this);
 
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -122,28 +136,33 @@ public class PerfilFragment extends Fragment implements ProfileListener {
     public void onResume() {
 
         perfil = SingletonGestorHospital.getInstance(getContext()).getProfileBD(id);
-        
-        etPNome.setText(perfil.getFirst_name());
-        etApelido.setText(perfil.getLast_name());
-        etEmail.setText(perfil.getEmail());
-        etTelefone.setText(String.valueOf(perfil.getPhone_number()));
-        etNif.setText(String.valueOf(perfil.getNIF()));
-        etEndereco.setText(perfil.getAddress());
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
-        String date = formatter.format(perfil.getBirth_date());
-        etDNascimento.setText(date);
-        etgenero.setText(perfil.getGender());
-        etcodPostal.setText(perfil.getPostal_code());
+        if(perfil != null){
+            tvPNome.setText(perfil.getFirst_name());
+            tvLNome.setText(perfil.getLast_name());
+            etPNome.setText(perfil.getFirst_name());
+            etApelido.setText(perfil.getLast_name());
+            etEmail.setText(perfil.getEmail());
+            etTelefone.setText(String.valueOf(perfil.getPhone_number()));
+            etNif.setText(String.valueOf(perfil.getNIF()));
+            etEndereco.setText(perfil.getAddress());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");//formating according to my need
+            String date = formatter.format(perfil.getBirth_date());
+            etDNascimento.setText(date);
+            etgenero.setText(perfil.getGender());
+            etcodPostal.setText(perfil.getPostal_code());
 
-        etPNome.setEnabled(false);
-        etApelido.setEnabled(false);
-        etEmail.setEnabled(false);
-        etTelefone.setEnabled(false);
-        etNif.setEnabled(false);
-        etEndereco.setEnabled(false);
-        etDNascimento.setEnabled(false);
-        etgenero.setEnabled(false);
-        etcodPostal.setEnabled(false);
+            etPNome.setEnabled(false);
+            etApelido.setEnabled(false);
+            etEmail.setEnabled(false);
+            etTelefone.setEnabled(false);
+            etNif.setEnabled(false);
+            etEndereco.setEnabled(false);
+            etDNascimento.setEnabled(false);
+            etgenero.setEnabled(false);
+            etcodPostal.setEnabled(false);
+
+        }
+
 
         super.onResume();
     }

@@ -15,6 +15,7 @@ import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import amsi.dei.estg.ipleiria.healthschedule.utils.HospitalJsonParser;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
@@ -52,7 +53,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     private int id_especialidade;
     private int id_medico;
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
-
     private Spinner spMedico, spEspecialidade;
     private ArrayAdapter arrayAdapter;
     private ArrayList<Especialidade> especialidade;
@@ -90,7 +90,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         cvDate = findViewById(R.id.cvDate);
         tvEspecialidade = findViewById(R.id.tvEspecialidade);
         tvMedico = findViewById(R.id.tvMedico);
-
+        cvDate.setMinDate((new Date().getTime()));
         tpTime.setIs24HourView(true);
 
         Date currentTime = Calendar.getInstance().getTime();
@@ -101,8 +101,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         cvDate.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                 i1 = i1 + 1;
-                 String mes;
+                i1 = i1 + 1;
+                String mes;
                 if (i1 < 9)
                     mes = "0"+ i1;
                 else
@@ -114,7 +114,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
 
         if (marcacao != null){
-           // setTitle("Detalhes"+livro.getTitulo());
+            // setTitle("Detalhes"+livro.getTitulo());
             carregarDetalhesMarcacao();
             fab.setImageResource(R.drawable.ic_action_guardar);
         }else{
@@ -328,7 +328,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
     private void dialogRemover() {
         AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        builder.setTitle("Remover Livro").setMessage("Pretende mesmo remover o livro").setIcon(android.R.drawable.ic_delete)
+        builder.setTitle("Remover Marcação").setMessage("Pretende mesmo remover esta marcação?").setIcon(android.R.drawable.ic_delete)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
