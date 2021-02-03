@@ -30,7 +30,7 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_contato"
-                    android:title="@string/contato" />
+                    android:title="Reclamações" />
                 <item
                     android:id="@+id/nav_receitas"
                     android:title="@string/lista_de_receitas" />

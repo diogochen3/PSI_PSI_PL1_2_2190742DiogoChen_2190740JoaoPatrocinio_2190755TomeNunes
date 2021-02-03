@@ -1,5 +1,10 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
+<<<<<<< Updated upstream
+=======
+import android.media.Image;
+
+>>>>>>> Stashed changes
 import java.sql.Blob;
 import java.util.Date;
 
@@ -9,7 +14,12 @@ private String First_name,Last_name,Email,Address,postal_code, gender;
 private Date Birth_date;
 private String image;
 
+<<<<<<< Updated upstream
     public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date, String image) {
+=======
+
+    public Profile(int id, int phone_number, int NIF, int is_medico, String first_name, String last_name, String email, String address, String postal_code, String gender, Date birth_date) {
+>>>>>>> Stashed changes
         this.id = id;
         Phone_number = phone_number;
         this.NIF = NIF;

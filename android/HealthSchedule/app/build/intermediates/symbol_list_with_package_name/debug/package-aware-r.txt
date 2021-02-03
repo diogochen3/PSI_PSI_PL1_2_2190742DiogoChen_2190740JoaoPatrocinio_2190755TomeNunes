@@ -1894,6 +1894,7 @@ id never
 id nif_et
 id noScroll
 id nome
+id nome_medico
 id none
 id normal
 id notification_background
@@ -2053,9 +2054,15 @@ id txtMedicoMarcacao
 id txtNome
 id txtNomeEspecialidade
 id txtNomeMedico
+<<<<<<< Updated upstream
 id txtNumeroTL
+=======
+id txtNomeMedico_esp
+>>>>>>> Stashed changes
 id txtQuantidade
 id txtSituacao
+id txtemailmedico
+id txttelefonemedico
 id unchecked
 id uniform
 id unlabeled

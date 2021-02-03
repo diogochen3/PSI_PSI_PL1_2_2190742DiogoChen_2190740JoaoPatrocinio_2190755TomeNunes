@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
+import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 
 public class AdapterNomeMedicos extends BaseAdapter {
@@ -18,6 +19,7 @@ public class AdapterNomeMedicos extends BaseAdapter {
 
     private Context context;
     private LayoutInflater inflater;
+    private ArrayList<MedicoEspecialidade> especialidade;
     private ArrayList<Profile> profiles;
 
     public AdapterNomeMedicos(Context context, ArrayList<Profile> profiles) {
@@ -60,15 +62,22 @@ public class AdapterNomeMedicos extends BaseAdapter {
 
 
     private class ViewHolderSpinner {
-        private TextView txtNomeMedico;
+        private TextView txtNomeMedico,txtNomeMedico_esp,txtemailmedico,txttelefonemedico;
         // private ImageView imgCapa;
 
         public ViewHolderSpinner(View view) {
             txtNomeMedico = view.findViewById(R.id.txtNomeMedico);
+            txtNomeMedico_esp = view.findViewById(R.id.txtNomeMedico_esp);
+            txtemailmedico = view.findViewById(R.id.txtemailmedico);
+            txttelefonemedico = view.findViewById(R.id.txttelefonemedico);
         }
 
         public void update(Profile profile) {
             txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
+
+
+
+
         }
 
     }
