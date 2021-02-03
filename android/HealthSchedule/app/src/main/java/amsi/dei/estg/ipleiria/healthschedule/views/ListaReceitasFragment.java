@@ -59,11 +59,6 @@ public class ListaReceitasFragment extends Fragment implements SwipeRefreshLayou
         SingletonGestorHospital.getInstance(getContext()).setReceitasListener(this);
         SingletonGestorHospital.getInstance(getContext()).getAllReceitasAPI(getContext());
 
-      /*  if (listaMarcacoes != null){
-            lvListaMarcacoes.setAdapter(new AdapterMarcacao(getActivity(),listaMarcacoes));
-        }else{
-            Toast.makeText(getContext(), "FODASE", Toast.LENGTH_SHORT).show();
-        }*/
 
         return view;
 

@@ -1769,6 +1769,7 @@ id end_padder
 id endereco_et
 id enterAlways
 id enterAlwaysCollapsed
+id esp_medico
 id etBody
 id etCodPostal
 id etDNascimento
@@ -1894,6 +1895,7 @@ id never
 id nif_et
 id noScroll
 id nome
+id nome_medico
 id none
 id normal
 id notification_background

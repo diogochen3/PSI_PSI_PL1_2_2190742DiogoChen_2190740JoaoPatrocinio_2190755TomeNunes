@@ -96,15 +96,23 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
                 Paint myPaint = new Paint();
                 //String myString = myEditText.getText().toString();
-                int x = 10, y=25;
-                myPage.getCanvas().drawText("ola",x,y,myPaint);
-              /*  for (String line:myString.split(“\n”)){
-                    myPage.getCanvas().drawText(line, x, y, myPaint);
-                    y+=myPaint.descent()-myPaint.ascent();
-                }*/
+
+
+                for (Marcacao marcacaoitem : listaMarcacoes){
+
+                    myPage.getCanvas().drawText(marcacaoitem.getTempo(), x, y , myPaint);
+                    /*myPage.getCanvas().drawText(marcacaoitem.getId_Utente(), x, y , myPaint);*/
+                    myPage.getCanvas().drawText(marcacaoitem.getDate(), x, y , myPaint);
+                    myPage.getCanvas().drawText(marcacaoitem.getDate(), x, y , myPaint);
+
+
+
+
+                    x = x+100;
+                }
                 mypPdfDocument.finishPage(myPage);
 
-                String myFilePath = Environment.getExternalStorageDirectory().getPath() + "/myPDFFile.pdf";
+                String myFilePath = Environment.getExternalStorageDirectory().getPath() + "/listademarcacoes.pdf";
                 File myFile = new File(myFilePath);
                 try {
                     mypPdfDocument.writeTo(new FileOutputStream(myFile));
@@ -112,39 +120,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 catch (Exception e){
                     e.printStackTrace();
                 }
-
                 mypPdfDocument.close();
-
-                Canvas canvas = myPage.getCanvas();
-                myPaint.setTextSize(30);
-                for (Marcacao marcacaoitem : AdapterMarcacao.marcacoeslista){
-
-                    canvas.drawText(marcacaoitem.getDate(), x, y , myPaint);
-                }
-
-                mypPdfDocument.finishPage(myPage);
-
-                ContextWrapper cw = new ContextWrapper(getActivity().getApplicationContext());
-                File directory = cw.getExternalCacheDir();
-                Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                Uri URI =Uri.fromFile(directory);
-                emailIntent.setData(Uri.parse("mailto:tome.nunes80@gmail.com"));
-                emailIntent.setType("text/plain");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"Recipient"});
-                emailIntent.putExtra(Intent.EXTRA_STREAM, URI);
-                emailIntent.putExtra(Intent.EXTRA_TEXT   , "Message Body");
-                File file = new File(directory , "marcacoes" + ".PDF");
-                startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-
-                try {
-                    mypPdfDocument.writeTo(new FileOutputStream(file));
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-                mypPdfDocument.close();
-
-                /*String fileDirectory =;*/
-
 
 
             }
