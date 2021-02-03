@@ -19,8 +19,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".views.ListaMedicosActivity" />
-        <activity android:name=".views.ListaMedicamentosActivity" />
         <activity android:name=".views.MarcacaoActivity" />
         <activity android:name=".views.LoginActivity">
             <intent-filter>

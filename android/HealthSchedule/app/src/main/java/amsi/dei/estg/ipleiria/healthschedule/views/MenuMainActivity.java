@@ -53,7 +53,8 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
         carregarCabecalho();
 
-
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
 
         navigationView.setNavigationItemSelectedListener(this);
 

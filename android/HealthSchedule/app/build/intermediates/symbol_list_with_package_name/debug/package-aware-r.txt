@@ -1823,6 +1823,7 @@ id image
 id imageView2
 id imageView3
 id imageView4
+id imagemMedico
 id imgVProfile
 id info
 id invisible
@@ -1842,8 +1843,7 @@ id list_item
 id lvEspecialidade
 id lv_agenda
 id lv_diagnostico
-id lv_medicamento
-id lv_medico
+id lv_medicossssss
 id lv_receita
 id marcacao_card
 id marcacao_label
@@ -1970,7 +1970,6 @@ id spEspecialidade
 id spMedico
 id spacer
 id spinner
-id spinner3
 id spline
 id split_action_bar
 id spread
@@ -2012,7 +2011,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView12
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2132,8 +2130,6 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_alterar_profile
-layout activity_lista_medicamentos
-layout activity_lista_medicos
 layout activity_login
 layout activity_marcacao
 layout activity_menu_main

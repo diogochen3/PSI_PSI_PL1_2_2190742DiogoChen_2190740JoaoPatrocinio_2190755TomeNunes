@@ -6,101 +6,95 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
+8-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
+9-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-11-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:5-81
-11-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:22-78
+11-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:40:5-81
+11-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:40:22-78
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:5-79
-12-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:22-76
+12-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:41:5-79
+12-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:41:22-76
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:5-65
-13-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:22-62
+13-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:5-65
+13-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:22-62
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:5-67
-14-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:22-64
+14-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:5-67
+14-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:22-64
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:5-80
-15-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:22-77
+15-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:5-80
+15-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:22-77
 16
 17    <application
-17-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:5:5-41:19
+17-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:5:5-39:19
 18        android:allowBackup="true"
-18-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:6:9-35
+18-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.3.1] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\c560b8721f05ca12656603dd382025ab\core-1.3.1\AndroidManifest.xml:24:18-86
+19-->[androidx.core:core:1.3.1] C:\Users\Diogo Chen\.gradle\caches\transforms-2\files-2.1\c560b8721f05ca12656603dd382025ab\core-1.3.1\AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/ic_launcher"
-21-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:7:9-43
+21-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:7:9-43
 22        android:label="@string/app_name"
-22-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:8:9-41
+22-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:8:9-41
 23        android:requestLegacyExternalStorage="true"
-23-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:9:9-52
+23-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:9:9-52
 24        android:roundIcon="@mipmap/ic_launcher_round"
-24-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:10:9-54
+24-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:10:9-54
 25        android:supportsRtl="true"
-25-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:11:9-35
+25-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:11:9-35
 26        android:testOnly="true"
 27        android:theme="@style/AppTheme"
-27-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:12:9-40
+27-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:12:9-40
 28        android:usesCleartextTraffic="true" >
-28-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:13:9-44
+28-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:13:9-44
 29        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.AlterarProfileActivity" />
-29-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:14:9-75
-29-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:14:19-63
+29-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:14:9-75
+29-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:14:19-63
 30        <activity
-30-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:16:9-20:59
+30-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:16:9-20:59
 31            android:name="amsi.dei.estg.ipleiria.healthschedule.views.MenuMainActivity"
-31-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:17:13-51
+31-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:17:13-51
 32            android:launchMode="singleTop"
-32-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:18:13-43
+32-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:18:13-43
 33            android:screenOrientation="portrait"
-33-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:19:13-49
+33-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:19:13-49
 34            android:theme="@style/AppTheme.NoActionBar" />
-34-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:20:13-56
-35        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosActivity" />
-35-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:22:9-64
-35-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:22:19-61
-36        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicamentosActivity" />
-36-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:23:9-69
-36-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:23:19-66
-37        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity" />
-37-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:24:9-60
-37-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:24:19-57
-38        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.LoginActivity" >
-38-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:25:9-31:20
-38-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:25:19-54
-39            <intent-filter>
-39-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:26:13-30:29
-40                <action android:name="android.intent.action.MAIN" />
-40-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:27:17-69
-40-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:27:25-66
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:29:17-77
-42-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:29:27-74
-43            </intent-filter>
-44        </activity>
-45
-46        <provider
-47            android:name="androidx.core.content.FileProvider"
-47-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:33:13-62
-48            android:authorities="amsi.dei.estg.ipleiria.healthschedule.fileprovider"
-48-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:34:13-64
-49            android:exported="false"
-49-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:35:13-37
-50            android:grantUriPermissions="true" >
-50-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:36:13-47
-51            <meta-data
-51-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:37:13-39:54
-52                android:name="android.support.FILE_PROVIDER_PATHS"
-52-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:38:17-67
-53                android:resource="@xml/file_paths" />
-53-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:39:17-51
-54        </provider>
-55    </application>
-56
-57</manifest>
+34-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:20:13-56
+35        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.MarcacaoActivity" />
+35-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:22:9-60
+35-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:22:19-57
+36        <activity android:name="amsi.dei.estg.ipleiria.healthschedule.views.LoginActivity" >
+36-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:23:9-29:20
+36-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:23:19-54
+37            <intent-filter>
+37-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:24:13-28:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:25:17-69
+38-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:25:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:27:17-77
+40-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:27:27-74
+41            </intent-filter>
+42        </activity>
+43
+44        <provider
+45            android:name="androidx.core.content.FileProvider"
+45-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:31:13-62
+46            android:authorities="amsi.dei.estg.ipleiria.healthschedule.fileprovider"
+46-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:32:13-64
+47            android:exported="false"
+47-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:33:13-37
+48            android:grantUriPermissions="true" >
+48-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:34:13-47
+49            <meta-data
+49-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:35:13-37:54
+50                android:name="android.support.FILE_PROVIDER_PATHS"
+50-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:36:17-67
+51                android:resource="@xml/file_paths" />
+51-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:37:17-51
+52        </provider>
+53    </application>
+54
+55</manifest>
