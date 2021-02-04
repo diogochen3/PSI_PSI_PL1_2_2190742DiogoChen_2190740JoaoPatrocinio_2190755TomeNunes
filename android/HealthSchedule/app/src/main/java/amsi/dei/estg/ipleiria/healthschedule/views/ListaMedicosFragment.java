@@ -50,14 +50,7 @@ public class ListaMedicosFragment extends Fragment {
 
         lvListaMedicos.setAdapter(new AdapterMedicos(getContext(),medico));
 
-        lvListaMedicos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-            }
-        });
         FloatingActionButton fab= view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

@@ -11,23 +11,23 @@
 9-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-11-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:40:5-81
-11-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:40:22-78
+11-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:5-81
+11-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:22-78
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:41:5-79
-12-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:41:22-76
+12-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:5-79
+12-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:22-76
 13    <uses-permission android:name="android.permission.CAMERA" />
-13-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:5-65
-13-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:22-62
+13-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:46:5-65
+13-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:46:22-62
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:5-67
-14-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:22-64
+14-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:5-67
+14-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:22-64
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-15-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:5-80
-15-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:22-77
+15-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:49:5-80
+15-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:49:22-77
 16
 17    <application
-17-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:5:5-39:19
+17-->C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:5:5-43:19
 18        android:allowBackup="true"
 18-->C:\wamp64\www\android\HealthSchedule\app\src\main\AndroidManifest.xml:6:9-35
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"

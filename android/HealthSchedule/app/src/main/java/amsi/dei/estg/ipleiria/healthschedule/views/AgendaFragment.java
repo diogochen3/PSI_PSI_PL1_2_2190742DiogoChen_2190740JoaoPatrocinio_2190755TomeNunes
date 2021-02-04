@@ -7,13 +7,16 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.graphics.pdf.PdfDocument.Page;
 import android.graphics.pdf.PdfDocument.PageInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.print.PrintManager;
 import android.util.AndroidException;
 import android.util.Log;
@@ -30,11 +33,13 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
+import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
@@ -53,13 +58,15 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     private ListView lvListaMarcacoes;
     private static final int EDITAR=2;
     private static final int ADICIONAR=1;
-    private int user_id,x=100,y=40;
+    private int user_id,x=50,y=40;
     private Marcacao marcacao;
     private CardView marcacao_card;
     private SwipeRefreshLayout swipeRefreshLayout;
     private ArrayList<Profile> medico;
     private ArrayList<Marcacao> listaMarcacoes;
+    private ArrayList<Especialidade> listaEspecialidade;
     private Button criarPDF;
+    private String medicos;
 
     public AgendaFragment() {
 
@@ -70,6 +77,14 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            try {
+                Method m = StrictMode.class.getMethod("disableDeathOnFileUriExposure");
+                m.invoke(null);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            }
         View view = inflater.inflate(R.layout.fragment_agenda, container, false);
         setHasOptionsMenu(true);
 
@@ -91,29 +106,66 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 }
 
                 PdfDocument mypPdfDocument = new PdfDocument();
-                PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(300,600,1).create();
+                PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(700,1000,1).create();
                 PdfDocument.Page myPage = mypPdfDocument.startPage(myPageInfo);
 
                 Paint myPaint = new Paint();
                 //String myString = myEditText.getText().toString();
+                Canvas canvas = myPage.getCanvas();
 
 
-                for (Marcacao marcacaoitem : listaMarcacoes){
+                ArrayList<Marcacao> listaUserMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,listaMarcacoes);
+                myPaint.setColor(Color.BLUE);
+                x=100;
+                canvas.drawText("Hora:", x, y , myPaint);
+                x=200;
+                canvas.drawText("medico:", x, y , myPaint);
+                x=300;
+                canvas.drawText("especialidade:", x, y , myPaint);
+                x=400;
+                canvas.drawText("Data:", x, y , myPaint);
+                y=y+50;
+                myPaint.setColor(Color.BLACK);
+                for (Marcacao marcacaoitem : listaUserMarcacoes){
+                    x=100;
+                    canvas.drawText(marcacaoitem.getTempo(), x, y , myPaint);
 
-                    myPage.getCanvas().drawText(marcacaoitem.getTempo(), x, y , myPaint);
-                    /*myPage.getCanvas().drawText(marcacaoitem.getId_Utente(), x, y , myPaint);*/
-                    myPage.getCanvas().drawText(marcacaoitem.getDate(), x, y , myPaint);
-                    myPage.getCanvas().drawText(marcacaoitem.getDate(), x, y , myPaint);
+                    for (Profile profileitem : medico){
+                        if (marcacaoitem.getId_Medico() == profileitem.getId()) {
+                            x=200;
+                            myPage.getCanvas().drawText(profileitem.getFirst_name(), x, y, myPaint);
+
+                        }
+                        }
+                    for (Especialidade especialidadeitem : listaEspecialidade){
+                        if (marcacaoitem.getId_especialidade() == especialidadeitem.getId()) {
+                            x=300;
+                            myPage.getCanvas().drawText(especialidadeitem.getName(), x, y, myPaint);
+
+                        }
+                    }
+                    x=400;
+                    canvas.drawText(marcacaoitem.getDate(), x, y , myPaint);
+                    x=500;
 
 
+                    y=y+14;
 
-
-                    x = x+100;
-                }
+}
                 mypPdfDocument.finishPage(myPage);
 
                 String myFilePath = Environment.getExternalStorageDirectory().getPath() + "/listademarcacoes.pdf";
                 File myFile = new File(myFilePath);
+                ContextWrapper cw = new ContextWrapper(getActivity().getApplicationContext());
+                File directory = cw.getExternalCacheDir();
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                Uri URI =Uri.fromFile(myFile);
+                emailIntent.setData(Uri.parse("mailto:tome.nunes800@gmail.com"));
+                emailIntent.setType("text/plain");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{"tome.nunes80@gmail.com"});
+                emailIntent.putExtra(Intent.EXTRA_STREAM, URI);
+                emailIntent.putExtra(Intent.EXTRA_TEXT   , "aqui está o pdf");
+                startActivity(Intent.createChooser(emailIntent, "A enviar..."));
                 try {
                     mypPdfDocument.writeTo(new FileOutputStream(myFile));
                 }
@@ -123,7 +175,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 mypPdfDocument.close();
 
 
-            }
+    }
         });
 
 
@@ -202,6 +254,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     public void onResume() {
         listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
         medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
+        listaEspecialidade = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
+
 
 
         ArrayList<Marcacao> listaUserMarcacoes = SingletonGestorHospital.getInstance(getContext()).getMarcacoes(user_id,listaMarcacoes);

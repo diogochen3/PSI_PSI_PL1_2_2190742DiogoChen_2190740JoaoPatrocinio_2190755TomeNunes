@@ -49,8 +49,8 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
     private static final int PERMISSAO_CAMARA = 2;
     private static final int CAMERA_REQUEST = 3;
     private static final int IMAGEM_REQUEST = 4;
+    private static long THUMB_SIZE = 6553;
     private static final String ID_USER = "ID_USER";
-    private TextView tvPNome,tvLNome;
     private EditText etPNome, etApelido, etEmail, etTelefone, etNif, etEndereco, etDNascimento , etgenero, etcodPostal;
     private Profile perfil;
     private Button btnUpload;
@@ -65,8 +65,6 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alterar_profile);
 
-        tvPNome = findViewById(R.id.tvPNome);
-        tvLNome = findViewById(R.id.tvLNome);
         etPNome = findViewById(R.id.etPNome);
         etApelido = findViewById(R.id.etLNome);
         etEmail = findViewById(R.id.etEmail);
@@ -105,7 +103,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                     perfil.setBirth_date(date);
                     perfil.setGender(etgenero.getText().toString());
                     perfil.setPostal_code(etcodPostal.getText().toString());
-                    image = SingletonGestorHospital.getInstance(getApplicationContext()).getStringImage(bitmap);
+                    image = getStringImage(bitmap);
                     SingletonGestorHospital.getInstance(getApplicationContext()).editarProfileAPI(perfil, getApplicationContext(), image);
                 }
             }
@@ -164,6 +162,14 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
+    public String getStringImage(Bitmap bmp) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+
     private void carregarFotoGaleria() {
         Intent intent = new Intent();
         intent.setType("image/*");
@@ -206,6 +212,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                 if (resultCode == Activity.RESULT_OK) {
                     String[] paths = new String[]{currentPhotoPath};
                     bitmap = BitmapFactory.decodeFile(currentPhotoPath);
+                  //  bitmap = generateThumb(bitmap, (int) THUMB_SIZE);
                     imgProfile.setImageBitmap(bitmap);
                     MediaScannerConnection.scanFile(this, paths, null, new
                             MediaScannerConnection.MediaScannerConnectionClient() {
@@ -226,6 +233,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                 Uri path = intent.getData();
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
+                    //bitmap = generateThumb(bitmap, (int) THUMB_SIZE);
                     imgProfile.setImageBitmap(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -269,7 +277,20 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         etgenero.setEnabled(false);
         //etcodPostal.setEnabled(false);
     }
-
+    public static Bitmap generateThumb(Bitmap bitmap, int THUMB_SIZE) {
+        double ratioSquare;
+        int bitmapHeight, bitmapWidth;
+        bitmapHeight = bitmap.getHeight();
+        bitmapWidth = bitmap.getWidth();
+        ratioSquare = (bitmapHeight * bitmapWidth) / THUMB_SIZE;
+        if (ratioSquare <= 1)
+            return bitmap;
+        double ratio = Math.sqrt(ratioSquare);
+        Log.d("mylog", "Ratio: " + ratio);
+        int requiredHeight = (int) Math.round(bitmapHeight / ratio);
+        int requiredWidth = (int) Math.round(bitmapWidth / ratio);
+        return Bitmap.createScaledBitmap(bitmap, requiredWidth, requiredHeight, true);
+    }
 
     @Override
     public void onRefreshListaProfiles(ArrayList<Profile> profiles) {
