@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import amsi.dei.estg.ipleiria.healthschedule.R;
 
 
-public class ListaMedicosFragment extends Fragment implements EspecialidadeListener, MedicoEspecialidadeListener {
+public class ListaMedicosFragment extends Fragment {
 
     private ListView lvListaMedicos;
     private ArrayList<Profile> medico;
@@ -40,29 +40,15 @@ public class ListaMedicosFragment extends Fragment implements EspecialidadeListe
         View view = inflater.inflate(R.layout.fragment_lista_medicos, container, false);
         setHasOptionsMenu(true);
 
-        SingletonGestorHospital.getInstance(getContext()).setEspecialidadeListener(this);
 
-        SingletonGestorHospital.getInstance(getContext()).setMedicoEspecialidadeListener(this);
+        lvListaMedicos= view.findViewById(R.id.lv_medicossssss);
 
-
-
-        lvListaMedicos= view.findViewById(R.id.lv_medico);
-        SingletonGestorHospital.getInstance(getContext()).getAllEspecialidadeAPI(getContext());
-        SingletonGestorHospital.getInstance(getContext()).getAllMedicoEspecialidadeAPI(getContext());
 
         medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
-       /* especialidades = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
-        medicoEspecialidades = SingletonGestorHospital.getInstance(getContext()).getallMedicoEspecialidadeBD();*/
+        especialidades = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
+        medicoEspecialidades = SingletonGestorHospital.getInstance(getContext()).getallMedicoEspecialidadeBD();
 
-        if(medico != null && especialidades != null && medicoEspecialidades != null){
-            lvListaMedicos.setAdapter(new AdapterMedicos(getContext(),medico,especialidades,medicoEspecialidades));
-
-    }
-
-
-
-
-
+        lvListaMedicos.setAdapter(new AdapterMedicos(getContext(),medico));
 
 
         FloatingActionButton fab= view.findViewById(R.id.fab);
@@ -73,19 +59,6 @@ public class ListaMedicosFragment extends Fragment implements EspecialidadeListe
 
 
         return view;
-
-
-    }
-
-    @Override
-    public void onRefreshListaEspecialidade(ArrayList<Especialidade> especialidades1) {
-        especialidades = especialidades1;
-
-    }
-
-    @Override
-    public void onRefreshListaMedicoEspecialidade(ArrayList<MedicoEspecialidade> medicoEspecialidade) {
-        medicoEspecialidades = medicoEspecialidade;
 
 
     }

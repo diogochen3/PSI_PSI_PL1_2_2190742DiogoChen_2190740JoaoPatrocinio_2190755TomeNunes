@@ -15,6 +15,7 @@ import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
+import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdapterMedicos extends BaseAdapter {
@@ -22,14 +23,10 @@ public class AdapterMedicos extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Profile> profiles;
-    private ArrayList<Especialidade> especialidades;
-    private ArrayList<MedicoEspecialidade> medicoEspecialidades;
 
-    public AdapterMedicos(Context context, ArrayList<Profile> profiles, ArrayList<Especialidade> especialidades, ArrayList<MedicoEspecialidade> medicoEspecialidades) {
+    public AdapterMedicos(Context context, ArrayList<Profile> profiles) {
         this.context = context;
         this.profiles = profiles;
-        this.especialidades = especialidades;
-        this.medicoEspecialidades = medicoEspecialidades;
     }
 
     @Override
@@ -52,7 +49,7 @@ public class AdapterMedicos extends BaseAdapter {
         if (inflater == null)
             inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         if (view == null)
-            view = inflater.inflate(R.layout.item_spinner_medicos, null);
+            view = inflater.inflate(R.layout.item_lista_medico, null);
 
         //otimização
         ViewHolderLista viewHolderLista = (ViewHolderLista) view.getTag();
@@ -78,16 +75,15 @@ public class AdapterMedicos extends BaseAdapter {
 
         public void update(Profile profile) {
             txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
-            ArrayList<String> nomeEspecialidade = new ArrayList<>();
             txtEmail.setText(profile.getEmail());
             txtNumeroTL.setText(profile.getPhone_number());
-
-            for (Especialidade e: especialidades) {
+            ArrayList<String> nomeEspecialidade = SingletonGestorHospital.getInstance(context).getEspecialidadeNome(profile);
+            /*for (Especialidade e: especialidades) {
                 for (MedicoEspecialidade me: medicoEspecialidades) {
                     if (profile.getId() == me.getId_Medico() && me.getId_Especialidade() == e.getId())
                         nomeEspecialidade.add(e.getName());
                 }
-            }
+            }*/
 
             ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, nomeEspecialidade);
             lvEspecialidade.setAdapter(adapterEspecialidade);

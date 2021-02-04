@@ -667,6 +667,16 @@ public class SingletonGestorHospital {
 
         return null;
     }
+    public ArrayList<String> getEspecialidadeNome(Profile profile) {
+        ArrayList<String> nomeEspecialidade = new ArrayList<>();
+        for (Especialidade e: especialidades) {
+            for (MedicoEspecialidade me: medicoEspecialidades) {
+                if (profile.getId() == me.getId_Medico() && me.getId_Especialidade() == e.getId())
+                    nomeEspecialidade.add(e.getName());
+            }
+        }
+        return nomeEspecialidade;
+    }
 
     public ArrayList<Especialidade> getArrayEspecialidade(int id_especialidade) {
         ArrayList<Especialidade> auxEspecialidades = new ArrayList<>();
