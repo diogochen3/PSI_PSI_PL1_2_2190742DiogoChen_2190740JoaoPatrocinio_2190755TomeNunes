@@ -180,10 +180,6 @@
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\menu\\menu_remover_marcaco.xml"
     },
     {
-        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_lista_medicamento.xml.flat",
-        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\item_lista_medicamento.xml"
-    },
-    {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_action_adicionar.xml.flat",
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_action_adicionar.xml"
     },

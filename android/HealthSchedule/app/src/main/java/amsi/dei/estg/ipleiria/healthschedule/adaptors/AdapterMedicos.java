@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
+import amsi.dei.estg.ipleiria.healthschedule.listeners.EspecialidadeListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
@@ -61,33 +62,41 @@ public class AdapterMedicos extends BaseAdapter {
 
         return view;
     }
-    private class ViewHolderLista {
+    private class ViewHolderLista implements EspecialidadeListener {
         private TextView txtNomeMedico, txtEmail, txtNumeroTL;
         private ListView lvEspecialidade;
         // private ImageView imgCapa;
 
         public ViewHolderLista(View view) {
-            txtNomeMedico = view.findViewById(R.id.txtNomeMedico);
+            txtNomeMedico = view.findViewById(R.id.txtNome);
             txtEmail = view.findViewById(R.id.txtEmail);
             txtNumeroTL = view.findViewById(R.id.txtNumeroTL);
-            lvEspecialidade = view.findViewById(R.id.lvEspecialidade);
+            lvEspecialidade = view.findViewById(R.id.listaEspecialidade);
         }
 
         public void update(Profile profile) {
-            txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
-            txtEmail.setText(profile.getEmail());
-            txtNumeroTL.setText(profile.getPhone_number());
             ArrayList<String> nomeEspecialidade = SingletonGestorHospital.getInstance(context).getEspecialidadeNome(profile);
-            /*for (Especialidade e: especialidades) {
+            
+                txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
+                txtEmail.setText(profile.getEmail());
+                txtNumeroTL.setText(profile.getPhone_number()+"");
+                ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, nomeEspecialidade);
+                lvEspecialidade.setAdapter(adapterEspecialidade);
+
+
+           /* for (Especialidade e: especialidades) {
                 for (MedicoEspecialidade me: medicoEspecialidades) {
                     if (profile.getId() == me.getId_Medico() && me.getId_Especialidade() == e.getId())
                         nomeEspecialidade.add(e.getName());
                 }
             }*/
 
-            ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, nomeEspecialidade);
-            lvEspecialidade.setAdapter(adapterEspecialidade);
+
         }
 
+        @Override
+        public void onRefreshListaEspecialidade(ArrayList<Especialidade> especialidades) {
+
+        }
     }
 }

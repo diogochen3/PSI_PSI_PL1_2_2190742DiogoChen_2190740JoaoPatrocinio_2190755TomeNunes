@@ -1598,7 +1598,6 @@ drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
-id Ano
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
@@ -1607,7 +1606,6 @@ id FUNCTION
 id META
 id Medico
 id NO_DEBUG
-id Numero
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1762,7 +1760,6 @@ id easeIn
 id easeInOut
 id easeOut
 id edit_query
-id email
 id email_et
 id end
 id end_padder
@@ -1840,7 +1837,7 @@ id line3
 id linear
 id listMode
 id list_item
-id lvEspecialidade
+id listaEspecialidade
 id lv_agenda
 id lv_diagnostico
 id lv_medicossssss
@@ -2037,7 +2034,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvAno
 id tvEmail
 id tvEspecialidade
 id tvLNome
@@ -2159,7 +2155,6 @@ layout fragment_lista_receitas
 layout fragment_perfil
 layout item_lista_diagnostico
 layout item_lista_marcacao
-layout item_lista_medicamento
 layout item_lista_medico
 layout item_lista_receitas
 layout item_spinner_especialidade
