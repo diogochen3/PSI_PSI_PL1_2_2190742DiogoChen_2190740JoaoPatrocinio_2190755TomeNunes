@@ -68,4 +68,17 @@ public class ListaDiagnosticosFragment extends Fragment implements SwipeRefreshL
 
     }
 
+    public void onResume() {
+
+
+        listaDiagnosticos = SingletonGestorHospital.getInstance(getContext()).getallDiagnosticoBD();
+
+        ArrayList<Diagnostico> listaUserDiagnostico = SingletonGestorHospital.getInstance(getContext()).getDiagnosticos(user_id,listaDiagnosticos);
+
+
+        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getActivity(),listaUserDiagnostico));
+
+        super.onResume();
+    }
+
 }

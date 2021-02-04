@@ -1605,6 +1605,7 @@ id Email
 id FUNCTION
 id META
 id Medico
+id Medico1
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
@@ -2043,13 +2044,16 @@ id tvSuject
 id txtDataMarcacao
 id txtDescricao
 id txtEmail
+id txtEmail1
 id txtHoraMarcacao
 id txtMedicamento
 id txtMedicoMarcacao
 id txtNome
+id txtNome1
 id txtNomeEspecialidade
 id txtNomeMedico
 id txtNumeroTL
+id txtNumeroTL1
 id txtQuantidade
 id txtSituacao
 id unchecked
