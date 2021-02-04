@@ -1605,7 +1605,6 @@ id Email
 id FUNCTION
 id META
 id Medico
-id Medico1
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
@@ -1967,7 +1966,6 @@ id snapMargins
 id spEspecialidade
 id spMedico
 id spacer
-id spinner
 id spline
 id split_action_bar
 id spread
@@ -2035,7 +2033,6 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvEmail
 id tvEspecialidade
 id tvLNome
 id tvMedico
@@ -2044,16 +2041,13 @@ id tvSuject
 id txtDataMarcacao
 id txtDescricao
 id txtEmail
-id txtEmail1
 id txtHoraMarcacao
 id txtMedicamento
 id txtMedicoMarcacao
 id txtNome
-id txtNome1
 id txtNomeEspecialidade
 id txtNomeMedico
 id txtNumeroTL
-id txtNumeroTL1
 id txtQuantidade
 id txtSituacao
 id unchecked

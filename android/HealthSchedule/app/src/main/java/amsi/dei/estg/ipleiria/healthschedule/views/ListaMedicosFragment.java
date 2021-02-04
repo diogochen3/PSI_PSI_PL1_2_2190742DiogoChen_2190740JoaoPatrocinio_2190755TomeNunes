@@ -44,22 +44,36 @@ public class ListaMedicosFragment extends Fragment {
         lvListaMedicos= view.findViewById(R.id.lv_medicossssss);
 
 
-        medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
+        medico = SingletonGestorHospital.getInstance(getContext()).getMedicosEspecialidade();
+
         especialidades = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
         medicoEspecialidades = SingletonGestorHospital.getInstance(getContext()).getallMedicoEspecialidadeBD();
 
         lvListaMedicos.setAdapter(new AdapterMedicos(getContext(),medico));
 
 
-        FloatingActionButton fab= view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            }
-        });
 
 
         return view;
 
 
     }
+
+    public void onResume() {
+
+
+        medico = SingletonGestorHospital.getInstance(getContext()).getMedicosEspecialidade();
+
+        especialidades = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
+        medicoEspecialidades = SingletonGestorHospital.getInstance(getContext()).getallMedicoEspecialidadeBD();
+
+        lvListaMedicos.setAdapter(new AdapterMedicos(getContext(),medico));
+
+
+        super.onResume();
+    }
+
+
+
+
 }
