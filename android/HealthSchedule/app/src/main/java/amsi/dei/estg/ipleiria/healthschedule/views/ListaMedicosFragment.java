@@ -37,7 +37,7 @@ public class ListaMedicosFragment extends Fragment implements EspecialidadeListe
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_agenda, container, false);
+        View view = inflater.inflate(R.layout.fragment_lista_medicos, container, false);
         setHasOptionsMenu(true);
 
         SingletonGestorHospital.getInstance(getContext()).setEspecialidadeListener(this);
@@ -64,14 +64,7 @@ public class ListaMedicosFragment extends Fragment implements EspecialidadeListe
 
 
 
-        lvListaMedicos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-            }
-        });
         FloatingActionButton fab= view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

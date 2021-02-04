@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:32:9-40:20
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:32:9-42:20
 	android:grantUriPermissions
 		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:36:13-47
 	android:authorities
@@ -11,10 +11,10 @@ INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManif
 	android:name
 		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:33:13-62
 manifest
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\c94abb5b6f3c93ce775f87f3983081c3\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\c63d4a666c0a1ba98c2e2f24b9638d9e\material-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.bumptech.glide:glide:4.10.0] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\efb0318a3168b8a2e384b54bbc3121c0\jetified-glide-4.10.0\AndroidManifest.xml:2:1-12:12
@@ -56,25 +56,25 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\tome\.gradle\
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\06bc4641de51b04d4df94808d6e05292\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\1b64911e987df0fea019408e241659d7\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\a77c810a56173ccf6fb339f045a6aacd\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
-INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
+INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
 	package
 		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
 		INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
 		INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-49:12
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:1-51:12
 		INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:5:5-41:19
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:5:5-43:19
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\c94abb5b6f3c93ce775f87f3983081c3\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\c94abb5b6f3c93ce775f87f3983081c3\jetified-volley-1.1.1\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\tome\.gradle\caches\transforms-2\files-2.1\c63d4a666c0a1ba98c2e2f24b9638d9e\material-1.2.1\AndroidManifest.xml:22:5-20
@@ -148,25 +148,25 @@ ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest
 	android:name
 		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:29:27-74
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:5-81
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:5-81
 	android:name
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:42:22-78
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:5-79
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:5-79
 	android:name
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:43:22-76
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:22-76
 uses-permission#android.permission.CAMERA
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:5-65
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:46:5-65
 	android:name
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:44:22-62
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:46:22-62
 uses-permission#android.permission.INTERNET
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:5-67
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:5-67
 	android:name
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:45:22-64
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:5-80
+ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:49:5-80
 	android:name
-		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:47:22-77
+		ADDED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml:49:22-77
 uses-sdk
 INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\wamp64\www\PSI\android\HealthSchedule\app\src\main\AndroidManifest.xml
