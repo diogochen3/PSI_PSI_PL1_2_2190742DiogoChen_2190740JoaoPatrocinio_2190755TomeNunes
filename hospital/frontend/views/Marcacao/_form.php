@@ -13,14 +13,14 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 /* @var $especialidades array */
 /* @var $medico array */
-
+$datenow = Yii::$app->formatter->asDatetime('now', 'php:Y-m-d');
 ?>
 
 <div class="marcacao-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date')->Input("date") ?>
+    <?= $form->field($model, 'date')->Input("date",["min"=> $datenow]) ?>
 
     <?= $form->field($model, 'tempo')->Input("time") ?>
 

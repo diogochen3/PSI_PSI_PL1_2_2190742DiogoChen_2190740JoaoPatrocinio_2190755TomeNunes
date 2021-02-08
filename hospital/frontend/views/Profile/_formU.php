@@ -10,9 +10,12 @@ use yii\widgets\ActiveForm;
 <div class="block-heading">
     <h2 class="text-info" style="width: 159px;margin: 4px;padding: 10px;height: 54px;">Perfil</h2>
 </div>
-<?php $form = ActiveForm::begin(); ?>
-
+<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
+<div class="col">
+    <div class="form-group"> <?= $form->field($model, 'imagem')->fileInput() ?></div>
+</div>
 <div class="form-row">
+
     <div class="col-xl-4">
         <div class="form-group"><?= $form->field($model, 'First_name')->textInput(['maxlength' => true]) ?></div>
     </div>

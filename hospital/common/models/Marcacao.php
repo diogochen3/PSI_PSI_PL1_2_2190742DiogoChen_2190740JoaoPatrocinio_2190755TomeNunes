@@ -4,24 +4,22 @@ namespace common\models;
 
 use Yii;
 
-use common\models\User;
-use common\models\Especialidade;
-
 /**
  * This is the model class for table "marcacao".
  *
  * @property int $id
  * @property string $date
  * @property string $tempo
- * @property int $Aceitar
+ * @property int|null $Aceitar
  * @property int $id_especialidade
  * @property int $id_Utente
  * @property int $id_Medico
  *
  * @property Consultas $consultas
+ * @property Horario[] $horarios
  * @property Especialidade $especialidade
- * @property User $medico
- * @property User $utente
+ * @property Profile $medico
+ * @property Profile $utente
  */
 class Marcacao extends \yii\db\ActiveRecord
 {
@@ -43,8 +41,8 @@ class Marcacao extends \yii\db\ActiveRecord
             [['date', 'tempo'], 'safe'],
             [['Aceitar', 'id_especialidade', 'id_Utente', 'id_Medico'], 'integer'],
             [['id_especialidade'], 'exist', 'skipOnError' => true, 'targetClass' => Especialidade::className(), 'targetAttribute' => ['id_especialidade' => 'id']],
-            [['id_Medico'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_Medico' => 'id']],
-            [['id_Utente'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_Utente' => 'id']],
+            [['id_Medico'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_Medico' => 'id']],
+            [['id_Utente'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_Utente' => 'id']],
         ];
     }
 
@@ -75,6 +73,16 @@ class Marcacao extends \yii\db\ActiveRecord
     }
 
     /**
+     * Gets query for [[Horarios]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getHorarios()
+    {
+        return $this->hasMany(Horario::className(), ['id_marcacao' => 'id']);
+    }
+
+    /**
      * Gets query for [[Especialidade]].
      *
      * @return \yii\db\ActiveQuery
@@ -91,7 +99,7 @@ class Marcacao extends \yii\db\ActiveRecord
      */
     public function getMedico()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_Medico']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_Medico']);
     }
 
     /**
@@ -101,6 +109,6 @@ class Marcacao extends \yii\db\ActiveRecord
      */
     public function getUtente()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_Utente']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_Utente']);
     }
 }

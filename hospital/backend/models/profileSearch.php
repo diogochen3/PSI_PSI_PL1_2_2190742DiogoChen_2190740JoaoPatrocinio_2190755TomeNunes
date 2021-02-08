@@ -17,7 +17,7 @@ class profileSearch extends Profile
     public function rules()
     {
         return [
-            [['id', 'Phone_number', 'NIF', 'is_medico'], 'integer'],
+            [['id', 'Phone_number', 'NIF'], 'integer'],
             [['First_name', 'Last_name', 'Email', 'Address', 'Birth_date', 'gender', 'postal_code'], 'safe'],
         ];
     }
@@ -62,7 +62,6 @@ class profileSearch extends Profile
             'Phone_number' => $this->Phone_number,
             'NIF' => $this->NIF,
             'Birth_date' => $this->Birth_date,
-            'is_medico' => $this->is_medico,
         ]);
 
         $query->andFilterWhere(['like', 'First_name', $this->First_name])

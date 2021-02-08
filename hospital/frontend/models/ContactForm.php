@@ -20,6 +20,7 @@ class ContactForm extends Model
     /**
      * {@inheritdoc}
      */
+
     public function rules()
     {
         return [

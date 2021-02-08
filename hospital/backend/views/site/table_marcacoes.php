@@ -49,6 +49,8 @@
                                     <th>Especialidade da Consulta</th>
                                     <th>Data solicitada pelo utente</th>
                                     <th>Hora solicitada pelo utente</th>
+                                    <th>Aceitar</th>
+                                    <th>Editar</th>
 
                                 </tr>
                                 </thead>
@@ -58,7 +60,8 @@
                                     <?php
 
                                     foreach ($marcacoes as $marcacao) : ?>
-
+                                    <?php if ($marcacao->id0->id == $marcacao->id){}else
+                                    {?>
                                     <td></td>
 
                                     <td><?= $marcacao->utente->username  ?></td>
@@ -66,10 +69,15 @@
                                     <td><?= $marcacao->especialidade->Name  ?></td>
                                     <td><?= $marcacao->date  ?></td>
                                     <td><?= $marcacao->tempo  ?></td>
+                                        <?php if ($marcacao->Aceitar == 2) { ?>
+                                        <td> <?= Html::a('Aceitar Marcação', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+                                        <td> <?= Html::a('Enviar mensagem horarios', ['enviar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+                                    <?php }elseif($marcacao->Aceitar == 1){  ?>
+                                        <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-success']) ?></td>
+                                        <td></td>
+                                    <?php } ?>
 
-
-
-
+                                    <?php } ?>
 
                                 </tr>
 

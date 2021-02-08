@@ -4,12 +4,13 @@ namespace backend\controllers;
 
 use backend\models\profileSearch;
 use backend\models\SignupForm;
+use common\models\Horario;
 use common\models\Marcacao;
 use common\models\Profile;
+use common\models\User;
 use frontend\mosquitto\controllers\NotificationController;
 use Yii;
 use yii\data\Pagination;
-use yii\debug\models\search\User;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -165,7 +166,9 @@ class SiteController extends Controller
 
             $searchModel = new profileSearch();
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-            $query = Profile::find()->where(['is_medico' => 0]);
+            $idutente = User::isUtente();
+
+            $query = Profile::find()->where(['id' => $idutente]);
 
 
             $pagination = new Pagination([
@@ -272,5 +275,26 @@ class SiteController extends Controller
             return $this->render('signup', [
                 'model' => $model,
                 ]);
+    }
+
+    public function actionAceitar($id)
+    {
+        $model = Marcacao::find()->where(["id" => $id])->one();
+        $model->aceitar = 1;
+        $model->save(false);
+        return $this->goHome();
+    }
+    public function actionEnviar($id)
+    {
+        $model = new Horario();
+
+        if ($model->load(Yii::$app->request->post()) && $model->enviar($id)) {
+            Yii::$app->session->setFlash('success', 'enviado com sucesso');
+            return $this->redirect('table_marcacoes');
+        }
+
+        return $this->render('enviar', [
+            'model' => $model,
+        ]);
     }
 }

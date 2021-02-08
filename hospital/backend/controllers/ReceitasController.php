@@ -67,7 +67,7 @@ class ReceitasController extends Controller
         $model = new Receitas();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['../index']);
+            return $this->goHome();
         }
 
         return $this->render('create', [

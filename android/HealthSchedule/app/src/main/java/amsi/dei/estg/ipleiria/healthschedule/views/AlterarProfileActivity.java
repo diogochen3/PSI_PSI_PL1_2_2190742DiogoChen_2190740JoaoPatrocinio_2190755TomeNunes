@@ -263,8 +263,9 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
         if (perfil.getImage() != null)
         {
             byte[] decodeByte = Base64.decode(perfil.getImage(),Base64.DEFAULT);
-            Bitmap bitmap = BitmapFactory.decodeByteArray(decodeByte, 0,decodeByte.length);
-            imgProfile.setImageBitmap(bitmap);
+            Bitmap bitmaps = BitmapFactory.decodeByteArray(decodeByte, 0,decodeByte.length);
+            imgProfile.setImageBitmap(bitmaps);
+            bitmap = bitmaps;
         }
 
         //etPNome.setEnabled(false);

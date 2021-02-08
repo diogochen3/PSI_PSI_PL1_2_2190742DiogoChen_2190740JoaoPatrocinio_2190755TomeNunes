@@ -5,6 +5,7 @@ use Yii;
 use yii\base\Model;
 use common\models\User;
 use common\models\Profile;
+use yii\web\UploadedFile;
 
 /**
  * Signup form
@@ -22,8 +23,7 @@ class SignupForm extends Model
     public $Birth_date;
     public $gender;
     public $postal_code;
-
-
+    public $imagem;
     /**
      * {@inheritdoc}
      */
@@ -53,7 +53,7 @@ class SignupForm extends Model
 
             ['postal_code', 'trim'],
             ['postal_code', 'required'],
-            ['postal_code', 'string', 'max' => 40],
+            ['postal_code', 'string', 'max' => 25],
 
             ['NIF', 'trim'],
             ['NIF', 'required'],
@@ -74,6 +74,9 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
 
+            ['imagem', 'file',
+                'extensions' => 'jpg, jpeg, gif, png',
+                'maxFiles' => 1],
 
 
 
@@ -92,6 +95,7 @@ class SignupForm extends Model
             $user = new User();
 
             $profile = new Profile();
+
             $user->username = $this->fname;
             $user->email = $this->email;
             $profile->Email = $this->email;
@@ -103,6 +107,11 @@ class SignupForm extends Model
             $profile->gender = $this->gender;
             $profile->postal_code = $this->postal_code;
             $profile->Birth_date = $this->Birth_date;
+            $imagem = UploadedFile::getInstance($this, 'imagem');
+            $image_name = $imagem.rand(1, 4000).'.'.$imagem->extension;
+            $image_path = 'assets/img/'.$image_name;
+            $imagem->saveAs($image_path);
+            $profile->imagem = base64_encode($image_path);
 
             $user->setPassword($this->password);
             $user->generateAuthKey();

@@ -198,7 +198,7 @@ AppAsset::register($this);
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
             <script src="/assets/js/script.min.js?h=823eb1733a0a81fa385a52d2e8e60900"></script>
             <script type="text/javascript">
-                var limiter = 500;
+               /* var limiter = 500;
                 var request = function (){
                     if(limiter > 500){
                     $.ajax({
@@ -216,7 +216,7 @@ AppAsset::register($this);
                     window.requestAnimationFrame(request);
                 }
 
-                request();
+                request();*/
             </script>
 
 </body>

@@ -17,9 +17,7 @@ use yii\bootstrap\ActiveForm;
         <div class="block-heading">
             <h2 class="text-info" style="width: 159px;margin: 4px;padding: 10px;height: 54px;">Registar</h2>
         </div>
-
-
-                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+                <?php $form = ActiveForm::begin(['id' => 'form-signup' ,'options' => ['enctype' => 'multipart/form-data']]); ?>
 
                 <div class="col-xl-4">
                     <?= $form->field($model, 'fname')->textInput()->label("Primeiro Nome") ?>
@@ -47,8 +45,6 @@ use yii\bootstrap\ActiveForm;
                 <div class="col-xl-3">
 
 
-
-
                            <?= $form->field($model, 'gender')->dropDownList(
             ['Male' => 'Masculino', 'Female' => 'Feminino', 'Other' =>'Outro']
 
@@ -66,6 +62,7 @@ use yii\bootstrap\ActiveForm;
              
             </div>
             <?= $form->field($model, 'password')->passwordInput() ?>
+            <?= $form->field($model, 'imagem')->fileInput() ?>
 
             <div class="form-group">
                 <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>

@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Especialidade;
+use common\models\Horario;
 use common\models\MedicoEspecialidade;
 use common\models\User;
 use common\models\Profile;
@@ -194,8 +195,20 @@ class MarcacaoController extends Controller
         $utenteId =  Yii::$app->user->id;
         $marcacao = Marcacao::find();
         $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->all();
+        $utente = Profile::find();
+        $utente = $utente->where(['id'=> $utenteId])->one();
         return $this->render('historico', [
             'model' => $marcacaoutente,
+            'utente' => $utente,
+        ]);
+    }
+
+    public function actionMensagem($id)
+    {
+        $horario = Horario::find()->where(["id_marcacao"])->all();
+
+        return $this->render('mensagem', [
+            'model' => $horario,
         ]);
     }
 }

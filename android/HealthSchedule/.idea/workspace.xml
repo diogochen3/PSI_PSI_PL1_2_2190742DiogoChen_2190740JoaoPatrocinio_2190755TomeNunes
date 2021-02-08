@@ -15,81 +15,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex_archive_input_jar_hashes/debug/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/classes/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/multi-v2/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/out/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/LoginActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MarcacaoActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/MenuMainActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/PerfilFragment.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_lista_medicos.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_lista_medicos.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_lista_medicamento.xml.flat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_lista_medico.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_item_lista_medico.xml.flat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/out/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMedicos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMedicos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/AlterarProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/AlterarProfileActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicamentosActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lista_medicos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lista_medicos.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_lista_medicamento.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_lista_medico.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_lista_medico.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad4eb80222.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad4ed544e4.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad4f7c091a.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad50100245.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad5057f01e.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad51901191.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad7f21dfbf.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad810d4cd2.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ad880ba816.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601adbd2f1341.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601adbd2f13b6.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601adc00eb33d.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601adccc196da.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601adcce84feb.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601adcf45070d.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601add0cd9a00.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601add169f800.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ae3edf3728.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ae41c92c8c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ae579c1916.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601ae94f4abd1.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601aeb2eec282.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601aeb61a6781.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601aeb86702e9.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b0b07dac6c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b0b6b5e35c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b0b9446243.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b0c3064eb6.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b1a0299622.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b1a02a7142.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b33653c80b.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b33653d3b3.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/601b3365d543c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/runtime/debug/index.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hospital/frontend/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../hospital/frontend/runtime/logs/app.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -488,11 +427,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
           <line>189</line>
           <option name="timeStamp" value="194" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java</url>
-          <line>229</line>
-          <option name="timeStamp" value="197" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -9,6 +9,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProfileController implements the CRUD actions for Profile model.
@@ -104,6 +105,12 @@ class ProfileController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->imagem = UploadedFile::getInstance($model, 'imagem');
+            $image_name = $model->imagem.rand(1, 4000).'.'.$model->imagem->extension;
+            $image_path = 'assets/img/'.$image_name;
+            $model->imagem->saveAs($image_path);
+            $model->imagem = base64_encode($image_path);
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

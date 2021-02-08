@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-
+/* @var $utente */
 use common\models\User;
 use yii\helpers\Html;
 use yii\helpers\VarDumper;
@@ -21,7 +21,7 @@ $this->title = 'Health Schedule';
         <h2 class="text-info" style="border-width: 0px;margin: 25px;padding: 0px;height: 37px;">Histórico de Consultas do Utente</h2>
         <div class="col-sm-6 col-lg-4" style="margin: 0px;">
                            <div class="card-body info" style="margin: 5px;padding: 30px;height: 90px;">
-                    <h4 class="card-title"> <?= $model[0]->utente->id0->First_name; ?> <?= $model[0]->utente->id0->Last_name; ?></h4>
+                    <h4 class="card-title"> <?= $utente->First_name; ?> <?= $utente->Last_name; ?></h4>
                 </div>
             </div>
         </div>
@@ -35,13 +35,18 @@ $this->title = 'Health Schedule';
                     <th>Aceito</th>
                     <th>Editar</th>
                     <th>Eliminar</th>
+                    <th>Mensagem</th>
                 </tr>
                 </thead>
                 <tbody>
+                <?php if (sizeof($model) > 0 ){ ?>
                 <?php foreach ($model as $item) {?>
+
+                        <?php if ($item->id0->id == $item->id){}else
+                        {?>
                 <tr>
                     <td><?= $item->date; ?></td>
-                    <td><?= $item->medico->id0->First_name; ?> <?= $item->medico->id0->Last_name; ?></td>
+                    <td><?= $item->medico->First_name; ?> <?= $item->medico->Last_name; ?></td>
                     <td><?= $item->especialidade->Name; ?></td>
                     <?php if ($item->Aceitar == 0) { ?>
                         <td> <?= Html::a('Não foi aceite', '', ['class' => 'btn btn-primary']) ?></td>
@@ -49,7 +54,7 @@ $this->title = 'Health Schedule';
 
                     <?php }elseif($item->Aceitar == 1){  ?>
                         <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-success']) ?></td>
-                        <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-danger']) ?></td>
+                        <td> </td>
                     <?php }else{ ?>
                     <td><?= "Ainda não foi visto" ?></td>
                     <?php } ?>
@@ -60,9 +65,17 @@ $this->title = 'Health Schedule';
                                 'method' => 'post',
                             ],
                         ]) ?></td>
+                    <?php if ($item->horarios->id_marcaco == null){ ?>
+                    <td></td>
+                    <?php } else { ?>
+                    <td> <?= Html::a('Mensagem de disponibiliade', ['mensagem', 'id' => $item->id] ,['class' => 'btn btn-primary']) ?></td>
+                    <?php } ?>
                 </tr>
                 <?php } ?>
-
+                <?php } ?>
+                <?php }else         {
+                    echo "<td> nao tem marcacao</td>";
+                }?>
                 </tbody>
             </table>
         </div>

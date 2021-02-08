@@ -78,7 +78,7 @@ class DiagnosticoController extends Controller
             if ($model->load(Yii::$app->request->post())) {
                 $model->id_medico = Yii::$app->user->id;
                 $model->save(false);
-                return $this->redirect(['../index']);
+                return $this->goHome();
         }
 
         return $this->render('create', [

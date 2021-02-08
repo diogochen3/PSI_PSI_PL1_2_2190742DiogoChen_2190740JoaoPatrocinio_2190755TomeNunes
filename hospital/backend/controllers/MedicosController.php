@@ -8,6 +8,7 @@ use common\models\Profile;
 use common\models\User;
 use Yii;
 use yii\filters\VerbFilter;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
@@ -42,6 +43,7 @@ class MedicosController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            VarDumper::dump("ola");
             return $this->redirect(['site/table_medicos']);
         }
 
@@ -62,11 +64,7 @@ class MedicosController extends Controller
         $this->findModel($id)->delete();
         $this->findModelUser($id)->delete();
 
-<<<<<<< Updated upstream
         return $this->redirect(['site/table_medicos']);
-=======
-        return $this->redirect(['index']);
->>>>>>> Stashed changes
     }
 
     /**
