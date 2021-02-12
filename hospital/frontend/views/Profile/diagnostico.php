@@ -56,10 +56,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <?php
                                         foreach ($model as $item) : ?>
 
-                                        <td><?= $item->id0->Diagnosticos0->date  ?></td>
-                                        <td><?= $item->id0->Diagnosticos0->descricao  ?></td>
-                                        <td><?= $item->id0->Diagnosticos0->situacao  ?></td>
-                                        <td><?= $item->id0->Diagnosticos0->medico->First_name  ?> <?= $item->id0->Diagnosticos0->medico->Last_name  ?></td>
+                                        <td><?= $item->date  ?></td>
+                                        <td><?= $item->descricao  ?></td>
+                                        <td><?= $item->situacao  ?></td>
+                                        <td><?= $item->medico->First_name  ?> <?= $item->medico->Last_name  ?></td>
 
                                     </tr>
 

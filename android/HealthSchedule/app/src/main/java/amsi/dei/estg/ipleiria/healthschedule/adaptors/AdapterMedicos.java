@@ -76,20 +76,16 @@ public class AdapterMedicos extends BaseAdapter {
 
         public void update(Profile profile) {
             ArrayList<String> nomeEspecialidade = SingletonGestorHospital.getInstance(context).getEspecialidadeNome(profile);
-            
-                txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
-                txtEmail.setText(profile.getEmail());
-                txtNumeroTL.setText(profile.getPhone_number()+"");
-                ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, nomeEspecialidade);
-                lvEspecialidade.setAdapter(adapterEspecialidade);
 
 
-           /* for (Especialidade e: especialidades) {
-                for (MedicoEspecialidade me: medicoEspecialidades) {
-                    if (profile.getId() == me.getId_Medico() && me.getId_Especialidade() == e.getId())
-                        nomeEspecialidade.add(e.getName());
-                }
-            }*/
+
+                    txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
+                    txtEmail.setText(profile.getEmail());
+                    txtNumeroTL.setText(profile.getPhone_number() + "");
+                    ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, nomeEspecialidade);
+                    lvEspecialidade.setAdapter(adapterEspecialidade);
+
+
 
 
         }

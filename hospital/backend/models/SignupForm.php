@@ -1,10 +1,12 @@
 <?php
 namespace backend\models;
 
+use common\models\MedicoEspecialidade;
 use Yii;
 use yii\base\Model;
 use common\models\User;
 use common\models\Profile;
+use yii\helpers\VarDumper;
 
 /**
  * Signup form
@@ -22,7 +24,7 @@ class SignupForm extends Model
     public $Birth_date;
     public $gender;
     public $postal_code;
-
+    public $id_especialidade;
 
     /**
      * {@inheritdoc}
@@ -92,7 +94,7 @@ class SignupForm extends Model
             $user = new User();
 
             $profile = new Profile();
-            $user->username = $this->username;
+            $user->username = $this->fname;
             $user->email = $this->email;
             $profile->Email = $this->email;
             $profile->First_name = $this->fname;
@@ -110,7 +112,13 @@ class SignupForm extends Model
             $user->save(false);
             $profile->id = $user->getId();
             $profile->save(false);
-
+            $especialidadelist = $_POST['SignupForm']['id_especialidade'];
+            foreach ($especialidadelist as $item) {
+                $medico_Especialidade = new MedicoEspecialidade();
+                $medico_Especialidade->id_especialidade = $item;
+                $medico_Especialidade->id_medico = $profile->id;
+                $medico_Especialidade->save();
+            }
 
             // the following three lines were added:
             $auth = \Yii::$app->authManager;

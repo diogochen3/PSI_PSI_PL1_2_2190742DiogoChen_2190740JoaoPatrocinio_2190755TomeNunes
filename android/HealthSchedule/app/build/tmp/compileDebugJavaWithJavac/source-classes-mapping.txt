@@ -11,7 +11,10 @@ amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment$3
 amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosFragment
+<<<<<<< HEAD
  amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosFragment$1
+=======
+>>>>>>> 5ad90ff42307dc4f8ab4f9eebb29b8ff03ad8a8c
 amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMarcacao.java
  amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao
  amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao$ViewHolderLista

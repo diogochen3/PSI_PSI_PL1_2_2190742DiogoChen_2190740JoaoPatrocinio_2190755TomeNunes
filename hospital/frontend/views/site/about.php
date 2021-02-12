@@ -61,9 +61,11 @@ use \yii\widgets\LinkPager;
 
       <td><?= $medico->First_name  ?> <?= $medico->Last_name  ?></td>
                                             <td><?= $medico->Email  ?></td>
-                                            <td></td>
-                                            <td></td>
-
+      <td>
+      <?php foreach ($medico->especialidades as $especialidade) {
+          ?><?= $especialidade->Name  ?><br>
+     <?php } ?>
+      </td>
 
 
                                         </tr>

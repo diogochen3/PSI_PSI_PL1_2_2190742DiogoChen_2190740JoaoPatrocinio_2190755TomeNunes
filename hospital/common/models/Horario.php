@@ -9,8 +9,10 @@ use Yii;
  *
  * @property int $id
  * @property string $tempo
- * @property int $id_marcacao
+ * @property int $usado
+ * @property int $id_medico
  *
+ * @property Profile $medico
  * @property Marcacao $marcacao
  */
 class Horario extends \yii\db\ActiveRecord
@@ -29,10 +31,10 @@ class Horario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'tempo', 'id_marcacao'], 'required'],
-            [['id', 'id_marcacao'], 'integer'],
+            [['tempo', 'id_medico'], 'required'],
             [['tempo'], 'safe'],
-            [['id_marcacao'], 'exist', 'skipOnError' => true, 'targetClass' => Marcacao::className(), 'targetAttribute' => ['id_marcacao' => 'id']],
+            [['usado', 'id_medico'], 'integer'],
+            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_medico' => 'id']],
         ];
     }
 
@@ -44,8 +46,19 @@ class Horario extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'tempo' => 'Tempo',
-            'id_marcacao' => 'Id Marcacao',
+            'usado' => 'Usado',
+            'id_medico' => 'Id Medico',
         ];
+    }
+
+    /**
+     * Gets query for [[Medico]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedico()
+    {
+        return $this->hasOne(Profile::className(), ['id' => 'id_medico']);
     }
 
     /**
@@ -55,15 +68,7 @@ class Horario extends \yii\db\ActiveRecord
      */
     public function getMarcacao()
     {
-        return $this->hasOne(Marcacao::className(), ['id' => 'id_marcacao']);
+        return $this->hasOne(Marcacao::className(), ['id' => 'id']);
     }
 
-    public function enviar($id)
-    {
-        $horario = new Horario();
-
-        $horario->tempo = $this->tempo;
-        $horario->id_marcacao = $id;
-        $horario->save(false);
-    }
 }

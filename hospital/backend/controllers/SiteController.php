@@ -4,12 +4,16 @@ namespace backend\controllers;
 
 use backend\models\profileSearch;
 use backend\models\SignupForm;
+use common\models\Consultas;
+use common\models\Contacto;
+use common\models\Especialidade;
 use common\models\Horario;
 use common\models\Marcacao;
 use common\models\Profile;
 use common\models\User;
 use frontend\mosquitto\controllers\NotificationController;
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\data\Pagination;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
@@ -138,19 +142,7 @@ class SiteController extends Controller
 
         return $this->redirect('login');
     }
-    public function actionProfile()
-    {
 
-        $model = $this->findModel(Yii::$app->user->getId());
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect('profile');
-        }
-
-        return $this->render('profile', [
-            'model' => $model,
-        ]);
-    }
     protected function findModel($id)
     {
         if (($model = profile::findOne($id)) !== null) {
@@ -213,8 +205,8 @@ class SiteController extends Controller
         }
 
     public function actionTable_medicos(){
-        $query = Profile::find()->where("is_medico = 1");
-
+        $idmedico = User::isMedico();
+        $query = Profile::find()->where(["id" => $idmedico]);
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
@@ -267,34 +259,70 @@ class SiteController extends Controller
         public function actionSignup()
         {
             $model = new SignupForm();
-            VarDumper::dump($model->NIF);
+            $esp = Especialidade::find()->all();
+            $listEsp = [];
+
+            foreach ($esp as $item) {
+                $listEsp[$item->id] = $item->Name;
+            }
+
+
             if ($model->load(Yii::$app->request->post()) && $model->signup()) {
                 Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+
                 return $this->goHome();
             }
             return $this->render('signup', [
                 'model' => $model,
-                ]);
+                'especialidades' => $listEsp,
+            ]);
     }
 
     public function actionAceitar($id)
     {
-        $model = Marcacao::find()->where(["id" => $id])->one();
-        $model->aceitar = 1;
-        $model->save(false);
+
+        $marcacao = Marcacao::find()->where(["id" => $id])->one();
+        $marcacao->Aceitar = 1;
+        $marcacao->save(false);
+        $consulta = new Consultas();
+        $consulta->id = $marcacao->id;
+        $consulta->id_medico = Yii::$app->user->getId();
+        $consulta->id_utente = $marcacao->id_Utente;
+        $consulta->estado = 0;
+        $consulta->save();
         return $this->goHome();
     }
+
+    public function actionNAceitar($id)
+    {
+        $marcacao = Marcacao::find()->where(["id" => $id])->one();
+        $marcacao->aceitar = 0;
+        $marcacao->save(false);
+
+        return $this->goHome();
+    }
+
     public function actionEnviar($id)
     {
         $model = new Horario();
 
         if ($model->load(Yii::$app->request->post()) && $model->enviar($id)) {
             Yii::$app->session->setFlash('success', 'enviado com sucesso');
-            return $this->redirect('table_marcacoes');
+            return $this->goHome();
         }
 
         return $this->render('enviar', [
             'model' => $model,
         ]);
     }
+
+    public function actionMensagem()
+    {
+        $model = Contacto::find()->all();
+        return $this->render('mensagem', [
+            'model' => $model,
+        ]);
+    }
+
+
 }

@@ -212,7 +212,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                 if (resultCode == Activity.RESULT_OK) {
                     String[] paths = new String[]{currentPhotoPath};
                     bitmap = BitmapFactory.decodeFile(currentPhotoPath);
-                  //  bitmap = generateThumb(bitmap, (int) THUMB_SIZE);
+                    bitmap = generateThumb(bitmap, (int) THUMB_SIZE);
                     imgProfile.setImageBitmap(bitmap);
                     MediaScannerConnection.scanFile(this, paths, null, new
                             MediaScannerConnection.MediaScannerConnectionClient() {
@@ -233,7 +233,7 @@ public class AlterarProfileActivity extends AppCompatActivity implements Profile
                 Uri path = intent.getData();
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
-                    //bitmap = generateThumb(bitmap, (int) THUMB_SIZE);
+                    bitmap = generateThumb(bitmap, (int) THUMB_SIZE);
                     imgProfile.setImageBitmap(bitmap);
                 } catch (IOException e) {
                     e.printStackTrace();

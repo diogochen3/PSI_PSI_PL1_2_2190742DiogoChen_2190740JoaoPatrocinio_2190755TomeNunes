@@ -37,12 +37,11 @@ class DiagnosticoController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Diagnostico::find(),
-        ]);
+        $idUtilidor = Yii::$app->user->id;
+        $diagnostico = Diagnostico::find()->where(["id_medico" => $idUtilidor])->all();
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'model' => $diagnostico,
         ]);
     }
 
@@ -78,7 +77,7 @@ class DiagnosticoController extends Controller
             if ($model->load(Yii::$app->request->post())) {
                 $model->id_medico = Yii::$app->user->id;
                 $model->save(false);
-                return $this->goHome();
+                return $this->redirect('index');
         }
 
         return $this->render('create', [
@@ -87,6 +86,21 @@ class DiagnosticoController extends Controller
         ]);
     }
 
+    public function actionCreate2($id,$date)
+    {
+        $model = new Diagnostico();
+        $model->id_medico = Yii::$app->user->id;
+        $model->id_utente = $id;
+        $model->date = $date;
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save(false);
+            return $this->redirect('index');
+        }
+
+        return $this->render('create2', [
+            'model' => $model,
+        ]);
+    }
     /**
      * Updates an existing Diagnostico model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -99,7 +113,7 @@ class DiagnosticoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['../index']);
+            return $this->redirect('index');
         }
 
         return $this->render('update', [

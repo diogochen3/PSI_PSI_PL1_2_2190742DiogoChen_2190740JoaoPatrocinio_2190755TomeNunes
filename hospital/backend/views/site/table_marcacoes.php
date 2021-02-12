@@ -1,4 +1,5 @@
-<?php use \yii\widgets\LinkPager;
+<?php use yii\helpers\Html;
+use \yii\widgets\LinkPager;
 
 /* @var $marcacoes array */?>
 
@@ -23,7 +24,7 @@
 
                 <div class="card shadow">
                     <div class="card-header py-3">
-                        <p class="text-primary m-0 font-weight-bold">Corpo Clinico</p>
+                        <p class="text-primary m-0 font-weight-bold">Lista de marcações</p>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -47,8 +48,7 @@
                                     <th>Nome do Utente que marcou</th>
                                     <th>Nome do medico pedido pelo utente</th>
                                     <th>Especialidade da Consulta</th>
-                                    <th>Data solicitada pelo utente</th>
-                                    <th>Hora solicitada pelo utente</th>
+                                    <th>Horario solicitada pelo utente</th>
                                     <th>Aceitar</th>
                                     <th>Editar</th>
 
@@ -60,23 +60,19 @@
                                     <?php
 
                                     foreach ($marcacoes as $marcacao) : ?>
-                                    <?php if ($marcacao->id0->id == $marcacao->id){}else
-                                    {?>
                                     <td></td>
 
-                                    <td><?= $marcacao->utente->username  ?></td>
-                                    <td><?= $marcacao->medico->username  ?></td>
+                                    <td><?= $marcacao->utente->First_name  ?></td>
+                                    <td><?= $marcacao->medico->First_name  ?></td>
                                     <td><?= $marcacao->especialidade->Name  ?></td>
-                                    <td><?= $marcacao->date  ?></td>
-                                    <td><?= $marcacao->tempo  ?></td>
-                                        <?php if ($marcacao->Aceitar == 2) { ?>
-                                        <td> <?= Html::a('Aceitar Marcação', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
-                                        <td> <?= Html::a('Enviar mensagem horarios', ['enviar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+                                    <td><?= $marcacao->id0->tempo  ?></td>
+                                        <?php if ($marcacao->Aceitar == 0) { ?>
+                                        <td> <?= Html::a('Aceitar Marcação', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?>
+                                            <?= Html::a('Não Aceitar', ['nAceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+                                        <td> <?= Html::a('Editar', ['update', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
                                     <?php }elseif($marcacao->Aceitar == 1){  ?>
-                                        <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-success']) ?></td>
+                                        <td> Aceite </td>
                                         <td></td>
-                                    <?php } ?>
-
                                     <?php } ?>
 
                                 </tr>

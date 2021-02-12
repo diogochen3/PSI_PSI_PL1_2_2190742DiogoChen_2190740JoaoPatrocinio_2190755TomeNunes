@@ -43,8 +43,7 @@ class MedicosController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            VarDumper::dump("ola");
-            return $this->redirect(['site/table_medicos']);
+            return $this->redirect('profile');
         }
 
         return $this->render('update', [
@@ -65,6 +64,20 @@ class MedicosController extends Controller
         $this->findModelUser($id)->delete();
 
         return $this->redirect(['site/table_medicos']);
+    }
+
+    public function actionProfile()
+    {
+        $idUtilizador = Yii::$app->user->getId();
+        $model = Profile::find()->where(["id" => $idUtilizador])->one();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect('profile');
+        }
+
+        return $this->render('profile', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -91,4 +104,5 @@ class MedicosController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

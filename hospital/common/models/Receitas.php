@@ -8,11 +8,14 @@ use Yii;
  * This is the model class for table "receitas".
  *
  * @property int $id
- * @property string $Nome_medicamento
- * @property int $quantidade
+ * @property int $cod_acesso
+ * @property int $cod_dispensa
+ * @property string $data_emissao
+ * @property int $id_consulta
  *
- * @property ReceitasConsultas[] $receitasConsultas
- * @property Consultas[] $consultas
+ * @property ReceitaMedicamento[] $receitaMedicamentos
+ * @property Medicamento[] $medicamentos
+ * @property Consultas $consulta
  */
 class Receitas extends \yii\db\ActiveRecord
 {
@@ -30,9 +33,10 @@ class Receitas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Nome_medicamento', 'quantidade'], 'required'],
-            [['quantidade'], 'integer'],
-            [['Nome_medicamento'], 'string', 'max' => 255],
+            [['cod_acesso', 'cod_dispensa', 'data_emissao', 'id_consulta'], 'required'],
+            [['cod_acesso', 'cod_dispensa', 'id_consulta'], 'integer'],
+            [['data_emissao'], 'safe'],
+            [['id_consulta'], 'exist', 'skipOnError' => true, 'targetClass' => Consultas::className(), 'targetAttribute' => ['id_consulta' => 'id']],
         ];
     }
 
@@ -43,28 +47,40 @@ class Receitas extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'Nome_medicamento' => 'Nome Medicamento',
-            'quantidade' => 'Quantidade',
+            'cod_acesso' => 'Cod Acesso',
+            'cod_dispensa' => 'Cod Dispensa',
+            'data_emissao' => 'Data Emissao',
+            'id_consulta' => 'Id Consulta',
         ];
     }
 
     /**
-     * Gets query for [[ReceitasConsultas]].
+     * Gets query for [[ReceitaMedicamentos]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getReceitasConsultas()
+    public function getReceitaMedicamentos()
     {
-        return $this->hasMany(ReceitasConsultas::className(), ['id_receitas' => 'id']);
+        return $this->hasMany(ReceitaMedicamento::className(), ['id_receita' => 'id']);
     }
 
     /**
-     * Gets query for [[Consultas]].
+     * Gets query for [[Medicamentos]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getConsultas()
+    public function getMedicamentos()
     {
-        return $this->hasMany(Consultas::className(), ['id' => 'id_consultas'])->viaTable('receitas_consultas', ['id_receitas' => 'id']);
+        return $this->hasMany(Medicamento::className(), ['id' => 'id_medicamento'])->viaTable('receita_medicamento', ['id_receita' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Consulta]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getConsulta()
+    {
+        return $this->hasOne(Consultas::className(), ['id' => 'id_consulta']);
     }
 }

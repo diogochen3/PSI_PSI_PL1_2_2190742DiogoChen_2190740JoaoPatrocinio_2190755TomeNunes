@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\SignupForm */
+/* @var $especialidades array */
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
@@ -65,6 +66,8 @@ use yii\bootstrap\ActiveForm;
                 </div>
              
             </div>
+
+        <?= $form->field($model, 'id_especialidade')->checkboxList($especialidades) ?>
 
             <?= $form->field($model, 'password')->passwordInput() ?>
 

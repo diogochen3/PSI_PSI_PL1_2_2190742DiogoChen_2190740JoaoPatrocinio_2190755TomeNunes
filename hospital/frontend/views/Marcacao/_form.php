@@ -6,6 +6,7 @@ use PhpMqtt\Client\MQTTClient;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\jui\DatePicker;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -13,33 +14,42 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 /* @var $especialidades array */
 /* @var $medico array */
-$datenow = Yii::$app->formatter->asDatetime('now', 'php:Y-m-d');
+
 ?>
 
 <div class="marcacao-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date')->Input("date",["min"=> $datenow]) ?>
-
-    <?= $form->field($model, 'tempo')->Input("time") ?>
-
-
-<?= $form->field($model, 'id_especialidade')->dropDownList($especialidades,
-    ['prompt'=>'-Choose a especialidade-',
-        'onchange'=>
-            '$.get( "'.Url::toRoute('/marcacao/lists').'", { id: $(this).val() } )
+    <?= $form->field($model, 'id_especialidade')->dropDownList($especialidades,
+        ['prompt'=>'-Escolhe a especialidade-',
+            'onchange'=>
+                '$.get( "'.Url::toRoute('/marcacao/lists').'", { id: $(this).val() } )
                             .done(function( data ) {
                                 $( "#'.Html::getInputId($model, 'id_Medico').'" ).html( data );
                             }
                         );
                     '
-    ]);?>
+        ])->label("Especialidade");?>
 
-<?= $form->field($model, 'id_Medico')
-    ->dropDownList(
-        ['prompt'=>'-Choose o medico-']
-    );?>
+    <?= $form->field($model, 'id_Medico')
+        ->dropDownList($medico[]= [],
+            ['prompt'=>'-Escolhe o medico-',
+                'onchange'=>
+                '$.get( "'.Url::toRoute('/marcacao/listdate').'", { id: $(this).val() } )
+                            .done(function( data ) {
+                                $( "#'.Html::getInputId($model, 'id').'" ).html( data );
+                            }
+                        );
+                    '
+            ]
+        )->label("Medico"); ?>
+
+
+    <?= $form->field($model, 'id')->dropDownList(
+        ['prompt'=>'-Escolhe o data-']
+    )->label("tempo"); ?>
+
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

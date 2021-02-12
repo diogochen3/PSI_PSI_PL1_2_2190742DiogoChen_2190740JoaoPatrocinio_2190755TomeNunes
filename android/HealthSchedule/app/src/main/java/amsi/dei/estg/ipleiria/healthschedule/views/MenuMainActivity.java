@@ -67,7 +67,6 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
         navigationView.setCheckedItem(R.id.nav_perfil);
         Fragment fragment=new PerfilFragment();
         fragment.setArguments(b2);
-        setTitle(R.string.nav_perfil);
         fragmentManager.beginTransaction().replace(R.id.contentFragment,fragment).commit();
 
     }
@@ -115,8 +114,6 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
             case R.id.nav_receitas:
                  fragment=new ListaReceitasFragment();
                  fragment.setArguments(b2);
-                 setTitle(menuItem.getTitle());
-                 // System.out.println("-->Nav Dinamico");
                 break;
                 default:
 //                fragment=new EstaticoFragment();

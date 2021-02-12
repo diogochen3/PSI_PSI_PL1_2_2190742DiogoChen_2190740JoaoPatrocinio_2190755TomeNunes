@@ -50,7 +50,8 @@ AppAsset::register($this);
 
     $menuItems = [
 
-        ['label' => 'Inicio', 'url' => ['/site/index']],
+        ['label' => 'Inicio', 'url' => ['../index.php']],
+        ['label' => 'Contacto', 'url' => ['/site/contact']],
         ['label' => 'Serviços', 'url' => ['/site/about']],
         ['label' => 'Corpo Clinico', 'url' => ['/site/about']],
         ['label' => 'Marcações', 'url' => ['/marcacao/create']],
@@ -74,7 +75,8 @@ AppAsset::register($this);
             . Html::endForm()
             . '</li>';
         $menuItems[] =    ['label' => 'Perfil', 'url' => ['/profile/view']];
-
+        $menuItems[] =    ['label' => 'Receitas', 'url' => ['/receitas/index']];
+        $menuItems[] =    ['label' => 'diagnostico', 'url' => ['/profile/diagnostico']];
     }
 
     echo Nav::widget([

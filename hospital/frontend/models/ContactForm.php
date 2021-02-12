@@ -2,7 +2,9 @@
 
 namespace frontend\models;
 
+use common\models\Contacto;
 use Yii;
+use yii\base\InvalidConfigException;
 use yii\base\Model;
 
 /**
@@ -12,6 +14,7 @@ class ContactForm extends Model
 {
     public $name;
     public $email;
+    public $id_Categoria;
     public $subject;
     public $body;
     public $verifyCode;
@@ -25,7 +28,7 @@ class ContactForm extends Model
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject', 'body','id_Categoria'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
@@ -42,6 +45,34 @@ class ContactForm extends Model
             'verifyCode' => 'Verification Code',
         ];
     }
+
+    public function contacto()
+    {
+        if ($this->validate()) {
+
+            $contacto = new Contacto();
+
+            $contacto->id_Categoria = $this->id_Categoria;
+            $contacto->nome = $this->name;
+            $contacto->email = $this->email;
+            $contacto->assunto = $this->subject;
+            $contacto->corpo = $this->body;
+            $contacto->id_Utente = Yii::$app->user->getId();
+            $datenow = null;
+            try {
+               $datenow = Yii::$app->formatter->asDatetime('now', 'php:Y-m-d H:i:s');
+            } catch (InvalidConfigException $e) {
+
+            }
+            $contacto->data_envio = $datenow;
+            $contacto->respondido = 0;
+            $contacto->save(false);
+            return $contacto;
+        }
+
+        return null;
+    }
+
 
     /**
      * Sends an email to the specified email address using the information collected by this model.

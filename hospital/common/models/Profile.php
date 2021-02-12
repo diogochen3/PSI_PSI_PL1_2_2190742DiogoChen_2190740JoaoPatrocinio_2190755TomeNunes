@@ -17,16 +17,22 @@ use Yii;
  * @property string $Birth_date
  * @property string $gender
  * @property string $postal_code
- * @property resource $imagem
+ * @property resource|null $imagem
+ * @property int|null $id_medico_familia
  *
  * @property Consultas[] $consultas
  * @property Consultas[] $consultas0
+ * @property Contacto[] $contactos
  * @property Diagnostico[] $diagnosticos
  * @property Diagnostico[] $diagnosticos0
+ * @property Horario[] $horarios
  * @property Marcacao[] $marcacaos
  * @property Marcacao[] $marcacaos0
  * @property MedicoEspecialidade[] $medicoEspecialidades
+ * @property Especialidade[] $especialidades
  * @property User $id0
+ * @property Profile $medicoFamilia
+ * @property Profile[] $profiles
  */
 class Profile extends \yii\db\ActiveRecord
 {
@@ -45,9 +51,8 @@ class Profile extends \yii\db\ActiveRecord
     {
         return [
             [['id', 'First_name', 'Last_name', 'Email', 'Phone_number', 'NIF', 'Address', 'Birth_date', 'gender', 'postal_code'], 'required'],
-            [['id', 'Phone_number', 'NIF'], 'integer'],
+            [['id', 'Phone_number', 'NIF', 'id_medico_familia'], 'integer'],
             [['Birth_date'], 'safe'],
-            ['imagem', 'file', 'extensions' => 'jpg, jpeg, gif, png', 'maxFiles' => 1],
             [['gender', 'imagem'], 'string'],
             [['First_name', 'Last_name', 'postal_code'], 'string', 'max' => 20],
             [['Email'], 'string', 'max' => 25],
@@ -56,6 +61,7 @@ class Profile extends \yii\db\ActiveRecord
             [['Email'], 'unique'],
             [['id'], 'unique'],
             [['id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id' => 'id']],
+            [['id_medico_familia'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_medico_familia' => 'id']],
         ];
     }
 
@@ -69,7 +75,6 @@ class Profile extends \yii\db\ActiveRecord
             'First_name' => 'First Name',
             'Last_name' => 'Last Name',
             'Email' => 'Email',
-            'imagem' => 'imagem',
             'Phone_number' => 'Phone Number',
             'NIF' => 'Nif',
             'Address' => 'Address',
@@ -77,6 +82,7 @@ class Profile extends \yii\db\ActiveRecord
             'gender' => 'Gender',
             'postal_code' => 'Postal Code',
             'imagem' => 'Imagem',
+            'id_medico_familia' => 'Id Medico Familia',
         ];
     }
 
@@ -91,16 +97,6 @@ class Profile extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Medicos]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getMedicos()
-    {
-        return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
-    }
-
-    /**
      * Gets query for [[Consultas0]].
      *
      * @return \yii\db\ActiveQuery
@@ -108,6 +104,16 @@ class Profile extends \yii\db\ActiveRecord
     public function getConsultas0()
     {
         return $this->hasMany(Consultas::className(), ['id_utente' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Contactos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getContactos()
+    {
+        return $this->hasMany(Contacto::className(), ['id_Utente' => 'id']);
     }
 
     /**
@@ -128,6 +134,16 @@ class Profile extends \yii\db\ActiveRecord
     public function getDiagnosticos0()
     {
         return $this->hasMany(Diagnostico::className(), ['id_utente' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Horarios]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getHorarios()
+    {
+        return $this->hasMany(Horario::className(), ['id_medico' => 'id']);
     }
 
     /**
@@ -161,6 +177,16 @@ class Profile extends \yii\db\ActiveRecord
     }
 
     /**
+     * Gets query for [[Especialidades]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getEspecialidades()
+    {
+        return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
+    }
+
+    /**
      * Gets query for [[Id0]].
      *
      * @return \yii\db\ActiveQuery
@@ -168,5 +194,25 @@ class Profile extends \yii\db\ActiveRecord
     public function getId0()
     {
         return $this->hasOne(User::className(), ['id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[MedicoFamilia]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedicoFamilia()
+    {
+        return $this->hasOne(Profile::className(), ['id' => 'id_medico_familia']);
+    }
+
+    /**
+     * Gets query for [[Profiles]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProfiles()
+    {
+        return $this->hasMany(Profile::className(), ['id_medico_familia' => 'id']);
     }
 }

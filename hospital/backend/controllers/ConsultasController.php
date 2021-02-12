@@ -133,4 +133,17 @@ class ConsultasController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionRealizar($id)
+    {
+        $consulta = Consultas::find()->where(["id" => $id])->one();
+        $consulta->estado = 1;
+        $consulta->save();
+
+        $model = Consultas::find()->all();
+
+        return $this->render('index', [
+            'model' => $model,
+        ]);
+    }
 }

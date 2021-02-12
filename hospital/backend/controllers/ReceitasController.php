@@ -2,9 +2,14 @@
 
 namespace backend\controllers;
 
+use backend\models\ReceitaForm;
+use common\models\Consultas;
+use common\models\Medicamento;
+use common\models\ReceitaMedicamento;
 use Yii;
 use common\models\Receitas;
-use backend\models\ReceitasSearch;
+use yii\data\ActiveDataProvider;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,12 +40,15 @@ class ReceitasController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ReceitasSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $idutilizador = Yii::$app->user->getId();
+        $consultas = Consultas::find()->where(["id_medico"=>$idutilizador])->all();
+        foreach ($consultas as $consulta) {
+           $ids = $consulta->id;
+        }
+        $model = Receitas::find()->where(["id_consulta" => $ids])->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 
@@ -52,28 +60,65 @@ class ReceitasController extends Controller
      */
     public function actionView($id)
     {
+        $model = Receitas::find()->where(["id_consulta" => $id])->all();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
+
 
     /**
      * Creates a new Receitas model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id)
     {
-        $model = new Receitas();
+        $model = new ReceitaForm();
+        $medicamentos =  Medicamento::find()->all();
+        $listMedicamento = [];
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->goHome();
+        foreach ($medicamentos as $item) {
+            $listMedicamento[$item->id] = "Nome: ".$item->nome_medicamento." Dosagem: " .$item->dosagem.
+                " Forma do farmaceuta: " .$item->forma_farmaceuta.
+                " Embalado: ".$item->embalagem;
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->enviar($id)) {
+            return $this->redirect(['view', 'id' => $id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'medicamentos' => $listMedicamento
         ]);
     }
+
+    public function actionAdicionar($id)
+    {
+        $model = new ReceitaMedicamento();
+        //$model = ReceitaMedicamento::find()->where(["id_receita" => $id])->one();
+
+        $model->id_receita = $id;
+        $medicamentos =  Medicamento::find()->all();
+        $listMedicamento = [];
+
+        foreach ($medicamentos as $item) {
+            $listMedicamento[$item->id] = "Nome: ".$item->nome_medicamento." Dosagem: " .$item->dosagem.
+                " Forma do farmaceuta: " .$item->forma_farmaceuta.
+                " Embalado: ".$item->embalagem;
+        }
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id_receita]);
+        }
+
+        return $this->render('adicionar', [
+            'model' => $model,
+            'medicamentos' => $listMedicamento
+        ]);
+    }
+
 
     /**
      * Updates an existing Receitas model.
@@ -87,7 +132,7 @@ class ReceitasController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['../index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -106,7 +151,7 @@ class ReceitasController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['../index']);
+        return $this->redirect(['index']);
     }
 
     /**

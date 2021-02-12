@@ -18,7 +18,7 @@ $this->title = 'Health Schedule';
         <div class="container">
             <div class="block-heading"></div>
         </div>
-        <h2 class="text-info" style="border-width: 0px;margin: 25px;padding: 0px;height: 37px;">Histórico de Consultas do Utente</h2>
+        <h2 class="text-info" style="border-width: 0px;margin: 25px;padding: 0px;height: 37px;">Histórico de marcações do Utente</h2>
         <div class="col-sm-6 col-lg-4" style="margin: 0px;">
                            <div class="card-body info" style="margin: 5px;padding: 30px;height: 90px;">
                     <h4 class="card-title"> <?= $utente->First_name; ?> <?= $utente->Last_name; ?></h4>
@@ -34,44 +34,36 @@ $this->title = 'Health Schedule';
                     <th>Especialidade</th>
                     <th>Aceito</th>
                     <th>Editar</th>
-                    <th>Eliminar</th>
-                    <th>Mensagem</th>
+                    <th>Canselar</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php if (sizeof($model) > 0 ){ ?>
                 <?php foreach ($model as $item) {?>
 
-                        <?php if ($item->id0->id == $item->id){}else
-                        {?>
+
                 <tr>
-                    <td><?= $item->date; ?></td>
+                    <td><?= $item->id0->tempo ?></td>
                     <td><?= $item->medico->First_name; ?> <?= $item->medico->Last_name; ?></td>
                     <td><?= $item->especialidade->Name; ?></td>
                     <?php if ($item->Aceitar == 0) { ?>
-                        <td> <?= Html::a('Não foi aceite', '', ['class' => 'btn btn-primary']) ?></td>
+                        <?= 'Não foi aceite'; ?>
                         <td> <?= Html::a('editar', ['update', 'id' => $item->id], ['class' => 'btn btn-primary']) ?></td>
-
+                        <td><?= Html::a('Cancelar', ['delete', 'id' => $item->id], [
+                                'class' => 'btn btn-danger',
+                                'data' => [
+                                    'confirm' => 'Are you sure you want to delete this item?',
+                                    'method' => 'post',
+                                ],
+                            ]) ?></td>
                     <?php }elseif($item->Aceitar == 1){  ?>
-                        <td> <?= Html::a('Aceite', '', ['class' => 'btn btn-success']) ?></td>
+                        <td><?= 'Aceite'; ?></td>
+                        <td> </td>
                         <td> </td>
                     <?php }else{ ?>
                     <td><?= "Ainda não foi visto" ?></td>
                     <?php } ?>
-                    <td><?= Html::a('Delete', ['delete', 'id' => $item->id], [
-                            'class' => 'btn btn-danger',
-                            'data' => [
-                                'confirm' => 'Are you sure you want to delete this item?',
-                                'method' => 'post',
-                            ],
-                        ]) ?></td>
-                    <?php if ($item->horarios->id_marcaco == null){ ?>
-                    <td></td>
-                    <?php } else { ?>
-                    <td> <?= Html::a('Mensagem de disponibiliade', ['mensagem', 'id' => $item->id] ,['class' => 'btn btn-primary']) ?></td>
-                    <?php } ?>
                 </tr>
-                <?php } ?>
                 <?php } ?>
                 <?php }else         {
                     echo "<td> nao tem marcacao</td>";

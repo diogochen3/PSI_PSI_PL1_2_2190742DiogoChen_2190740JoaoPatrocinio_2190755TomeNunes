@@ -2,5 +2,6 @@ suite_namespace: frontend\tests\acceptance
 actor: AcceptanceTester
 modules:
   enabled:
-    - PhpBrowser:
-        url: http://front.test
+    - WebDriver:
+        url: 'http://front.test'
+        browser: chrome

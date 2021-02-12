@@ -81,7 +81,7 @@ class MarcacaoController extends Controller
                     echo "<option value='".$item->id."'>".$item->First_name."</option>";
                 }
             } else {
-                echo "<option>-</option>";
+                echo "<option>Não existe ainda pessoas com esta especialidade</option>";
             }
 
         /*$query =
@@ -96,6 +96,23 @@ class MarcacaoController extends Controller
 
         }*/
     }
+
+    public function actionListdate($id){
+        $horario = Horario::find()->where(['id_medico' => $id])->all();
+
+        if (!empty($horario)) {
+            foreach($horario as $item) {
+                if ($item->usado == 0)
+                    echo "<option value='".$item->id."'>".$item->tempo."</option>";
+            }
+
+        } else {
+            echo "<option>Está indisponivel</option>";
+        }
+
+    }
+
+
     public function actionCreate()
     {
         $model = new Marcacao();
@@ -117,14 +134,20 @@ class MarcacaoController extends Controller
             }
 
             foreach ($medico as $item) {
-                $listmed[$item->id] = $item->Email;
+                $listmed[$item->id] = $item->First_name;
             }
 
             if ($model->load(Yii::$app->request->post())) {
                 $model->id_Utente = Yii::$app->user->id;
-                $model->save(false);
+                $horario = Horario::find()->where(["id" => $model->id])->one();
+                if ($horario->usado == 0)
+                {
+                    $horario->usado = 1;
+                    $horario->save(false);
+                    $model->save(false);
 
-                NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->Last_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
+                    NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->Last_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
+                }
 
         }
 
@@ -149,9 +172,19 @@ class MarcacaoController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $model = Marcacao::find()->where(["id"=>$id])->one();
+        $horario = Horario::find()->where(["id"=>$id])->one();
+
+
+        $listhora = [];
+
+        foreach ($horario as $item) {
+            $listhora[$item->id] = $item->tempo;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $horario->usado = 0;
+            $horario->save(false);
             return $this->redirect(['historico']);
         }
 

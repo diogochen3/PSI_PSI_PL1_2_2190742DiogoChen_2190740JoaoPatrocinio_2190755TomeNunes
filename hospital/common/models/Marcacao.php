@@ -8,16 +8,14 @@ use Yii;
  * This is the model class for table "marcacao".
  *
  * @property int $id
- * @property string $date
- * @property string $tempo
  * @property int|null $Aceitar
  * @property int $id_especialidade
  * @property int $id_Utente
  * @property int $id_Medico
  *
  * @property Consultas $consultas
- * @property Horario[] $horarios
  * @property Especialidade $especialidade
+ * @property Horario $id0
  * @property Profile $medico
  * @property Profile $utente
  */
@@ -37,10 +35,11 @@ class Marcacao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'tempo', 'id_especialidade', 'id_Utente', 'id_Medico'], 'required'],
-            [['date', 'tempo'], 'safe'],
-            [['Aceitar', 'id_especialidade', 'id_Utente', 'id_Medico'], 'integer'],
+            [['id', 'id_especialidade', 'id_Utente', 'id_Medico'], 'required'],
+            [['id', 'Aceitar', 'id_especialidade', 'id_Utente', 'id_Medico'], 'integer'],
+            [['id'], 'unique'],
             [['id_especialidade'], 'exist', 'skipOnError' => true, 'targetClass' => Especialidade::className(), 'targetAttribute' => ['id_especialidade' => 'id']],
+            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Horario::className(), 'targetAttribute' => ['id' => 'id']],
             [['id_Medico'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_Medico' => 'id']],
             [['id_Utente'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_Utente' => 'id']],
         ];
@@ -53,8 +52,6 @@ class Marcacao extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'date' => 'Date',
-            'tempo' => 'Tempo',
             'Aceitar' => 'Aceitar',
             'id_especialidade' => 'Id Especialidade',
             'id_Utente' => 'Id Utente',
@@ -73,16 +70,6 @@ class Marcacao extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[Horarios]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getHorarios()
-    {
-        return $this->hasMany(Horario::className(), ['id_marcacao' => 'id']);
-    }
-
-    /**
      * Gets query for [[Especialidade]].
      *
      * @return \yii\db\ActiveQuery
@@ -90,6 +77,16 @@ class Marcacao extends \yii\db\ActiveRecord
     public function getEspecialidade()
     {
         return $this->hasOne(Especialidade::className(), ['id' => 'id_especialidade']);
+    }
+
+    /**
+     * Gets query for [[Id0]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getId0()
+    {
+        return $this->hasOne(Horario::className(), ['id' => 'id']);
     }
 
     /**

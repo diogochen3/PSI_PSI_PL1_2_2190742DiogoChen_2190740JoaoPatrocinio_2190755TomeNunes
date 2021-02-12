@@ -1,6 +1,7 @@
 <?php use \yii\widgets\LinkPager;
 use yii\helpers\Html;
 use yii\grid\GridView;
+$user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
 /* @var $utentes array */?>
 
 <ul>
@@ -24,7 +25,7 @@ use yii\grid\GridView;
 
                 <div class="card shadow">
                     <div class="card-header py-3">
-                        <p class="text-primary m-0 font-weight-bold">Corpo Clinico</p>
+                        <p class="text-primary m-0 font-weight-bold">Lista de utentes</p>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -58,6 +59,12 @@ use yii\grid\GridView;
                                     <th>codigo postal</th>
                                     <th>Data de nascimento</th>
                                     <th>Genero</th>
+                                    <?php
+                                    if(isset($user['admin'])){
+                                    ?><th>Editar</th>
+                                        <th>retirar</th> <?php
+                                    }
+                                    ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -76,6 +83,12 @@ use yii\grid\GridView;
                                     <td><?= $utente->gender  ?></td>
                                     <td></td>
 
+                                    <?php
+                                    if(isset($user['admin'])){
+                                        ?><td> <?= Html::a('Update', ['utente/update', 'id' => $utente->id], ['class' => 'btn btn-primary']) ?></td>
+                                        <td> <?= Html::a('Retirar', ['utente/delete', 'id' => $utente->id], ['class' => 'btn btn-primary']) ?></td><?php
+                                    }
+                                    ?>
 
 
                                 </tr>

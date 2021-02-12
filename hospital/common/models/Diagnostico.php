@@ -2,7 +2,6 @@
 
 namespace common\models;
 
-use common\models\User;
 use Yii;
 
 /**
@@ -15,8 +14,8 @@ use Yii;
  * @property int $id_medico
  * @property int $id_utente
  *
- * @property User $medico
- * @property User $utente
+ * @property Profile $medico
+ * @property Profile $utente
  */
 class Diagnostico extends \yii\db\ActiveRecord
 {
@@ -38,8 +37,8 @@ class Diagnostico extends \yii\db\ActiveRecord
             [['date'], 'safe'],
             [['id_medico', 'id_utente'], 'integer'],
             [['descricao', 'situacao'], 'string', 'max' => 255],
-            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_medico' => 'id']],
-            [['id_utente'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_utente' => 'id']],
+            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_medico' => 'id']],
+            [['id_utente'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_utente' => 'id']],
         ];
     }
 
@@ -65,7 +64,7 @@ class Diagnostico extends \yii\db\ActiveRecord
      */
     public function getMedico()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_medico']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_medico']);
     }
 
     /**
@@ -75,6 +74,6 @@ class Diagnostico extends \yii\db\ActiveRecord
      */
     public function getUtente()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_utente']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_utente']);
     }
 }

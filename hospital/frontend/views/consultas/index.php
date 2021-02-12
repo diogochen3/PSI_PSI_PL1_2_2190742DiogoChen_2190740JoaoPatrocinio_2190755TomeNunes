@@ -32,7 +32,7 @@ $this->title = 'Health Schedule';
                     <th>Data</th>
                     <th>Médico</th>
                     <th>Especialidade</th>
-                    <th>Receitas</th>
+                    <th>receita</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -41,20 +41,14 @@ $this->title = 'Health Schedule';
                     <?php foreach ($model as $item) {?>
 
                         <tr>
-                            <td><?= $item->id0->date; ?></td>
+                            <td><?= $item->id0->id0->tempo  ?></td>
                             <td><?= $item->medico->First_name; ?> <?= $item->medico->Last_name; ?></td>
                             <td><?= $item->id0->especialidade->Name; ?></td>
-                            <td>
-
-                                <?php foreach ($item->receitas as $receita) { ?>
-
-                                    <?= $receita->Nome_medicamento." * ".$receita->quantidade ?>
-                                <br>
-
-                                <?php }
-
+                        <td><?php if(sizeof($item->receitas) > 0) { ?></td>
+                            <td> <?= Html::a('receita', ['receitas/view',"id" =>$item->id], ['class' => 'btn btn-primary']); ?> </td>
+                        <?php } else { ?>
+                            <td></td> <?php }
                                 }  ?>
-                            </td>
                         </tr>
                     <?php } else { ?>
                     <td> <?= "nao aconteceu nehuma consulta"; ?></td>

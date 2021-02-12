@@ -252,6 +252,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
 
     @Override
     public void onResume() {
+
         listaMarcacoes = SingletonGestorHospital.getInstance(getContext()).getallMarcacaoBD();
         medico = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
         listaEspecialidade = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();

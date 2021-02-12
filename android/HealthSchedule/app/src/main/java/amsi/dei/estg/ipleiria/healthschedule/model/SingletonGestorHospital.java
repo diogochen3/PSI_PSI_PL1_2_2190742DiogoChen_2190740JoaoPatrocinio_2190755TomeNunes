@@ -268,6 +268,26 @@ public class SingletonGestorHospital {
         }
         return profile;
     }
+    public ArrayList<Profile> getMedicosEspecialidade() {
+
+        ArrayList<Profile> profile = new ArrayList<>();
+
+        for (MedicoEspecialidade me: medicoEspecialidades)
+        {
+            for (Profile p: profiles)
+            {
+                if (me.getId_Medico() == p.getId())  {
+                    profile.add(p);
+                }
+            }
+        }
+        return profile;
+
+    }
+
+
+
+
     public ArrayList<Profile> getallProfileBD() {
         profiles = hospitalDB.getAllProfilesBD();
         return profiles;
@@ -797,6 +817,8 @@ public class SingletonGestorHospital {
     public void adicionarMedicoEspecialidadeBD(MedicoEspecialidade medicoEspecialidade){
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
     }
+
+
 
 
 

@@ -59,12 +59,10 @@ use \yii\widgets\LinkPager;
                                 </tr>
                                 </thead>
                                 <tbody>
-
-                                <tr>
                                     <?php
 
                                     foreach ($medicos as $medico) : ?>
-
+                                        <tr>
                                     <td></td>
 
                                     <td><?= $medico->First_name  ?></td>
@@ -77,7 +75,7 @@ use \yii\widgets\LinkPager;
                                     <td><?= $medico->postal_code  ?></td>
                                     <td><?= $medico->Address  ?></td>
                                     <td><?= Html::a('Update', ['medicos/update', 'id' => $medico->id], ['class' => 'btn btn-primary']) ?></td>
-                                    <td><?= Html::a('Delete', ['delete', 'id' => $medico->id], [
+                                    <td><?= Html::a('Delete', ['medicos/delete', 'id' => $medico->id], [
                             'class' => 'btn btn-danger',
                             'data' => [
                                 'confirm' => 'Are you sure you want to delete this item?',
@@ -97,6 +95,7 @@ use \yii\widgets\LinkPager;
 
                                 </tbody>
                             </table>
+
                         </div>
                         <div class="row">
                             <div class="col-md-6 align-self-center">

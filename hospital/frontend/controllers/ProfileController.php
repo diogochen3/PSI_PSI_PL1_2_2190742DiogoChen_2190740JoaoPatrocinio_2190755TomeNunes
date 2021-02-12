@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\models\Consultas;
+use common\models\Diagnostico;
 use Yii;
 use common\models\Profile;
 use yii\data\ActiveDataProvider;
@@ -158,12 +159,12 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function actionDiagnostica()
+    public function actionDiagnostico()
     {
         $id = Yii::$app->user->id;
-
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+        $model = Diagnostico::find()->where(["id_utente" => $id])->all();
+        return $this->render('diagnostico', [
+            'model' => $model,
         ]);
 
     }
