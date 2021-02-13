@@ -43938,3 +43938,470 @@ $_SERVER = [
     'REQUEST_TIME' => 1613228293
 >>>>>>> master
 ]
+2021-02-13 17:06:54 [127.0.0.1][45][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 40795 bytes' 
+
+in C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php:36
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php(36): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): Opis\Closure\unserialize('<<<<<<< HEAD\r\na...')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Dispatcher.php(191): yii\debug\LogTarget->collect(Array, true)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#7 [internal function]: yii\log\Logger->flush(true)
+#8 {main}
+2021-02-13 17:06:54 [127.0.0.1][45][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"O0Lj040q734AK86NnU1W6aOZtY2Y_oYe\";}'
+    'advanced-backend' => 'avumru9edfu5go0sk8ce7f1c0i'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22O0Lj040q734AK86NnU1W6aOZtY2Y_oYe%22%3B%7D; advanced-backend=avumru9edfu5go0sk8ce7f1c0i'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '49354'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1613232414.226
+    'REQUEST_TIME' => 1613232414
+]
+2021-02-13 17:07:13 [127.0.0.1][45][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 40795 bytes' 
+
+in C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php:36
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php(36): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): Opis\Closure\unserialize('<<<<<<< HEAD\r\na...')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Dispatcher.php(191): yii\debug\LogTarget->collect(Array, true)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#7 [internal function]: yii\log\Logger->flush(true)
+#8 {main}
+2021-02-13 17:07:12 [127.0.0.1][45][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"O0Lj040q734AK86NnU1W6aOZtY2Y_oYe\";}'
+    'advanced-backend' => 'avumru9edfu5go0sk8ce7f1c0i'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22O0Lj040q734AK86NnU1W6aOZtY2Y_oYe%22%3B%7D; advanced-backend=avumru9edfu5go0sk8ce7f1c0i'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '49368'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/medicos/profile'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicos/profile'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\medicos\\profile'
+    'PHP_SELF' => '/index.php/medicos/profile'
+    'REQUEST_TIME_FLOAT' => 1613232432.972
+    'REQUEST_TIME' => 1613232432
+]
+2021-02-13 17:07:21 [127.0.0.1][45][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 40795 bytes' 
+
+in C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php:36
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php(36): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): Opis\Closure\unserialize('<<<<<<< HEAD\r\na...')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Dispatcher.php(191): yii\debug\LogTarget->collect(Array, true)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#7 [internal function]: yii\log\Logger->flush(true)
+#8 {main}
+2021-02-13 17:07:20 [127.0.0.1][45][-][info][application] $_GET = [
+    'id' => '45'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"O0Lj040q734AK86NnU1W6aOZtY2Y_oYe\";}'
+    'advanced-backend' => 'avumru9edfu5go0sk8ce7f1c0i'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/medicos/profile'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22O0Lj040q734AK86NnU1W6aOZtY2Y_oYe%22%3B%7D; advanced-backend=avumru9edfu5go0sk8ce7f1c0i'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '49376'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=45'
+    'REQUEST_URI' => '/index.php/medicos/update?id=45'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicos/update'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\medicos\\update'
+    'PHP_SELF' => '/index.php/medicos/update'
+    'REQUEST_TIME_FLOAT' => 1613232440.895
+    'REQUEST_TIME' => 1613232440
+]
+2021-02-13 17:07:22 [127.0.0.1][45][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 40795 bytes' 
+
+in C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php:36
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php(36): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): Opis\Closure\unserialize('<<<<<<< HEAD\r\na...')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Dispatcher.php(191): yii\debug\LogTarget->collect(Array, true)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#7 [internal function]: yii\log\Logger->flush(true)
+#8 {main}
+2021-02-13 17:07:22 [127.0.0.1][45][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"O0Lj040q734AK86NnU1W6aOZtY2Y_oYe\";}'
+    'advanced-backend' => 'avumru9edfu5go0sk8ce7f1c0i'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/medicos/update?id=45'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22O0Lj040q734AK86NnU1W6aOZtY2Y_oYe%22%3B%7D; advanced-backend=avumru9edfu5go0sk8ce7f1c0i'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '49376'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/medicos/profile'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicos/profile'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\medicos\\profile'
+    'PHP_SELF' => '/index.php/medicos/profile'
+    'REQUEST_TIME_FLOAT' => 1613232442.74
+    'REQUEST_TIME' => 1613232442
+]
+2021-02-13 17:07:31 [127.0.0.1][45][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 40795 bytes' 
+
+in C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php:36
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php(36): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): Opis\Closure\unserialize('<<<<<<< HEAD\r\na...')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Dispatcher.php(191): yii\debug\LogTarget->collect(Array, true)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#7 [internal function]: yii\log\Logger->flush(true)
+#8 {main}
+2021-02-13 17:07:30 [127.0.0.1][45][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"O0Lj040q734AK86NnU1W6aOZtY2Y_oYe\";}'
+    'advanced-backend' => 'avumru9edfu5go0sk8ce7f1c0i'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/medicos/profile'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22O0Lj040q734AK86NnU1W6aOZtY2Y_oYe%22%3B%7D; advanced-backend=avumru9edfu5go0sk8ce7f1c0i'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '49384'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/table_marcacoes'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/table_marcacoes'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\site\\table_marcacoes'
+    'PHP_SELF' => '/index.php/site/table_marcacoes'
+    'REQUEST_TIME_FLOAT' => 1613232450.856
+    'REQUEST_TIME' => 1613232450
+]
+2021-02-13 17:07:39 [127.0.0.1][45][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 40795 bytes' 
+
+in C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php:36
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\opis\closure\functions.php(36): unserialize('<<<<<<< HEAD\r\na...')
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): Opis\Closure\unserialize('<<<<<<< HEAD\r\na...')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile('C:\\xampp\\htdocs...', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Dispatcher.php(191): yii\debug\LogTarget->collect(Array, true)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#7 [internal function]: yii\log\Logger->flush(true)
+#8 {main}
+2021-02-13 17:07:39 [127.0.0.1][45][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"O0Lj040q734AK86NnU1W6aOZtY2Y_oYe\";}'
+    'advanced-backend' => 'avumru9edfu5go0sk8ce7f1c0i'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/site/table_marcacoes'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=5b55eedb100cb1a4708a30050c8f3cfd3f3daf69b7d7d70eaec445356c85bf2ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22O0Lj040q734AK86NnU1W6aOZtY2Y_oYe%22%3B%7D; advanced-backend=avumru9edfu5go0sk8ce7f1c0i'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '49388'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/site/table'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/site/table'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\site\\table'
+    'PHP_SELF' => '/index.php/site/table'
+    'REQUEST_TIME_FLOAT' => 1613232459.696
+    'REQUEST_TIME' => 1613232459
+]

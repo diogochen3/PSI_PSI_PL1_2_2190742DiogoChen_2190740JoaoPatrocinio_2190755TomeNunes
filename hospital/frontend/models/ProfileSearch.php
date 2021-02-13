@@ -39,7 +39,7 @@ class ProfileSearch extends Profile
      * @return ActiveDataProvider
      */
     public function search($params)
-    {
+    {/*
         $query = Profile::find();
 
         // add conditions that should always apply here
@@ -73,5 +73,5 @@ class ProfileSearch extends Profile
             ->andFilterWhere(['like', 'postal_code', $this->postal_code]);
 
         return $dataProvider;
-    }
+    */}
 }

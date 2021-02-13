@@ -2,9 +2,15 @@
 
 /* @var $this yii\web\View */
 /* @var $utente */
-use common\models\User;
 use yii\helpers\Html;
+use yii\grid\GridView;
+use common\models\User;
+use yii\widgets\ActiveForm;
+
 use yii\helpers\VarDumper;
+/* @var $this yii\web\View */
+/* @var $searchModel frontend\models\MarcacaoSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Health Schedule';
 
@@ -28,6 +34,7 @@ $this->title = 'Health Schedule';
         <div class="table-responsive" style="margin: 16px;height: 150px;padding: 15px;">
             <table class="table">
                 <thead>
+
                 <tr>
                     <th>Data</th>
                     <th>Médico</th>
@@ -38,6 +45,7 @@ $this->title = 'Health Schedule';
                 </tr>
                 </thead>
                 <tbody>
+
 
                 <?php if (sizeof($model) > 0 ){ ?>
                 <?php foreach ($model as $item) {?>
@@ -67,6 +75,8 @@ $this->title = 'Health Schedule';
                 <?php }else         {
                     echo "<td> nao tem marcacao</td>";
                 }?>
+
+
                 </tbody>
             </table>
         </div>
