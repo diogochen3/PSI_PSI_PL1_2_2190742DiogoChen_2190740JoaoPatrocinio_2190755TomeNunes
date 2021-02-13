@@ -250,4 +250,5 @@ class MarcacaoController extends Controller
             'model' => $horario,
         ]);
     }
+    /* $query->andFilterWhere(['between', 'date', $this->start_date, $this->end_date]); */
 }

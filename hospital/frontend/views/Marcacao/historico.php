@@ -38,10 +38,9 @@ $this->title = 'Health Schedule';
                 </tr>
                 </thead>
                 <tbody>
+
                 <?php if (sizeof($model) > 0 ){ ?>
                 <?php foreach ($model as $item) {?>
-
-
                 <tr>
                     <td><?= $item->id0->tempo ?></td>
                     <td><?= $item->medico->First_name; ?> <?= $item->medico->Last_name; ?></td>

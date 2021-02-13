@@ -37,11 +37,14 @@ class ReceitasController extends Controller
      */
     public function actionIndex()
     {
+        $ids= null;
         $idutilizador = Yii::$app->user->getId();
         $consultas = Consultas::find()->where(["id_utente"=>$idutilizador])->all();
         foreach ($consultas as $consulta) {
             $ids = $consulta->id;
         }
+
+
         $model = Receitas::find()->where(["id_consulta" => $ids])->all();
 
         return $this->render('index', [
