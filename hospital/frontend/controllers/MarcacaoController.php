@@ -120,12 +120,12 @@ class MarcacaoController extends Controller
         //VarDumper::dump(Yii::$app->user->can('createMarcacao'));
 
         if (Yii::$app->user->can('createMarcacao')){
-
+            $idUtilizador =  Yii::$app->user->id;
             $user = Profile::find();
             $medicoId = User::isMedico();
             $medico = $user->where(['id' => $medicoId])->all();
             $esp = Especialidade::find()->all();
-            $userl = Profile::find()->where(["id" => Yii::$app->user->id])->one();
+            $userl = Profile::find()->where(["id" => $idUtilizador])->one();
             $listEsp = [];
             $listmed = [];
 
@@ -146,6 +146,12 @@ class MarcacaoController extends Controller
                     $horario->save(false);
                     $model->save(false);
 
+                    $marcacao = Marcacao::find();
+                    $marcacaoutente = $marcacao->where(['id_Utente' => $idUtilizador])->all();
+                    return $this->render('historico', [
+                        'model' => $marcacaoutente,
+                        'utente' => $userl,
+                    ]);
                     NotificationController::Send(NotificationController::NotificationsTypes_Marcacao, "O Utente ". $userl->Last_name ."  (" . $userl->NIF .") Fez o pedido de marcação.");
                 }
 

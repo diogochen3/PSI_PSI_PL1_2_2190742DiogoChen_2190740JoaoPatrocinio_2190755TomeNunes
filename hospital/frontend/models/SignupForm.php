@@ -108,10 +108,13 @@ class SignupForm extends Model
             $profile->postal_code = $this->postal_code;
             $profile->Birth_date = $this->Birth_date;
             $imagem = UploadedFile::getInstance($this, 'imagem');
-            $image_name = $imagem.rand(1, 4000).'.'.$imagem->extension;
-            $image_path = 'assets/img/'.$image_name;
-            $imagem->saveAs($image_path);
-            $profile->imagem = base64_encode($image_path);
+            if ($imagem)
+            {
+                $image_name = $imagem.rand(1, 4000).'.'.$imagem->extension;
+                $image_path = 'assets/img/'.$image_name;
+                $imagem->saveAs($image_path);
+                $profile->imagem = base64_encode($image_path);
+            }
 
             $user->setPassword($this->password);
             $user->generateAuthKey();

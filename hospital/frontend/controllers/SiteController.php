@@ -330,29 +330,4 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Signs user up.
-     *
-     * @return mixed
-     */
-
-
-    public function actionCreate()
-    {
-        $model = new Marcacao();
-        $utenteId = Yii::$app->user->id;
-        $user = Profile::find();
-        $medicoId = User::isMedico();
-        $medico = $user->where(['id' => $medicoId])->all();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-           'medico' => $medico
-           // 'utenteid' => $utenteId,
-        ]);
-    }
-
 }

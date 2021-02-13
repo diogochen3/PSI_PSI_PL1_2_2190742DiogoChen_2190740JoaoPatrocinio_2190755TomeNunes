@@ -43,7 +43,7 @@ use yii\widgets\ActiveForm;
                         );
                     '
             ]
-        )->label("Medico"); ?>
+        )->label("Médico"); ?>
 
 
     <?= $form->field($model, 'id')->dropDownList(

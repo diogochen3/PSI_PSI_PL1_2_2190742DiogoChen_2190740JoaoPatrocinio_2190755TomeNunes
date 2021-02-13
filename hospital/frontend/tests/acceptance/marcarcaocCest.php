@@ -27,16 +27,27 @@ class marcarcaocCest
         $I->fillField('Password', '1234567890');
 
         $I->click('Signup');
+        $I->wait(5);
         $I->amOnPage('index.php/site/login');
         $I->see('Email');
-        $I->fillField('#loginform-email' , 'ambrosio.nunes@gmail.com');
+
+        $I->wait(5);
+
+        $I->fillField('#loginform-email' , 'ambrosio1.nunes@gmail.com');
         $I->fillField('#loginform-password', '1234567890');
+
+        $I->wait(5);
         $I->click('Login');
+        $I->wait(5);
+
         $I->amOnPage('index.php/marcacao/create');
-        $I->fillField('Date', '24-12-2020');
-        $I->fillField('Tempo', '20:20');
-        $I->selectOption('Id Especialidade', '2');
-        $I->selectOption('Id Medico', '18');
+        $I->selectOption('Especialidade', '2');
+        $I->wait(5);
+        $I->selectOption('Médico', '64');
+        $I->wait(5);
+        $I->selectOption('tempo', '2');
+        $I->wait(10);
+
         $I->click('Save');
 
     }
