@@ -43468,3 +43468,78 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1613152962.553
     'REQUEST_TIME' => 1613152962
 ]
+2021-02-13 14:58:13 [::1][64][pksark6epo6mlo98d8r7biik24][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\db\ActiveQuery::nome_medicamento in C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Component.php:155
+Stack trace:
+#0 C:\wamp64\www\hospital\backend\views\medicamento\index.php(60): yii\base\Component->__get('nome_medicament...')
+#1 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\h...')
+#2 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp64\\www\\h...', Array)
+#3 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp64\\www\\h...', Array, Object(backend\controllers\MedicamentoController))
+#4 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('index', Array, Object(backend\controllers\MedicamentoController))
+#5 C:\wamp64\www\hospital\backend\controllers\MedicamentoController.php(43): yii\base\Controller->render('index', Array)
+#6 [internal function]: backend\controllers\MedicamentoController->actionIndex()
+#7 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#9 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#10 C:\wamp64\www\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('medicamento/ind...', Array)
+#11 C:\wamp64\www\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 C:\wamp64\www\hospital\backend\web\index.php(17): yii\base\Application->run()
+#13 {main}
+2021-02-13 14:58:13 [::1][64][pksark6epo6mlo98d8r7biik24][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '6109867003c5d97cb2a8aa44aa20c26750217abd82ba5122a68f54a9811800f2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[64,\"rY3c5ryQbJv60M2MrQ6k4yWNzrIj1wHR\",2592000]\";}'
+    'advanced-backend' => 'pksark6epo6mlo98d8r7biik24'
+    '_csrf-backend' => '900a14b7a6102658356ccb609cab29e77635d1bf65f7435680822b5d11ba4a72a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"hlki1CVnj--39frqoW75BXOOKYaENh1L\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 64
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=6109867003c5d97cb2a8aa44aa20c26750217abd82ba5122a68f54a9811800f2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B64%2C%22rY3c5ryQbJv60M2MrQ6k4yWNzrIj1wHR%22%2C2592000%5D%22%3B%7D; advanced-backend=pksark6epo6mlo98d8r7biik24; _csrf-backend=900a14b7a6102658356ccb609cab29e77635d1bf65f7435680822b5d11ba4a72a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22hlki1CVnj--39frqoW75BXOOKYaENh1L%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files\\Microsoft MPI\\Bin\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\GtkSharp\\2.12\\bin;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\wamp64\\bin\\php\\php7.2.34;C:\\composer;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) PHP/7.2.34 Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) PHP/7.2.34'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/hospital/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '57725'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/index.php/medicamento/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicamento/index'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\hospital\\backend\\web\\medicamento\\index'
+    'PHP_SELF' => '/index.php/medicamento/index'
+    'REQUEST_TIME_FLOAT' => 1613228293.417
+    'REQUEST_TIME' => 1613228293
+]

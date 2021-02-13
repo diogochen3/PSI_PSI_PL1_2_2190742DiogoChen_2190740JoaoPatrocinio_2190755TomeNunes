@@ -84,20 +84,22 @@ AppAsset::register($this);
                     <li class="nav-item">  <?= Html::a('Lista de Especialidade', ['especialidade/index']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de diagnostico', ['diagnostico/index']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de receitas', ['receitas/index']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Lista de medicamento', ['medicamento/index']) ?></li>
                     <li class="nav-item">  <?= Html::a('Criar Horario', ['horario/create']) ?></li>
-
+                    <li class="nav-item">  <?= Html::a('Teu Horario', ['horario/view']) ?></li>
                     <?php
                     $user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
-
                     if(isset($user['admin'])){
+                    ?><li class="nav-item">Modo admin<?php
                         ?><li class="nav-item">  <?= Html::a('Lista de medicos', ['site/table_medicos']);?><?php
                         ?><li class="nav-item"> <?= Html::a('Criar medicos', ['site/signup']);?> <?php
                         ?><li class="nav-item"> <?= Html::a('Criar especialidade', ['especialidade/create']);?> <?php
                     ?><li class="nav-item"> <?= Html::a('ver Mensagens', ['contacto/index']);?> <?php
-                    ?><li class="nav-item"> <?= Html::a('Criar especialidade', ['especialidade/create']);?> <?php
-                    ?><li class="nav-item"> <?= Html::a('Criar especialidade', ['especialidade/create']);?> <?php
-                    ?><li class="nav-item"> <?= Html::a('Criar especialidade', ['especialidade/create']);?> <?php
-                    ?><li class="nav-item"> <?= Html::a('Criar especialidade', ['especialidade/create']);?> <?php
+                    ?><li class="nav-item"> <?= Html::a('Lista de marcacao', ['admin/lista_marcacao']);?> <?php
+                    ?><li class="nav-item"> <?= Html::a('Lista de Consultas', ['admin/lista_consultas']);?> <?php
+                    ?><li class="nav-item"> <?= Html::a('Lista de diagnostico', ['admin/lista_diagnostico']);?> <?php
+                    ?><li class="nav-item"> <?= Html::a('Lista de Receitas', ['admin/lista_receitas']);?> <?php
+                    ?><li class="nav-item"> <?= Html::a('Horario', ['horario/index']);?> <?php
                     }
 
 
