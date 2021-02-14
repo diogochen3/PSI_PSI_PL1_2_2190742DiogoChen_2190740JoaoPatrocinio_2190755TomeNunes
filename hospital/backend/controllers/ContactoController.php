@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\Categorias;
 use Yii;
 use common\models\Contacto;
 use backend\models\ContactoSearch;
@@ -35,12 +36,14 @@ class ContactoController extends Controller
      */
     public function actionIndex()
     {
+        $model = new Contacto();
         $searchModel = new ContactoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 

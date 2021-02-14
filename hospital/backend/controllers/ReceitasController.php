@@ -46,7 +46,6 @@ class ReceitasController extends Controller
            $ids = $consulta->id;
         }
         $model = Receitas::find()->where(["id_consulta" => $ids])->all();
-
         return $this->render('index', [
             'model' => $model,
         ]);
