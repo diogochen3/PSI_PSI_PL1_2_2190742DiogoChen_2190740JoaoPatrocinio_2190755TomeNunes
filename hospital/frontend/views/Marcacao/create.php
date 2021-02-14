@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = 'Marcar Consulta';
 ?>
 <div class="marcacao-create">
-    <?= Html::a('Historico das Marcaçoes', 'historico', ['class' => 'btn btn-primary']) ?>
+    <?= Html::a('Marcaçoes', 'historico', ['class' => 'btn btn-primary']) ?>
     <?= Html::a('Consultas', '/index.php/consultas/index', ['class' => 'btn btn-primary']) ?>
     <h1><?= Html::encode($this->title) ?></h1>
 

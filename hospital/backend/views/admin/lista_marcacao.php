@@ -55,7 +55,6 @@ use \yii\widgets\LinkPager;
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 <tr>
                                     <?php
 
@@ -67,21 +66,31 @@ use \yii\widgets\LinkPager;
                                     <td><?= $marcacao->especialidade->Name  ?></td>
                                     <td><?= $marcacao->id0->tempo  ?></td>
                                     <?php if ($marcacao->Aceitar == 0) { ?>
-                                        <td> <?= Html::a('Aceitar Marcação', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?>
-                                            <?= Html::a('Não Aceitar', ['nAceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
-                                        <td> <?= Html::a('Editar', ['update', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+
+
+                                        <td>
+                                            <?= Html::a('Aceitar', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary nexteachother']) ?>
+                                         <?= Html::a('Não Aceitar', ['nAceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary nexteachother']) ?>
+                                        </td>
+
+
+
+
+                                            <td> <?= Html::a('Editar', ['update', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
                                     <?php }elseif($marcacao->Aceitar == 1){  ?>
                                         <td> Aceite </td>
                                         <td></td>
                                     <?php } ?>
-                                    <th><?= Html::a('Eliminar', ['deleteMarcacao', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></th>
+                                    <th><?= Html::a('Eliminar', ['deleteMarcacao', 'id' => $marcacao->id], ['class' => 'btn btn-danger']) ?></th>
+
                                 </tr>
 
 
-
-
                                 <?php endforeach; ?>
+<style>
 
+
+</style>
 
                                 </tbody>
                             </table>

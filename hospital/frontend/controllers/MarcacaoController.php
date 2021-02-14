@@ -42,13 +42,7 @@ class MarcacaoController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new MarcacaoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
     }
 
     /**
@@ -185,6 +179,7 @@ class MarcacaoController extends Controller
         $listhora = [];
 
         foreach ($horario as $item) {
+
             $listhora[$item->id] = $item->tempo;
         }
 
@@ -231,14 +226,30 @@ class MarcacaoController extends Controller
 
     public function actionHistorico()
     {
+
         $utenteId =  Yii::$app->user->id;
         $marcacao = Marcacao::find();
-        $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->all();
-        $utente = Profile::find();
+
+        if(Yii::$app->request->get() == null){
+            $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->all();
+
+        }else{
+            $Nomemedico = Yii::$app->request->get();
+            $medico = Profile::find();
+            $medico->where(['First_name' => $Nomemedico])->one();
+            var_export($medico);
+            die;
+            $marcacaoutente = $marcacao->where(['id_Utente' => $utenteId])->andWhere(['id_Medico' => $medico])->all();
+
+        }
+
+              $utente = Profile::find();
         $utente = $utente->where(['id'=> $utenteId])->one();
         return $this->render('historico', [
             'model' => $marcacaoutente,
             'utente' => $utente,
+
+
         ]);
     }
 

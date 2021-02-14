@@ -91,12 +91,6 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
-
-
-        return $this->render('index');
-    }
 
 
     /**
@@ -107,7 +101,7 @@ class SiteController extends Controller
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect("index.php/medicos/profile");
         }
 
 
@@ -290,7 +284,7 @@ class SiteController extends Controller
         $consulta->id_utente = $marcacao->id_Utente;
         $consulta->estado = 0;
         $consulta->save();
-        return $this->goHome();
+        return $this->redirect("table_marcacoes");
     }
 
     public function actionNAceitar($id)
@@ -299,7 +293,7 @@ class SiteController extends Controller
         $marcacao->aceitar = 0;
         $marcacao->save(false);
 
-        return $this->goHome();
+        return $this->redirect("table_marcacoes");
     }
 
     public function actionEnviar($id)

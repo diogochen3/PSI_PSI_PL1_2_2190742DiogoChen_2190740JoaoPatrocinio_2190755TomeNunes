@@ -8,13 +8,13 @@ use Yii;
  * This is the model class for table "consultas".
  *
  * @property int $id
+ * @property int $estado
  * @property int $id_utente
  * @property int $id_medico
  *
  * @property Marcacao $id0
- * @property User $medico
- * @property User $utente
- * @property ReceitasConsultas[] $receitasConsultas
+ * @property Profile $medico
+ * @property Profile $utente
  * @property Receitas[] $receitas
  */
 class Consultas extends \yii\db\ActiveRecord
@@ -34,11 +34,11 @@ class Consultas extends \yii\db\ActiveRecord
     {
         return [
             [['id', 'id_utente', 'id_medico'], 'required'],
-            [['id', 'id_utente', 'id_medico'], 'integer'],
+            [['id', 'estado', 'id_utente', 'id_medico'], 'integer'],
             [['id'], 'unique'],
             [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Marcacao::className(), 'targetAttribute' => ['id' => 'id']],
-            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_medico' => 'id']],
-            [['id_utente'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_utente' => 'id']],
+            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_medico' => 'id']],
+            [['id_utente'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_utente' => 'id']],
         ];
     }
 
@@ -49,6 +49,7 @@ class Consultas extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'estado' => 'Estado',
             'id_utente' => 'Id Utente',
             'id_medico' => 'Id Medico',
         ];
@@ -71,7 +72,7 @@ class Consultas extends \yii\db\ActiveRecord
      */
     public function getMedico()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_medico']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_medico']);
     }
 
     /**
@@ -81,17 +82,7 @@ class Consultas extends \yii\db\ActiveRecord
      */
     public function getUtente()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_utente']);
-    }
-
-    /**
-     * Gets query for [[ReceitasConsultas]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getReceitasConsultas()
-    {
-        return $this->hasMany(ReceitasConsultas::className(), ['id_consultas' => 'id']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_utente']);
     }
 
     /**
@@ -101,6 +92,6 @@ class Consultas extends \yii\db\ActiveRecord
      */
     public function getReceitas()
     {
-        return $this->hasMany(Receitas::className(), ['id' => 'id_receitas'])->viaTable('receitas_consultas', ['id_consultas' => 'id']);
+        return $this->hasMany(Receitas::className(), ['id_consulta' => 'id']);
     }
 }

@@ -15,22 +15,59 @@ class ConsultasTest extends \Codeception\Test\Unit
 
     protected function _after()
     {
+        Consultas::deleteAll();
+    }
+    public static function adicionarConsulta()
+    {
+        $Consultas = new Consultas();
+        $Consultas->id="3";
+        $Consultas->estado= "1";
+        $Consultas->id_medico= "64";
+        $Consultas->id_utente= "43";
+        return $Consultas;
+    }
+    public function testFields()
+    {
+        $Consultas = $this->adicionarConsulta();
+        $this->assertTrue($Consultas->validate());
+
+    }
+    public function testAddConsulta()
+    {
+        $Consultas = $this->adicionarConsulta();
+        $this->assertTrue($Consultas->save());
+        $this->tester->seeRecord(Consultas::class, ['id' => '3']);
+    }
+    public function testAddErroConsulta()
+    {
+        $Consultas = new Consultas();
+        $Consultas->id="ola";
+        $Consultas->estado= "1";
+        $Consultas->id_medico= "64";
+        $Consultas->id_utente= "43";
+
+        $this->assertFalse($Consultas->save());
+        $this->tester->dontSeeRecord(Consultas::class, ['id' => 'ola']);
+
+    }
+    public function testDeleteConsulta()
+    {
+        $Consultas = $this->adicionarConsulta();
+        $Consultas->save();
+        $this->tester->seeRecord(Consultas::class, ['id' => '3']);
+        $Consultas->delete();
+        $this->tester->dontSeeRecord(Consultas::class, ['id' => '3']);
+
     }
 
-    // tests
-    public function testConsultas(){
-        $consultas = new Consultas();
-        $consultas->id = "1";
-        $consultas->id_medico= "2";
-        $consultas->id_utente= "3";
-        $consultas->save();
+    public function testEditConsulta()
+    {
 
-
-        $this->tester->seeRecord('common\models\Diagnostico', ['id' => '1',
-            'id_medico' => '2',
-            'id_utente' => '3']);
-
-        // $this->tester->dontSeeRecord('common\models\profile', ['First_name' => 'pato','Last_name' => 'ganso' ,'NIF' => '220032320','Address' => 'rua dos patos','Email' => 'pato.ganso@gmail.com','Phone_number' => '923456344','postal_code' => '2440','Birth_date' => '2000-01-04','gender' => 'Male']);
+        $Consultas = $this->adicionarConsulta();
+        $Consultas->save();
+        $Consultas->estado= "0";
+        $Consultas->save();
+        $this->tester->seeRecord(Consultas::class, ['estado' => '0']);
 
     }
 }

@@ -1,8 +1,10 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
 public class Receita {
-private int id,quantidade;
-private String Nome_medicamento;
+
+private int id, codigo_acesso, codigo_dispensa;
+
+private String data_emissao;
 
 
     public Receita(int id, int quantidade, String nome_medicamento) {

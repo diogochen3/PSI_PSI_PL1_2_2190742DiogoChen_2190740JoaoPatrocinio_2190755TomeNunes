@@ -187,6 +187,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
 
         });
 
+
     }
 
     private String validarHoras() {
@@ -215,8 +216,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     private void carregarDetalhesMarcacao() {
         spEspecialidade.setVisibility(View.GONE);
         spMedico.setVisibility(View.GONE);
-
-
 
         /*ArrayList<Especialidade> especialidades = new ArrayList<>();
         ArrayList<Profile> profiles = new ArrayList<>();

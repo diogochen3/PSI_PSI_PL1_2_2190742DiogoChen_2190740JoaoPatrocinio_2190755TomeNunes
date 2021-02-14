@@ -2,7 +2,7 @@
 return [
     'components' => [
         'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=bd_hospital',
+            'dsn' => 'mysql:host=localhost;dbname=bd_hospital_test',
         ],
     ],
 ];

@@ -11,7 +11,7 @@ use Yii;
  * @property int $id_especialidade
  *
  * @property Especialidade $especialidade
- * @property User $medico
+ * @property Profile $medico
  */
 class MedicoEspecialidade extends \yii\db\ActiveRecord
 {
@@ -31,8 +31,9 @@ class MedicoEspecialidade extends \yii\db\ActiveRecord
         return [
             [['id_medico', 'id_especialidade'], 'required'],
             [['id_medico', 'id_especialidade'], 'integer'],
+            [['id_medico', 'id_especialidade'], 'unique', 'targetAttribute' => ['id_medico', 'id_especialidade']],
             [['id_especialidade'], 'exist', 'skipOnError' => true, 'targetClass' => Especialidade::className(), 'targetAttribute' => ['id_especialidade' => 'id']],
-            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id_medico' => 'id']],
+            [['id_medico'], 'exist', 'skipOnError' => true, 'targetClass' => Profile::className(), 'targetAttribute' => ['id_medico' => 'id']],
         ];
     }
 
@@ -64,6 +65,6 @@ class MedicoEspecialidade extends \yii\db\ActiveRecord
      */
     public function getMedico()
     {
-        return $this->hasOne(User::className(), ['id' => 'id_medico']);
+        return $this->hasOne(Profile::className(), ['id' => 'id_medico']);
     }
 }
