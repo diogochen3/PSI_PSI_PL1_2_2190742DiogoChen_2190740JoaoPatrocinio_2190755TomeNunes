@@ -15,32 +15,63 @@ class diagnosticoTest extends \Codeception\Test\Unit
 
     protected function _after()
     {
+        Diagnostico::deleteAll();
     }
-
-    // tests
-    public function testSomeFeature()
+    public static function adicionarDiagnostico()
     {
-
-    }
-
-    public function testDiagnostico(){
-
         $Diagnostico = new Diagnostico();
+        $Diagnostico->id="10";
         $Diagnostico->descricao= "testar a descricao";
         $Diagnostico->date= "2021-01-01";
         $Diagnostico->situacao= "testar a situaçao";
-        $Diagnostico->id_medico= "1";
-        $Diagnostico->id_utente= "1";
-        $Diagnostico->save();
+        $Diagnostico->id_medico= "64";
+        $Diagnostico->id_utente= "43";
+        return $Diagnostico;
+    }
+    public function testFields()
+    {
+        $Diagnostico = $this->adicionarDiagnostico();
+        $this->assertTrue($Diagnostico->validate());
 
+    }
+    public function testAddDiagnostico()
+    {
+        $Diagnostico = $this->adicionarDiagnostico();
+        $this->assertTrue($Diagnostico->save());
+        $this->tester->seeRecord(Diagnostico::class, ['situacao' => 'testar a situaçao']);
+    }
+    public function testAddErroDiagnostico()
+    {
+        $Diagnostico = new Diagnostico();
+        $Diagnostico->id= "10";
+        $Diagnostico->descricao= "testar a descricao";
+        $Diagnostico->date= "testar data";
+        $Diagnostico->situacao= "testar a situaçao";
+        $Diagnostico->id_medico= "64";
+        $Diagnostico->id_utente= "teste do erro";
 
-        $this->tester->seeRecord('common\models\Diagnostico', ['descricao' => 'testar a descricao',
-            'date' => '2021-01-01' ,
-            'situacao' => 'testar a situaçao',
-            'id_medico' => '1',
-            'id_utente' => '1']);
+        $this->assertFalse($Diagnostico->save());
+        $this->tester->dontSeeRecord(Diagnostico::class, ['id' => '10']);
 
-        // $this->tester->dontSeeRecord('common\models\profile', ['First_name' => 'pato','Last_name' => 'ganso' ,'NIF' => '220032320','Address' => 'rua dos patos','Email' => 'pato.ganso@gmail.com','Phone_number' => '923456344','postal_code' => '2440','Birth_date' => '2000-01-04','gender' => 'Male']);
+    }
+    public function testDeleteDiagnostico()
+    {
+        $diagnostico = $this->adicionarDiagnostico();
+        $diagnostico->save();
+        $this->tester->seeRecord(Diagnostico::class, ['id' => '10']);
+        $diagnostico->delete();
+        $this->tester->dontSeeRecord(Diagnostico::class, ['id' => '10']);
+
+    }
+
+    public function testEditDiagnostico()
+    {
+
+        $diagnostico = $this->adicionarDiagnostico();
+        $diagnostico->save();
+        $diagnostico->situacao= "testar a situaçao editada";
+        $diagnostico->save();
+        $this->tester->seeRecord(Diagnostico::class, ['situacao' => 'testar a situaçao editada']);
 
     }
 }

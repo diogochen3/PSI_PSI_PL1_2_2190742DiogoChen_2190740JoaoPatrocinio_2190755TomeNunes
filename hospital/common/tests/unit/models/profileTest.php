@@ -12,19 +12,11 @@ class profileTest extends \Codeception\Test\Unit
     protected function _before()
     {
     }
-
     protected function _after()
     {
     }
-
-    // tests
-    public function testSomeFeature()
+    public static function adicionarProfile()
     {
-
-    }
-
-    public function testProfile(){
-
         $profile = new Profile();
         $profile->First_name= "pato";
         $profile->Last_name= "ganso";
@@ -35,22 +27,56 @@ class profileTest extends \Codeception\Test\Unit
         $profile->postal_code= "2440";
         $profile->Birth_date= "2000-01-04";
         $profile->gender= "Male";
-        $profile->id= "8";
+        $profile->id="74";
+        return $profile;
+    }
+    public function testFields()
+    {
+        $profile = $this->adicionarProfile();
+        $this->assertTrue($profile->validate());
+
+    }
+    public function testAddProfile()
+    {
+        $profile = $this->adicionarProfile();
+        $this->assertTrue($profile->save());
+        $this->tester->seeRecord(Profile::class, ['id' => '74']);
+    }
+    public function testAddErroProfile()
+    {
+        $profile = new Profile();
+        $profile->First_name= "pato";
+        $profile->Last_name= "ganso";
+        $profile->NIF= "testerro";
+        $profile->Address= "rua dos patos";
+        $profile->Email= "pato.ganso@gmail.com";
+        $profile->Phone_number= "923456344";
+        $profile->postal_code= "2440";
+        $profile->Birth_date= "2000-01-04";
+        $profile->gender= "Male";
+        $profile->id="74";
+        $this->assertFalse($profile->save());
+        $this->tester->dontSeeRecord(Profile::class, ['NIF' => 'testerro']);
+
+    }
+    public function testDeleteProfile()
+    {
+        $profile = $this->adicionarProfile();
         $profile->save();
+        $this->tester->seeRecord(Profile::class, ['id' => '74']);
+        $profile->delete();
+        $this->tester->dontSeeRecord(Profile::class, ['id' => '74']);
 
+    }
 
-        $this->tester->seeRecord('Profile', ['First_name' => 'pato',
-            'Last_name' => 'ganso' ,
-            'NIF' => '220032320',
-            'id' => '8',
-            'Address' => 'rua dos patos',
-            'Email' => 'pato.ganso@gmail.com',
-            'Phone_number' => '923456344',
-            'postal_code' => '2440',
-            'Birth_date' => '2000-01-04',
-            'gender' => 'Male']);
+    public function testEditProfile()
+    {
 
-        // $this->tester->dontSeeRecord('common\models\profile', ['First_name' => 'pato','Last_name' => 'ganso' ,'NIF' => '220032320','Address' => 'rua dos patos','Email' => 'pato.ganso@gmail.com','Phone_number' => '923456344','postal_code' => '2440','Birth_date' => '2000-01-04','gender' => 'Male']);
+        $profile = $this->adicionarProfile();
+        $profile->save();
+        $profile->postal_code = "2500";
+        $profile->save();
+        $this->tester->seeRecord(Profile::class, ['postal_code' => '2500']);
 
     }
 }

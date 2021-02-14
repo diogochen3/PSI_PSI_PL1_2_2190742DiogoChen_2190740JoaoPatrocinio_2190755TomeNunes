@@ -27,11 +27,11 @@ class receitaTest extends \Codeception\Test\Unit
         $Receitas->id_consulta= "1";
         return $Receitas;
     }
-
     public function testFields()
     {
         $Receitas = $this->adicionarReceitas();
         $this->assertTrue($Receitas->validate());
+
     }
     public function testAddReceitas()
     {
