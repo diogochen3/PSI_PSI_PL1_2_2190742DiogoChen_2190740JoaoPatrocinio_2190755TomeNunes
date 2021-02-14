@@ -77,7 +77,6 @@ AppAsset::register($this);
 
 
                     <li class="nav-item">  <?= Html::a('Perfil', ['medicos/profile']) ?></li>
-                    <li class="nav-item">  <?= Html::a('Criar diagnostico', ['diagnostico/create']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Marcaçoes', ['site/table_marcacoes']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Utentes', ['site/table']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de Consultas', ['consultas/index']) ?></li>
@@ -85,8 +84,7 @@ AppAsset::register($this);
                     <li class="nav-item">  <?= Html::a('Lista de diagnostico', ['diagnostico/index']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de receitas', ['receitas/index']) ?></li>
                     <li class="nav-item">  <?= Html::a('Lista de medicamento', ['medicamento/index']) ?></li>
-                    <li class="nav-item">  <?= Html::a('Criar Horario', ['horario/create']) ?></li>
-                    <li class="nav-item">  <?= Html::a('Teu Horario', ['horario/view']) ?></li>
+
                     <?php
                     $user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
                     if(isset($user['admin'])){
@@ -101,6 +99,12 @@ AppAsset::register($this);
                     ?><li class="nav-item"> <?= Html::a('Lista de Receitas', ['admin/lista_receitas']);?> <?php
                     ?><li class="nav-item"> <?= Html::a('Horario', ['horario/index']);?> <?php
                     }
+                    if(isset($user['medico'])){
+                        ?> <li class="nav-item">  <?= Html::a('Criar Horario', ['horario/create']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Teu Horario', ['horario/view']) ?></li>
+                    <li class="nav-item">  <?= Html::a('Criar diagnostico', ['diagnostico/create']) ?></li>
+
+                 <?php   }
 
 
                     ?>

@@ -179,6 +179,7 @@ class MarcacaoController extends Controller
         $listhora = [];
 
         foreach ($horario as $item) {
+
             $listhora[$item->id] = $item->tempo;
         }
 
@@ -260,8 +261,4 @@ class MarcacaoController extends Controller
             'model' => $horario,
         ]);
     }
-    /* Book::find()
-    ->where(['between', 'date', $start, $end])
-    ->andWhere(['like', 'book', $bookName])
-    ->all();*/
 }

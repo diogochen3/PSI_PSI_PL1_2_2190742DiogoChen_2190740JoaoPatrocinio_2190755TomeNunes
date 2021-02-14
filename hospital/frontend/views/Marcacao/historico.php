@@ -39,9 +39,9 @@ $this->title = 'Health Schedule';
                     <th>Data</th>
                     <th>Médico</th>
                     <th>Especialidade</th>
-                    <th>Aceito</th>
+                    <th>Aceite</th>
                     <th>Editar</th>
-                    <th>Canselar</th>
+                    <th>Cancelar</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -54,7 +54,7 @@ $this->title = 'Health Schedule';
                     <td><?= $item->medico->First_name; ?> <?= $item->medico->Last_name; ?></td>
                     <td><?= $item->especialidade->Name; ?></td>
                     <?php if ($item->Aceitar == 0) { ?>
-                        <?= 'Não foi aceite'; ?>
+                        <td><?= 'Não foi aceite'; ?></td>
                         <td> <?= Html::a('editar', ['update', 'id' => $item->id], ['class' => 'btn btn-primary']) ?></td>
                         <td><?= Html::a('Cancelar', ['delete', 'id' => $item->id], [
                                 'class' => 'btn btn-danger',
