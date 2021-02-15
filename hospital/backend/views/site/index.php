@@ -2,7 +2,7 @@
 use \yii\widgets\LinkPager;
 
 /* @var $marcacoes array */?>
-<head>
+<!--<head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="body">
@@ -11,40 +11,40 @@ use \yii\widgets\LinkPager;
 
         <div class="card marcacoes">
             <a href="table_marcacoes">
-            <div class="card-front"><i class="far fa-bookmark"></i> </div>
+                <div class="card-front"><i class="far fa-bookmark"></i> </div>
                 <div class="card-back">Marcações</div></a>
         </div>
     </div>
 
-<div class="cardbox" style="float: left;">
-    <div class="card diagnosticos">
-        <a href="..\diagnostico\index">
-        <div class="card-front"><i class="fas fa-clipboard"></i> </div>
-        <div class="card-back">Diagnosticos</div></a>
+    <div class="cardbox" style="float: left;">
+        <div class="card diagnosticos">
+            <a href="..\diagnostico\index">
+                <div class="card-front"><i class="fas fa-clipboard"></i> </div>
+                <div class="card-back">Diagnosticos</div></a>
+        </div>
     </div>
-</div>
 
-<div class="cardbox" style="float: left;">
-    <div class="card consultas">
-        <a href="..\consultas\index">
-        <div class="card-front"><i class="fas fa-calendar-check"></i> </div>
-            <div class="card-back">Consultas</div></a>
+    <div class="cardbox" style="float: left;">
+        <div class="card consultas">
+            <a href="..\consultas\index">
+                <div class="card-front"><i class="fas fa-calendar-check"></i> </div>
+                <div class="card-back">Consultas</div></a>
+        </div>
     </div>
-</div>
 
 
-<div class="cardbox" style="float: left;">
-    <div class="card especialidade">
-        <a href="..\especialidade\index">
-        <div class="card-front"><i class="fas fa-id-badge"></i> </div>
-        <div class="card-back">Especialidade</div>
-    </div>
+    <div class="cardbox" style="float: left;">
+        <div class="card especialidade">
+            <a href="..\especialidade\index">
+                <div class="card-front"><i class="fas fa-id-badge"></i> </div>
+                <div class="card-back">Especialidade</div>
+        </div>
     </div>
     <div>
         <div class="cardbox" style="float: left;">
             <div class="card utentes">
                 <a href="table">
-                <div class="card-front"><i class="fas fa-user-friends"></i> </div>
+                    <div class="card-front"><i class="fas fa-user-friends"></i> </div>
                     <div class="card-back">Utentes</div></a>
             </div>
         </div>
@@ -53,7 +53,7 @@ use \yii\widgets\LinkPager;
         <div class="cardbox" style="float: left;">
             <div class="card medicamentos">
                 <a href="..\medicamento\index">
-                <div class="card-front"><i class="fas fa-pills"></i> </div>
+                    <div class="card-front"><i class="fas fa-pills"></i> </div>
                     <div class="card-back">Medicamentos</div></a>
             </div>
         </div>
@@ -61,13 +61,13 @@ use \yii\widgets\LinkPager;
         <div class="cardbox" style="float: left;">
             <div class="card receitas">
                 <a href="..\receitas\index">
-                <div class="card-front"><i class="fas fa-receipt"></i> </div>
+                    <div class="card-front"><i class="fas fa-receipt"></i> </div>
                     <div class="card-back">Receitas</div></a>
             </div>
         </div>
 
 
-</div>
+    </div>
 
 
 
@@ -112,10 +112,10 @@ use \yii\widgets\LinkPager;
         background: #ab8440;
 
     }  .medicamentos{
-        background: #d73ccf;
+           background: #d73ccf;
 
-    }
-.receitas{
+       }
+    .receitas{
         background: #9d4e36;
 
     }
