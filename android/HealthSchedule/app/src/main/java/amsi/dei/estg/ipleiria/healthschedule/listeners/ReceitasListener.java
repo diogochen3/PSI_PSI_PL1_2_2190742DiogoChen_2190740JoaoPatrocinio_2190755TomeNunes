@@ -9,6 +9,4 @@ public interface ReceitasListener {
 
     void onRefreshListaReceitas(ArrayList<Receita> receitas);
 
-    void onRefreshdetalhesReceitas();
-
 }

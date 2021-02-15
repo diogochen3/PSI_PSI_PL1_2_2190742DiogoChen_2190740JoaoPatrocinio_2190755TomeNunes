@@ -17,9 +17,11 @@ import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Horario;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
+import amsi.dei.estg.ipleiria.healthschedule.model.Medicamento;
 import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.Receita;
+import amsi.dei.estg.ipleiria.healthschedule.model.ReceitaMedicamento;
 
 public class HospitalJsonParser {
 
@@ -108,11 +110,15 @@ public class HospitalJsonParser {
                 try {
                     JSONObject receita = (JSONObject) response.get(i);
                     int id = receita.getInt("id");
-                    String nome_medicamento = receita.getString("Nome_medicamento");
-                    int quantidade = receita.getInt("quantidade");
+                    int codAcesso = receita.getInt("cod_acesso");
+                    int codDispensa = receita.getInt("cod_dispensa");
+                    String data_emissao = receita.getString("data_emissao");
+                    int id_consulta = receita.getInt("id_consulta");
+                    Receita r = new Receita(id,codAcesso,codDispensa,id_consulta,data_emissao);
+                    receitas.add(r);
 
-                   // Receita l = new Receita(id);
-                 //   receitas.add(l);
+                  /*  String nome_medicamento = receita.getString("Nome_medicamento");
+                    int quantidade = receita.getInt("quantidade");*/
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -288,5 +294,50 @@ public class HospitalJsonParser {
         }
 
         return auxHorario;
+    }
+
+    public static ArrayList<ReceitaMedicamento> parserJsonReceitaMedicamento(JSONArray response) {
+        ArrayList<ReceitaMedicamento> receitaMedicamentos = new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject receitaMedicamento = (JSONObject) response.get(i);
+                    int id_receita = receitaMedicamento.getInt("id_receita");
+                    int id_medicamento = receitaMedicamento.getInt("id_medicamento");
+                    int quantidade = receitaMedicamento.getInt("quantidade");
+                    String posologia = receitaMedicamento.getString("posologia");
+
+
+                    ReceitaMedicamento me = new ReceitaMedicamento(id_receita, id_medicamento,quantidade,posologia);
+                    receitaMedicamentos.add(me);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return receitaMedicamentos;
+    }
+
+    public static ArrayList<Medicamento> parserJsonMedicamentos(JSONArray response) {
+
+        ArrayList<Medicamento> medicamentoaux= new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject medicamento = (JSONObject) response.get(i);
+                    int id = medicamento.getInt("id");
+                    String nome = medicamento.getString("nome_medicamento");
+                    String dosagem = medicamento.getString("dosagem");
+                    String forma = medicamento.getString("forma_farmaceuta");
+                    String embalagem = medicamento.getString("embalagem");
+
+                   Medicamento p = new Medicamento(id, nome,dosagem,embalagem,forma);
+                    medicamentoaux.add(p);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return medicamentoaux;
     }
 }

@@ -43,7 +43,6 @@ public class ListaMedicosFragment extends Fragment {
 
         lvListaMedicos= view.findViewById(R.id.lv_medicossssss);
 
-
         medico = SingletonGestorHospital.getInstance(getContext()).getMedicosEspecialidade();
 
         especialidades = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
@@ -60,10 +59,7 @@ public class ListaMedicosFragment extends Fragment {
     }
 
     public void onResume() {
-
-
         medico = SingletonGestorHospital.getInstance(getContext()).getMedicosEspecialidade();
-
         especialidades = SingletonGestorHospital.getInstance(getContext()).getallEspecialidadeBD();
         medicoEspecialidades = SingletonGestorHospital.getInstance(getContext()).getallMedicoEspecialidadeBD();
 

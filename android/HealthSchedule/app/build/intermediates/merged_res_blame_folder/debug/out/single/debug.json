@@ -332,6 +332,10 @@
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_action_adicionar.png"
     },
     {
+        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_lista_medicamentos.xml.flat",
+        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\item_lista_medicamentos.xml"
+    },
+    {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },

@@ -1,5 +1,6 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
+import android.animation.ValueAnimator;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -15,8 +16,9 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=13;
+    private static final int DB_VERSION=14;
     private static final int DATABASE_VERSION = 2;
+
 
     private final SQLiteDatabase db;
 
@@ -60,8 +62,23 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_RECEITA="receitas";
     private static final String ID_RECEITA="id";
-    private static final String QUANTIDADE_RECEITA="quantidade";
-    private static final String NOME_MEDICAMENTO_RECEITA="Nome_medicamento";
+    private static final String COD_ACESSO_RECEITA="cod_accesso";
+    private static final String COD_DISPENSA_RECEITA="cod_dispensa";
+    private static final String DATA_EMISSAO_RECEITA="data_emissao";
+    private static final String ID_CONSULTA_RECEITA="id_consulta";
+
+    private static final String TABLE_RECEITAMEDICAMENTO = "receita_medicamento";
+    private static final String ID_RECEITA_RECEITAMEDICAMENTO="id_receita";
+    private static final String ID_MEDICAMENTO_RECEITAMEDICAMENTO="id_medicamento";
+    private static final String QUANTIDADE_RECEITAMEDICAMENTO="quantidade";
+    private static final String POSOLOGIA_RECEITAMEDICAMENTO="posologia";
+
+    private static final String TABLE_MEDICAMENTO="medicamento";
+    private static final String ID_MEDICAMENTO="id";
+    private static final String NOME_MEDICAMENTO="nome_medicamento";
+    private static final String DOSAGEM_MEDICAMENTO="dosagem";
+    private static final String FORMA_FARMACEUTA_MEDICAMENTO="forma_farmaceuta";
+    private static final String EMBALAGEM_MEDICAMENTO="embalagem";
 
     private static final String TABLE_HORARIO= "horario";
     private static final String ID_HORARIO="id";
@@ -126,9 +143,25 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
         String sqlCreateTableReceita="CREATE TABLE IF NOT EXISTS "+TABLE_RECEITA+"("+
                 ID_RECEITA +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                QUANTIDADE_RECEITA + " INTEGER NOT NULL, "+
-                NOME_MEDICAMENTO_RECEITA+ " TEXT NOT NULL "+
+                COD_ACESSO_RECEITA + " INTEGER NOT NULL, "+
+                COD_DISPENSA_RECEITA+ " INTEGER NOT NULL ,"+
+                DATA_EMISSAO_RECEITA+ " TEXT NOT NULL ,"+
+                ID_CONSULTA_RECEITA+ " INTEGER NOT NULL "+
                 ");";
+        String sqlCreateTableReceitaMedicamento="CREATE TABLE IF NOT EXISTS "+TABLE_RECEITAMEDICAMENTO+"("+
+                ID_RECEITA_RECEITAMEDICAMENTO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                ID_MEDICAMENTO_RECEITAMEDICAMENTO + " INTEGER NOT NULL, "+
+                QUANTIDADE_RECEITAMEDICAMENTO+ " INTEGER NOT NULL ,"+
+                POSOLOGIA_RECEITAMEDICAMENTO+ " TEXT NOT NULL "+
+                ");";
+        String sqlCreateTableMedicamento="CREATE TABLE IF NOT EXISTS "+TABLE_MEDICAMENTO+"("+
+                ID_MEDICAMENTO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                NOME_MEDICAMENTO + " TEXT NOT NULL, "+
+                DOSAGEM_MEDICAMENTO+ " TEXT NOT NULL ,"+
+                FORMA_FARMACEUTA_MEDICAMENTO+ " TEXT NOT NULL ,"+
+                EMBALAGEM_MEDICAMENTO+ " TEXT NOT NULL "+
+                ");";
+
 
 
         sqLiteDatabase.execSQL(sqlCreateTableEspecialidade);
@@ -138,7 +171,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlCreateTableMedicoEspecialidade);
         sqLiteDatabase.execSQL(sqlCreateTableHorario);
         sqLiteDatabase.execSQL(sqlCreateTableReceita);
-
+        sqLiteDatabase.execSQL(sqlCreateTableReceitaMedicamento);
+        sqLiteDatabase.execSQL(sqlCreateTableMedicamento);
     }
 
 
@@ -158,6 +192,10 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlDropTableReceita);
         String sqlDropTableHorario="DROP TABLE IF EXISTS "+ TABLE_HORARIO;
         sqLiteDatabase.execSQL(sqlDropTableHorario);
+        String sqlDropTableReceitaMedicamento="DROP TABLE IF EXISTS "+ TABLE_RECEITAMEDICAMENTO;
+        sqLiteDatabase.execSQL(sqlDropTableReceitaMedicamento);
+        String sqlDropTableMedicamento ="DROP TABLE IF EXISTS "+ TABLE_MEDICAMENTO;
+        sqLiteDatabase.execSQL(sqlDropTableMedicamento);
         this.onCreate(sqLiteDatabase);
     }
 
@@ -332,34 +370,14 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 Diagnostico auxDiagnostico=new Diagnostico(cursor.getInt(0),
                         cursor.getInt(1),
                         cursor.getInt(2),
-                        cursor.getString(3),
                         cursor.getString(4),
+                        cursor.getString(3),
                         cursor.getString(5));
                 diagnosticos.add(auxDiagnostico);
             }while (cursor.moveToNext());
         }
         return diagnosticos;
     }
-
-    public ArrayList<Receita> getAllReceitasBD(){
-        ArrayList<Receita> receitas=new ArrayList<>();
-        Cursor cursor=this.db.query(TABLE_RECEITA, new String[]{
-                        ID_RECEITA,
-                        QUANTIDADE_RECEITA,
-                        NOME_MEDICAMENTO_RECEITA},
-                null,null,null,null,null);
-
-        if (cursor.moveToFirst()){
-            do {
-               /* Receita auxReceita=new Receita(cursor.getInt(0),
-                        cursor.getInt(1),
-                        cursor.getString(2));*/
-             //   receitas.add(auxReceita);
-            }while (cursor.moveToNext());
-        }
-        return receitas;
-    }
-
 
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){
         ContentValues values= new ContentValues();
@@ -371,22 +389,41 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         values.put(DID_UTENTE_DIAGNOSTICO,diagnostico.getId_utente());
 
         this.db.insert(TABLE_DIAGNOSTICO,null,values);
-
-       /* long id= this.db.insert(TABLE_LIVROS,null,values);
-        if (id>-1){
-            livro.setId((int)id);
-            return livro;
-        }*/
-
-        //return livro;
-        //return null;
     }
+
+    public ArrayList<Receita> getAllReceitasBD(){
+        ArrayList<Receita> receitas=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_RECEITA, new String[]{
+                        ID_RECEITA,
+                        COD_ACESSO_RECEITA,
+                        COD_DISPENSA_RECEITA,
+                DATA_EMISSAO_RECEITA,
+                ID_CONSULTA_RECEITA},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Receita auxReceita=new Receita(cursor.getInt(0),
+                        cursor.getInt(1),
+                        cursor.getInt(2),
+                        cursor.getInt(4),
+                        cursor.getString(3));
+                receitas.add(auxReceita);
+            }while (cursor.moveToNext());
+        }
+        return receitas;
+    }
+
+
+
 
     public void adicionarReceitaBD(Receita receita){
         ContentValues values= new ContentValues();
         values.put(ID_RECEITA,receita.getId());
-       // values.put(QUANTIDADE_RECEITA,receita.getQuantidade());
-       // values.put(NOME_MEDICAMENTO_RECEITA,receita.getNome_medicamento());
+        values.put(COD_ACESSO_RECEITA,receita.getCodigo_acesso());
+        values.put(COD_DISPENSA_RECEITA,receita.getCodigo_dispensa());
+        values.put(DATA_EMISSAO_RECEITA,receita.getData_emissao());
+        values.put(ID_CONSULTA_RECEITA,receita.getId_consulta());
 
         this.db.insert(TABLE_RECEITA,null,values);
 
@@ -531,4 +568,74 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
         return this.db.update(TABLE_HORARIO,values,"id=? ",new String[]{horario.getId() +""}) >0;
     }
+
+    /******************************** ReceitaMedicamento **************************************************/
+
+    public void removerAllReceitaMedicamentoBD() {
+        this.db.delete(TABLE_RECEITAMEDICAMENTO,null,null);
+    }
+
+    public void adicionarReceitaMedicamentoBD(ReceitaMedicamento rm) {
+        ContentValues values= new ContentValues();
+
+        values.put(ID_RECEITA_RECEITAMEDICAMENTO,rm.getId_receita());
+        values.put(ID_MEDICAMENTO_RECEITAMEDICAMENTO,rm.getId_medicamento());
+        values.put(QUANTIDADE_RECEITAMEDICAMENTO,rm.getQuantidade());
+        values.put(POSOLOGIA_RECEITAMEDICAMENTO,rm.getPosologia());
+
+        this.db.insert(TABLE_RECEITAMEDICAMENTO,null,values);
+    }
+
+    public ArrayList<ReceitaMedicamento> getAllReceitaMedicamentosBD() {
+        ArrayList<ReceitaMedicamento> receitaMedicamentos=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_RECEITAMEDICAMENTO, new String[]{
+                        ID_RECEITA_RECEITAMEDICAMENTO,ID_MEDICAMENTO_RECEITAMEDICAMENTO,QUANTIDADE_RECEITAMEDICAMENTO, POSOLOGIA_RECEITAMEDICAMENTO},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                ReceitaMedicamento auxReceitaMedicamento =new ReceitaMedicamento(cursor.getInt(0),
+                        cursor.getInt(1),cursor.getInt(2),cursor.getString(3));
+                receitaMedicamentos.add(auxReceitaMedicamento);
+            }while (cursor.moveToNext());
+        }
+        return receitaMedicamentos;
+    }
+
+    public void removerAllMedicamentosBD() {
+        this.db.delete(TABLE_MEDICAMENTO,null,null);
+    }
+
+    public void adicionarMedicamentoBD(Medicamento m) {
+        ContentValues values= new ContentValues();
+
+        values.put(ID_MEDICAMENTO,m.getId());
+        values.put(NOME_MEDICAMENTO,m.getNome_medicamento());
+        values.put(DOSAGEM_MEDICAMENTO,m.getDosagem());
+        values.put(FORMA_FARMACEUTA_MEDICAMENTO,m.getForma_farmaceuta());
+        values.put(EMBALAGEM_MEDICAMENTO,m.getEmbalagem());
+
+        this.db.insert(TABLE_MEDICAMENTO,null,values);
+    }
+    public ArrayList<Medicamento> getAllMedicamentosBD() {
+
+            ArrayList<Medicamento> medicamentos=new ArrayList<>();
+            Cursor cursor=this.db.query(TABLE_MEDICAMENTO, new String[]{
+                            ID_MEDICAMENTO,NOME_MEDICAMENTO,DOSAGEM_MEDICAMENTO,FORMA_FARMACEUTA_MEDICAMENTO,EMBALAGEM_MEDICAMENTO},
+                    null,null,null,null,null);
+
+            if (cursor.moveToFirst()){
+                do {
+                    Medicamento auxMedicamento =new Medicamento(cursor.getInt(0),
+                            cursor.getString(1),cursor.getString(2),cursor.getString(4),cursor.getString(3));
+                    medicamentos.add(auxMedicamento);
+                }while (cursor.moveToNext());
+            }
+            return medicamentos;
+    }
+
+
+
+
+
 }

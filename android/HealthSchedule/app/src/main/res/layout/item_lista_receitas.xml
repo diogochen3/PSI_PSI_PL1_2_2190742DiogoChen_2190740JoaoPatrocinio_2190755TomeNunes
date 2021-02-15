@@ -12,18 +12,10 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="25dp"
-            android:layout_height="100dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/programarandroid1" />
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0"
             android:orientation="vertical">
 
             <LinearLayout
@@ -36,11 +28,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:text="Nome do medicamento:"
+                    android:text="Código de acesso:"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtMedicamento"
+                    android:id="@+id/txtCodAcesso"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -53,25 +45,51 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/hora"
+                    android:id="@+id/coddispen"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="0"
-                    android:text="Quantidade do medicamento:"
+                    android:text="Código de dispensa:"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtQuantidade"
+                    android:id="@+id/txtCodDispensa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    />
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:text="Data de Emissão:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtDataemissao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_medicamento"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
         </LinearLayout>
+
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>
 

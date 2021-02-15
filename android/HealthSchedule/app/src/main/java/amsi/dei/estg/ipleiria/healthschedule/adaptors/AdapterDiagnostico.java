@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
 import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
+import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 
 public class AdapterDiagnostico extends BaseAdapter {
 
@@ -18,10 +19,12 @@ public class AdapterDiagnostico extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private ArrayList<Diagnostico> diagnosticos;
+    private ArrayList<Profile> profiles;
 
-    public AdapterDiagnostico(Context context, ArrayList<Diagnostico> diagnosticos) {
+    public AdapterDiagnostico(Context context, ArrayList<Diagnostico> diagnosticos, ArrayList<Profile> profiles) {
         this.context = context;
         this.diagnosticos = diagnosticos;
+        this.profiles = profiles;
     }
 
     @Override
@@ -58,19 +61,24 @@ public class AdapterDiagnostico extends BaseAdapter {
     }
 
     private class ViewHolderLista {
-        private TextView txtSituacao, txtDescricao;
+        private TextView txtSituacao, txtDescricao, txtDate, txtMedicoDiagnostico;
         // private ImageView imgCapa;
 
         public ViewHolderLista(View view) {
             txtSituacao = view.findViewById(R.id.txtSituacao);
             txtDescricao = view.findViewById(R.id.txtDescricao);
-
+            txtDate = view.findViewById(R.id.txtdataDiagnostico);
+            txtMedicoDiagnostico = view.findViewById(R.id.txtMedicoDiagnostico);
         }
 
         public void update(Diagnostico diagnostico) {
+            for (Profile p: profiles) {
+                if (diagnostico.getId_medico() == p.getId())
+                    txtMedicoDiagnostico.setText(p.getFirst_name() +" "+ p.getLast_name());
+            }
             txtDescricao.setText(diagnostico.getDescricao());
             txtSituacao.setText(diagnostico.getSituacao());
-
+            txtDate.setText(diagnostico.getDate());
         }
 
     }

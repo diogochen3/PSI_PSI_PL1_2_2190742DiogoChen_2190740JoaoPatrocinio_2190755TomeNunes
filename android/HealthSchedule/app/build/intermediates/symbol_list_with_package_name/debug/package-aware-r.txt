@@ -1713,6 +1713,7 @@ id chronometer
 id clear_text
 id clip_horizontal
 id clip_vertical
+id coddispen
 id codigo_et
 id collapseActionView
 id collapsingToolbarLayout
@@ -1726,6 +1727,7 @@ id cos
 id custom
 id customPanel
 id cut
+id data
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1809,7 +1811,6 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
-id hora
 id icon
 id icon_group
 id ifRoom
@@ -1839,6 +1840,7 @@ id list_item
 id listaEspecialidade
 id lv_agenda
 id lv_diagnostico
+id lv_medicamento
 id lv_medicossssss
 id lv_receita
 id marcacao_card
@@ -2007,8 +2009,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView2
-id textView3
 id textView4
 id text_input_end_icon
 id text_input_start_icon
@@ -2018,6 +2018,8 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
+id textvEspecialidade
+id textvMedico
 id time
 id title
 id titleDividerNoCustom
@@ -2040,18 +2042,24 @@ id tvLNome
 id tvMedico
 id tvPNome
 id tvSuject
+id txSitua
+id txdata
+id txmed
+id txtCodAcesso
+id txtCodDispensa
+id txtDataemissao
 id txtDescricao
 id txtEmail
 id txtHorario
-id txtMedicamento
+id txtMedicoDiagnostico
 id txtMedicoMarcacao
 id txtNome
 id txtNomeEspecialidade
 id txtNomeMedico
 id txtNumeroTL
-id txtQuantidade
 id txtSituacao
 id txtTempoMarcacao
+id txtdataDiagnostico
 id unchecked
 id uniform
 id unlabeled
@@ -2155,6 +2163,7 @@ layout fragment_lista_receitas
 layout fragment_perfil
 layout item_lista_diagnostico
 layout item_lista_marcacao
+layout item_lista_medicamentos
 layout item_lista_medico
 layout item_lista_receitas
 layout item_spinner_especialidade

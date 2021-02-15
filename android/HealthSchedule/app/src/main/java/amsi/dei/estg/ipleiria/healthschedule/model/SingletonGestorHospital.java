@@ -30,6 +30,7 @@ import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -93,9 +94,17 @@ public class SingletonGestorHospital {
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
-    /************************ variaveis MedicoEspecialidade ******************************************/
+    /************************ variaveis Horario ******************************************/
     private static final  String  mUrlAPIHorario =  "http://192.168.1.104/hospital/frontend/web/index.php/api/horario";
     private ArrayList<Horario> horarios;
+
+    /************************* variaveis Medicamento *********************************************/
+    private static final  String  mUrlAPIMedicamento =  "http://192.168.1.104/hospital/frontend/web/index.php/api/medicamento";
+    private ArrayList<Medicamento> medicamentos;
+
+    /************************* variaveis receitaMedicamento *********************************************/
+    private static final  String  mUrlAPIReceitaMedicamento =  "http://192.168.1.104/hospital/frontend/web/index.php/api/receitamedicamento";
+    private ArrayList<ReceitaMedicamento> receitaMedicamentos;
 
     public static synchronized SingletonGestorHospital getInstance(Context context) {
         if (instance == null)
@@ -113,6 +122,8 @@ public class SingletonGestorHospital {
         especialidadesNome= new ArrayList<>();
         medicoEspecialidades= new ArrayList<>();
         horarios = new ArrayList<>();
+        medicamentos = new ArrayList<>();
+        receitaMedicamentos = new ArrayList<>();
         hospitalDB =new HospitalBDHelper(context);
     }
 
@@ -278,17 +289,20 @@ public class SingletonGestorHospital {
 
         ArrayList<Profile> profile = new ArrayList<>();
 
-        for (MedicoEspecialidade me: medicoEspecialidades)
+        for (Profile p: profiles)
         {
-            for (Profile p: profiles)
+            for (MedicoEspecialidade me: medicoEspecialidades)
             {
-                if (me.getId_Medico() == p.getId())  {
+                if (me.getId_Medico() == p.getId())
+                {
                     profile.add(p);
+                    break;
                 }
+
             }
         }
-        return profile;
 
+        return profile;
     }
 
 
@@ -394,7 +408,7 @@ public class SingletonGestorHospital {
         if (!HospitalJsonParser.isConnectionInternet(context)) {
 
         }else {
-            StringRequest req =new StringRequest(Request.Method.PUT, mUrlAPIHorario, new Response.Listener<String>() {
+            StringRequest req =new StringRequest(Request.Method.PUT, mUrlAPIHorario+"/horarionew/"+horario.getId(), new Response.Listener<String>() {
 
                 @Override
                 public void onResponse(String response) {
@@ -413,39 +427,6 @@ public class SingletonGestorHospital {
                     Map<String, String> params = new HashMap<>();
 
                     params.put("usado", horario.getUsado()+"");
-                    return params;
-                }
-            };
-
-            volleyQueue.add(req);
-
-        }
-    }
-
-    public void getEditEditarHorarioAPI(final Context context){
-
-        if (!HospitalJsonParser.isConnectionInternet(context)) {
-
-        }else {
-            StringRequest req =new StringRequest(Request.Method.PUT, mUrlAPIHorario, new Response.Listener<String>() {
-
-                @Override
-                public void onResponse(String response) {
-                    Horario horarioaux = HospitalJsonParser.parserJsonHorario(response);
-                    editarHorariosBD(horarioaux);
-
-                }
-            }, new ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }){
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
-
-                    params.put("usado", "0");
                     return params;
                 }
             };
@@ -566,7 +547,7 @@ public class SingletonGestorHospital {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
 
-                params.put("id", marcacao.getId()+"");
+                params.put("id_horario", marcacao.getId()+"");
                 params.put("Aceitar", marcacao.getAceitar()+"");
                 params.put("id_especialidade", marcacao.getId_especialidade() + "");
                 params.put("id_Utente", marcacao.getId_Medico()+"");
@@ -579,10 +560,10 @@ public class SingletonGestorHospital {
 
         volleyQueue.add(req);
     }
-    public void editarMarcacaoAPI(final Marcacao marcacao, final Context context){
+    public void editarMarcacaoAPI(final Marcacao marcacao, final Context context, int id){
 
         StringRequest req =new StringRequest(Request.Method.PUT,
-                mUrlAPIMarcacao+"/marcacaonew/"+marcacao.getId(),
+                mUrlAPIMarcacao+"/marcacaonew/"+id,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -605,11 +586,11 @@ public class SingletonGestorHospital {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
 
-                params.put("id", marcacao.getId()+"");
+                params.put("id_horario", marcacao.getId()+"");
                 params.put("Aceitar", marcacao.getAceitar()+"");
                 params.put("id_especialidade", marcacao.getId_especialidade() + "");
-                params.put("id_Utente", marcacao.getId_Medico()+"");
-                params.put("id_Medico", marcacao.getId_Utente()+"");
+                params.put("id_Utente", marcacao.getId_Utente()+"");
+                params.put("id_Medico", marcacao.getId_Medico()+"");
                 return params;
             }
         };
@@ -798,6 +779,7 @@ public class SingletonGestorHospital {
         }
     }
 
+
     public void adicionarReceitasBD(ArrayList<Receita> receitas){
         hospitalDB.removerAllReceitasBD();
         for(Receita l: receitas){
@@ -918,7 +900,7 @@ public class SingletonGestorHospital {
     public void getAllMedicoEspecialidadeAPI(final Context context){
 
         if (!HospitalJsonParser.isConnectionInternet(context)) {
-            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+
         }else {
 
             //JsonRequest req;
@@ -958,6 +940,107 @@ public class SingletonGestorHospital {
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
     }
 
+    public void getAllReceitaMedicamentoAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+
+        }else {
+
+            //JsonRequest req;
+            // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIReceitaMedicamento, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    receitaMedicamentos = HospitalJsonParser.parserJsonReceitaMedicamento(response);
+                    adicionarReceitaMedicamentosBD(receitaMedicamentos);
 
 
+                }
+            }, new ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            volleyQueue.add(req);
+        }
+    }
+
+    private void adicionarReceitaMedicamentosBD(ArrayList<ReceitaMedicamento> receitaMedicamentos) {
+        hospitalDB.removerAllReceitaMedicamentoBD();
+        for(ReceitaMedicamento rm: receitaMedicamentos){
+            adicionarReceitaMedicamentoBD(rm);
+        }
+    }
+
+    private void adicionarReceitaMedicamentoBD(ReceitaMedicamento rm) {
+        hospitalDB.adicionarReceitaMedicamentoBD(rm);
+    }
+/************************************************** Medicamento ************************************/
+    public void getAllMedicamentoAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+
+        }else {
+
+            //JsonRequest req;
+            // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIReceitaMedicamento, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    medicamentos = HospitalJsonParser.parserJsonMedicamentos(response);
+                    adicionarMedicamentosBD(medicamentos);
+
+
+                }
+            }, new ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            volleyQueue.add(req);
+        }
+    }
+
+    private void adicionarMedicamentosBD(ArrayList<Medicamento> medicamentos) {
+        hospitalDB.removerAllMedicamentosBD();
+        for(Medicamento m: medicamentos){
+            adicionarMedicamentoBD(m);
+        }
+    }
+
+    private void adicionarMedicamentoBD(Medicamento m) {
+        hospitalDB.adicionarMedicamentoBD(m);
+    }
+
+    public ArrayList<Receita> getMarcacaReceita(ArrayList<Receita> receit, int user_id) {
+        ArrayList<Receita> receitas1 = new ArrayList<>();
+        for (Receita r: receit) {
+            for (Marcacao m: marcacoes) {
+                if (r.getId_consulta() == m.getId() && m.getId_Utente() == user_id)
+                    receitas1.add(r);
+            }
+        }
+        return receitas1;
+    }
+
+    public ArrayList<Receita> getAllReceitasBD() {
+        receitas = hospitalDB.getAllReceitasBD();
+        return receitas;
+    }
+
+    public ArrayList<ReceitaMedicamento> getAllReceitaMedicamentoBD() {
+        receitaMedicamentos = hospitalDB.getAllReceitaMedicamentosBD();
+        return receitaMedicamentos;
+    }
+
+    public ArrayList<Medicamento> getAllMedicamentoBD() {
+        medicamentos = hospitalDB.getAllMedicamentosBD();
+        return medicamentos;
+    }
 }

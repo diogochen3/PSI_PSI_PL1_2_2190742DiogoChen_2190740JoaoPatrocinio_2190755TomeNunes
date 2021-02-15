@@ -5,13 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
-import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
 import amsi.dei.estg.ipleiria.healthschedule.model.Receita;
+import amsi.dei.estg.ipleiria.healthschedule.model.ReceitaMedicamento;
+import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 
 public class AdapterReceitas extends BaseAdapter {
 
@@ -59,18 +62,22 @@ public class AdapterReceitas extends BaseAdapter {
     }
 
     private class ViewHolderLista {
-        private TextView txtMedicamento, txtQuantidade;
-
+        private TextView txtcodAcesso, txtcodDispensa, txtDataEmissao;
+        private ListView lvMedicamento;
 
         public ViewHolderLista(View view) {
-            txtMedicamento = view.findViewById(R.id.txtMedicamento);
-            txtQuantidade = view.findViewById(R.id.txtQuantidade);
-
+            txtcodAcesso = view.findViewById(R.id.txtCodAcesso);
+            txtcodDispensa = view.findViewById(R.id.txtCodDispensa);
+            txtDataEmissao = view.findViewById(R.id.txtDataemissao);
+            lvMedicamento = view.findViewById(R.id.lv_medicamento);
         }
 
         public void update(Receita receita) {
-           // txtMedicamento.setText(receita.getNome_medicamento());
-           // txtQuantidade.setText(receita.getQuantidade() + "");
+            txtcodAcesso.setText(receita.getCodigo_acesso()+"");
+            txtcodDispensa.setText(receita.getCodigo_dispensa()+"");
+            txtDataEmissao.setText(receita.getData_emissao());
+       //     ArrayList<ReceitaMedicamento> receitaMedicamentos = SingletonGestorHospital.getInstance(context).getMedicamentoReceita(receita.getId()) ;
+
 
         }
 

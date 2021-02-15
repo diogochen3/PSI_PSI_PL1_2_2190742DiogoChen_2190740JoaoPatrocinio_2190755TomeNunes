@@ -83,6 +83,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
         setHasOptionsMenu(true);
         horarios = SingletonGestorHospital.getInstance(getContext()).getallHorariosBD();
 
+        SingletonGestorHospital.getInstance(getContext()).setMarcacaoListener(this);
 
         criarPDF= view.findViewById(R.id.btnCreatePdf);
 
@@ -124,7 +125,8 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                 myPaint.setColor(Color.BLACK);
                 for (Marcacao marcacaoitem : listaUserMarcacoes){
                     x=100;
-                   // canvas.drawText(marcacaoitem.getTempo(), x, y , myPaint);
+                    Horario horario = SingletonGestorHospital.getInstance(getContext()).gethorario(marcacaoitem.getId());
+                    canvas.drawText(horario.gettempo(), x, y , myPaint);
 
                     for (Profile profileitem : medico){
                         if (marcacaoitem.getId_Medico() == profileitem.getId()) {
@@ -141,9 +143,6 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
                         }
                     }
                     x=400;
-                   // canvas.drawText(marcacaoitem.getDate(), x, y , myPaint);
-                    x=500;
-
 
                     y=y+14;
 
@@ -264,6 +263,7 @@ public class AgendaFragment extends Fragment implements SwipeRefreshLayout.OnRef
     }
     @Override
     public void onRefresh() {
+        SingletonGestorHospital.getInstance(getContext()).getAllHorarioAPI(getContext());
         SingletonGestorHospital.getInstance(getContext()).getAllMarcacaoAPI(getContext());
         swipeRefreshLayout.setRefreshing(false);
 

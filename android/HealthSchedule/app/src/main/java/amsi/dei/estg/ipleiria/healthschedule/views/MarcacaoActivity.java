@@ -59,7 +59,7 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
     private ArrayAdapter arrayAdapter;
     private ArrayList<Especialidade> especialidade;
     private ArrayList<Profile> medico;
-    private TextView tvEspecialidade, tvMedico;
+    private TextView tvEspecialidade, tvMedico, txtEspecialidade, txtMedico;
     private ArrayList<Horario> horarios;
     private Horario antiHorario, atualHorario;
 
@@ -79,8 +79,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         SingletonGestorHospital.getInstance(getApplicationContext()).setMarcacaoListener(this);
 
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
-
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllHorarioAPI(getApplicationContext());
 
         final FloatingActionButton fab = findViewById(R.id.fab);
         spEspecialidade = findViewById(R.id.spEspecialidade);
@@ -88,6 +88,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         spHorario = findViewById(R.id.spHorario);
         tvEspecialidade = findViewById(R.id.tvEspecialidade);
         tvMedico = findViewById(R.id.tvMedico);
+        txtEspecialidade = findViewById(R.id.textvEspecialidade);
+        txtMedico = findViewById(R.id.textvMedico);
        // cvDate.setMinDate((new Date().getTime()));
        // tpTime.setIs24HourView(true);
 
@@ -95,7 +97,6 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
         if (marcacao != null){
 
             antiHorario = SingletonGestorHospital.getInstance(getApplicationContext()).gethorario(marcacao.getId());
-
             // setTitle("Detalhes"+livro.getTitulo());
             carregarDetalhesMarcacao();
             fab.setImageResource(R.drawable.ic_action_guardar);
@@ -124,14 +125,14 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                         marcacao.setAceitar(0);
                         SingletonGestorHospital.getInstance(getApplicationContext()).editarHorarioAPI(antiHorario,getApplicationContext());
                         SingletonGestorHospital.getInstance(getApplicationContext()).editarHorarioAPI(atualHorario,getApplicationContext());
-                        SingletonGestorHospital.getInstance(getApplicationContext()).editarMarcacaoAPI(marcacao,getApplicationContext());
+                        SingletonGestorHospital.getInstance(getApplicationContext()).editarMarcacaoAPI(marcacao,getApplicationContext(),antiHorario.getId());
 
                     }
                     else if (validarMarcaco()==true){
                         //time = validarHoras();
 
 
-                        marcacao = new Marcacao(0,id_especialidade,id_user,id_medico,0);
+                        marcacao = new Marcacao(id_horario,id_especialidade,id_user,id_medico,0);
                         Horario horario = SingletonGestorHospital.getInstance(getApplicationContext()).gethorario(id_horario);
                         horario.setUsado(1);
                         SingletonGestorHospital.getInstance(getApplicationContext()).editarHorarioAPI(horario,getApplicationContext());
@@ -287,6 +288,8 @@ public class MarcacaoActivity extends AppCompatActivity  implements MarcacoesLis
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        marcacao.setAceitar(0);
+                        SingletonGestorHospital.getInstance(getApplicationContext()).editarHorarioAPI(antiHorario,getApplicationContext());
                         SingletonGestorHospital.getInstance(getApplicationContext()).removerMarcacaoAPI(marcacao,getApplicationContext());
                     }
                 })

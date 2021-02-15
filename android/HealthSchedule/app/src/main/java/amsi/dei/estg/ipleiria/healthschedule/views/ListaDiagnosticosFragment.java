@@ -17,18 +17,24 @@ import amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.DiagnosticoListener;
 import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
+import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class ListaDiagnosticosFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, DiagnosticoListener {
     private ListView lvListaDiagnosticos;
-    private ArrayList<Diagnostico> listaDiagnosticos;
+    private ArrayList<Diagnostico> listaDiagnosticos, listaUserDiagnostico;
+
     private SwipeRefreshLayout swipeRefreshLayout;
     private int user_id;
+    private ArrayList<Profile> profiles;
     @Override
     public void onRefreshListaDiagnostico(ArrayList<Diagnostico> diagnosticos) {
-        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getContext(),diagnosticos));
+
+        listaUserDiagnostico= SingletonGestorHospital.getInstance(getContext()).getDiagnosticos(user_id,diagnosticos);
+        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getActivity(),listaUserDiagnostico,profiles));
+
     }
 
     @Override
@@ -38,8 +44,9 @@ public class ListaDiagnosticosFragment extends Fragment implements SwipeRefreshL
 
     @Override
     public void onRefresh() {
-
+        SingletonGestorHospital.getInstance(getContext()).getAllProfileAPI(getContext());
         SingletonGestorHospital.getInstance(getContext()).getAllDiagnosticoAPI(getContext());
+
         swipeRefreshLayout.setRefreshing(false);
     }
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,29 +61,24 @@ public class ListaDiagnosticosFragment extends Fragment implements SwipeRefreshL
         swipeRefreshLayout= view.findViewById(R.id.swipe_refresh_layout);
 
         swipeRefreshLayout.setOnRefreshListener(this);
+        SingletonGestorHospital.getInstance(getContext()).setDiagnosticosListener(this);
+        SingletonGestorHospital.getInstance(getContext()).getAllDiagnosticoAPI(getContext());
 
-
-        listaDiagnosticos = SingletonGestorHospital.getInstance(getContext()).getallDiagnosticoBD();
+        /*listaDiagnosticos = SingletonGestorHospital.getInstance(getContext()).getallDiagnosticoBD();
 
         ArrayList<Diagnostico> listaUserDiagnostico = SingletonGestorHospital.getInstance(getContext()).getDiagnosticos(user_id,listaDiagnosticos);
 
 
-        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getActivity(),listaUserDiagnostico));
+        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getActivity(),listaUserDiagnostico));*/
 
         return view;
-
-
     }
 
     public void onResume() {
-
-
         listaDiagnosticos = SingletonGestorHospital.getInstance(getContext()).getallDiagnosticoBD();
-
-        ArrayList<Diagnostico> listaUserDiagnostico = SingletonGestorHospital.getInstance(getContext()).getDiagnosticos(user_id,listaDiagnosticos);
-
-
-        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getActivity(),listaUserDiagnostico));
+        listaUserDiagnostico = SingletonGestorHospital.getInstance(getContext()).getDiagnosticos(user_id,listaDiagnosticos);
+        profiles = SingletonGestorHospital.getInstance(getContext()).getallProfileBD();
+        lvListaDiagnosticos.setAdapter(new AdapterDiagnostico(getActivity(),listaUserDiagnostico,profiles));
 
         super.onResume();
     }

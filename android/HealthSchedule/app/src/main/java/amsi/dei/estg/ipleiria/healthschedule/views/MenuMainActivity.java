@@ -55,6 +55,9 @@ public class MenuMainActivity extends AppCompatActivity  implements NavigationVi
 
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllEspecialidadeAPI(getApplicationContext());
         SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicoEspecialidadeAPI(getApplicationContext());
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllReceitaMedicamentoAPI(getApplicationContext());
+        SingletonGestorHospital.getInstance(getApplicationContext()).getAllMedicamentoAPI(getApplicationContext());
+
 
         navigationView.setNavigationItemSelectedListener(this);
 
