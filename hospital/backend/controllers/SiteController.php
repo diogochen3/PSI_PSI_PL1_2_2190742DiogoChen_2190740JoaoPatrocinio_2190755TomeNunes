@@ -218,6 +218,31 @@ class SiteController extends Controller
         ]);
 
     }
+    public function actionAceitar($id)
+    {
+
+        $marcacao = Marcacao::find()->where(["id" => $id])->one();
+
+        $marcacao->Aceitar = 1;
+        $marcacao->save(false);
+        $consulta = new Consultas();
+        $consulta->id = $marcacao->id;
+        $consulta->id_medico = Yii::$app->user->getId();
+        $consulta->id_utente = $marcacao->id_Utente;
+        $consulta->estado = 0;
+        $consulta->save();
+        return $this->redirect("table_marcacoes");
+    }
+
+    public function actionNaceitar($id)
+    {
+        $marcacao = Marcacao::find()->where(["id" => $id])->one();
+
+        $marcacao->Aceitar = 0;
+        $marcacao->save(false);
+
+        return $this->redirect("table_marcacoes");
+    }
         public function actionNotifications(){
 
             $list = NotificationController::Receive("user_".Yii::$app->user->id);
@@ -272,29 +297,7 @@ class SiteController extends Controller
             ]);
     }
 
-    public function actionAceitar($id)
-    {
 
-        $marcacao = Marcacao::find()->where(["id" => $id])->one();
-        $marcacao->Aceitar = 1;
-        $marcacao->save(false);
-        $consulta = new Consultas();
-        $consulta->id = $marcacao->id;
-        $consulta->id_medico = Yii::$app->user->getId();
-        $consulta->id_utente = $marcacao->id_Utente;
-        $consulta->estado = 0;
-        $consulta->save();
-        return $this->redirect("table_marcacoes");
-    }
-
-    public function actionNAceitar($id)
-    {
-        $marcacao = Marcacao::find()->where(["id" => $id])->one();
-        $marcacao->aceitar = 0;
-        $marcacao->save(false);
-
-        return $this->redirect("table_marcacoes");
-    }
 
     public function actionEnviar($id)
     {

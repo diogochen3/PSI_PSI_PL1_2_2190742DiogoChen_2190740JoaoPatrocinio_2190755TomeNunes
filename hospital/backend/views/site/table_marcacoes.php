@@ -67,9 +67,8 @@ use \yii\widgets\LinkPager;
                                     <td><?= $marcacao->especialidade->Name  ?></td>
                                     <td><?= $marcacao->id0->tempo  ?></td>
                                         <?php if ($marcacao->Aceitar == 0) { ?>
-                                        <td> <?= Html::a('Aceitar Marcação', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?>
-                                            <?= Html::a('Não Aceitar', ['nAceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
-                                        <td> <?= Html::a('Editar', ['update', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+                                        <td> <?= Html::a('Aceitar Marcação', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-success']) ?>
+                                                       <td> <?= Html::a('Editar', ['update', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
                                     <?php }elseif($marcacao->Aceitar == 1){  ?>
                                         <td> Aceite </td>
                                         <td></td>

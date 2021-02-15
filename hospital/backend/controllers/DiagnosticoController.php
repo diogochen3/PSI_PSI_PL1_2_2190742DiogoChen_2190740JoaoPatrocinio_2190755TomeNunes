@@ -111,6 +111,12 @@ class DiagnosticoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $utente= Profile::find()->where(['id'=>$model->id_utente])->all();
+
+        $listute =[];
+        foreach ($utente as $item) {
+            $listute[$item->id] = $item->First_name;
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect('index');
@@ -118,6 +124,7 @@ class DiagnosticoController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'utente'=>$listute,
         ]);
     }
 

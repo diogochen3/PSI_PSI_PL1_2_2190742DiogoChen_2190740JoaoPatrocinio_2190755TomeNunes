@@ -7,8 +7,8 @@ class EditarPerfilCest
     {
         $I->amOnPage('site/login');
         $I->see('Email');
-        $I->fillField('#loginform-email' , 'tome.nunes902@gmail.com');
-        $I->fillField('#loginform-password', '1234567890');
+        $I->fillField('#loginform-email' , '123e21qe1e@sqe.sadq');
+        $I->fillField('#loginform-password', '123456789');
         $I->click('Login');
         $I->amOnPage('profile/view');
         $I->click('Update');

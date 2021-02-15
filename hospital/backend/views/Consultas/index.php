@@ -6,8 +6,6 @@ use yii\grid\GridView;
 
 
 $this->title = 'Consultas';
-\yii\helpers\VarDumper::dump(sizeof($model[0]->utente->diagnosticos0) > 0);
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="consultas-index">
 

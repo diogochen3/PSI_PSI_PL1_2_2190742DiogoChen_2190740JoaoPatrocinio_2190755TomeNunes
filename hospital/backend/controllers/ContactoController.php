@@ -36,13 +36,10 @@ class ContactoController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Contacto();
-        $searchModel = new ContactoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $model = Contacto::find()->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+
             'model' => $model,
         ]);
     }

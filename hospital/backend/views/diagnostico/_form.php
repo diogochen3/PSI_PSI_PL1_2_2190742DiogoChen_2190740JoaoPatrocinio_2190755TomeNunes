@@ -15,13 +15,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'descricao')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date')->Input("date") ?>
 
     <?= $form->field($model, 'situacao')->textInput(['maxlength' => true]) ?>
 
-
-    <?= $form->field($model, 'id_utente')->dropDownList($utente,
-            ['prompt'=>'-escolher o utente-']
+    <?= $form->field($model, 'id_utente')->dropDownList($utente
         );?>
 
     <div class="form-group">

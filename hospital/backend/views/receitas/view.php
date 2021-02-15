@@ -73,7 +73,7 @@ use yii\grid\GridView;
                                             </td>
                                             <td><?= $item->data_emissao  ?></td>
                                             <td><?= Html::a('adicionar medicamentos', ['adicionar', 'id' => $item->id],['class' => 'btn btn-success']) ?> </td>
-                                            <td><?= Html::a('eliminar', ['delete', 'id' => $item->id],['class' => 'btn btn-success']) ?></td>
+                                            <td><?= Html::a('eliminar', ['delete', 'id' => $item->id],['class' => 'btn btn-danger']) ?></td>
                                         </tr>
 
                                     <?php endforeach; ?>
