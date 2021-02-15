@@ -52,7 +52,6 @@ AppAsset::register($this);
 
         ['label' => 'Inicio', 'url' => ['../index.php']],
         ['label' => 'Contacto', 'url' => ['/site/contact']],
-        ['label' => 'Serviços', 'url' => ['/site/about']],
         ['label' => 'Corpo Clinico', 'url' => ['/site/about']],
         ['label' => 'Marcações', 'url' => ['/marcacao/create']],
 
@@ -77,6 +76,7 @@ AppAsset::register($this);
         $menuItems[] =    ['label' => 'Perfil', 'url' => ['/profile/view']];
         $menuItems[] =    ['label' => 'Receitas', 'url' => ['/receitas/index']];
         $menuItems[] =    ['label' => 'diagnostico', 'url' => ['/profile/diagnostico']];
+        $menuItems[] =    ['label' => 'Horarios', 'url' => ['/horario/index']];
     }
 
     echo Nav::widget([
