@@ -58,17 +58,16 @@ public class AdapterHorario  extends BaseAdapter {
         return view;
     }
 
-
     private class ViewHolderSpinner {
-        private TextView txtNomeMedico;
+        private TextView txtHorario;
         // private ImageView imgCapa;
 
         public ViewHolderSpinner(View view) {
-            txtNomeMedico = view.findViewById(R.id.txtNome);
+            txtHorario = view.findViewById(R.id.txtHorario);
         }
 
         public void update(Horario horario) {
-            txtNomeMedico.setText(profile.getFirst_name() + " " + profile.getLast_name());
+            txtHorario.setText(horario.gettempo());
 
         }
     }

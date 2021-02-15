@@ -1,14 +1,14 @@
 package amsi.dei.estg.ipleiria.healthschedule.model;
 
 public class Horario {
-    private int id;
-    private String date;
-    private int usado;
+    private int id, usado, id_medico;
+    private String tempo;
 
-    public Horario(int id, String date, int usado) {
+    public Horario(int id, int usado, int id_medico, String tempo) {
         this.id = id;
-        this.date = date;
         this.usado = usado;
+        this.id_medico = id_medico;
+        this.tempo = tempo;
     }
 
     public int getId() {
@@ -19,12 +19,12 @@ public class Horario {
         this.id = id;
     }
 
-    public String getDate() {
-        return date;
+    public String gettempo() {
+        return tempo;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void settempo(String tempo) {
+        this.tempo = tempo;
     }
 
     public int getUsado() {
@@ -33,5 +33,13 @@ public class Horario {
 
     public void setUsado(int usado) {
         this.usado = usado;
+    }
+
+    public int getId_medico() {
+        return id_medico;
+    }
+
+    public void setId_medico(int id_medico) {
+        this.id_medico = id_medico;
     }
 }

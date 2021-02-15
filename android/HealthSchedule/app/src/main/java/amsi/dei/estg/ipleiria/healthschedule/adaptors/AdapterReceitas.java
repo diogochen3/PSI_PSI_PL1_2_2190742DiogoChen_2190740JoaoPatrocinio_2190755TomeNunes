@@ -69,8 +69,8 @@ public class AdapterReceitas extends BaseAdapter {
         }
 
         public void update(Receita receita) {
-            txtMedicamento.setText(receita.getNome_medicamento());
-            txtQuantidade.setText(receita.getQuantidade() + "");
+           // txtMedicamento.setText(receita.getNome_medicamento());
+           // txtQuantidade.setText(receita.getQuantidade() + "");
 
         }
 
