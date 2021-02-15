@@ -56,6 +56,7 @@ public class AdapterReceitas extends BaseAdapter {
             viewHolderLista = new ViewHolderLista(view);
             view.setTag(viewHolderLista);
         }
+
         viewHolderLista.update(receitas.get(i));
 
         return view;
@@ -76,9 +77,8 @@ public class AdapterReceitas extends BaseAdapter {
             txtcodAcesso.setText(receita.getCodigo_acesso()+"");
             txtcodDispensa.setText(receita.getCodigo_dispensa()+"");
             txtDataEmissao.setText(receita.getData_emissao());
-       //     ArrayList<ReceitaMedicamento> receitaMedicamentos = SingletonGestorHospital.getInstance(context).getMedicamentoReceita(receita.getId()) ;
-
-
+            ArrayList<ReceitaMedicamento> receitaMedicamentos = SingletonGestorHospital.getInstance(context).getMedicamentoReceita(receita.getId());
+            lvMedicamento.setAdapter(new AdapterMedicamento(context,receitaMedicamentos));
         }
 
     }

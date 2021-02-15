@@ -8,12 +8,12 @@
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
-        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contato.xml.flat",
-        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\fragment_contato.xml"
-    },
-    {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_spinner_horario.xml.flat",
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\item_spinner_horario.xml"
+    },
+    {
+        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contato.xml.flat",
+        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\fragment_contato.xml"
     },
     {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_action_guardar.xml.flat",
@@ -32,12 +32,12 @@
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\marcacao_icon.png"
     },
     {
-        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_action_adicionar.png.flat",
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_action_adicionar.png"
+    },
+    {
+        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_email_24.png.flat",
@@ -76,12 +76,12 @@
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_action_upload.png"
     },
     {
-        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_adicionar.png.flat",
-        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_adicionar.png"
-    },
-    {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo3.png.flat",
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\drawable\\logo3.png"
+    },
+    {
+        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_adicionar.png.flat",
+        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\drawable-xhdpi\\ic_action_adicionar.png"
     },
     {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_action_apagar.png.flat",
@@ -104,12 +104,12 @@
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\src\\main\\res\\layout\\item_lista_medico.xml"
     },
     {
-        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_lock_24.png.flat",
-        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_lock_24.png"
-    },
-    {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_marcacao_icon.png.flat",
         "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\marcacao_icon.png"
+    },
+    {
+        "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_lock_24.png.flat",
+        "source": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_lock_24.png"
     },
     {
         "merged": "C:\\wamp64\\www\\android\\HealthSchedule\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v21_poraceitar.xml.flat",

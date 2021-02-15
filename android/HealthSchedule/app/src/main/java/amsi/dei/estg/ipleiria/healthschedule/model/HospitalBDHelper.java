@@ -16,7 +16,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME="bd_Hospital";
     
-    private static final int DB_VERSION=14;
+    private static final int DB_VERSION=16;
     private static final int DATABASE_VERSION = 2;
 
 
@@ -149,8 +149,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_CONSULTA_RECEITA+ " INTEGER NOT NULL "+
                 ");";
         String sqlCreateTableReceitaMedicamento="CREATE TABLE IF NOT EXISTS "+TABLE_RECEITAMEDICAMENTO+"("+
-                ID_RECEITA_RECEITAMEDICAMENTO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                ID_MEDICAMENTO_RECEITAMEDICAMENTO + " INTEGER NOT NULL, "+
+                ID_RECEITA_RECEITAMEDICAMENTO +" INTEGER , "+
+                ID_MEDICAMENTO_RECEITAMEDICAMENTO + " INTEGER , "+
                 QUANTIDADE_RECEITAMEDICAMENTO+ " INTEGER NOT NULL ,"+
                 POSOLOGIA_RECEITAMEDICAMENTO+ " TEXT NOT NULL "+
                 ");";

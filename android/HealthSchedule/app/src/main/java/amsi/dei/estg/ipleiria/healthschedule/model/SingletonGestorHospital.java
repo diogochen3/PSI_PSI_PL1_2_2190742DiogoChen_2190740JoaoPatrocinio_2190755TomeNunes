@@ -987,7 +987,7 @@ public class SingletonGestorHospital {
 
             //JsonRequest req;
             // req = new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>()
-            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIReceitaMedicamento, null, new Response.Listener<JSONArray>() {
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMedicamento, null, new Response.Listener<JSONArray>() {
 
                 @Override
                 public void onResponse(JSONArray response) {
@@ -1042,5 +1042,25 @@ public class SingletonGestorHospital {
     public ArrayList<Medicamento> getAllMedicamentoBD() {
         medicamentos = hospitalDB.getAllMedicamentosBD();
         return medicamentos;
+    }
+
+    public ArrayList<ReceitaMedicamento> getMedicamentoReceita(int id) {
+        ArrayList<ReceitaMedicamento> receitaMedicamento = new ArrayList<>();
+        for (ReceitaMedicamento rm: receitaMedicamentos) {
+            if (rm.getId_receita() == id)
+            {
+                receitaMedicamento.add(rm);
+            }
+        }
+
+        return receitaMedicamento;
+    }
+
+    public Medicamento getMedicamentos(int id_medicamento) {
+        for (Medicamento m: medicamentos) {
+            if (m.getId() == id_medicamento)
+                return m;
+        }
+        return null;
     }
 }
