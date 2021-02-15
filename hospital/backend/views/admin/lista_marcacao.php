@@ -76,13 +76,18 @@ use \yii\widgets\LinkPager;
 
 
 
-                                            <td> <?= Html::a('Editar', ['update', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
+                                            <td> <?= Html::a('Editar', ['updatemarcacao', 'id' => $marcacao->id], ['class' => 'btn btn-primary']) ?></td>
                                     <?php }elseif($marcacao->Aceitar == 1){  ?>
                                         <td> Aceite </td>
                                         <td></td>
                                     <?php } ?>
-                                    <th><?= Html::a('Eliminar', ['deleteMarcacao', 'id' => $marcacao->id], ['class' => 'btn btn-danger']) ?></th>
-
+                                                                       <td><?= Html::a('Eliminar', ['deleteMarcacao', 'id' => $marcacao->id], [
+                                            'class' => 'btn btn-danger',
+                                            'data' => [
+                                                'confirm' => 'Are you sure you want to delete this item?',
+                                                'method' => 'post',
+                                            ],
+                                        ]) ?></td>
                                 </tr>
 
 

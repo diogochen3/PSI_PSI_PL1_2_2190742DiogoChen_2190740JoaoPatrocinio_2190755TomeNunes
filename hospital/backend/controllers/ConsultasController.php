@@ -36,7 +36,8 @@ class ConsultasController extends Controller
      */
     public function actionIndex()
     {
-        $model = Consultas::find()->all();
+        $medicoId =  Yii::$app->user->id;
+        $model = Consultas::find()->where(['id_medico'=>$medicoId])->all();
 
         return $this->render('index', [
             'model' => $model,

@@ -68,7 +68,7 @@ AppAsset::register($this);
 
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="">
                     <div class="sidebar-brand-icon rotate-n-15"><img src="/assets/img/logo3%20(2).png?h=829630e69395d43245a5df848574b6e5" style="width: 70px;"></div>
                     <div class="sidebar-brand-text mx-3"></div>
                 </a>

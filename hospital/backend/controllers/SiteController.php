@@ -14,6 +14,7 @@ use common\models\User;
 use frontend\mosquitto\controllers\NotificationController;
 use Yii;
 use yii\base\InvalidConfigException;
+use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
@@ -98,6 +99,12 @@ class SiteController extends Controller
      *
      * @return string
      */
+
+    public function actionIndex()
+    {
+
+        return $this->render('index');
+    }
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -320,6 +327,37 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    public function actionUpdatemarcacao($id)
+    {
+        $model = Marcacao::find()->where(["id"=>$id])->one();
+        $horario1 = Horario::find()->where(["id_medico"=>$model->id_Medico])->all();
+        $horario = Horario::find()->where(["id"=>$id])->one();
+
+        $listhora = [];
 
 
-}
+        foreach ($horario1 as $item) {
+            if ($item->usado == 0){
+                $listhora[$item->id] = $item->tempo;
+            }
+
+        }
+
+
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $horarionovo=Horario::find()->where(['id'=>$model->id])->one();
+            $horarionovo->usado=1;
+            $horario->usado = 0;
+
+            $horario->save(false);
+            $horarionovo->save(false);
+
+
+            return $this->redirect(['table_marcacoes']);
+        } return $this->render('updatemarcacao', [
+        'model' => $model,
+        'tempo' => $listhora,
+    ]);
+    }
+        }

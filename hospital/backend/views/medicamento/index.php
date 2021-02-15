@@ -68,8 +68,8 @@ $user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
                                             <td><?= $item->embalagem  ?></td>
                                             <?php if(isset($user['admin'])){ ?>
                                             <td><?= Html::a('adicionar medicamentos', ['create', 'id' => $item->id],['class' => 'btn btn-success']) ?> </td>
-                                            <td><?= Html::a('editar medicamentos', ['update', 'id' => $item->id],['class' => 'btn btn-success']) ?> </td>
-                                            <td><?= Html::a('eliminar medicamentos', ['delete', 'id' => $item->id],['class' => 'btn btn-success']) ?></td>
+                                            <td><?= Html::a('editar medicamentos', ['update', 'id' => $item->id],['class' => 'btn btn-primary']) ?> </td>
+                                            <td><?= Html::a('eliminar medicamentos', ['delete', 'id' => $item->id],['class' => 'btn btn-danger']) ?></td>
                                             <?php } ?>
                                         </tr>
 

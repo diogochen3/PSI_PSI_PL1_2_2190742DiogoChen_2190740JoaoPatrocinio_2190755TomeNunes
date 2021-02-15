@@ -36,6 +36,7 @@ class ContactoController extends Controller
      */
     public function actionIndex()
     {
+
         $model = Contacto::find()->all();
 
         return $this->render('index', [
