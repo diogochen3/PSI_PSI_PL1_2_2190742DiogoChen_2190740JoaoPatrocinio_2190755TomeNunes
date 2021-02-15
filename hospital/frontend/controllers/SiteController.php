@@ -223,7 +223,7 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
-        VarDumper::dump($model->NIF);
+
 
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
 

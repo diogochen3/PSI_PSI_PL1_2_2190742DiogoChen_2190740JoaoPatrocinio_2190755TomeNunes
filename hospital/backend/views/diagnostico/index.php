@@ -62,8 +62,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <td><?= $item->date ?></td>
                                         <td><?= $item->descricao  ?> </td>
                                         <td><?= $item->utente->First_name  ?> <?= $item->utente->Last_name  ?></td>
-                                        <td><?= Html::a('editar', ['update', 'id' => $item->id]) ?></td>
-                                        <td><?= Html::a('eliminar', ['delete', 'id' => $item->id]) ?></td>
+                                        <td><?= Html::a('editar', ['update', 'id' => $item->id],['class' => 'btn btn-success']) ?></td>
+                                        <td><?= Html::a('eliminar', ['delete', 'id' => $item->id], [
+                                                'class' => 'btn btn-danger',
+                                                'data' => [
+                                                    'confirm' => 'Are you sure you want to delete this item?',
+                                                    'method' => 'post',
+                                                ],
+                                            ]) ?></td>
                                     </tr>
 
 

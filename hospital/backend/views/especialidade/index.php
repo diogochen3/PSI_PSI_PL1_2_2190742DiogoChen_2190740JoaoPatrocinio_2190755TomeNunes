@@ -68,7 +68,14 @@ $user =Yii::$app->authManager->getAssignments(Yii::$app->user->getId());
                                            <?php
                                             if(isset($user['admin'])){
                                         ?><td> <?= Html::a('Update', ['update', 'id' => $especialidade->id], ['class' => 'btn btn-primary']) ?></td>
-                                        <td> <?= Html::a('Eliminar', ['delete', 'id' => $especialidade->id], ['class' => 'btn btn-primary']) ?></td><?php
+                                                <td><?= Html::a('Eliminar', ['delete', 'id' => $especialidade->id], [
+                                                        'class' => 'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want to delete this item?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?></td>
+                                                <?php
                                             }
                                            ?>
                                 </tr>

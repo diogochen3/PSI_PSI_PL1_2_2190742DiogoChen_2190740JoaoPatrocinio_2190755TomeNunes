@@ -20,9 +20,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'date')->Input("date") ?>
-
-    <?= $form->field($model, 'tempo')->Input("time") ?>
+    <?= $form->field($model, 'id')->dropDownList($tempo
+    )->label("tempo"); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

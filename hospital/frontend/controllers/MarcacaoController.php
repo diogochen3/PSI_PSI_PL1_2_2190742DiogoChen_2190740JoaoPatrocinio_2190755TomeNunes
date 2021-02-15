@@ -171,28 +171,41 @@ class MarcacaoController extends Controller
      * @throws NotFoundHttpException if the model cannot be found
      */
     public function actionUpdate($id)
-    {
-        $model = Marcacao::find()->where(["id"=>$id])->one();
-        $horario = Horario::find()->where(["id"=>$id])->one();
+        {
+            $model = Marcacao::find()->where(["id"=>$id])->one();
+            $horario1 = Horario::find()->where(["id_medico"=>$model->id_Medico])->all();
+            $horario = Horario::find()->where(["id"=>$id])->one();
+
+            $listhora = [];
 
 
-        $listhora = [];
+           foreach ($horario1 as $item) {
+                if ($item->usado == 0){
+                   $listhora[$item->id] = $item->tempo;
+                    }
 
-        foreach ($horario as $item) {
+            }
 
-            $listhora[$item->id] = $item->tempo;
+
+
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                $horarionovo=Horario::find()->where(['id'=>$model->id])->one();
+                $horarionovo->usado=1;
+                $horario->usado = 0;
+
+                $horario->save(false);
+                $horarionovo->save(false);
+
+
+                return $this->redirect(['historico']);
+            }
+
+
+            return $this->render('update', [
+                'model' => $model,
+                'tempo' => $listhora,
+            ]);
         }
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $horario->usado = 0;
-            $horario->save(false);
-            return $this->redirect(['historico']);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
 
     /**
      * Deletes an existing Marcacao model.
@@ -204,6 +217,9 @@ class MarcacaoController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+        $horario=Horario::find()->where(['id'=>$id])->one();
+        $horario->usado=0;
+        $horario->save(false);
 
         return $this->redirect(['historico']);
     }
