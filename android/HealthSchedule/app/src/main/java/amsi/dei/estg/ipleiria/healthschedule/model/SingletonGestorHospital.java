@@ -14,6 +14,7 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.Response.ErrorListener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonRequest;
@@ -36,6 +37,7 @@ import javax.crypto.Mac;
 
 import amsi.dei.estg.ipleiria.healthschedule.listeners.DiagnosticoListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.EspecialidadeListener;
+import amsi.dei.estg.ipleiria.healthschedule.listeners.HorarioListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.HospitalLoginListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener;
 import amsi.dei.estg.ipleiria.healthschedule.listeners.MedicoEspecialidadeListener;
@@ -50,14 +52,14 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.119/index.php/api/user/login";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.104/hospital/frontend/web/index.php/api/user/login";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
 
 
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.104/hospital/frontend/web/index.php/api/marcacao";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
@@ -66,31 +68,34 @@ public class SingletonGestorHospital {
 
     /************************ variaveis Profile ******************************************/
 
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.119/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.104/hospital/frontend/web/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Especialidade ******************************************/
 
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.119/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.104/hospital/frontend/web/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
 
     /************************ variaveis Diagnostico ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.119/index.php/api/diagnostico";
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.104/hospital/frontend/web/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener DiagnosticosListener;
     /************************ variaveis Receitas ******************************************/
-    private static final  String  mUrlAPIReceitas =  "http://192.168.1.119/index.php/api/receitas";
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.104/hospital/frontend/web/index.php/api/receitas";
     private ArrayList<Receita> receitas;
     private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.119/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.104/hospital/frontend/web/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
+    /************************ variaveis MedicoEspecialidade ******************************************/
+    private static final  String  mUrlAPIHorario =  "http://192.168.1.104/hospital/frontend/web/index.php/api/horario";
+    private ArrayList<Horario> horarios;
 
     public static synchronized SingletonGestorHospital getInstance(Context context) {
         if (instance == null)
@@ -107,6 +112,7 @@ public class SingletonGestorHospital {
         especialidades= new ArrayList<>();
         especialidadesNome= new ArrayList<>();
         medicoEspecialidades= new ArrayList<>();
+        horarios = new ArrayList<>();
         hospitalDB =new HospitalBDHelper(context);
     }
 
@@ -172,7 +178,7 @@ public class SingletonGestorHospital {
                         profileListener.onRefreshListaProfiles(hospitalDB.getAllProfilesBD());
                     }
                 }
-            }, new Response.ErrorListener() {
+            }, new ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -197,7 +203,7 @@ public class SingletonGestorHospital {
                         }
                     }
                 },
-                new Response.ErrorListener() {
+                new ErrorListener() {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
@@ -307,7 +313,7 @@ public class SingletonGestorHospital {
                 //TODO: informar a vista -> listener
             }
         },
-                new Response.ErrorListener() {
+                new ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(applicationContext, "Login invalido", Toast.LENGTH_SHORT).show();
@@ -342,6 +348,141 @@ public class SingletonGestorHospital {
 
     }
 
+    /************************************** Horiario ****************************************************************/
+
+    public void getAllHorarioAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+
+        }else {
+            JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIHorario, null, new Response.Listener<JSONArray>() {
+
+                @Override
+                public void onResponse(JSONArray response) {
+                    horarios = HospitalJsonParser.parserJsonHorarios(response);
+                    adicionarHorariosBD(horarios);
+
+                }
+            }, new ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+            volleyQueue.add(req);
+
+        }
+    }
+
+    private void adicionarHorariosBD(ArrayList<Horario> horarios) {
+        hospitalDB.removerAllHorariosBD();
+        for(Horario l: horarios){
+            adicionarHorarioBD(l);
+        }
+    }
+
+    private void adicionarHorarioBD(Horario l) {
+        hospitalDB.adicionarHorarioBD(l);
+    }
+    public ArrayList<Horario> getallHorariosBD() {
+        horarios = hospitalDB.getAllHorariosBD();
+        return horarios;
+    }
+
+    public void editarHorarioAPI(final Horario horario, final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+
+        }else {
+            StringRequest req =new StringRequest(Request.Method.PUT, mUrlAPIHorario, new Response.Listener<String>() {
+
+                @Override
+                public void onResponse(String response) {
+                    Horario horarioaux = HospitalJsonParser.parserJsonHorario(response);
+                    editarHorariosBD(horarioaux);
+
+                }
+            }, new ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+
+                    params.put("usado", horario.getUsado()+"");
+                    return params;
+                }
+            };
+
+            volleyQueue.add(req);
+
+        }
+    }
+
+    public void getEditEditarHorarioAPI(final Context context){
+
+        if (!HospitalJsonParser.isConnectionInternet(context)) {
+
+        }else {
+            StringRequest req =new StringRequest(Request.Method.PUT, mUrlAPIHorario, new Response.Listener<String>() {
+
+                @Override
+                public void onResponse(String response) {
+                    Horario horarioaux = HospitalJsonParser.parserJsonHorario(response);
+                    editarHorariosBD(horarioaux);
+
+                }
+            }, new ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+
+                    params.put("usado", "0");
+                    return params;
+                }
+            };
+
+            volleyQueue.add(req);
+
+        }
+    }
+
+
+    private void editarHorariosBD(Horario horario) {
+        Horario horarioAux = gethorario(horario.getId());
+        if (horarioAux!=null)
+        {
+            hospitalDB.editarHorarioBD(horarioAux);
+        }
+    }
+
+    public Horario gethorario(int id) {
+        for (Horario h: horarios)
+            if (id == h.getId())
+                return h;
+
+        return null;
+    }
+
+
+    public ArrayList<Horario> gethorarios(long id) {
+        ArrayList<Horario> auxhorarios = new ArrayList<>();
+        for (Horario h: horarios) {
+            if (h.getId_medico() == (int)id && h.getUsado() == 0)
+                auxhorarios.add(h);
+        }
+        return auxhorarios;
+    }
+
+
     /************************************* Marcacao ****************************************************************/
     public ArrayList<Marcacao> getMarcacoes(int id, ArrayList<Marcacao> marcacao)
     {
@@ -359,7 +500,7 @@ public class SingletonGestorHospital {
     public void getAllMarcacaoAPI(final Context context){
 
         if (!HospitalJsonParser.isConnectionInternet(context)) {
-            Toast.makeText(context, "False", Toast.LENGTH_SHORT).show();
+
         }else {
             JsonRequest req =new JsonArrayRequest(Request.Method.GET, mUrlAPIMarcacao, null, new Response.Listener<JSONArray>() {
 
@@ -384,7 +525,7 @@ public class SingletonGestorHospital {
                     }
 
                 }
-            }, new Response.ErrorListener() {
+            }, new ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -412,7 +553,7 @@ public class SingletonGestorHospital {
                         //TODO: informar a vista -> listener
                     }
                 },
-                new Response.ErrorListener() {
+                new ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -425,8 +566,7 @@ public class SingletonGestorHospital {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
 
-                params.put("date", marcacao.getDate());
-                params.put("tempo", marcacao.getTempo());
+                params.put("id", marcacao.getId()+"");
                 params.put("Aceitar", marcacao.getAceitar()+"");
                 params.put("id_especialidade", marcacao.getId_especialidade() + "");
                 params.put("id_Utente", marcacao.getId_Medico()+"");
@@ -453,7 +593,7 @@ public class SingletonGestorHospital {
                         }
                     }
                 },
-                new Response.ErrorListener() {
+                new ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -465,8 +605,7 @@ public class SingletonGestorHospital {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
 
-                params.put("date", marcacao.getDate());
-                params.put("tempo", marcacao.getTempo());
+                params.put("id", marcacao.getId()+"");
                 params.put("Aceitar", marcacao.getAceitar()+"");
                 params.put("id_especialidade", marcacao.getId_especialidade() + "");
                 params.put("id_Utente", marcacao.getId_Medico()+"");
@@ -490,7 +629,7 @@ public class SingletonGestorHospital {
                     MarcacoesListener.onRefreshdetalhesMarcacoes();
                 }
             }
-        }, new Response.ErrorListener() {
+        }, new ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -506,6 +645,7 @@ public class SingletonGestorHospital {
         switch (operacao){
             case ADICIONAR_MARCACAO_BD:
                 adicionarMarcacaoBD(marcacao);
+
                 break;
             case EDITAR_MARCACAO_BD:
                 editarMarcacaoBD(marcacao);
@@ -582,7 +722,7 @@ public class SingletonGestorHospital {
                     }
 
                 }
-            }, new Response.ErrorListener() {
+            }, new ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -646,7 +786,7 @@ public class SingletonGestorHospital {
                     }
 
                 }
-            }, new Response.ErrorListener() {
+            }, new ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -726,7 +866,7 @@ public class SingletonGestorHospital {
                     }
 
                 }
-            }, new Response.ErrorListener() {
+            }, new ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -796,7 +936,7 @@ public class SingletonGestorHospital {
                     }
 
                 }
-            }, new Response.ErrorListener() {
+            }, new ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(context, error.getMessage(), Toast.LENGTH_SHORT).show();
@@ -817,8 +957,6 @@ public class SingletonGestorHospital {
     public void adicionarMedicoEspecialidadeBD(MedicoEspecialidade medicoEspecialidade){
         hospitalDB.adicionarMedicoEspecialidadeBD(medicoEspecialidade);
     }
-
-
 
 
 

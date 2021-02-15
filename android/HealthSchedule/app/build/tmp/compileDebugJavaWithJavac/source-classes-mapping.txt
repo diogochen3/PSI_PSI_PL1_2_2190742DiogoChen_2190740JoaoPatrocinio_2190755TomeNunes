@@ -11,10 +11,6 @@ amsi/dei/estg/ipleiria/healthschedule/views/AgendaFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.AgendaFragment$3
 amsi/dei/estg/ipleiria/healthschedule/views/ListaMedicosFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosFragment
-<<<<<<< HEAD
- amsi.dei.estg.ipleiria.healthschedule.views.ListaMedicosFragment$1
-=======
->>>>>>> 5ad90ff42307dc4f8ab4f9eebb29b8ff03ad8a8c
 amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterMarcacao.java
  amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao
  amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterMarcacao$ViewHolderLista
@@ -66,7 +62,15 @@ amsi/dei/estg/ipleiria/healthschedule/model/SingletonGestorHospital.java
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$24
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$25
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$26
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$27
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$28
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$29
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$3
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$30
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$31
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$32
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$33
+ amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$34
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$4
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$5
  amsi.dei.estg.ipleiria.healthschedule.model.SingletonGestorHospital$6
@@ -78,8 +82,14 @@ amsi/dei/estg/ipleiria/healthschedule/views/ListaDiagnosticosFragment.java
 amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterNomeMedicos.java
  amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterNomeMedicos
  amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterNomeMedicos$ViewHolderSpinner
+amsi/dei/estg/ipleiria/healthschedule/model/medicamento.java
+ amsi.dei.estg.ipleiria.healthschedule.model.medicamento
+amsi/dei/estg/ipleiria/healthschedule/model/ReceitaMedicamento.java
+ amsi.dei.estg.ipleiria.healthschedule.model.ReceitaMedicamento
 amsi/dei/estg/ipleiria/healthschedule/views/ContatoFragment.java
  amsi.dei.estg.ipleiria.healthschedule.views.ContatoFragment
+amsi/dei/estg/ipleiria/healthschedule/listeners/HorarioListener.java
+ amsi.dei.estg.ipleiria.healthschedule.listeners.HorarioListener
 amsi/dei/estg/ipleiria/healthschedule/views/AlterarProfileActivity.java
  amsi.dei.estg.ipleiria.healthschedule.views.AlterarProfileActivity
  amsi.dei.estg.ipleiria.healthschedule.views.AlterarProfileActivity$1
@@ -100,6 +110,9 @@ amsi/dei/estg/ipleiria/healthschedule/listeners/DiagnosticoListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.DiagnosticoListener
 amsi/dei/estg/ipleiria/healthschedule/listeners/MarcacoesListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.MarcacoesListener
+amsi/dei/estg/ipleiria/healthschedule/adaptors/AdapterHorario.java
+ amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterHorario
+ amsi.dei.estg.ipleiria.healthschedule.adaptors.AdapterHorario$ViewHolderSpinner
 amsi/dei/estg/ipleiria/healthschedule/listeners/MedicoEspecialidadeListener.java
  amsi.dei.estg.ipleiria.healthschedule.listeners.MedicoEspecialidadeListener
 amsi/dei/estg/ipleiria/healthschedule/model/HospitalBDHelper.java
@@ -111,6 +124,8 @@ amsi/dei/estg/ipleiria/healthschedule/model/Especialidade.java
  amsi.dei.estg.ipleiria.healthschedule.model.Especialidade
 amsi/dei/estg/ipleiria/healthschedule/model/Profile.java
  amsi.dei.estg.ipleiria.healthschedule.model.Profile
+amsi/dei/estg/ipleiria/healthschedule/model/Horario.java
+ amsi.dei.estg.ipleiria.healthschedule.model.Horario
 amsi/dei/estg/ipleiria/healthschedule/model/Marcacao.java
  amsi.dei.estg.ipleiria.healthschedule.model.Marcacao
 amsi/dei/estg/ipleiria/healthschedule/model/Receita.java

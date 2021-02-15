@@ -1726,7 +1726,6 @@ id cos
 id custom
 id customPanel
 id cut
-id cvDate
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1964,6 +1963,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spEspecialidade
+id spHorario
 id spMedico
 id spacer
 id spline
@@ -2007,6 +2007,9 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
+id textView3
+id textView4
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2024,7 +2027,6 @@ id toolbar
 id top
 id topPanel
 id touch_outside
-id tpTime
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -2038,10 +2040,9 @@ id tvLNome
 id tvMedico
 id tvPNome
 id tvSuject
-id txtDataMarcacao
 id txtDescricao
 id txtEmail
-id txtHoraMarcacao
+id txtHorario
 id txtMedicamento
 id txtMedicoMarcacao
 id txtNome
@@ -2050,6 +2051,7 @@ id txtNomeMedico
 id txtNumeroTL
 id txtQuantidade
 id txtSituacao
+id txtTempoMarcacao
 id unchecked
 id uniform
 id unlabeled
@@ -2156,6 +2158,7 @@ layout item_lista_marcacao
 layout item_lista_medico
 layout item_lista_receitas
 layout item_spinner_especialidade
+layout item_spinner_horario
 layout item_spinner_medicos
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

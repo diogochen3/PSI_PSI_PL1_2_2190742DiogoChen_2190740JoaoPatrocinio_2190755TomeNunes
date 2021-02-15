@@ -25,10 +25,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     private static final String ID_ESPECIALIDADE_MARCACAO="id_especialidade";
     private static final String ID_UTENTE_MARCACAO="id_Utente";
     private static final String ID_MEDICO_MARCACAO="id_Medico";
-    private static final String DATE_MARCACAO="date";
-    private static final String TEMPO_MARCACAO="tempo";
     private static final String ACEITAR_MACACAO="Aceitar";
-    private static final String IS_MEDICO_PROFILE = "is_medico";
 
     private static final String TABLE_PROFILE="profile";
     private static final String ID_PROFILE="id";
@@ -59,13 +56,18 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_MEDICO_ESPECIALIDADE ="medico_especialidade";
     private static final String ID_MEDICO_MEDICO_ESPECIALIDADE="id_medico";
-    private static final String ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE="id_utente";
+    private static final String ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE="id_especialidade";
 
     private static final String TABLE_RECEITA="receitas";
     private static final String ID_RECEITA="id";
     private static final String QUANTIDADE_RECEITA="quantidade";
     private static final String NOME_MEDICAMENTO_RECEITA="Nome_medicamento";
 
+    private static final String TABLE_HORARIO= "horario";
+    private static final String ID_HORARIO="id";
+    private static final String TEMPO_HORARIO="tempo";
+    private static final String USADO_HORARIO="usado";
+    private static final String ID_MEDICO_HORARIO="id_medico";
 
     public HospitalBDHelper(Context context) {
         super(context,DB_NAME,null, DB_VERSION);
@@ -85,27 +87,27 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 DATANASCIMENTO_PROFILE+ " INTEGER NOT NULL, "+
                 GENERO_PROFILE+ " TEXT NOT NULL, " +
                 CODPOSTAL_PROFILE+ " TEXT NOT NULL, "+
-                IS_MEDICO_PROFILE+ " TEXT NOT NULL, "+
                 IMAGE_PROFILE+ " TEXT "+
                 ");";
 
         String sqlCreateTableMarcacao="CREATE TABLE IF NOT EXISTS "+TABLE_MARCACAO+"("+
-                ID_MARCACAO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                DATE_MARCACAO + " TEXT NOT NULL, "+
-                TEMPO_MARCACAO+ " TEXT NOT NULL, "+
+                ID_MARCACAO +" INTEGER PRIMARY KEY, "+
                 ACEITAR_MACACAO+ " INTEGER, "+
                 ID_ESPECIALIDADE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_UTENTE_MARCACAO+ " INTEGER NOT NULL, "+
                 ID_MEDICO_MARCACAO+ " INTEGER NOT NULL " +
                 ");";
+
         String sqlCreateTableMedicoEspecialidade="CREATE TABLE IF NOT EXISTS "+TABLE_MEDICO_ESPECIALIDADE+"("+
                 ID_MEDICO_MEDICO_ESPECIALIDADE+ " INTEGER NOT NULL, "+
                 ID_ESPECIALIDADE_MEDICO_ESPECIALIDADE+ " INTEGER NOT NULL " +
                 ");";
+
         String sqlCreateTableEspecialidade="CREATE TABLE IF NOT EXISTS "+TABLE_ESPECIALIDADE+"("+
                 ID_ESPECIALIDADE +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 NOME_ESPECIALIDADE + " TEXT NOT NULL " +
                 ");";
+
         String sqlCreateTableDiagnostico="CREATE TABLE IF NOT EXISTS "+TABLE_DIAGNOSTICO+"("+
                 ID_DIAGNOSTICO +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 DESCRICAO_DIAGNOSTICO + " TEXT NOT NULL, "+
@@ -114,18 +116,27 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 ID_MEDICO_DIAGNOSTICO+ " INTEGER NOT NULL, "+
                 DID_UTENTE_DIAGNOSTICO+ " INTEGER NOT NULL "+
                 ");";
+
+        String sqlCreateTableHorario="CREATE TABLE IF NOT EXISTS "+TABLE_HORARIO+"("+
+                ID_HORARIO+" INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                TEMPO_HORARIO + " TEXT NOT NULL, "+
+                USADO_HORARIO+ " INTEGER NOT NULL, "+
+                ID_MEDICO_HORARIO+ " INTEGER NOT NULL "+
+                ");";
+
         String sqlCreateTableReceita="CREATE TABLE IF NOT EXISTS "+TABLE_RECEITA+"("+
                 ID_RECEITA +" INTEGER PRIMARY KEY AUTOINCREMENT, "+
                 QUANTIDADE_RECEITA + " INTEGER NOT NULL, "+
                 NOME_MEDICAMENTO_RECEITA+ " TEXT NOT NULL "+
                 ");";
 
+
         sqLiteDatabase.execSQL(sqlCreateTableEspecialidade);
         sqLiteDatabase.execSQL(sqlCreateTableMarcacao);
         sqLiteDatabase.execSQL(sqlCreateTableProfile);
         sqLiteDatabase.execSQL(sqlCreateTableDiagnostico);
         sqLiteDatabase.execSQL(sqlCreateTableMedicoEspecialidade);
-
+        sqLiteDatabase.execSQL(sqlCreateTableHorario);
         sqLiteDatabase.execSQL(sqlCreateTableReceita);
 
     }
@@ -145,6 +156,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(sqlDropTableMedicoEspecialidade);
         String sqlDropTableReceita="DROP TABLE IF EXISTS "+ TABLE_RECEITA;
         sqLiteDatabase.execSQL(sqlDropTableReceita);
+        String sqlDropTableHorario="DROP TABLE IF EXISTS "+ TABLE_HORARIO;
+        sqLiteDatabase.execSQL(sqlDropTableHorario);
         this.onCreate(sqLiteDatabase);
     }
 
@@ -162,7 +175,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                 DATANASCIMENTO_PROFILE,
                 GENERO_PROFILE,
                 CODPOSTAL_PROFILE,
-                IS_MEDICO_PROFILE,
                 IMAGE_PROFILE}, null,null,null,null,null);
 
         if (cursor.moveToFirst()){
@@ -179,7 +191,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                         cursor.getInt(0),//ID_PROFILE
                         cursor.getInt(4),//TELEFONE_PROFILE
                         cursor.getInt(5),//NIF_PROFILE
-                        cursor.getInt(10),//IS_MEDICO_PROFILE
                         cursor.getString(1),//PRIMEIRO_NOME_PROFILE
                         cursor.getString(2),//APELIDO_PROFILE
                         cursor.getString(3),//EMAIL_PROFILE
@@ -187,7 +198,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                         cursor.getString(9),//CODPOSTAL_PROFILE
                         cursor.getString(8),//GENERO_PROFILE
                         date,
-                        cursor.getString(11)
+                        cursor.getString(10)
                 );
                 profiles.add(auxProfile);
             }while (cursor.moveToNext());
@@ -211,7 +222,6 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         values.put(DATANASCIMENTO_PROFILE,date);
         values.put(GENERO_PROFILE,profile.getGender());
         values.put(CODPOSTAL_PROFILE,profile.getPostal_code());
-        values.put(IS_MEDICO_PROFILE,profile.getIs_medico());
         values.put(IMAGE_PROFILE,profile.getImage());
 
         this.db.insert(TABLE_PROFILE,null,values);
@@ -259,7 +269,7 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
         Cursor cursor=this.db.query(TABLE_MARCACAO, new String[]{
                 ID_MARCACAO,
                         ID_ESPECIALIDADE_MARCACAO,
-                        ID_MEDICO_MARCACAO,ID_UTENTE_MARCACAO,DATE_MARCACAO,TEMPO_MARCACAO,ACEITAR_MACACAO},
+                        ID_MEDICO_MARCACAO,ID_UTENTE_MARCACAO,ACEITAR_MACACAO},
                 null,null,null,null,null);
 
         if (cursor.moveToFirst()){
@@ -268,20 +278,28 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
                         cursor.getInt(1),
                         cursor.getInt(3),
                         cursor.getInt(2),
-                        cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getInt(6));
+                        cursor.getInt(4));
                 marcacoes.add(auxMarcacao);
             }while (cursor.moveToNext());
         }
         return marcacoes;
     }
 
+    public void adicionarMarcacaoBD(Marcacao marcacao){
+        ContentValues values= new ContentValues();
+        values.put(ID_MARCACAO,marcacao.getId());
+        values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
+        values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
+        values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
+        values.put(ACEITAR_MACACAO ,marcacao.getAceitar());
+
+        this.db.insert(TABLE_MARCACAO,null,values);
+
+    }
 
     public boolean editarMarcacaoBD(Marcacao marcacao) {
         ContentValues values= new ContentValues();
-        values.put(DATE_MARCACAO, marcacao.getDate());
-        values.put(TEMPO_MARCACAO,marcacao.getTempo());
+        values.put(ID_MARCACAO, marcacao.getId());
         //values.put(ACEITAR_MACACAO,marcacao.getAceitar());
         //  values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
         //  values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
@@ -333,27 +351,15 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
 
         if (cursor.moveToFirst()){
             do {
-                Receita auxReceita=new Receita(cursor.getInt(0),
+               /* Receita auxReceita=new Receita(cursor.getInt(0),
                         cursor.getInt(1),
-                        cursor.getString(2));
-                receitas.add(auxReceita);
+                        cursor.getString(2));*/
+             //   receitas.add(auxReceita);
             }while (cursor.moveToNext());
         }
         return receitas;
     }
-    public void adicionarMarcacaoBD(Marcacao marcacao){
-        ContentValues values= new ContentValues();
-        values.put(ID_MARCACAO,marcacao.getId());
-        values.put(ID_ESPECIALIDADE_MARCACAO,marcacao.getId_especialidade());
-        values.put(ID_MEDICO_MARCACAO,marcacao.getId_Medico());
-        values.put(ID_UTENTE_MARCACAO,marcacao.getId_Utente());
-        values.put(DATE_MARCACAO ,marcacao.getDate());
-        values.put(TEMPO_MARCACAO ,marcacao.getTempo());
-        values.put(ACEITAR_MACACAO ,marcacao.getAceitar());
 
-        this.db.insert(TABLE_MARCACAO,null,values);
-
-    }
 
     public void adicionarDiagnosticoBD(Diagnostico diagnostico){
         ContentValues values= new ContentValues();
@@ -379,8 +385,8 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     public void adicionarReceitaBD(Receita receita){
         ContentValues values= new ContentValues();
         values.put(ID_RECEITA,receita.getId());
-        values.put(QUANTIDADE_RECEITA,receita.getQuantidade());
-        values.put(NOME_MEDICAMENTO_RECEITA,receita.getNome_medicamento());
+       // values.put(QUANTIDADE_RECEITA,receita.getQuantidade());
+       // values.put(NOME_MEDICAMENTO_RECEITA,receita.getNome_medicamento());
 
         this.db.insert(TABLE_RECEITA,null,values);
 
@@ -484,6 +490,45 @@ public class HospitalBDHelper extends SQLiteOpenHelper {
     public void  removerAllMedicoEspecialidadesBD(){
         this.db.delete(TABLE_MEDICO_ESPECIALIDADE,null,null);
     }
+    
+    public void removerAllHorariosBD() {
+        this.db.delete(TABLE_HORARIO,null,null);
+    }
 
+    public void adicionarHorarioBD(Horario horario) {
+        ContentValues values= new ContentValues();
+        
+        values.put(ID_HORARIO,horario.getId());
+        values.put(TEMPO_HORARIO,horario.gettempo());
+        values.put(USADO_HORARIO,horario.getUsado());
+        values.put(ID_MEDICO_HORARIO,horario.getId_medico());
 
+        this.db.insert(TABLE_HORARIO,null,values);
+    }
+
+    public ArrayList<Horario> getAllHorariosBD() {
+        ArrayList<Horario> horarios=new ArrayList<>();
+        Cursor cursor=this.db.query(TABLE_HORARIO, new String[]{
+                        ID_HORARIO,TEMPO_HORARIO, USADO_HORARIO, ID_MEDICO_HORARIO},
+                null,null,null,null,null);
+
+        if (cursor.moveToFirst()){
+            do {
+                Horario auxHorario =new Horario(cursor.getInt(0),
+                        cursor.getInt(2),cursor.getInt(3),cursor.getString(1));
+                horarios.add(auxHorario);
+            }while (cursor.moveToNext());
+        }
+        return horarios;
+    }
+
+    public boolean editarHorarioBD(Horario horario) {
+        ContentValues values= new ContentValues();
+
+        values.put(TEMPO_HORARIO, horario.gettempo());
+        values.put(USADO_HORARIO, horario.getUsado());
+        values.put(ID_MEDICO_HORARIO, horario.getId_medico());
+
+        return this.db.update(TABLE_HORARIO,values,"id=? ",new String[]{horario.getId() +""}) >0;
+    }
 }

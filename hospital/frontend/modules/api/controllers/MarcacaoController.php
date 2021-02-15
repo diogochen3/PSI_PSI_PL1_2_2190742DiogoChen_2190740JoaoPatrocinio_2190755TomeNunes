@@ -46,15 +46,13 @@ public function actionTotal()
         return ['limite' => $limit, 'Records' => $recs];
     }
     public function actionMarcar()    {
-        $date= Yii::$app->request->post("date");
-        $tempo= Yii::$app->request->post("tempo");
+        $id = Yii::$app->request->post("id_horario");
         $especialidade = Yii::$app->request->post("id_especialidade");
         $aceitar = Yii::$app->request->post("Aceitar");
         $medico = Yii::$app->request->post("id_Medico");
         $utente = Yii::$app->request->post("id_Utente");
         $climodel= new $this->modelClass;
-        $climodel->date=$date;
-        $climodel->tempo=$tempo;
+        $climodel->id=$id;
         $climodel->id_especialidade=$especialidade;
         $climodel->id_Utente=$utente;
         $climodel->Aceitar=$aceitar;
@@ -71,8 +69,7 @@ public function actionTotal()
     }
     public function actionMarcacaonew($id)
     {
-        $date = Yii::$app->request->post("date");
-        $tempo = Yii::$app->request->post("tempo");
+        $id_horario = Yii::$app->request->post("id_horario");
         $especialidade = Yii::$app->request->post("id_especialidade");
         $aceitar = Yii::$app->request->post("Aceitar");
         $medico = Yii::$app->request->post("id_Medico");
@@ -82,8 +79,7 @@ public function actionTotal()
 
 
         if($rec !== null){
-                $rec->date=$date;
-                $rec->tempo=$tempo;
+            $rec->id = $id_horario;
                 $rec->id_especialidade=$especialidade;
                 $rec->id_Utente=$utente;
                 $rec->Aceitar=$aceitar;

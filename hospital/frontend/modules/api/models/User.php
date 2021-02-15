@@ -24,17 +24,8 @@ use yii\web\IdentityInterface;
  * @property int $updated_at
  * @property string $password write-only password
  * @property string|null $verification_token
- * @property int $is_medico
- *
- * @property Consultas[] $consultas
- * @property Consultas[] $consultas0
- * @property Diagnostico[] $diagnosticos
- * @property Diagnostico[] $diagnosticos0
- * @property Marcacao[] $marcacaos
- * @property Marcacao[] $marcacaos0
- * @property MedicoEspecialidade[] $medicoEspecialidades
- * @property Profile $profile
- */
+ **/
+
 class User extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
@@ -258,15 +249,6 @@ class User extends ActiveRecord implements IdentityInterface
     public function getId0()
     {
         return $this->hasOne(Profile::className(), ['id' => 'id']);
-    }
-    /**
-     * Gets query for [[Medicos]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getMedicos()
-    {
-        return $this->hasMany(Especialidade::className(), ['id' => 'id_especialidade'])->viaTable('medico_especialidade', ['id_medico' => 'id']);
     }
 
 }

@@ -1,9 +1,6 @@
 package amsi.dei.estg.ipleiria.healthschedule.adaptors;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import amsi.dei.estg.ipleiria.healthschedule.R;
+import amsi.dei.estg.ipleiria.healthschedule.model.Horario;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
 import androidx.cardview.widget.CardView;
@@ -25,13 +23,13 @@ public class AdapterMarcacao extends BaseAdapter {
     private LayoutInflater inflater;
     private ArrayList<Marcacao> marcacoes;
     private ArrayList<Profile> medico;
+    private ArrayList<Horario> horarios;
 
-
-
-    public AdapterMarcacao(Context context, ArrayList<Marcacao> marcacoes, ArrayList<Profile> medico) {
+    public AdapterMarcacao(Context context, ArrayList<Marcacao> marcacoes, ArrayList<Profile> medico, ArrayList<Horario> horarios) {
         this.context = context;
         this.marcacoes = marcacoes;
         this.medico = medico;
+        this.horarios = horarios;
     }
 
     @Override
@@ -71,7 +69,7 @@ public class AdapterMarcacao extends BaseAdapter {
     }
 
     private class ViewHolderLista {
-        private TextView txtDataMarcacao, txtHoraMarcacao, txtEspecialidadeMarcacao, txtMedicoMarcacao, txtUtenteMarcacao;
+        private TextView txtTempoMarcacao, txtEspecialidadeMarcacao, txtMedicoMarcacao, txtUtenteMarcacao;
         private CardView marcacao_card;
         private ImageView aceite,naoaceite,poraceitar;
 
@@ -80,20 +78,20 @@ public class AdapterMarcacao extends BaseAdapter {
             naoaceite = view.findViewById(R.id.naoaceite);
             poraceitar = view.findViewById(R.id.poraceitar);
             marcacao_card = view.findViewById(R.id.marcacao_card);
-            txtDataMarcacao = view.findViewById(R.id.txtDataMarcacao);
-            txtHoraMarcacao = view.findViewById(R.id.txtHoraMarcacao);
+            txtTempoMarcacao = view.findViewById(R.id.txtTempoMarcacao);
             txtMedicoMarcacao = view.findViewById(R.id.txtMedicoMarcacao);
 
         }
 
         public void update(Marcacao marcacao) {
-            txtDataMarcacao.setText(marcacao.getDate());
-            txtHoraMarcacao.setText(marcacao.getTempo());
             for (Profile p: medico) {
                 if (marcacao.getId_Medico() == p.getId())
                     txtMedicoMarcacao.setText(p.getFirst_name() +" "+ p.getLast_name());
             }
-
+            for (Horario h: horarios) {
+                if (marcacao.getId() == h.getId())
+                    txtTempoMarcacao.setText(h.gettempo());
+            }
 
             if(marcacao.getAceitar()== 0){
                 naoaceite.setVisibility(View.GONE);

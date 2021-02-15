@@ -133,7 +133,20 @@ return [
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'api/receitasconsultas',
+                    'controller' => 'api/receitamedicamento',
+                    'pluralize' => false,
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/horario',
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'PUT horarionew/{id}' => 'horarionew',
+                    ],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/medicamento',
                     'pluralize' => false,
                 ],
             ],

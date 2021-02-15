@@ -15,6 +15,7 @@ import java.util.Date;
 
 import amsi.dei.estg.ipleiria.healthschedule.model.Diagnostico;
 import amsi.dei.estg.ipleiria.healthschedule.model.Especialidade;
+import amsi.dei.estg.ipleiria.healthschedule.model.Horario;
 import amsi.dei.estg.ipleiria.healthschedule.model.Marcacao;
 import amsi.dei.estg.ipleiria.healthschedule.model.MedicoEspecialidade;
 import amsi.dei.estg.ipleiria.healthschedule.model.Profile;
@@ -60,13 +61,11 @@ public class HospitalJsonParser {
                 try {
                     JSONObject marcacao = (JSONObject) response.get(i);
                     int id = marcacao.getInt("id");
-                    String date = marcacao.getString("date");
-                    String tempo = marcacao.getString("tempo");
                     int Aceitar = marcacao.getInt("Aceitar");
                     int id_especialidade = marcacao.getInt("id_especialidade");
                     int id_Utente = marcacao.getInt("id_Utente");
                     int id_Medico = marcacao.getInt("id_Medico");
-                    Marcacao l = new Marcacao(id, id_especialidade, id_Utente, id_Medico, date, tempo, Aceitar);
+                    Marcacao l = new Marcacao(id, id_especialidade, id_Utente, id_Medico, Aceitar);
                     marcacoes.add(l);
 
                 } catch (JSONException e) {
@@ -112,8 +111,8 @@ public class HospitalJsonParser {
                     String nome_medicamento = receita.getString("Nome_medicamento");
                     int quantidade = receita.getInt("quantidade");
 
-                    Receita l = new Receita(id, quantidade, nome_medicamento);
-                    receitas.add(l);
+                   // Receita l = new Receita(id);
+                 //   receitas.add(l);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -143,11 +142,10 @@ public class HospitalJsonParser {
                     String dNascimento = profile.getString("Birth_date");
                     String genero = profile.getString("gender");
                     String codPostal = profile.getString("postal_code");
-                    int is_medico = profile.getInt("is_medico");
                     String image = profile.getString("imagem");
                     Date date = formatter.parse(dNascimento);
 
-                    Profile p = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date,image);
+                    Profile p = new Profile(id, telefone, nif,pNome,apelido,email,endereco,codPostal,genero,date,image);
                     profiles.add(p);
                 } catch (ParseException | JSONException e) {
                     e.printStackTrace();
@@ -173,10 +171,9 @@ public class HospitalJsonParser {
             String dNascimento = profile.getString("Birth_date");
             String genero = profile.getString("gender");
             String codPostal = profile.getString("postal_code");
-            int is_medico = profile.getInt("is_medico");
             Date date = formatter.parse(dNascimento);
             String image = profile.getString("image");
-            auxProfile = new Profile(id, telefone, nif, is_medico,pNome,apelido,email,endereco,codPostal,genero,date,image);
+            auxProfile = new Profile(id, telefone, nif,pNome,apelido,email,endereco,codPostal,genero,date,image);
 
         } catch(JSONException | ParseException e) {
             e.printStackTrace();
@@ -193,14 +190,12 @@ public class HospitalJsonParser {
 
             JSONObject marcacao = new JSONObject(response);
             int id = marcacao.getInt("id");
-            String date = marcacao.getString("date");
-            String tempo = marcacao.getString("tempo");
             int aceitar = marcacao.getInt("Aceitar");
             int id_especialidade = marcacao.getInt("id_especialidade");
             int id_utente = marcacao.getInt("id_Utente");
             int id_medico = marcacao.getInt("id_Medico");
 
-            auxMarcacao= new Marcacao(id,id_especialidade,id_utente,id_medico,date,tempo,aceitar);
+            auxMarcacao= new Marcacao(id,id_especialidade,id_utente,id_medico,aceitar);
 
         } catch(JSONException e) {
             e.printStackTrace();
@@ -252,4 +247,46 @@ public class HospitalJsonParser {
     }
 
 
+    public static ArrayList<Horario> parserJsonHorarios(JSONArray response) {
+        ArrayList<Horario> horarios = new ArrayList<>();
+        if (response != null) {
+            for (int i = 0; i < response.length(); i++) {
+                try {
+                    JSONObject horario = (JSONObject) response.get(i);
+                    int id = horario.getInt("id");
+                    String tempo = horario.getString("tempo");
+                    int usado = horario.getInt("usado");
+                    int id_medico = horario.getInt("id_medico");
+
+                    Horario h = new Horario(id,usado,id_medico,tempo);
+                    horarios.add(h);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return horarios;
+    }
+
+    public static Horario parserJsonHorario(String response) {
+
+        Horario auxHorario = null;
+
+
+        try {
+
+            JSONObject horario = new JSONObject(response);
+            int id = horario.getInt("id");
+            String tempo = horario.getString("tempo");
+            int usado = horario.getInt("usado");
+            int id_medico = horario.getInt("id_medico");
+
+            auxHorario= new Horario(id,usado,id_medico,tempo);
+
+        } catch(JSONException e) {
+            e.printStackTrace();
+        }
+
+        return auxHorario;
+    }
 }

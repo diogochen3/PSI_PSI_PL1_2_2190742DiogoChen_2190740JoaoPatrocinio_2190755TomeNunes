@@ -37,29 +37,39 @@
             tools:layout_editor_absoluteY="97dp" />
 
 
-    <Spinner
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Especialidade" />
+
+        <Spinner
         android:id="@+id/spEspecialidade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Spinner
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Medico" />
+
+        <Spinner
         android:id="@+id/spMedico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0" />
 
-    <CalendarView
-        android:id="@+id/cvDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tempo" />
 
-    <TimePicker
-        android:id="@+id/tpTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:timePickerMode="spinner" />
-
-
+        <Spinner
+            android:id="@+id/spHorario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>

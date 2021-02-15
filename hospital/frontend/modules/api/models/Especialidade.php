@@ -12,6 +12,7 @@ use Yii;
  *
  * @property Marcacao[] $marcacaos
  * @property MedicoEspecialidade[] $medicoEspecialidades
+ * @property Profile[] $medicos
  */
 class Especialidade extends \yii\db\ActiveRecord
 {
@@ -63,5 +64,15 @@ class Especialidade extends \yii\db\ActiveRecord
     public function getMedicoEspecialidades()
     {
         return $this->hasMany(MedicoEspecialidade::className(), ['id_especialidade' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Medicos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedicos()
+    {
+        return $this->hasMany(Profile::className(), ['id' => 'id_medico'])->viaTable('medico_especialidade', ['id_especialidade' => 'id']);
     }
 }

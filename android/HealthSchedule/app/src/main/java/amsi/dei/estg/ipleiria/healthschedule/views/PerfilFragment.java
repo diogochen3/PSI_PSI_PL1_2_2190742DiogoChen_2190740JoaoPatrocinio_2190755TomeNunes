@@ -73,6 +73,7 @@ public class PerfilFragment extends Fragment implements ProfileListener {
         id =b3.getInt("ID");
 
         SingletonGestorHospital.getInstance(getContext()).getAllProfileAPI(getContext());
+        SingletonGestorHospital.getInstance(getContext()).getAllHorarioAPI(getContext());
         //SharedPreferences sharedPreferences = getSharedPreferences(MenuMainActivity.TOKEN, Context.MODE_PRIVATE);
         // token = sharedPreferences.getString(MenuMainActivity.TOKEN, "sem email");
 
