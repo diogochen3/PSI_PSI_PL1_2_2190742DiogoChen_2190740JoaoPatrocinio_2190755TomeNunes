@@ -3,6 +3,8 @@
 namespace backend\controllers;
 
 use common\models\Categorias;
+use MongoDB\BSON\Timestamp;
+use mysql_xdevapi\Expression;
 use Yii;
 use common\models\Contacto;
 use backend\models\ContactoSearch;
@@ -124,5 +126,17 @@ class ContactoController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+    public function actionRespondido($id)
+    {
+
+        $Contacto = Contacto::find()->where(["id" => $id])->one();
+        if($Contacto==null){}else{
+            $Contacto->respondido = 1;
+            $Contacto->data_respondido = $date = date('Y-m-d H:i:s');
+            $Contacto->save(false);
+        }
+
+        return $this->redirect("index");
     }
 }

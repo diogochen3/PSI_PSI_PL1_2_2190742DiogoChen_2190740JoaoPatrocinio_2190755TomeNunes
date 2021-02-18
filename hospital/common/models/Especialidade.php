@@ -2,18 +2,15 @@
 
 namespace common\models;
 
-use common\models\User;
 use Yii;
 
 /**
  * This is the model class for table "especialidade".
  *
  * @property int $id
- * @property int $Name
+ * @property string $Name
  *
  * @property Marcacao[] $marcacaos
- * @property MedicoEspecialidade[] $medicoEspecialidades
- * @property User[] $medicos
  */
 class Especialidade extends \yii\db\ActiveRecord
 {
@@ -32,7 +29,7 @@ class Especialidade extends \yii\db\ActiveRecord
     {
         return [
             [['Name'], 'required'],
-            [['Name'], 'integer'],
+            [['Name'], 'string', 'max' => 255],
         ];
     }
 
@@ -55,25 +52,5 @@ class Especialidade extends \yii\db\ActiveRecord
     public function getMarcacaos()
     {
         return $this->hasMany(Marcacao::className(), ['id_especialidade' => 'id']);
-    }
-
-    /**
-     * Gets query for [[MedicoEspecialidades]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getMedicoEspecialidades()
-    {
-        return $this->hasMany(MedicoEspecialidade::className(), ['id_especialidade' => 'id']);
-    }
-
-    /**
-     * Gets query for [[Medicos]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getMedicos()
-    {
-        return $this->hasMany(User::className(), ['id' => 'id_medico'])->viaTable('medico_especialidade', ['id_especialidade' => 'id']);
     }
 }

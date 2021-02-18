@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css?h=e6119be3d1e93121c763c07412516b02">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=fcf418ef9ef80599aec4b7aead34e9eb">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+
+    <meta name="csrf-param" content="_csrf-frontend">
+<meta name="csrf-token" content="z8KHtBhukaygV23yA1rwN-aQHEDJim6ejZKP9eue0VK2tuzYag3hnvUAXcdaPKBvv_NyFafYG9v64Ne-3qmnHQ==">
+
+<link href="/assets/9983bfb8/css/bootstrap.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet"></head>
+<body>
+
+<div class="wrap">
+    <nav id="w6" class="navbar navbar-light navbar-expand-md fixed-top bg-light navbar-transparency" style="height: 80px"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w6-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/index-test.php">Health Schedule</a></div><div id="w6-collapse" class="collapse navbar-collapse"><ul id="w7" class="navbar-nav navbar-right nav"><li><a href="/index-test.php/../index.php">Inicio</a></li>
+<li class="active"><a href="/index-test.php/site/contact">Contacto</a></li>
+<li><a href="/index-test.php/site/about">Corpo Clinico</a></li>
+<li><a href="/index-test.php/marcacao/create">Marcações</a></li>
+<li><form action="/index-test.php/site/logout" method="post">
+<input type="hidden" name="_csrf-frontend" value="z8KHtBhukaygV23yA1rwN-aQHEDJim6ejZKP9eue0VK2tuzYag3hnvUAXcdaPKBvv_NyFafYG9v64Ne-3qmnHQ=="><button type="submit" class="btn btn-link logout">Logout (Diogo)</button></form></li>
+<li><a href="/index-test.php/profile/view">Perfil</a></li>
+<li><a href="/index-test.php/receitas/index">Receitas</a></li>
+<li><a href="/index-test.php/profile/diagnostico">diagnostico</a></li>
+<li><a href="/index-test.php/horario/index">Horarios</a></li></ul></div></div></nav>
+
+    <div class="container">
+        <ul class="breadcrumb"><li><a href="/index-test.php">Home</a></li>
+<li class="active">Contact</li>
+</ul>                <div class="site-contact">
+    <h1>Contact</h1>
+
+    <p>
+        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+    </p>
+
+    <div class="row">
+        <div class="col-lg-5">
+            <form id="contact-form" action="/site/contact" method="post">
+<input type="hidden" name="_csrf-frontend" value="z8KHtBhukaygV23yA1rwN-aQHEDJim6ejZKP9eue0VK2tuzYag3hnvUAXcdaPKBvv_NyFafYG9v64Ne-3qmnHQ==">
+
+                <div class="form-group field-contactform-name required">
+<label class="control-label" for="contactform-name">Name</label>
+<input type="text" id="contactform-name" class="form-control" name="ContactForm[name]" autofocus aria-required="true">
+
+<p class="help-block help-block-error"></p>
+</div>                <div class="form-group field-contactform-id_categoria required">
+<label class="control-label" for="contactform-id_categoria">Id Categoria</label>
+<select id="contactform-id_categoria" class="form-control" name="ContactForm[id_Categoria]" aria-required="true">
+<option value="1">Problemas na marcação</option>
+<option value="2">Problemas no Login</option>
+</select>
+
+<p class="help-block help-block-error"></p>
+</div>                <div class="form-group field-contactform-email required">
+<label class="control-label" for="contactform-email">Email</label>
+<input type="text" id="contactform-email" class="form-control" name="ContactForm[email]" aria-required="true">
+
+<p class="help-block help-block-error"></p>
+</div>
+                <div class="form-group field-contactform-subject required">
+<label class="control-label" for="contactform-subject">Subject</label>
+<input type="text" id="contactform-subject" class="form-control" name="ContactForm[subject]" aria-required="true">
+
+<p class="help-block help-block-error"></p>
+</div>
+                <div class="form-group field-contactform-body required">
+<label class="control-label" for="contactform-body">Body</label>
+<textarea id="contactform-body" class="form-control" name="ContactForm[body]" rows="6" aria-required="true"></textarea>
+
+<p class="help-block help-block-error"></p>
+</div>
+                <div class="form-group field-contactform-verifycode">
+<label class="control-label" for="contactform-verifycode">Verification Code</label>
+<div class="row"><div class="col-lg-3"><img id="contactform-verifycode-image" src="/index-test.php/site/captcha?v=602d4e9e932277.03250834" alt=""></div><div class="col-lg-6"><input type="text" id="contactform-verifycode" class="form-control" name="ContactForm[verifyCode]"></div></div>
+
+<p class="help-block help-block-error"></p>
+</div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" name="contact-button">Submit</button>                </div>
+
+            </form>        </div>
+    </div>
+
+</div>
+    </div>
+</div>
+
+
+    <div class="row" style="background-color: rgb(41,44,47); margin-right: 0;">
+        <div class="col-sm-6 col-md-4 footer-navigation">
+            <h3 style="color: blue">Health Schedule</h3>
+            <p class="company-name " style="     margin-left: 50px; margin-top: 25%;">Health schedule © 2020</p>
+        </div>
+        <div class="col-sm-6 col-md-4 footer-contacts">
+            <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                <p style="color: #ffffff;"><span class="new-line-span">Algures em</span> Leiria, Portugal</p>
+            </div>
+            <div><i class="fa fa-phone footer-contacts-icon"></i>
+                <p class="footer-center-info email text-left" style="color: #ffffff;"> +1 555 123456</p>
+            </div>
+            <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                <p style="color: #ffffff;"> <a href="#" target="_blank">hospital@hospital.com</a></p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-4 footer-about">
+            <h4 style="color: #ffffff;">Sobre</h4>
+            <p style="color: #ffffff;"><strong>O&nbsp;</strong>Health schedule&nbsp;<strong>é uma unidade vocacionada para a prestação de cuidados de saúde. Temos ao seu dispor uma ampla oferta de serviços nas várias especialidades médicas e cirúrgicas.</strong><br><strong>Contando com profissionais de excelência e infra-estruturas equipadas, o Hospital tem como objetivo prestar um eficaz tratamento aos seus pacientes.</strong><br></p>
+            <div
+                    class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+        </div>
+    </div>
+</footer>
+
+<script src="/assets/7a2c90e9/jquery.js"></script>
+<script src="/assets/ca3878e7/yii.js"></script>
+<script src="/assets/ca3878e7/yii.validation.js"></script>
+<script src="/assets/ca3878e7/yii.captcha.js"></script>
+<script src="/assets/ca3878e7/yii.activeForm.js"></script>
+<script src="/assets/9983bfb8/js/bootstrap.js"></script>
+<script>jQuery(function ($) {
+jQuery('#contactform-verifycode-image').yiiCaptcha({"refreshUrl":"\/index-test.php\/site\/captcha?refresh=1","hashKey":"yiiCaptcha\/site\/captcha"});
+jQuery('#contact-form').yiiActiveForm([{"id":"contactform-name","name":"name","container":".field-contactform-name","input":"#contactform-name","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Name cannot be blank."});}},{"id":"contactform-id_categoria","name":"id_Categoria","container":".field-contactform-id_categoria","input":"#contactform-id_categoria","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Categoria cannot be blank."});}},{"id":"contactform-email","name":"email","container":".field-contactform-email","input":"#contactform-email","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Email cannot be blank."});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Email is not a valid email address.","enableIDN":false,"skipOnEmpty":1});}},{"id":"contactform-subject","name":"subject","container":".field-contactform-subject","input":"#contactform-subject","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Subject cannot be blank."});}},{"id":"contactform-body","name":"body","container":".field-contactform-body","input":"#contactform-body","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Body cannot be blank."});}},{"id":"contactform-verifycode","name":"verifyCode","container":".field-contactform-verifycode","input":"#contactform-verifycode","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.captcha(value, messages, {"hash":658,"hashKey":"yiiCaptcha/site/captcha","caseSensitive":false,"message":"The verification code is incorrect."});}}], []);
+});</script></body>
+</html>

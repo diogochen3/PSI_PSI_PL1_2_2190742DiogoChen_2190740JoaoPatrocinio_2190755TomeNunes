@@ -69,9 +69,8 @@ use \yii\widgets\LinkPager;
 
 
                                         <td>
-                                            <?= Html::a('Aceitar', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary nexteachother']) ?>
-                                         <?= Html::a('Não Aceitar', ['nAceitar', 'id' => $marcacao->id], ['class' => 'btn btn-primary nexteachother']) ?>
-                                        </td>
+                                            <?= Html::a('Aceitar', ['aceitar', 'id' => $marcacao->id], ['class' => 'btn btn-success nexteachother']) ?>
+                                            </td>
 
 
 

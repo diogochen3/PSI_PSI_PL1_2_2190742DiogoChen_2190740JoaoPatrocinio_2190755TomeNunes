@@ -7,7 +7,7 @@ class EditarPerfilCest
     {
         $I->amOnPage('site/login');
         $I->see('Email');
-        $I->fillField('#loginform-email' , '123e21qe1e@sqe.sadq');
+        $I->fillField('#loginform-email' , 'abcdefgh@abc.com');
         $I->fillField('#loginform-password', '123456789');
         $I->click('Login');
         $I->amOnPage('profile/view');

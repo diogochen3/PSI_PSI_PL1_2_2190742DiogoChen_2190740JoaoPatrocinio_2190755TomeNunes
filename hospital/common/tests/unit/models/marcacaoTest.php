@@ -21,11 +21,11 @@ class marcacaoTest extends \Codeception\Test\Unit
     public static function adicionarMarcacao()
     {
         $marcacao = new Marcacao();
-        $marcacao->id= "2";
+        $marcacao->id= "6";
         $marcacao->Aceitar= "0";
         $marcacao->id_especialidade= "2";
         $marcacao->id_Utente= "42";
-        $marcacao->id_Medico= "56";
+        $marcacao->id_Medico= "64";
         return $marcacao;
     }
     public function testFields()
@@ -38,7 +38,7 @@ class marcacaoTest extends \Codeception\Test\Unit
     {
         $marcacao = $this->adicionarMarcacao();
         $this->assertTrue($marcacao->save());
-        $this->tester->seeRecord(Marcacao::class, ['id' => '2']);
+        $this->tester->seeRecord(Marcacao::class, ['id' => '6']);
     }
     public function testAddErroMarcacao()
     {
@@ -57,9 +57,9 @@ class marcacaoTest extends \Codeception\Test\Unit
     {
       $marcacao = $this->adicionarMarcacao();
         $marcacao->save();
-        $this->tester->seeRecord(Marcacao::class, ['id' => '2']);
+        $this->tester->seeRecord(Marcacao::class, ['id' => '6']);
         $marcacao->delete();
-        $this->tester->dontSeeRecord(Marcacao::class, ['id' => '2']);
+        $this->tester->dontSeeRecord(Marcacao::class, ['id' => '6']);
 
     }
 
@@ -68,9 +68,9 @@ class marcacaoTest extends \Codeception\Test\Unit
 
         $marcacao = $this->adicionarMarcacao();
         $marcacao->save();
-        $marcacao->id_Medico = "53";
+        $marcacao->id_Medico = "61";
         $marcacao->save();
-        $this->tester->seeRecord(Marcacao::class, ['id_Medico' => '53']);
+        $this->tester->seeRecord(Marcacao::class, ['id_Medico' => '61']);
 
     }
 }

@@ -46,7 +46,7 @@ $this->title = 'Health Schedule';
                             <td><?= $item->tempo; ?></td>
                             <td><?= $item->medico->First_name; ?> <?= $item->medico->Last_name; ?></td>
 
-                            <?php if($item->usado = 0){
+                            <?php if($item->usado == 1){
                             ?>
                                 <td style="color: red">Horario indisponivel</td>
                                 <?php

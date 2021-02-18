@@ -53,14 +53,14 @@ public class SingletonGestorHospital {
     private static RequestQueue volleyQueue;
 
     private static SingletonGestorHospital instance = null;
-    private static final  String  mUrlAPILogin =  "http://192.168.1.104/hospital/frontend/web/index.php/api/user/login";
+    private static final  String  mUrlAPILogin =  "http://192.168.1.119/index.php/api/user/login";
     private HospitalLoginListener hospitalLoginListener;
     private final HospitalBDHelper hospitalDB;
 
     /************************ variaveis marcacao ******************************************/
 
 
-    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.104/hospital/frontend/web/index.php/api/marcacao";
+    private static final  String  mUrlAPIMarcacao =  "http://192.168.1.119/index.php/api/marcacao/";
     private ArrayList<Marcacao> marcacoes;
     private MarcacoesListener MarcacoesListener;
     private static final int ADICIONAR_MARCACAO_BD = 1;
@@ -69,41 +69,41 @@ public class SingletonGestorHospital {
 
     /************************ variaveis Profile ******************************************/
 
-    private static final  String  mUrlAPIProfile =  "http://192.168.1.104/hospital/frontend/web/index.php/api/profile";
+    private static final  String  mUrlAPIProfile =  "http://192.168.1.119/index.php/api/profile";
     private ArrayList<Profile> profiles;
     private ProfileListener profileListener;
 
     /************************ variaveis Especialidade ******************************************/
 
-    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.104/hospital/frontend/web/index.php/api/especialidade";
+    private static final  String  mUrlAPIEspecialidade =  "http://192.168.1.119/index.php/api/especialidade";
     private ArrayList<Especialidade> especialidades;
     private ArrayList<String> especialidadesNome;
     private EspecialidadeListener especialidadeListener;
 
     /************************ variaveis Diagnostico ******************************************/
-    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.104/hospital/frontend/web/index.php/api/diagnostico";
+    private static final  String  mUrlAPIDiagnostico =  "http://192.168.1.119/index.php/api/diagnostico";
     private ArrayList<Diagnostico> diagnosticos;
     private DiagnosticoListener DiagnosticosListener;
     /************************ variaveis Receitas ******************************************/
-    private static final  String  mUrlAPIReceitas =  "http://192.168.1.104/hospital/frontend/web/index.php/api/receitas";
+    private static final  String  mUrlAPIReceitas =  "http://192.168.1.119/index.php/api/receitas";
     private ArrayList<Receita> receitas;
     private ReceitasListener ReceitasListener;
 
     /************************ variaveis MedicoEspecialidade ******************************************/
-    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.104/hospital/frontend/web/index.php/api/medicoespecialidade";
+    private static final  String  mUrlAPIMedicoEspecialidade =  "http://192.168.1.119/index.php/api/medicoespecialidade";
     private ArrayList<MedicoEspecialidade> medicoEspecialidades;
     private MedicoEspecialidadeListener medicoEspecialidadeListener;
 
     /************************ variaveis Horario ******************************************/
-    private static final  String  mUrlAPIHorario =  "http://192.168.1.104/hospital/frontend/web/index.php/api/horario";
+    private static final  String  mUrlAPIHorario =  "http://192.168.1.119/index.php/api/horario";
     private ArrayList<Horario> horarios;
 
     /************************* variaveis Medicamento *********************************************/
-    private static final  String  mUrlAPIMedicamento =  "http://192.168.1.104/hospital/frontend/web/index.php/api/medicamento";
+    private static final  String  mUrlAPIMedicamento =  "http://192.168.1.119/index.php/api/medicamento";
     private ArrayList<Medicamento> medicamentos;
 
     /************************* variaveis receitaMedicamento *********************************************/
-    private static final  String  mUrlAPIReceitaMedicamento =  "http://192.168.1.104/hospital/frontend/web/index.php/api/receitamedicamento";
+    private static final  String  mUrlAPIReceitaMedicamento =  "http://192.168.1.119/index.php/api/receitamedicamento";
     private ArrayList<ReceitaMedicamento> receitaMedicamentos;
 
     public static synchronized SingletonGestorHospital getInstance(Context context) {

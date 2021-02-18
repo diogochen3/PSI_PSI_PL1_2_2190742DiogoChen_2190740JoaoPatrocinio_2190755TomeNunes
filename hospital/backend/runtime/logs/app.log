@@ -56694,3 +56694,795 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1613414544.756
     'REQUEST_TIME' => 1613414544
 ]
+2021-02-18 11:52:25 [127.0.0.1][64][ka9qg8l0b7l4lfeq4hhf6s9uer][error][yii\web\HttpException:405] yii\web\MethodNotAllowedHttpException: Method Not Allowed. This URL can only handle the following request methods: POST. in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\filters\VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php(628): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(299): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Controller.php(207): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(178): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('receitas/delete', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2021-02-18 11:52:25 [127.0.0.1][64][ka9qg8l0b7l4lfeq4hhf6s9uer][info][application] $_GET = [
+    'id' => '11'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ka9qg8l0b7l4lfeq4hhf6s9uer'
+    '_identity-backend' => '6109867003c5d97cb2a8aa44aa20c26750217abd82ba5122a68f54a9811800f2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[64,\"rY3c5ryQbJv60M2MrQ6k4yWNzrIj1wHR\",2592000]\";}'
+    '_csrf-backend' => '826f31002c3f4c67fc0264bfc3283fbad80aab80519daf562215016befd8ef1aa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"iknikymI5KBa31zO8DO4Nf81LwDzhbEP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 64
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/receitas/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ka9qg8l0b7l4lfeq4hhf6s9uer; _identity-backend=6109867003c5d97cb2a8aa44aa20c26750217abd82ba5122a68f54a9811800f2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B64%2C%22rY3c5ryQbJv60M2MrQ6k4yWNzrIj1wHR%22%2C2592000%5D%22%3B%7D; _csrf-backend=826f31002c3f4c67fc0264bfc3283fbad80aab80519daf562215016befd8ef1aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22iknikymI5KBa31zO8DO4Nf81LwDzhbEP%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52409'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=11'
+    'REQUEST_URI' => '/index.php/receitas/delete?id=11'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/receitas/delete'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\receitas\\delete'
+    'PHP_SELF' => '/index.php/receitas/delete'
+    'REQUEST_TIME_FLOAT' => 1613645545.036
+    'REQUEST_TIME' => 1613645545
+]
+2021-02-18 11:52:38 [127.0.0.1][64][ka9qg8l0b7l4lfeq4hhf6s9uer][error][yii\web\HttpException:405] yii\web\MethodNotAllowedHttpException: Method Not Allowed. This URL can only handle the following request methods: POST. in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\filters\VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php(628): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(299): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Controller.php(207): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(178): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('receitas/delete', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2021-02-18 11:52:38 [127.0.0.1][64][ka9qg8l0b7l4lfeq4hhf6s9uer][info][application] $_GET = [
+    'id' => '11'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ka9qg8l0b7l4lfeq4hhf6s9uer'
+    '_identity-backend' => '6109867003c5d97cb2a8aa44aa20c26750217abd82ba5122a68f54a9811800f2a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[64,\"rY3c5ryQbJv60M2MrQ6k4yWNzrIj1wHR\",2592000]\";}'
+    '_csrf-backend' => '826f31002c3f4c67fc0264bfc3283fbad80aab80519daf562215016befd8ef1aa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"iknikymI5KBa31zO8DO4Nf81LwDzhbEP\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 64
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/receitas/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ka9qg8l0b7l4lfeq4hhf6s9uer; _identity-backend=6109867003c5d97cb2a8aa44aa20c26750217abd82ba5122a68f54a9811800f2a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B64%2C%22rY3c5ryQbJv60M2MrQ6k4yWNzrIj1wHR%22%2C2592000%5D%22%3B%7D; _csrf-backend=826f31002c3f4c67fc0264bfc3283fbad80aab80519daf562215016befd8ef1aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22iknikymI5KBa31zO8DO4Nf81LwDzhbEP%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52419'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=11'
+    'REQUEST_URI' => '/index.php/receitas/delete?id=11'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/receitas/delete'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\receitas\\delete'
+    'PHP_SELF' => '/index.php/receitas/delete'
+    'REQUEST_TIME_FLOAT' => 1613645558.441
+    'REQUEST_TIME' => 1613645558
+]
+2021-02-18 11:56:39 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\web\HttpException:405] yii\web\MethodNotAllowedHttpException: Method Not Allowed. This URL can only handle the following request methods: POST. in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\filters\VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Component.php(628): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(299): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Controller.php(207): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(178): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('medicamento/del...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2021-02-18 11:56:39 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/medicamento/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52528'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/index.php/medicamento/delete?id=1'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicamento/delete'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\medicamento\\delete'
+    'PHP_SELF' => '/index.php/medicamento/delete'
+    'REQUEST_TIME_FLOAT' => 1613645799.696
+    'REQUEST_TIME' => 1613645799
+]
+2021-02-18 11:57:35 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\xampp\htdocs\psi\hospital\backend\views\medicamento\view.php in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php:233
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\MedicamentoController))
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('view', Array, Object(backend\controllers\MedicamentoController))
+#2 C:\xampp\htdocs\psi\hospital\backend\controllers\MedicamentoController.php(54): yii\base\Controller->render('view', Array)
+#3 [internal function]: backend\controllers\MedicamentoController->actionView('1')
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('view', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('medicamento/vie...', Array)
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2021-02-18 11:57:35 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/medicamento/update?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52541'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/index.php/medicamento/view?id=1'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicamento/view'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\medicamento\\view'
+    'PHP_SELF' => '/index.php/medicamento/view'
+    'REQUEST_TIME_FLOAT' => 1613645855.142
+    'REQUEST_TIME' => 1613645855
+]
+2021-02-18 11:58:14 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\xampp\htdocs\psi\hospital\backend\views\medicamento\view.php in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php:233
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\MedicamentoController))
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(409): yii\base\View->render('view', Array, Object(backend\controllers\MedicamentoController))
+#2 C:\xampp\htdocs\psi\hospital\backend\controllers\MedicamentoController.php(54): yii\base\Controller->render('view', Array)
+#3 [internal function]: backend\controllers\MedicamentoController->actionView('1')
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('view', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('medicamento/vie...', Array)
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#10 {main}
+2021-02-18 11:58:13 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/medicamento/update?id=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52547'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/index.php/medicamento/view?id=1'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/medicamento/view'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\medicamento\\view'
+    'PHP_SELF' => '/index.php/medicamento/view'
+    'REQUEST_TIME_FLOAT' => 1613645893.901
+    'REQUEST_TIME' => 1613645893
+]
+2021-02-18 11:59:29 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: contacto/responder in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php:151
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('responder', Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('contacto/respon...', Array)
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2021-02-18 11:59:29 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '2'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/contacto/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52571'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=2'
+    'REQUEST_URI' => '/index.php/contacto/responder?id=2'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/contacto/responder'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\contacto\\responder'
+    'PHP_SELF' => '/index.php/contacto/responder'
+    'REQUEST_TIME_FLOAT' => 1613645969.079
+    'REQUEST_TIME' => 1613645969
+]
+2021-02-18 12:06:28 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: contacto/Respondido in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php:151
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('Respondido', Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('contacto/Respon...', Array)
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php:116
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2021-02-18 12:06:27 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '4'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/contacto/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52610'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=4'
+    'REQUEST_URI' => '/index.php/contacto/Respondido?id=4'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/contacto/Respondido'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\contacto\\Respondido'
+    'PHP_SELF' => '/index.php/contacto/Respondido'
+    'REQUEST_TIME_FLOAT' => 1613646387.818
+    'REQUEST_TIME' => 1613646387
+]
+2021-02-18 12:08:47 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][Error] Error: Class 'mysql_xdevapi\Expression' not found in C:\xampp\htdocs\psi\hospital\backend\controllers\ContactoController.php:136
+Stack trace:
+#0 [internal function]: backend\controllers\ContactoController->actionRespondido('3')
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('respondido', Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('contacto/respon...', Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#7 {main}
+2021-02-18 12:08:46 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/contacto/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52636'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=3'
+    'REQUEST_URI' => '/index.php/contacto/respondido?id=3'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/contacto/respondido'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\contacto\\respondido'
+    'PHP_SELF' => '/index.php/contacto/respondido'
+    'REQUEST_TIME_FLOAT' => 1613646526.789
+    'REQUEST_TIME' => 1613646526
+]
+2021-02-18 12:10:26 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\base\ErrorException:8] yii\base\ErrorException: Array to string conversion in C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\ColumnSchema.php:157
+Stack trace:
+#0 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\ColumnSchema.php(157): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'C:\\xampp\\htdocs...', 157, Array)
+#1 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\mysql\ColumnSchema.php(49): yii\db\ColumnSchema->typecast(Array)
+#2 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\QueryBuilder.php(652): yii\db\mysql\ColumnSchema->dbTypecast(Array)
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\QueryBuilder.php(630): yii\db\QueryBuilder->prepareUpdateSets('contacto', Array, Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\Command.php(588): yii\db\QueryBuilder->update('contacto', Array, Array, '<span class="st...')
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\ActiveRecord.php(330): yii\db\Command->update('contacto', Array, Array, '<span class="st...')
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\BaseActiveRecord.php(810): yii\db\ActiveRecord::updateAll(Array, Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\ActiveRecord.php(676): yii\db\BaseActiveRecord->updateInternal(NULL)
+#8 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\db\BaseActiveRecord.php(681): yii\db\ActiveRecord->update(false, NULL)
+#9 C:\xampp\htdocs\psi\hospital\backend\controllers\ContactoController.php(137): yii\db\BaseActiveRecord->save(false)
+#10 [internal function]: backend\controllers\ContactoController->actionRespondido('3')
+#11 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#12 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('respondido', Array)
+#14 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('contacto/respon...', Array)
+#15 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#17 {main}
+2021-02-18 12:10:26 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '3'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/contacto/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52650'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=3'
+    'REQUEST_URI' => '/index.php/contacto/respondido?id=3'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/contacto/respondido'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\contacto\\respondido'
+    'PHP_SELF' => '/index.php/contacto/respondido'
+    'REQUEST_TIME_FLOAT' => 1613646626.497
+    'REQUEST_TIME' => 1613646626
+]
+2021-02-18 12:15:42 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][error][yii\base\ErrorException:2] yii\base\ErrorException: DateTime::format() expects exactly 1 parameter, 2 given in C:\xampp\htdocs\psi\hospital\backend\controllers\ContactoController.php:137
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'DateTime::forma...', 'C:\\xampp\\htdocs...', 137, Array)
+#1 C:\xampp\htdocs\psi\hospital\backend\controllers\ContactoController.php(137): DateTime->format('D M d, Y G:i', 1613646942)
+#2 [internal function]: backend\controllers\ContactoController->actionRespondido('6')
+#3 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Controller.php(180): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('respondido', Array)
+#6 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\web\Application.php(104): yii\base\Module->runAction('contacto/respon...', Array)
+#7 C:\xampp\htdocs\psi\hospital\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\xampp\htdocs\psi\hospital\backend\web\index.php(17): yii\base\Application->run()
+#9 {main}
+2021-02-18 12:15:41 [127.0.0.1][45][m63t05flgntrjqbarlee7v86qm][info][application] $_GET = [
+    'id' => '6'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'm63t05flgntrjqbarlee7v86qm'
+    '_identity-backend' => 'fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a:2:{i:0;s:17:\"_identity-backend\";i:1;s:47:\"[45,\"5kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv\",2592000]\";}'
+    '_csrf-backend' => '15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 45
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'back.test'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://back.test/index.php/contacto/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7,ru;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=m63t05flgntrjqbarlee7v86qm; _identity-backend=fc13b2a6579f9866533491dd13b8837e0be736a9a8d93f0f6196f8da8966d170a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A47%3A%22%5B45%2C%225kDu9PbteB5FBiQ9Uw178kRbP6KZSYCv%22%2C2592000%5D%22%3B%7D; _csrf-backend=15fb36eb020ea976fa2513eeacb52de9cbe3064dfe3951c62e70112c9239ac84a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JZ_uppp2DtumnQRWB41lM-hlKNUw6aE3%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\wamp64\\bin\\php\\php7.4.0;C:\\composer;C:\\Program Files\\Portugal Identity Card\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Users\\TSN\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\TSN\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\TSN\\AppData\\Local\\atom\\bin;C:\\Users\\TSN\\.dotnet\\tools;C:\\Users\\TSN\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\TSN\\AppData\\Local\\gitkraken\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.46 (Win64) OpenSSL/1.1.1g Server at back.test Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.46 (Win64) OpenSSL/1.1.1g'
+    'SERVER_NAME' => 'back.test'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/psi/hospital/backend/web'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/psi/hospital/backend/web/index.php'
+    'REMOTE_PORT' => '52691'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=6'
+    'REQUEST_URI' => '/index.php/contacto/respondido?id=6'
+    'SCRIPT_NAME' => '/index.php'
+    'PATH_INFO' => '/contacto/respondido'
+    'PATH_TRANSLATED' => 'C:\\xampp\\htdocs\\psi\\hospital\\backend\\web\\contacto\\respondido'
+    'PHP_SELF' => '/index.php/contacto/respondido'
+    'REQUEST_TIME_FLOAT' => 1613646941.938
+    'REQUEST_TIME' => 1613646941
+]

@@ -15,9 +15,9 @@ class profileTest extends \Codeception\Test\Unit
     protected function _after()
     {
     }
-    public static function adicionarProfile()
+   /* public static function adicionarProfile()
     {
-        $profile = new Profile();
+      $profile = new Profile();
         $profile->First_name= "pato";
         $profile->Last_name= "ganso";
         $profile->NIF= "220032320";
@@ -77,6 +77,5 @@ class profileTest extends \Codeception\Test\Unit
         $profile->postal_code = "2500";
         $profile->save();
         $this->tester->seeRecord(Profile::class, ['postal_code' => '2500']);
-
-    }
+    }*/
 }

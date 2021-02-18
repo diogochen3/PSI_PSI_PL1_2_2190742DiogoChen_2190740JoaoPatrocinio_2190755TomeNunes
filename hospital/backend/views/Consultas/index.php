@@ -61,7 +61,7 @@ $this->title = 'Consultas';
                                         <?php if ($item->estado == 0){ ?>
                                             <td><?= Html::a('Realizar consulta',['realizar', 'id' => $item->id], ['class' => 'btn btn-primary']); ?> </td>
                                         <?php }else{ ?>
-                                        <td>Realiazado</td>
+                                        <td>Realizado</td>
                                         <?php } ?>
                                         <?php if ($item->estado == 0){ ?>
                                         <td></td>

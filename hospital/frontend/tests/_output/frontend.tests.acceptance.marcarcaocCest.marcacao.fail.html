@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
 
     <meta name="csrf-param" content="_csrf-frontend">
-<meta name="csrf-token" content="ArJFFzbeETYuZYSnbjuJEHWhEskQv2YsxLliGavCiNFK9ChWbLgiD14x0tYrXdBaR_FBkEGLXkOA9A8p35HLtA==">
+<meta name="csrf-token" content="r9dAvpIi_ptqYkJA0E2PHcy2DkTioYLztuxklzWCnyjAjxbfv2Wb3RALJiO9D-tIk4ZpLaTE44aGhTPFauDmfQ==">
 
-<link href="/assets/165ed999/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/9983bfb8/css/bootstrap.css" rel="stylesheet">
 <link href="/css/site.css" rel="stylesheet"></head>
 <body>
 
@@ -25,24 +25,24 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span></button><a class="navbar-brand" href="/index.php">Health Schedule</a></div><div id="w1-collapse" class="collapse navbar-collapse"><ul id="w2" class="navbar-nav navbar-right nav"><li><a href="/index.php/../index.php">Inicio</a></li>
 <li><a href="/index.php/site/contact">Contacto</a></li>
-<li><a href="/index.php/site/about">Serviços</a></li>
 <li><a href="/index.php/site/about">Corpo Clinico</a></li>
 <li class="active"><a href="/index.php/marcacao/create">Marcações</a></li>
 <li><form action="/index.php/site/logout" method="post">
-<input type="hidden" name="_csrf-frontend" value="ArJFFzbeETYuZYSnbjuJEHWhEskQv2YsxLliGavCiNFK9ChWbLgiD14x0tYrXdBaR_FBkEGLXkOA9A8p35HLtA=="><button type="submit" class="btn btn-link logout">Logout (ambrosio)</button></form></li>
+<input type="hidden" name="_csrf-frontend" value="r9dAvpIi_ptqYkJA0E2PHcy2DkTioYLztuxklzWCnyjAjxbfv2Wb3RALJiO9D-tIk4ZpLaTE44aGhTPFauDmfQ=="><button type="submit" class="btn btn-link logout">Logout (ambrosio)</button></form></li>
 <li><a href="/index.php/profile/view">Perfil</a></li>
 <li><a href="/index.php/receitas/index">Receitas</a></li>
-<li><a href="/index.php/profile/diagnostico">diagnostico</a></li></ul></div></div></nav>
+<li><a href="/index.php/profile/diagnostico">diagnostico</a></li>
+<li><a href="/index.php/horario/index">Horarios</a></li></ul></div></div></nav>
 
     <div class="container">
                         <div class="marcacao-create">
-    <a class="btn btn-primary" href="historico">Historico das Marcaçoes</a>    <a class="btn btn-primary" href="/index.php/consultas/index">Consultas</a>    <h1>Marcar Consulta</h1>
+    <a class="btn btn-primary" href="historico">Marcaçoes</a>    <a class="btn btn-primary" href="/index.php/consultas/index">Consultas</a>    <h1>Marcar Consulta</h1>
 
     
 <div class="marcacao-form">
 
     <form id="w0" action="/index.php/marcacao/create" method="post">
-<input type="hidden" name="_csrf-frontend" value="ArJFFzbeETYuZYSnbjuJEHWhEskQv2YsxLliGavCiNFK9ChWbLgiD14x0tYrXdBaR_FBkEGLXkOA9A8p35HLtA==">
+<input type="hidden" name="_csrf-frontend" value="r9dAvpIi_ptqYkJA0E2PHcy2DkTioYLztuxklzWCnyjAjxbfv2Wb3RALJiO9D-tIk4ZpLaTE44aGhTPFauDmfQ==">
     <div class="form-group field-marcacao-id_especialidade required has-success">
 <label class="control-label" for="marcacao-id_especialidade">Especialidade</label>
 <select id="marcacao-id_especialidade" class="form-control" name="Marcacao[id_especialidade]" onchange="$.get( &quot;/index.php/marcacao/lists&quot;, { id: $(this).val() } )
@@ -52,30 +52,29 @@
                         );
                     " aria-required="true" aria-invalid="false">
 <option value="">-Escolhe a especialidade-</option>
-<option value="1">213312</option>
-<option value="2">1232313</option>
-<option value="3">1212212</option>
+<option value="1">Cardiologia</option>
+<option value="2">Cirurgia Cardíaca</option>
+<option value="3">Cirurgia Pediátrica
+</option>
 </select>
 
 <div class="help-block"></div>
 </div>
-    <div class="form-group field-marcacao-id_medico required">
-<label class="control-label" for="marcacao-id_medico">Medico</label>
+    <div class="form-group field-marcacao-id_medico required has-success">
+<label class="control-label" for="marcacao-id_medico">Médico</label>
 <select id="marcacao-id_medico" class="form-control" name="Marcacao[id_Medico]" onchange="$.get( &quot;/index.php/marcacao/listdate&quot;, { id: $(this).val() } )
                             .done(function( data ) {
                                 $( &quot;#marcacao-id&quot; ).html( data );
                             }
                         );
-                    " aria-required="true"><option value="59">Diogo</option><option value="61">Diogo</option><option value="64">joao</option></select>
+                    " aria-required="true" aria-invalid="false"><option value="61">Diogo</option><option value="64">joao</option></select>
 
 <div class="help-block"></div>
 </div>
 
     <div class="form-group field-marcacao-id required">
 <label class="control-label" for="marcacao-id">tempo</label>
-<select id="marcacao-id" class="form-control" name="Marcacao[id]" aria-required="true">
-<option value="prompt">-Escolhe o data-</option>
-</select>
+<select id="marcacao-id" class="form-control" name="Marcacao[id]" aria-required="true"></select>
 
 <div class="help-block"></div>
 </div>
@@ -126,7 +125,7 @@
         </div>
 
         <div class="yii-debug-toolbar__block yii-debug-toolbar__ajax" style="display: block;">
-            AJAX <span class="yii-debug-toolbar__label yii-debug-toolbar__ajax_counter yii-debug-toolbar__label_success">1</span>
+            AJAX <span class="yii-debug-toolbar__label yii-debug-toolbar__ajax_counter yii-debug-toolbar__label_success">2</span>
             <div class="yii-debug-toolbar__ajax_info">
                 <table>
                     <thead>
@@ -138,48 +137,48 @@
                         <th>Profile</th>
                     </tr>
                     </thead>
-                    <tbody class="yii-debug-toolbar__ajax_requests"><tr class="yii-debug-toolbar__ajax_request"><td>GET</td><td><span class="yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_success">200</span></td><td class="yii-debug-toolbar__ajax_request_url" title="/index.php/marcacao/lists?id=2">/index.php/marcacao/lists?id=2</td><td class="yii-debug-toolbar__ajax_request_duration">124 ms</td> <td><a href="/index.php/debug/default/view?tag=6026f700ba9ee">6026f700ba9ee</a></td></tr></tbody>
+                    <tbody class="yii-debug-toolbar__ajax_requests"><tr class="yii-debug-toolbar__ajax_request"><td>GET</td><td><span class="yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_success">200</span></td><td class="yii-debug-toolbar__ajax_request_url" title="/index.php/marcacao/lists?id=2">/index.php/marcacao/lists?id=2</td><td class="yii-debug-toolbar__ajax_request_duration">168 ms</td> <td><a href="/index.php/debug/default/view?tag=602d45a726feb">602d45a726feb</a></td></tr><tr class="yii-debug-toolbar__ajax_request"><td>GET</td><td><span class="yii-debug-toolbar__ajax_request_status yii-debug-toolbar__label_success">200</span></td><td class="yii-debug-toolbar__ajax_request_url" title="/index.php/marcacao/listdate?id=64">/index.php/marcacao/listdate?id=64</td><td class="yii-debug-toolbar__ajax_request_duration">141 ms</td> <td><a href="/index.php/debug/default/view?tag=602d45ac42ebe">602d45ac42ebe</a></td></tr></tbody>
                 </table>
             </div>
         </div>
 
                                     <div class="yii-debug-toolbar__block">
-    <a href="/index.php/debug/default/view?panel=config&amp;tag=6026f6ffba00d" tabindex="-1">
+    <a href="/index.php/debug/default/view?panel=config&amp;tag=602d45a6831fa" tabindex="-1">
         <span class="yii-debug-toolbar__label">2.0.39.2</span>
         PHP
-        <span class="yii-debug-toolbar__label">7.2.34</span>
+        <span class="yii-debug-toolbar__label">7.2.33</span>
     </a>
 </div>
                                                 <div class="yii-debug-toolbar__block">
-    <a href="/index.php/debug/default/view?panel=request&amp;tag=6026f6ffba00d" title="Status code: 200 OK" tabindex="-1">Status <span class="yii-debug-toolbar__label yii-debug-toolbar__label_success">200</span></a>
+    <a href="/index.php/debug/default/view?panel=request&amp;tag=602d45a6831fa" title="Status code: 200 OK" tabindex="-1">Status <span class="yii-debug-toolbar__label yii-debug-toolbar__label_success">200</span></a>
 </div>
                                                 <div class="yii-debug-toolbar__block">
-    <a href="/index.php/debug/default/view?panel=router&amp;tag=6026f6ffba00d" title="Action: frontend\controllers\MarcacaoController::actionCreate()" tabindex="-1">Route <span class="yii-debug-toolbar__label">marcacao/create</span></a>
+    <a href="/index.php/debug/default/view?panel=router&amp;tag=602d45a6831fa" title="Action: frontend\controllers\MarcacaoController::actionCreate()" tabindex="-1">Route <span class="yii-debug-toolbar__label">marcacao/create</span></a>
 </div>
                                                 
 <div class="yii-debug-toolbar__block">
-    <a href="/index.php/debug/default/view?panel=log&amp;tag=6026f6ffba00d" title="Logged 32 messages" tabindex="-1">Log
+    <a href="/index.php/debug/default/view?panel=log&amp;tag=602d45a6831fa" title="Logged 32 messages" tabindex="-1">Log
         <span class="yii-debug-toolbar__label">32</span>
     </a>
         </div>
                                                 <div class="yii-debug-toolbar__block">
-    <a href="/index.php/debug/default/view?panel=profiling&amp;tag=6026f6ffba00d" title="Total request processing time was 333 ms" tabindex="-1">Time <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">333 ms</span></a>
-    <a href="/index.php/debug/default/view?panel=profiling&amp;tag=6026f6ffba00d" title="Peak memory consumption" tabindex="-1">Memory <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">2.803 MB</span></a>
+    <a href="/index.php/debug/default/view?panel=profiling&amp;tag=602d45a6831fa" title="Total request processing time was 315 ms" tabindex="-1">Time <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">315 ms</span></a>
+    <a href="/index.php/debug/default/view?panel=profiling&amp;tag=602d45a6831fa" title="Peak memory consumption" tabindex="-1">Memory <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">8.459 MB</span></a>
 </div>
                                                     <div class="yii-debug-toolbar__block">
-        <a href="/index.php/debug/default/view?panel=db&amp;tag=6026f6ffba00d" title="Executed 17 database queries which took 55 ms." tabindex="-1">
-            DB <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">17</span> <span class="yii-debug-toolbar__label">55 ms</span>
+        <a href="/index.php/debug/default/view?panel=db&amp;tag=602d45a6831fa" title="Executed 17 database queries which took 95 ms." tabindex="-1">
+            DB <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">17</span> <span class="yii-debug-toolbar__label">95 ms</span>
         </a>
     </div>
                                                     <div class="yii-debug-toolbar__block">
-        <a href="/index.php/debug/default/view?panel=event&amp;tag=6026f6ffba00d" tabindex="-1">Events <span class="yii-debug-toolbar__label">81</span></a>
+        <a href="/index.php/debug/default/view?panel=event&amp;tag=602d45a6831fa" tabindex="-1">Events <span class="yii-debug-toolbar__label">61</span></a>
     </div>
                                                     <div class="yii-debug-toolbar__block">
-        <a href="/index.php/debug/default/view?panel=assets&amp;tag=6026f6ffba00d" title="Number of asset bundles loaded" tabindex="-1">Asset Bundles <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">7</span></a>
+        <a href="/index.php/debug/default/view?panel=assets&amp;tag=602d45a6831fa" title="Number of asset bundles loaded" tabindex="-1">Asset Bundles <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">7</span></a>
     </div>
                                                                                                                                                 <div class="yii-debug-toolbar__block">
-    <a href="/index.php/debug/default/view?panel=user&amp;tag=6026f6ffba00d" tabindex="-1">
-                                    User <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">73</span>
+    <a href="/index.php/debug/default/view?panel=user&amp;tag=602d45a6831fa" tabindex="-1">
+                                    User <span class="yii-debug-toolbar__label yii-debug-toolbar__label_info">74</span>
                                     </a>
 </div>
                                                                     
@@ -614,11 +613,11 @@
     }
 
 })();
-</script><script src="/assets/6cb8e8ff/jquery.js"></script>
-<script src="/assets/34faa425/yii.js"></script>
-<script src="/assets/34faa425/yii.validation.js"></script>
-<script src="/assets/34faa425/yii.activeForm.js"></script>
-<script src="/assets/165ed999/js/bootstrap.js"></script>
+</script><script src="/assets/7a2c90e9/jquery.js"></script>
+<script src="/assets/ca3878e7/yii.js"></script>
+<script src="/assets/ca3878e7/yii.validation.js"></script>
+<script src="/assets/ca3878e7/yii.activeForm.js"></script>
+<script src="/assets/9983bfb8/js/bootstrap.js"></script>
 <script>jQuery(function ($) {
 jQuery('#w0').yiiActiveForm([{"id":"marcacao-id_especialidade","name":"id_especialidade","container":".field-marcacao-id_especialidade","input":"#marcacao-id_especialidade","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Especialidade cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Id Especialidade must be an integer.","skipOnEmpty":1});}},{"id":"marcacao-id_medico","name":"id_Medico","container":".field-marcacao-id_medico","input":"#marcacao-id_medico","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Id Medico cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Id Medico must be an integer.","skipOnEmpty":1});}},{"id":"marcacao-id","name":"id","container":".field-marcacao-id","input":"#marcacao-id","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"ID cannot be blank."});yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"ID must be an integer.","skipOnEmpty":1});}}], []);
 });</script>

@@ -12,7 +12,7 @@ public function CriarDiagnostico(FunctionalTester $I){
     $I->amOnPage('diagnostico/create');
     $I->fillField('Descricao', 'teste da descricao');
     $I->fillField('Situacao', 'teste da situaçao');
-    $I->selectOption('Id Utente', '36');
-    $I->click('Save');
+        $I->selectOption('Id Utente', '36');
+        $I->click('Save');
 }
 }

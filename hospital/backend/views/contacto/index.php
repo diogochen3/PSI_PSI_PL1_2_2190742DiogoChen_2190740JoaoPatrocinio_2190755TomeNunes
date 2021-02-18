@@ -79,7 +79,7 @@ use yii\grid\GridView;
                                             <td></td>
                                         <?php } ?>
                                         <?php if ($contacto->respondido == 0){ ?>
-                                            <td><?= Html::a('Reponder',['responder',"id" => $contacto->id],['class' => 'btn btn-primary']); ?></td>
+                                            <td><?= Html::a('Responder',['respondido',"id" => $contacto->id],['class' => 'btn btn-primary']); ?></td>
                                         <?php }elseif($contacto->respondido == 1){ ?>
                                             <td>Respondeu</td>
                                         <?php } ?>

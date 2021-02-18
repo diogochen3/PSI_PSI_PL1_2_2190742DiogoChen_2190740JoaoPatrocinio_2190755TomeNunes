@@ -16,14 +16,13 @@ class CriarMarcacaoCest
     {
         $I->amOnPage('site/login');
         $I->see('Email');
-        $I->fillField('#loginform-email' , '123e21qe1e@sqe.sadq');
+        $I->fillField('#loginform-email' , 'abcdefgh@abc.com');
         $I->fillField('#loginform-password', '123456789');
         $I->click('Login');
         $I->amOnPage('marcacao/create');
-        $I->fillField('Date', '24-12-2020');
-        $I->fillField('Tempo', '20:20');
-        $I->selectOption('Id Especialidade', '2');
-        $I->selectOption('Id Medico', '18');
+        $I->selectOption('Especialidade', '3');
+        $I->selectOption('Médico', '64');
+        $I->selectOption('tempo', '10');
         $I->click('Save');
     }
 

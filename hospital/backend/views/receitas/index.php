@@ -78,7 +78,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 </td>
                                                 <td><?= $item->data_emissao  ?></td>
                                                 <td><?= Html::a('adicionar medicamentos', ['adicionar', 'id' => $item->id],['class' => 'btn btn-success']) ?> </td>
-                                                <td><?= Html::a('eliminar', ['delete', 'id' => $item->id],['class' => 'btn btn-danger']) ?></td>
+                                                         <td><?= Html::a('Eliminar', ['delete', 'id' => $item->id], [
+                                                        'class' => 'btn btn-danger',
+                                                        'data' => [
+                                                            'confirm' => 'Are you sure you want to delete this item?',
+                                                            'method' => 'post',
+                                                        ],
+                                                    ]) ?></td>
                                             </tr>
 
                                     <?php endforeach; ?>

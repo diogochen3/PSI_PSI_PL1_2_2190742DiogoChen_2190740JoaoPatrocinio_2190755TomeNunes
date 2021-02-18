@@ -15,13 +15,13 @@ class ConsultasTest extends \Codeception\Test\Unit
 
     protected function _after()
     {
-        Consultas::deleteAll();
+       /* Consultas::deleteAll();*/
     }
     public static function adicionarConsulta()
     {
         $Consultas = new Consultas();
-        $Consultas->id="3";
-        $Consultas->estado= "1";
+        $Consultas->id="5";
+        $Consultas->estado= "0";
         $Consultas->id_medico= "64";
         $Consultas->id_utente= "43";
         return $Consultas;
@@ -36,7 +36,7 @@ class ConsultasTest extends \Codeception\Test\Unit
     {
         $Consultas = $this->adicionarConsulta();
         $this->assertTrue($Consultas->save());
-        $this->tester->seeRecord(Consultas::class, ['id' => '3']);
+        $this->tester->seeRecord(Consultas::class, ['id' => '5']);
     }
     public function testAddErroConsulta()
     {
@@ -54,9 +54,9 @@ class ConsultasTest extends \Codeception\Test\Unit
     {
         $Consultas = $this->adicionarConsulta();
         $Consultas->save();
-        $this->tester->seeRecord(Consultas::class, ['id' => '3']);
+        $this->tester->seeRecord(Consultas::class, ['id' => '5']);
         $Consultas->delete();
-        $this->tester->dontSeeRecord(Consultas::class, ['id' => '3']);
+        $this->tester->dontSeeRecord(Consultas::class, ['id' => '5']);
 
     }
 
