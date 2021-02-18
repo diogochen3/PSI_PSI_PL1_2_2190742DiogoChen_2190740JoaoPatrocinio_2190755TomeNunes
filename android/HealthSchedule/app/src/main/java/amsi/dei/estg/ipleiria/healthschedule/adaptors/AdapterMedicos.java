@@ -84,10 +84,7 @@ public class AdapterMedicos extends BaseAdapter {
                     txtNumeroTL.setText(profile.getPhone_number() + "");
                     ArrayAdapter<String> adapterEspecialidade = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, nomeEspecialidade);
                     lvEspecialidade.setAdapter(adapterEspecialidade);
-
-
-
-
+                    
         }
 
         @Override

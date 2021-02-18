@@ -75,7 +75,7 @@ public class ListaReceitasFragment extends Fragment implements SwipeRefreshLayou
 
     @Override
     public void onRefreshListaReceitas(ArrayList<Receita> receitas) {
-       newreceitas = SingletonGestorHospital.getInstance(getContext()).getMarcacaReceita(receitas,43);
+       newreceitas = SingletonGestorHospital.getInstance(getContext()).getMarcacaReceita(receitas,user_id);
         lvListaReceitas.setAdapter(new AdapterReceitas(getContext(),newreceitas));
     }
 }
